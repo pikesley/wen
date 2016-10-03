@@ -22,5 +22,10 @@ module Pixelclock
       patch '/display', { mode: 'time' }.to_json, JSON_HEADERS
       expect(ClockWorker).to have_enqueued_job 'display', {'mode' => 'time'}
     end
+
+    it 'shuffles' do
+      patch '/display', { mode: 'shuffle' }.to_json, JSON_HEADERS
+      expect(ClockWorker).to have_enqueued_job 'display', {'mode' => 'shuffle'}
+    end
   end
 end
