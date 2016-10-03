@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.3.1'
+ruby '2.1.5'
 
 gem 'sinatra', '~> 1.4'
 gem 'rack-conneg'
@@ -11,6 +11,7 @@ gem 'bootstrap-sass'
 gem 'erubis'
 gem 'puma'
 gem 'sidekiq'
+gem 'foreman'
 
 gem 'neoclock', path: '../neoclock'
 
