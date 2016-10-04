@@ -1,4 +1,4 @@
-module Neoclock
+module Clockface
   describe Clock do
     context 'bracketise' do
       it 'handles the easy case' do

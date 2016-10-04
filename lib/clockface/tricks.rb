@@ -1,4 +1,4 @@
-module Neoclock
+module Clockface
   class Clock
     def self.shuffle iterations = 64
       iterations.times do

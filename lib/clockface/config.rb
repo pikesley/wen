@@ -1,4 +1,4 @@
-module Neoclock
+module Clockface
   class Config
     include Singleton
 
@@ -21,7 +21,7 @@ module Neoclock
     private
 
     def fetch_yaml file
-      YAML.load(File.open(File.join(File.dirname(__FILE__), '..', '..', '..', 'config/%s.yml' % file)))
+      YAML.load(File.open(File.join(File.dirname(__FILE__), '..', '..', 'config/%s.yml' % file)))
     end
   end
 end

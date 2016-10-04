@@ -1,4 +1,4 @@
-module Neoclock
+module Clockface
   describe Clock do
     context 'show the time' do
       it 'shows an on-the-hour time' do

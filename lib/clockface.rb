@@ -7,7 +7,11 @@ require 'pixel_pi'
 require 'singleton'
 require 'ostruct'
 
-require_relative 'clockface/neoclock'
+require_relative 'clockface/clock'
+require_relative 'clockface/config'
+require_relative 'clockface/clock'
+require_relative 'clockface/neopixels'
+require_relative 'clockface/tricks'
 
 require_relative 'clockface/helpers'
 require_relative 'clockface/racks'
