@@ -1,8 +1,8 @@
 class TestHelper
-  include Pixelclock::Helpers
+  include Clockface::Helpers
 end
 
-module Pixelclock
+module Clockface
   describe Helpers do
     let(:helpers) { TestHelper.new }
 

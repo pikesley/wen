@@ -3,7 +3,7 @@ Coveralls.wear_merged!
 
 require 'rack/test'
 require 'rspec-sidekiq'
-require 'pixelclock'
+require 'clockface'
 require 'timecop'
 
 #require_relative '../lib/neoclock'
@@ -23,6 +23,6 @@ RSpec.configure do |config|
 
   include Rack::Test::Methods
   def app
-    Pixelclock::App
+    Clockface::App
   end
 end

@@ -1,11 +1,11 @@
-module Pixelclock
+module Clockface
   JSON_HEADERS = { 'HTTP_ACCEPT' => 'application/json' }
 
   describe App do
     it 'says hello' do
       get '/'
       expect(last_response).to be_ok
-      expect(last_response.body).to match /Hello from Pixelclock/
+      expect(last_response.body).to match /Hello from Clockface/
     end
 
     it 'serves JSON' do
@@ -13,7 +13,7 @@ module Pixelclock
       expect(last_response).to be_ok
       expect(JSON.parse last_response.body).to eq (
         {
-          'app' => 'Pixelclock'
+          'app' => 'Clockface'
         }
       )
     end

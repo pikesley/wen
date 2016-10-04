@@ -1,4 +1,4 @@
-module Pixelclock
+module Clockface
   CONFIG = YAML.load_file('config/config.yml') || {}
 
   module Helpers

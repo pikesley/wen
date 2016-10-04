@@ -7,14 +7,14 @@ require 'pixel_pi'
 require 'singleton'
 require 'ostruct'
 
-require_relative 'pixelclock/neoclock'
+require_relative 'clockface/neoclock'
 
-require_relative 'pixelclock/helpers'
-require_relative 'pixelclock/racks'
+require_relative 'clockface/helpers'
+require_relative 'clockface/racks'
 
 Sidekiq.options[:concurrency] = 1
 
-module Pixelclock
+module Clockface
   class ClockWorker
     include Sidekiq::Worker
 
@@ -28,7 +28,7 @@ module Pixelclock
 
   class App < Sinatra::Base
     helpers do
-      include Pixelclock::Helpers
+      include Clockface::Helpers
     end
 
     get '/' do
@@ -36,15 +36,15 @@ module Pixelclock
 
       respond_to do |wants|
         wants.html do
-          @content = '<h1>Hello from Pixelclock</h1>'
-          @title = 'Pixelclock'
+          @content = '<h1>Hello from Clockface</h1>'
+          @title = 'Clockface'
           @github_url = CONFIG['github_url']
           erb :index, layout: :default
         end
 
         wants.json do
           {
-            app: 'Pixelclock'
+            app: 'Clockface'
           }.to_json
         end
       end

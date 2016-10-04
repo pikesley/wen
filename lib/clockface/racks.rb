@@ -1,7 +1,7 @@
 require 'rack/conneg'
 require 'rack/tracker'
 
-module Pixelclock
+module Clockface
   class App < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'views'
