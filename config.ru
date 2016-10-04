@@ -1,3 +1,3 @@
-require File.join(File.dirname(__FILE__), 'lib/pixelclock.rb')
+require File.join(File.dirname(__FILE__), 'lib/wen.rb')
 
-run Pixelclock::App
+run Wen::App

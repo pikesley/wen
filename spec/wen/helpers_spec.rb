@@ -1,8 +1,8 @@
 class TestHelper
-  include Clockface::Helpers
+  include Wen::Helpers
 end
 
-module Clockface
+module Wen
   describe Helpers do
     let(:helpers) { TestHelper.new }
 

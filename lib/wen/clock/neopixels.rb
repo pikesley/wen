@@ -1,4 +1,4 @@
-module Clockface
+module Wen
   class Neopixels
     include Singleton
 

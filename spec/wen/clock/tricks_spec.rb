@@ -1,4 +1,4 @@
-module Clockface
+module Wen
   describe Clock do
     it 'takes an arbitrary time' do
       Timecop.freeze DateTime.parse '19:00' do

@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), 'lib/clockface.rb')
+require File.join(File.dirname(__FILE__), 'lib/wen.rb')
 
 unless ENV['RACK_ENV'] == 'production'
   require 'rspec/core/rake_task'

@@ -1,4 +1,4 @@
-module Clockface
+module Wen
   describe Clock do
     context 'bracketise' do
       it 'handles the easy case' do

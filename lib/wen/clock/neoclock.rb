@@ -1,15 +1,4 @@
-#require 'pixel_pi'
-#require 'singleton'
-#require 'ostruct'
-#require 'yaml'
-#
-#require_relative 'neoclock/version'
-#require_relative 'neoclock/clock'
-#require_relative 'neoclock/config'
-#require_relative 'neoclock/neopixels'
-#require_relative 'neoclock/tricks'
-#
-#module Neoclock
+module Wen
 ##  def self.blender start, stop, sixtieth
 ##    c = []
 ##    start.each_with_index do |component, i|
@@ -26,5 +15,4 @@
 ##    end
 ##    ((higher - lower) / 60.0 * sixtieth).to_i + lower
 ##  end
-#end
-#
+end
