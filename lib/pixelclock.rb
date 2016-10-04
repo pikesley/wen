@@ -3,8 +3,11 @@ require 'tilt/erubis'
 require 'json'
 require 'yaml'
 require 'sidekiq'
+require 'pixel_pi'
+require 'singleton'
+require 'ostruct'
 
-require 'neoclock'
+require_relative 'pixelclock/neoclock'
 
 require_relative 'pixelclock/helpers'
 require_relative 'pixelclock/racks'

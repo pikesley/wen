@@ -1,9 +1,3 @@
-PATH
-  remote: ../neoclock
-  specs:
-    neoclock (0.1.1)
-      pixel_pi (~> 0.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -192,6 +186,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.5)
+    timecop (0.8.1)
     tins (1.12.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
@@ -213,7 +208,7 @@ DEPENDENCIES
   guard-jasmine
   guard-rspec
   jasmine
-  neoclock!
+  pixel_pi
   pry
   puma
   rack-conneg
@@ -223,3 +218,10 @@ DEPENDENCIES
   rspec-sidekiq
   sidekiq
   sinatra (~> 1.4)
+  timecop
+
+RUBY VERSION
+   ruby 2.1.5p273
+
+BUNDLED WITH
+   1.13.2

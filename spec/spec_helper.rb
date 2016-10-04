@@ -4,6 +4,11 @@ Coveralls.wear_merged!
 require 'rack/test'
 require 'rspec-sidekiq'
 require 'pixelclock'
+require 'timecop'
+
+#require_relative '../lib/neoclock'
+
+ENV['TZ'] = 'UTC'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

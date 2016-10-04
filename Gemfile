@@ -12,8 +12,7 @@ gem 'erubis'
 gem 'puma'
 gem 'sidekiq'
 gem 'foreman'
-
-gem 'neoclock', path: '../neoclock'
+gem 'pixel_pi'
 
 group :test do
   gem 'rspec'
@@ -26,4 +25,5 @@ group :test do
   gem 'jasmine'
   gem 'pry'
   gem 'actionpack'
+  gem 'timecop'
 end
