@@ -4,7 +4,42 @@
 @import 'footer';
 @import 'github-corner';
 
-h1 {
+body {
+  background-color: $brand-secondary;
   color: $brand-primary;
   font-family: $font-primary;
+  text-align: center;
+}
+
+.btn-default {
+  background-color: $brand-primary;
+  border-color: $brand-primary;
+  color: $brand-secondary;
+}
+
+.btn:hover {
+  background-color: darken($brand-primary, 10%);
+  border-color: darken($brand-primary, 20%);
+}
+
+#main-nav {
+  padding-top: $padding-small-vertical;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+  background-color: $brand-primary;
+  border-color: $brand-primary;
+  color: $brand-secondary;
+}
+
+.nav-pills>li>a {
+  background-color: darken($brand-primary, 20%);
+  border-color: darken($brand-primary, 30%);
+  color: $brand-secondary;
+}
+
+.nav-pills>li>a:focus, .nav-pills>li>a:hover {
+  background-color: darken($brand-primary, 10%);
+  border-color: darken($brand-primary, 20%);
+  color: $brand-secondary;
 }

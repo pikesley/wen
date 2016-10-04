@@ -1,0 +1,22 @@
+<h2>colours</h2>
+<hr />
+<div class='row'>
+  <% Wen::CONFIG['display-modes'].each do |mode| %>
+    <div class='col-xs-6'>
+      <button class='btn btn-default' id='display-<%= mode %>' onclick='submit("<%= mode %>")'>
+        <%= mode %>
+      </button>
+    </div>
+  <% end %>
+</div>
+
+<script>
+function submit(mode) {
+  $.ajax({
+      url: '/display/',
+      data: JSON.stringify({ mode: mode }),
+      type: 'PATCH',
+      contentType: 'application/json'
+  })
+}
+</script>

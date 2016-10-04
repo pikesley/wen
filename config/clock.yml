@@ -21,44 +21,10 @@ neopixels:
         - 0
         - 0
         - 255
-    
+
 led:
   pin:        18
   freq:       800000
   dma:        5
   brightness: 16 # DOES FUCK ALL
   invert:     false
-
-colours:
-  black:
-    - 0
-    - 0
-    - 0
-  blue:
-    - 0
-    - 0
-    - 255
-  cyan:
-    - 0
-    - 255
-    - 255
-  green:
-    - 0
-    - 255
-    - 0
-  magenta:
-    - 255
-    - 0
-    - 255
-  red:
-    - 255
-    - 0
-    - 0
-  white:
-    - 255
-    - 255
-    - 255
-  yellow:
-    - 255
-    - 255
-    - 0

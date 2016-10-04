@@ -4,12 +4,15 @@
   <body>
     <%= erb :'includes/github-corner' if @github_url %>
     <div class='container'>
+      <%= erb :'includes/nav' %>
+
       <div class='row'>
-        <div class='col-md-2'></div>
-        <div class='col-md-8'>
-          <%= yield %>
+        <div class='col-md-3'></div>
+        <div class='col-md-6'>
+        <h1>clock control</h1>
+        <%= yield %>
         </div>
-        <div class='col-md-2'></div>
+        <div class='col-md-3'></div>
       </div>
     </div>
     <%= erb :'includes/footer' %>

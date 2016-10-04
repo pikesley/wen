@@ -1,2 +1,10 @@
 #google-analytics-tag: UA-00000000-0
 #github_url: https://github.com
+
+display-modes:
+  - time
+  - shuffle
+
+pages:
+  - display
+  - colours

@@ -28,10 +28,31 @@ module Wen
     get '/' do
       headers 'Vary' => 'Accept'
 
-      @content = '<h1>Hello from Wen</h1>'
-      @title = 'Wen'
-      @github_url = CONFIG['github_url']
-      erb :index, layout: :default
+      respond_to do |wants|
+         wants.html do
+           redirect to '/display'
+         end
+       end
+    end
+
+    get '/display/?' do
+      headers 'Vary' => 'Accept'
+
+      respond_to do |wants|
+        wants.html do
+          erb :display, layout: :default
+        end
+      end
+    end
+
+    get '/colours/?' do
+      headers 'Vary' => 'Accept'
+
+      respond_to do |wants|
+        wants.html do
+          erb :colours, layout: :default
+        end
+      end
     end
 
     patch '/display/?' do

@@ -5,7 +5,7 @@ module Wen
     it 'says hello' do
       get '/'
       expect(last_response).to be_ok
-      expect(last_response.body).to match /Hello from Wen/
+      expect(last_response.body).to match /Clock Control/
     end
 
     it 'sets the time' do
