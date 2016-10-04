@@ -6,9 +6,8 @@ require 'rspec-sidekiq'
 require 'wen'
 require 'timecop'
 
-#require_relative '../lib/neoclock'
-
 ENV['TZ'] = 'UTC'
+ENV['environment'] = 'test'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

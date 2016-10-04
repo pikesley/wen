@@ -7,8 +7,8 @@ module Wen
     def self.wheel type, time
       config = Config.instance.config
       l = []
-      figure = config.colours[config.neopixels[type]['colours']['figure']]
-      ground = config.colours[config.neopixels[type]['colours']['ground']]
+      figure = config.neopixels[type]['colours']['figure']
+      ground = config.neopixels[type]['colours']['ground']
       config.neopixels[type]['pins'].times do
         l.push ground
       end
@@ -39,6 +39,14 @@ module Wen
       last = (pin + 1) % length
       a.push last
       a.sort!
+    end
+
+    def self.colours params
+      params.each_pair do |hand, values|
+        values.each_pair do |layer, colour|
+          Config.instance.config.neopixels[hand]['colours'][layer] = colour
+        end
+      end
     end
   end
 end

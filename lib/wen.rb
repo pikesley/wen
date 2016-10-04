@@ -15,21 +15,11 @@ require_relative 'wen/clock/tricks'
 
 require_relative 'wen/helpers'
 require_relative 'wen/racks'
+require_relative 'wen/clock_worker'
 
 Sidekiq.options[:concurrency] = 1
 
 module Wen
-  class ClockWorker
-    include Sidekiq::Worker
-
-    def perform action, params
-      case action
-      when 'display'
-        Neoclock::Clock.send(params['mode'].to_sym)
-      end
-    end
-  end
-
   class App < Sinatra::Base
     helpers do
       include Wen::Helpers
@@ -38,24 +28,18 @@ module Wen
     get '/' do
       headers 'Vary' => 'Accept'
 
-      respond_to do |wants|
-        wants.html do
-          @content = '<h1>Hello from Wen</h1>'
-          @title = 'Wen'
-          @github_url = CONFIG['github_url']
-          erb :index, layout: :default
-        end
-
-        wants.json do
-          {
-            app: 'Wen'
-          }.to_json
-        end
-      end
+      @content = '<h1>Hello from Wen</h1>'
+      @title = 'Wen'
+      @github_url = CONFIG['github_url']
+      erb :index, layout: :default
     end
 
     patch '/display/?' do
-      ClockWorker.perform_async "display", JSON.parse(request.body.read)
+      ClockWorker.perform_async 'display', JSON.parse(request.body.read)
+    end
+
+    patch '/colours/?' do
+      ClockWorker.perform_async 'colours', JSON.parse(request.body.read)
     end
 
     # start the server if ruby file executed directly

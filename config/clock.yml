@@ -2,14 +2,26 @@ neopixels:
   minutes:
     pins: 24
     colours:
-      figure: red
-      ground: blue
+      figure:
+        - 255
+        - 0
+        - 0
+      ground:
+        - 0
+        - 0
+        - 255
   hours:
     pins: 12
     colours:
-      figure: red
-      ground: blue
-
+      figure:
+        - 255
+        - 0
+        - 0
+      ground:
+        - 0
+        - 0
+        - 255
+    
 led:
   pin:        18
   freq:       800000
