@@ -31,6 +31,11 @@ module Wen
         expect(Neopixels.instance).to receive(:illuminate).exactly(27).times
         described_class.boot_up
       end
+
+      # night mode?
+      # ease into the actual time out of the trick modes?
+      # blink mode
+      # accelerate at startup
     end
   end
 end
