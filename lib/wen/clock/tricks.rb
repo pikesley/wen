@@ -9,6 +9,18 @@ module Wen
       self.time
     end
 
+    def self.swing
+      t = 82800 + 1800
+      while t <= 864000
+        Timecop.freeze DateTime.strptime(t.to_s, '%s') do
+          self.time
+          t += 3930
+        end
+        sleep 0.05
+      end
+      self.time
+    end
+
     def self.boot_up
       c = Array.new(
         Config.instance.config.neopixels['minutes']['pins'] +

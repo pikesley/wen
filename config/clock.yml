@@ -31,8 +31,8 @@ led:
 
 display-modes:
   - shuffle
+  - swing
   - boot_up
-#  - time
 
 pages:
   - colours
