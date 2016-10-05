@@ -59,6 +59,19 @@ $.each(elements, function(i, element) {
 })
 
 $('input:radio').change(function(data) {
+  d = data['currentTarget']['id'].split('-')
+
+  x = {}
+  x[d[1]] = [parseInt(d[2]), parseInt(d[3]), parseInt(d[4])]
+  y = {}
+  y[d[0]] = x
+
+  $.ajax({
+      url: '/colours/',
+      data: JSON.stringify(y),
+      type: 'PATCH',
+      contentType: 'application/json'
+  })
   // data['currentTarget']['id'] < THIS
 //  params[data.target.name] = data.target.value
 //  refresh()
