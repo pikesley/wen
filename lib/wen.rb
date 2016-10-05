@@ -32,9 +32,9 @@ module Wen
 
       respond_to do |wants|
          wants.html do
-           redirect to '/display'
+            redirect to '/display'
          end
-       end
+      end
     end
 
     get '/display/?' do
