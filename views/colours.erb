@@ -9,11 +9,11 @@
           <span class='col-xs-2'>
             <%= layer %>
           </span>
-          <div class='col-xs-10'>
+          <div class='col-xs-10' id='<%= wheel %>-<%= layer %>'>
             <% Wen::Config.instance.config.colours.each_pair do |name, rgb| %>
               <input type='radio'
                      id='<%= wheel %>-<%= layer %>-<%= rgb.join('-') %>'
-                     name='<%= wheel %>-<%= layer %>-<%= rgb.join('-') %>'
+                     name='<%= wheel %>-<%= layer %> %>'
                      value='<%= rgb.join('-') %>' />
               <label for='<%= wheel %>-<%= layer %>-<%= rgb.join('-') %>' style='color: rgb(<%= rgb.join(', ') %>)'>
                 <span class='fa-stack'>
@@ -30,6 +30,10 @@
 <% end %>
 
 <script>
+$( document ).ready(function() {
+  refresh()
+})
+
 function submit(data) {
   var parts = data.split('-')
   $.ajax({
@@ -47,16 +51,20 @@ var elements = [
   <% end %>
 <% end %>
 ]
-var wheel
-var layer
 
-$.each(elements, function(i, element) {
-  var wheel = element[0]
-  var layer = element[1]
-  $.getJSON('/colours/' + wheel + '/' + layer, function(data) {
-    $('#' + wheel + '-' + layer + '-' + data['colour'].join('-')).attr('checked', 'checked')
+function refresh() {
+  var wheel
+  var layer
+
+  $.each(elements, function(i, element) {
+    var wheel = element[0]
+    var layer = element[1]
+
+    $.getJSON('/colours/' + wheel + '/' + layer, function(data) {
+      $('#' + wheel + '-' + layer + '-' + data['colour'].join('-')).attr('checked', 'checked')
+    })
   })
-})
+}
 
 $('input:radio').change(function(data) {
   d = data['currentTarget']['id'].split('-')
@@ -67,13 +75,10 @@ $('input:radio').change(function(data) {
   y[d[0]] = x
 
   $.ajax({
-      url: '/colours/',
-      data: JSON.stringify(y),
-      type: 'PATCH',
-      contentType: 'application/json'
+    url: '/colours/',
+    data: JSON.stringify(y),
+    type: 'PATCH',
+    contentType: 'application/json'
   })
-  // data['currentTarget']['id'] < THIS
-//  params[data.target.name] = data.target.value
-//  refresh()
-});
+})
 </script>
