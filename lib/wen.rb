@@ -75,6 +75,7 @@ module Wen
     # start the server if ruby file executed directly
     if app_file == $0
       run!
+      Clock.boot_up
     end
   end
 
