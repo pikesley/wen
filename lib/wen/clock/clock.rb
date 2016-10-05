@@ -7,14 +7,20 @@ module Wen
     def self.wheel type, time
       config = Config.instance.config
       l = []
-      hands = config.neopixels[type]['colours']['hands']
-      face = config.neopixels[type]['colours']['face']
+
+      hands = fetch_colour type, 'hands'
+      face = fetch_colour type, 'face'
+
       config.neopixels[type]['pins'].times do
         l.push face
       end
       Clock.send(:"#{type}_pins", time).map { |i| l[i] = hands }
 
       l
+    end
+
+    def self.fetch_colour type, layer
+      $redis.get("#{type}/#{layer}").split(',').map { |n| n.to_i }
     end
 
     def self.hours_pins time
@@ -42,9 +48,9 @@ module Wen
     end
 
     def self.colours params
-      params.each_pair do |hand, values|
+      params.each_pair do |wheel, values|
         values.each_pair do |layer, colour|
-          Config.instance.config.neopixels[hand]['colours'][layer] = colour
+          $redis.set "#{wheel}/#{layer}", colour.join(', ')
         end
       end
     end

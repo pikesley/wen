@@ -19,5 +19,14 @@ module Wen
       expect(Clock).to receive(:shuffle)
       ClockWorker.drain
     end
+
+    it 'has a config' do
+      expect(Wen::Config.instance.config).to be_a OpenStruct
+    end
+
+    it 'stores colours' do
+      Wen.stash_colours
+      expect($redis.get 'hours/hands').to eq "255, 0, 0"
+    end
   end
 end

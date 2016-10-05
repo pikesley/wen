@@ -1,7 +1,6 @@
 module Wen
   describe Clock do
     it 'sets colours' do
-      c = Config.instance.config.neopixels['hours']['colours']['hands']
       described_class.colours ({
         'hours' => {
           'hands' => [
@@ -9,19 +8,11 @@ module Wen
           ]
         }
       })
-      expect(Config.instance.config.neopixels['hours']['colours']['hands']).to eq [
-        0, 255, 0
-      ]
 
-      Config.instance.config.neopixels['hours']['colours']['hands'] = c
+      expect($redis.get 'hours/hands').to eq '0, 255, 0'
     end
 
     specify 'colours remain' do
-      mf = Config.instance.config.neopixels['minutes']['colours']['hands']
-      mg = Config.instance.config.neopixels['minutes']['colours']['face']
-      hf = Config.instance.config.neopixels['hours']['colours']['hands']
-      hg = Config.instance.config.neopixels['hours']['colours']['face']
-
       described_class.colours ({
         'minutes' => {
           'hands' => [
@@ -59,11 +50,6 @@ module Wen
         ]
         described_class.time
       end
-
-      Config.instance.config.neopixels['minutes']['colours']['hands'] = mf
-      Config.instance.config.neopixels['minutes']['colours']['face'] = mg
-      Config.instance.config.neopixels['hours']['colours']['hands'] = hf
-      Config.instance.config.neopixels['hours']['colours']['face'] = hg
     end
   end
 end

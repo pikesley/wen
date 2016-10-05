@@ -59,13 +59,9 @@ module Wen
 
     get '/colours/:wheel/:layer' do
       headers 'Vary' => 'Accept'
-#      respond_to do |wants|
-#        wants.json do
       {
-        'colour' => Wen::Config.instance.config.neopixels[params[:wheel]]['colours'][params[:layer]]
+        'colour' => Wen::Clock.fetch_colour(params[:wheel], params[:layer])
       }.to_json
-#        end
-#      end
     end
 
     patch '/display/?' do
@@ -77,6 +73,17 @@ module Wen
     end
 
     # start the server if ruby file executed directly
-    run! if app_file == $0
+    if app_file == $0
+      run!
+    end
+  end
+
+  def self.stash_colours
+    Wen::Config.instance.config.neopixels.each_pair do |wheel, data|
+      data['colours'].keys.each do |layer|
+        key = "#{wheel}/#{layer}"
+        $redis.set key, data['colours'][layer].join(', ')
+      end
+    end
   end
 end

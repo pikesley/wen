@@ -20,6 +20,11 @@ RSpec.configure do |config|
 
   config.order = :random
 
+  config.before :each do
+    $redis.flushdb
+    Wen.stash_colours
+  end
+
   include Rack::Test::Methods
   def app
     Wen::App
