@@ -26,6 +26,10 @@ module Wen
         expect(Neopixels.instance).to receive(:illuminate).exactly(65).times
         described_class.shuffle
       end
+
+      it 'does a startup move' do
+        expect(Neopixels.instance).to receive(:illuminate)
+      end
     end
   end
 end

@@ -30,8 +30,8 @@ led:
   invert:     false
 
 display-modes:
-  - time
   - shuffle
+#  - time
 
 pages:
   - colours
