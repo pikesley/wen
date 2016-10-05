@@ -1,3 +1,5 @@
+require 'timecop'
+
 module Wen
   class Clock
     def self.shuffle iterations = 64
