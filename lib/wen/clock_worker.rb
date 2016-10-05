@@ -8,6 +8,7 @@ module Wen
         Clock.send(params['mode'].to_sym)
       when 'colours'
         Clock.send(:colours, params)
+        Clock.time
       end
     end
   end
