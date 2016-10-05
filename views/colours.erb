@@ -1,22 +1,66 @@
 <h2>colours</h2>
 <hr />
-<div class='row'>
-  <% Wen::CONFIG['display-modes'].each do |mode| %>
-    <div class='col-xs-6'>
-      <button class='btn btn-default' id='display-<%= mode %>' onclick='submit("<%= mode %>")'>
-        <%= mode %>
-      </button>
-    </div>
-  <% end %>
-</div>
+<% ['minutes', 'hours'].each do |wheel| %>
+  <div class='row'>
+    <h3><%= wheel %></h3>
+    <% ['hands', 'face'].each do |layer| %>
+      <div class='form-group'>
+        <div class='row'>
+          <span class='col-xs-2'>
+            <%= layer %>
+          </span>
+          <div class='col-xs-10'>
+            <% Wen::Config.instance.config.colours.each_pair do |name, rgb| %>
+              <input type='radio'
+                     id='<%= wheel %>-<%= layer %>-<%= rgb.join('-') %>'
+                     name='<%= wheel %>-<%= layer %>-<%= rgb.join('-') %>'
+                     value='<%= rgb.join('-') %>' />
+              <label for='<%= wheel %>-<%= layer %>-<%= rgb.join('-') %>' style='color: rgb(<%= rgb.join(', ') %>)'>
+                <span class='fa-stack'>
+                  <i class='fa fa-check-square fa-stack-1x'></i>
+                  <i class='fa fa-square-o fa-stack-1x'></i>
+                </span>
+              </label>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
 
 <script>
-function submit(mode) {
+function submit(data) {
+  var parts = data.split('-')
   $.ajax({
-      url: '/display/',
+      url: '/colours/',
       data: JSON.stringify({ mode: mode }),
       type: 'PATCH',
       contentType: 'application/json'
   })
 }
+
+var elements = [
+<% Wen::Config.instance.config.neopixels.each do |wheel, layers| %>
+  <% layers['colours'].each_pair do |layer, colour| %>
+  [ '<%= wheel %>', '<%= layer %>' ],
+  <% end %>
+<% end %>
+]
+var wheel
+var layer
+
+$.each(elements, function(i, element) {
+  var wheel = element[0]
+  var layer = element[1]
+  $.getJSON('/colours/' + wheel + '/' + layer, function(data) {
+    $('#' + wheel + '-' + layer + '-' + data['colour'].join('-')).attr('checked', 'checked')
+  })
+})
+
+$('input:radio').change(function(data) {
+  // data['currentTarget']['id'] < THIS
+//  params[data.target.name] = data.target.value
+//  refresh()
+});
 </script>

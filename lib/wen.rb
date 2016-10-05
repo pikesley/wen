@@ -19,6 +19,8 @@ require_relative 'wen/clock_worker'
 
 Sidekiq.options[:concurrency] = 1
 
+$redis = Redis.new
+
 module Wen
   class App < Sinatra::Base
     helpers do
@@ -53,6 +55,17 @@ module Wen
           erb :colours, layout: :default
         end
       end
+    end
+
+    get '/colours/:wheel/:layer' do
+      headers 'Vary' => 'Accept'
+#      respond_to do |wants|
+#        wants.json do
+      {
+        'colour' => Wen::Config.instance.config.neopixels[params[:wheel]]['colours'][params[:layer]]
+      }.to_json
+#        end
+#      end
     end
 
     patch '/display/?' do

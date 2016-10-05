@@ -2,10 +2,10 @@ module Wen
   JSON_HEADERS = { 'HTTP_ACCEPT' => 'application/json' }
 
   describe App do
-    it 'says hello' do
-      get '/'
+    it 'has a display page' do
+      get '/display'
       expect(last_response).to be_ok
-      expect(last_response.body).to match /Clock Control/
+      expect(last_response.body).to match /clock control/
     end
 
     it 'sets the time' do

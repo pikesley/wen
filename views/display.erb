@@ -1,7 +1,7 @@
 <h2>display mode</h2>
 <hr />
 <div class='row'>
-  <% Wen::CONFIG['display-modes'].each do |mode| %>
+  <% Wen::Config.instance.config['display-modes'].each do |mode| %>
     <div class='col-xs-6'>
       <button class='btn btn-default' id='display-<%= mode %>' onclick='submit("<%= mode %>")'>
         <%= mode %>

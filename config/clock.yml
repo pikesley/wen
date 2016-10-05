@@ -2,22 +2,22 @@ neopixels:
   minutes:
     pins: 24
     colours:
-      figure:
+      hands:
         - 255
         - 0
         - 0
-      ground:
+      face:
         - 0
         - 0
         - 255
   hours:
     pins: 12
     colours:
-      figure:
+      hands:
         - 255
         - 0
         - 0
-      ground:
+      face:
         - 0
         - 0
         - 255
@@ -28,3 +28,49 @@ led:
   dma:        5
   brightness: 16 # DOES FUCK ALL
   invert:     false
+
+display-modes:
+  - time
+  - shuffle
+
+pages:
+  - display
+  - colours
+
+#google-analytics-tag: UA-00000000-0
+#github_url: https://github.com
+
+colours:
+  black:
+    - 0
+    - 0
+    - 0
+  white:
+    - 255
+    - 255
+    - 255
+  red:
+    - 255
+    - 0
+    - 0
+  magenta:
+    - 255
+    - 0
+    - 255
+  blue:
+    - 0
+    - 0
+    - 255
+  cyan:
+    - 0
+    - 255
+    - 255
+  green:
+    - 0
+    - 255
+    - 0
+
+  yellow:
+    - 255
+    - 255
+      - 0

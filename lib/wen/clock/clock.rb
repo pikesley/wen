@@ -7,12 +7,12 @@ module Wen
     def self.wheel type, time
       config = Config.instance.config
       l = []
-      figure = config.neopixels[type]['colours']['figure']
-      ground = config.neopixels[type]['colours']['ground']
+      hands = config.neopixels[type]['colours']['hands']
+      face = config.neopixels[type]['colours']['face']
       config.neopixels[type]['pins'].times do
-        l.push ground
+        l.push face
       end
-      Clock.send(:"#{type}_pins", time).map { |i| l[i] = figure }
+      Clock.send(:"#{type}_pins", time).map { |i| l[i] = hands }
 
       l
     end

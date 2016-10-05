@@ -1,5 +1,5 @@
 <ul class='nav nav-pills' id='main-nav'>
-  <% Wen::CONFIG['pages'].each do |page| %>
+  <% Wen::Config.instance.config['pages'].each do |page| %>
     <li role='presentation' <%= "class='active'" if request.path == "/#{page}" %>>
       <a href="/<%= page %>"><%= page %></a>
     </li>

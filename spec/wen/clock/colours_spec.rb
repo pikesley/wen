@@ -1,41 +1,41 @@
 module Wen
   describe Clock do
     it 'sets colours' do
-      c = Config.instance.config.neopixels['hours']['colours']['figure']
+      c = Config.instance.config.neopixels['hours']['colours']['hands']
       described_class.colours ({
         'hours' => {
-          'figure' => [
+          'hands' => [
             0, 255, 0
           ]
         }
       })
-      expect(Config.instance.config.neopixels['hours']['colours']['figure']).to eq [
+      expect(Config.instance.config.neopixels['hours']['colours']['hands']).to eq [
         0, 255, 0
       ]
 
-      Config.instance.config.neopixels['hours']['colours']['figure'] = c
+      Config.instance.config.neopixels['hours']['colours']['hands'] = c
     end
 
     specify 'colours remain' do
-      mf = Config.instance.config.neopixels['minutes']['colours']['figure']
-      mg = Config.instance.config.neopixels['minutes']['colours']['ground']
-      hf = Config.instance.config.neopixels['hours']['colours']['figure']
-      hg = Config.instance.config.neopixels['hours']['colours']['ground']
+      mf = Config.instance.config.neopixels['minutes']['colours']['hands']
+      mg = Config.instance.config.neopixels['minutes']['colours']['face']
+      hf = Config.instance.config.neopixels['hours']['colours']['hands']
+      hg = Config.instance.config.neopixels['hours']['colours']['face']
 
       described_class.colours ({
         'minutes' => {
-          'figure' => [
+          'hands' => [
             250, 129, 0
           ],
-          'ground' => [
+          'face' => [
             0, 121, 250
           ]
         },
         'hours' => {
-          'figure' => [
+          'hands' => [
             255, 0, 255
           ],
-          'ground' => [
+          'face' => [
             0, 255, 0
           ]
         }
@@ -60,10 +60,10 @@ module Wen
         described_class.time
       end
 
-      Config.instance.config.neopixels['minutes']['colours']['figure'] = mf
-      Config.instance.config.neopixels['minutes']['colours']['ground'] = mg
-      Config.instance.config.neopixels['hours']['colours']['figure'] = hf
-      Config.instance.config.neopixels['hours']['colours']['ground'] = hg
+      Config.instance.config.neopixels['minutes']['colours']['hands'] = mf
+      Config.instance.config.neopixels['minutes']['colours']['face'] = mg
+      Config.instance.config.neopixels['hours']['colours']['hands'] = hf
+      Config.instance.config.neopixels['hours']['colours']['face'] = hg
     end
   end
 end

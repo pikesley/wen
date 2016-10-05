@@ -43,3 +43,9 @@ body {
   border-color: darken($brand-primary, 20%);
   color: $brand-secondary;
 }
+
+/* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */
+input[type="radio"] { display: none; }
+input[type="radio"] + label .fa-check-square { display: none; }
+input[type="radio"]:checked + label .fa-check-square { display: block; }
+input[type="radio"]:checked + label .fa-square-o { display: none; }
