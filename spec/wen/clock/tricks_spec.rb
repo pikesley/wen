@@ -28,7 +28,8 @@ module Wen
       end
 
       it 'does a startup move' do
-        expect(Neopixels.instance).to receive(:illuminate)
+        expect(Neopixels.instance).to receive(:illuminate).exactly(27).times
+        described_class.boot_up
       end
     end
   end

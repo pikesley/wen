@@ -4,7 +4,7 @@
   <% Wen::Config.instance.config['display-modes'].each do |mode| %>
     <div class='col-xs-12'>
       <button class='btn btn-default' id='display-<%= mode %>' onclick='submit("<%= mode %>")'>
-        <%= mode %>
+        <%= mode.gsub('_', ' ') %>
       </button>
     </div>
   <% end %>
