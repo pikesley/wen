@@ -13,7 +13,7 @@ module Wen
         )
       end
 
-      def self.blink duration = 0.1
+      def self.blink duration = 1
         self.one_colour Clock.fetch_colour 'minutes', 'face'
         sleep duration unless ENV['environment'] == 'test'
         Clock.time
@@ -45,19 +45,6 @@ module Wen
       def self.shuffle iterations = 64
         iterations.times do
           Clock.time DateTime.strptime(Random.rand(86400).to_s, '%s')
-          sleep 0.05 unless ENV['environment'] == 'test'
-        end
-
-        Clock.time
-      end
-
-      def self.swing
-        t = 82800 + 1800
-        while t <= 864000
-          Timecop.freeze DateTime.strptime(t.to_s, '%s') do
-            Clock.time
-            t += 3930
-          end
           sleep 0.05 unless ENV['environment'] == 'test'
         end
 

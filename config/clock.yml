@@ -31,12 +31,11 @@ led:
 
 display-modes:
   - method: shuffle
-  - method: swing
   - method: roll_around
     display_name: roll
   - method: blink
   - method: boot_up
-    display_name: start-up 
+    display_name: start-up
 
 pages:
   - name: colours
