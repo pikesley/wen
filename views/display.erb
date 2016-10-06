@@ -2,8 +2,8 @@
 <hr />
 <div class='row'>
   <% Wen::Config.instance.config['display-modes'].each do |mode| %>
-    <div class='col-xs-6'>
-      <button class='btn btn-default' id='display-<%= mode["method"] %>' onclick='submit("<%= mode["method"] %>")'>
+    <div class='col-xs-12'>
+      <button class='btn btn-default btn-block' id='display-<%= mode["method"] %>' onclick='submit("<%= mode["method"] %>")'>
         <% display_name = mode['method'] %>
         <% display_name = mode['display_name'] if mode['display_name'] %>
         <%= display_name %>
