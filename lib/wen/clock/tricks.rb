@@ -51,6 +51,24 @@ module Wen
         Clock.time
       end
 
+      def self.scramble iterations = 64
+        iterations.times do
+          Neopixels.instance.illuminate Array.new(
+            Config.instance.config.neopixels['minutes']['pins'] +
+            Config.instance.config.neopixels['hours']['pins'],
+            self.random_color
+          )
+        end
+      end
+
+      def self.random_color
+        [
+          Random.rand(255),
+          Random.rand(255),
+          Random.rand(255)
+        ]
+      end
+
       def self.clear
         c = Array.new(
           Config.instance.config.neopixels['minutes']['pins'] +

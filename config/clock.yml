@@ -31,6 +31,7 @@ led:
 
 display-modes:
   - method: shuffle
+  - method: scramble
   - method: roll_around
     display_name: roll
   - method: blink
