@@ -28,14 +28,23 @@ module Wen
         now = Clock.time.strftime('%s').to_i
         future = now + 86400
 
-        delay = 1
+        delay = 4
 
-        100.times do
+        1200.times do
           Timecop.freeze DateTime.strptime(now.to_s, '%s') do
             Clock.time
             now += 3930
             sleep delay if IS_PI
             delay = delay / 2
+          end
+        end
+
+        1200.times do
+          Timecop.freeze DateTime.strptime(now.to_s, '%s') do
+            Clock.time
+            now += 3930
+            sleep delay if IS_PI
+            delay = delay * 2
           end
         end
 
