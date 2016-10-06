@@ -1,33 +1,28 @@
 <h2>colours</h2>
 <hr />
 <% ['minutes', 'hours'].each do |wheel| %>
-  <div class='row'>
     <h3><%= wheel %></h3>
     <% ['hands', 'face'].each do |layer| %>
-      <div class='form-group'>
-        <div class='row'>
-          <div class='col-xs-1'></div>
-          <div class='col-xs-1'>
-            <%= layer %>
-          </div>
-          <div class='col-xs-10' id='<%= wheel %>-<%= layer %>'>
-            <% Wen::Config.instance.config.colours.each_pair do |name, rgb| %>
-              <input type='radio'
-                     id='<%= wheel %>-<%= layer %>-<%= rgb.join('-') %>'
-                     name='<%= wheel %>-<%= layer %> %>'
-                     value='<%= rgb.join('-') %>' />
-              <label for='<%= wheel %>-<%= layer %>-<%= rgb.join('-') %>' style='color: rgb(<%= rgb.join(', ') %>)'>
-                <span class='fa-stack'>
-                  <i class='fa fa-check-square fa-stack-1x'></i>
-                  <i class='fa fa-square-o fa-stack-1x'></i>
-                </span>
-              </label>
-            <% end %>
-          </div>
+      <div class='row colours'>
+        <div class='col-xs-2 layer-label'>
+          <%= layer %>
+        </div>
+        <div class='col-xs-8 id='<%= wheel %>-<%= layer %>'>
+          <% Wen::Config.instance.config.colours.each_pair do |name, rgb| %>
+            <input type='radio'
+                   id='<%= wheel %>-<%= layer %>-<%= rgb.join('-') %>'
+                   name='<%= wheel %>-<%= layer %> %>'
+                   value='<%= rgb.join('-') %>' />
+            <label for='<%= wheel %>-<%= layer %>-<%= rgb.join('-') %>' style='color: rgb(<%= rgb.join(', ') %>)'>
+              <span class='fa-stack'>
+                <i class='fa fa-check-square fa-stack-1x'></i>
+                <i class='fa fa-square-o fa-stack-1x'></i>
+              </span>
+            </label>
+          <% end %>
         </div>
       </div>
     <% end %>
-  </div>
 <% end %>
 
 <a class='btn btn-default' href='/colours/picker'>expert mode</a>

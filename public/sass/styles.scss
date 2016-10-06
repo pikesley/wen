@@ -49,8 +49,17 @@ body {
   margin-bottom: $padding-small-vertical;
 }
 
-label {
+.layer-label, label {
   font-size: 1.2em;
+}
+
+.layer-label {
+  margin-left: 10px;
+}
+
+.fa-stack {
+  width: 1.2em;
+  height: 1em;
 }
 
 h2 {

@@ -8907,32 +8907,43 @@ body {
 }
 
 /* line 52, ../sass/styles.scss */
-label {
+.layer-label, label {
   font-size: 1.2em;
 }
 
 /* line 56, ../sass/styles.scss */
+.layer-label {
+  margin-left: 10px;
+}
+
+/* line 60, ../sass/styles.scss */
+.fa-stack {
+  width: 1.2em;
+  height: 1em;
+}
+
+/* line 65, ../sass/styles.scss */
 h2 {
   margin-top: 5px;
 }
 
 /* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */
-/* line 61, ../sass/styles.scss */
+/* line 70, ../sass/styles.scss */
 input[type="radio"] {
   display: none;
 }
 
-/* line 62, ../sass/styles.scss */
+/* line 71, ../sass/styles.scss */
 input[type="radio"] + label .fa-check-square {
   display: none;
 }
 
-/* line 63, ../sass/styles.scss */
+/* line 72, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-check-square {
   display: block;
 }
 
-/* line 64, ../sass/styles.scss */
+/* line 73, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-square-o {
   display: none;
 }
