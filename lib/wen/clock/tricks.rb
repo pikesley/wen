@@ -17,10 +17,10 @@ module Wen
         self.clear
         sleep duration / 10.0
         self.one_colour Clock.fetch_colour 'minutes', 'hands'
-        sleep duration if RUBY_PLATFORM =~ /arm.*-linux/
+        sleep duration if IS_PI
         self.clear
         sleep duration / 10.0
-        
+
         Clock.time
       end
 
@@ -31,7 +31,7 @@ module Wen
           Timecop.freeze DateTime.strptime(now.to_s, '%s') do
             Clock.time
             now += 3930
-            sleep 0.05 if RUBY_PLATFORM =~ /arm.*-linux/
+            sleep 0.05 if IS_PI
 
           end
         end
@@ -51,7 +51,7 @@ module Wen
       def self.shuffle iterations = 64
         iterations.times do
           Clock.time DateTime.strptime(Random.rand(86400).to_s, '%s')
-          sleep 0.05 if RUBY_PLATFORM =~ /arm.*-linux/
+          sleep 0.05 if IS_PI
 
         end
 
@@ -60,14 +60,14 @@ module Wen
 
       def self.boot_up
         self.clear
-        sleep 1 if RUBY_PLATFORM =~ /arm.*-linux/
+        sleep 1 if IS_PI
 
 
         a = []
         Config.instance.config.neopixels['minutes']['pins'].times do |i|
           a.push Config.instance.config['colours']['red']
           Neopixels.instance.illuminate a
-          sleep 0.5 if RUBY_PLATFORM =~ /arm.*-linux/
+          sleep 0.5 if IS_PI
 
         end
 
@@ -75,7 +75,7 @@ module Wen
           a.push Config.instance.config['colours']['blue']
         end
         Neopixels.instance.illuminate a
-        sleep 2 if RUBY_PLATFORM =~ /arm.*-linux/
+        sleep 2 if IS_PI
 
 
         Clock.time

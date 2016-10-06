@@ -17,8 +17,9 @@ require_relative 'wen/helpers'
 require_relative 'wen/racks'
 require_relative 'wen/clock_worker'
 
-Sidekiq.options[:concurrency] = 1
+IS_PI = RUBY_PLATFORM =~ /arm.*-linux/
 
+Sidekiq.options[:concurrency] = 1
 $redis = Redis.new
 
 module Wen
