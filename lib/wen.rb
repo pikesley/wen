@@ -48,11 +48,29 @@ module Wen
     end
 
     get '/colours/?' do
+      respond_to do |wants|
+         wants.html do
+            redirect to '/colours/spectrum'
+         end
+      end
+    end
+
+    get '/colours/picker' do
       headers 'Vary' => 'Accept'
 
       respond_to do |wants|
         wants.html do
-          erb :colours, layout: :default
+          erb :'colours/picker', layout: :default
+        end
+      end
+    end
+
+    get '/colours/spectrum' do
+      headers 'Vary' => 'Accept'
+
+      respond_to do |wants|
+        wants.html do
+          erb :'colours/spectrum', layout: :default
         end
       end
     end

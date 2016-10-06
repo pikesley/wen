@@ -8915,3 +8915,24 @@ label {
 h2 {
   margin-top: 5px;
 }
+
+/* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */
+/* line 61, ../sass/styles.scss */
+input[type="radio"] {
+  display: none;
+}
+
+/* line 62, ../sass/styles.scss */
+input[type="radio"] + label .fa-check-square {
+  display: none;
+}
+
+/* line 63, ../sass/styles.scss */
+input[type="radio"]:checked + label .fa-check-square {
+  display: block;
+}
+
+/* line 64, ../sass/styles.scss */
+input[type="radio"]:checked + label .fa-square-o {
+  display: none;
+}
