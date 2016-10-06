@@ -30,7 +30,7 @@ module Wen
 
         delay = 4
 
-        1200.times do
+        300.times do
           Timecop.freeze DateTime.strptime(now.to_s, '%s') do
             Clock.time
             now += 3930
@@ -39,7 +39,7 @@ module Wen
           end
         end
 
-        1200.times do
+        300.times do
           Timecop.freeze DateTime.strptime(now.to_s, '%s') do
             Clock.time
             now += 3930
