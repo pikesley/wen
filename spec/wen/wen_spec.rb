@@ -16,7 +16,7 @@ module Wen
     it 'shuffles' do
       patch '/display', { mode: 'shuffle' }.to_json, JSON_HEADERS
       expect(ClockWorker).to have_enqueued_job 'display', {'mode' => 'shuffle'}
-      expect(Clock).to receive(:shuffle)
+      expect(Clock::Tricks).to receive(:shuffle)
       ClockWorker.drain
     end
 

@@ -20,8 +20,10 @@ module Wen
         described_class.time DateTime.parse '06:30'
       end
     end
+  end
 
-    context 'tricks' do
+  module Clock
+    describe Tricks do
       it 'shuffles' do
         expect(Neopixels.instance).to receive(:illuminate).exactly(65).times
         described_class.shuffle
@@ -38,7 +40,22 @@ module Wen
       end
 
       it 'sets a ring to a single colour' do
-      #  described_class.one_colour 'minutes', [255, 0, 255]
+        expect(Neopixels.instance).to receive(:illuminate).exactly(1).times.with (
+          Array.new(36, [255, 0, 255])
+        )
+        described_class.one_colour [255, 0, 255]
+      end
+
+      it 'rolls around' do
+        Timecop.freeze DateTime.parse '12:34' do
+          expect(Neopixels.instance).to receive(:illuminate).at_least(12).times
+          described_class.roll_around
+        end
+      end
+
+      it 'blinks' do
+        expect(Neopixels.instance).to receive(:illuminate).exactly(2).times
+        described_class.blink
       end
 
       # night mode?
