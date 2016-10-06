@@ -3,7 +3,7 @@ module Wen
 
   describe App do
     it 'has a display page' do
-      get '/colours'
+      get '/colours/spectrum'
       expect(last_response).to be_ok
       expect(last_response.body).to match /colours/
     end
