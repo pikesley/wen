@@ -54,13 +54,12 @@ module Wen
       end
 
       it 'blinks' do
-        expect(Neopixels.instance).to receive(:illuminate).exactly(2).times
+        expect(Neopixels.instance).to receive(:illuminate).exactly(4).times
         described_class.blink
       end
 
       # night mode?
       # ease into the actual time out of the trick modes?
-      # blink mode
       # accelerate at startup
     end
   end
