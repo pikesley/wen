@@ -1,7 +1,8 @@
 module Wen
-  class Clock
+  module Clock
     def self.time dt = DateTime.now
       Neopixels.instance.illuminate (Clock.wheel 'minutes', dt) + (Clock.wheel 'hours', dt)
+      dt
     end
 
     def self.wheel type, time
@@ -48,7 +49,6 @@ module Wen
     end
 
     def self.colours params
-      puts params
       params.each_pair do |wheel, values|
         values.each_pair do |layer, colour|
           $redis.set "#{wheel}/#{layer}", colour.join(', ')

@@ -8901,23 +8901,17 @@ body {
   color: #0644a8;
 }
 
-/* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */
-/* line 49, ../sass/styles.scss */
-input[type="radio"] {
-  display: none;
-}
-
-/* line 50, ../sass/styles.scss */
-input[type="radio"] + label .fa-check-square {
-  display: none;
-}
-
-/* line 51, ../sass/styles.scss */
-input[type="radio"]:checked + label .fa-check-square {
-  display: block;
+/* line 48, ../sass/styles.scss */
+.colours {
+  margin-bottom: 5px;
 }
 
 /* line 52, ../sass/styles.scss */
-input[type="radio"]:checked + label .fa-square-o {
-  display: none;
+label {
+  font-size: 1.2em;
+}
+
+/* line 56, ../sass/styles.scss */
+h2 {
+  margin-top: 5px;
 }

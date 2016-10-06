@@ -2,9 +2,11 @@
 <hr />
 <div class='row'>
   <% Wen::Config.instance.config['display-modes'].each do |mode| %>
-    <div class='col-xs-12'>
-      <button class='btn btn-default' id='display-<%= mode %>' onclick='submit("<%= mode %>")'>
-        <%= mode.gsub('_', ' ') %>
+    <div class='col-xs-4'>
+      <button class='btn btn-default' id='display-<%= mode["method"] %>' onclick='submit("<%= mode["method"] %>")'>
+        <% display_name = mode['method'] %>
+        <% display_name = mode['display_name'] if mode['display_name'] %>
+        <%= display_name %>
       </button>
     </div>
   <% end %>

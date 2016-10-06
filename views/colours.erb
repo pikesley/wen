@@ -1,50 +1,23 @@
 <h2>colours</h2>
 <hr />
 <% ['minutes', 'hours'].each do |wheel| %>
-  <div class='row'>
-    <h3><%= wheel %></h3>
+  <h3><%= wheel %></h3>
     <% ['hands', 'face'].each do |layer| %>
-      <div class='form-group'>
-        <div class='row'>
-          <div class='col-xs-1'></div>
-          <div class='col-xs-1'>
-            <%= layer %>
-          </div>
-          <div class='col-xs-10' id='<%= wheel %>-<%= layer %>'>
-            <% Wen::Config.instance.config.colours.each_pair do |name, rgb| %>
-              <input type='radio'
-                     id='<%= wheel %>-<%= layer %>-<%= rgb.join('-') %>'
-                     name='<%= wheel %>-<%= layer %> %>'
-                     value='<%= rgb.join('-') %>' />
-              <label for='<%= wheel %>-<%= layer %>-<%= rgb.join('-') %>' style='color: rgb(<%= rgb.join(', ') %>)'>
-                <span class='fa-stack'>
-                  <i class='fa fa-check-square fa-stack-1x'></i>
-                  <i class='fa fa-square-o fa-stack-1x'></i>
-                </span>
-              </label>
-            <% end %>
-          </div>
+    <div class='row colours'>
+      <div class='col-xs-2'>
+        <label for='<%= wheel %>-<%= layer %>'><%= layer %></label>
+      </div>
+      <div class='col-xs-8'>
+        <div class='input-group' id='<%= wheel %>-<%= layer %>'>
+          <input type="text" name="<%= wheel %>-<%= layer %>-picker" id="<%= wheel %>-<%= layer %>-picker" value="" class="form-control" />
+          <span class="input-group-addon" id='<%= wheel %>-<%= layer %>-span'><i id='<%= wheel %>-<%= layer %>-inner'></i></span>
         </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 <% end %>
 
 <script>
-$( document ).ready(function() {
-  refresh()
-})
-
-function submit(data) {
-  var parts = data.split('-')
-  $.ajax({
-      url: '/colours/',
-      data: JSON.stringify({ mode: mode }),
-      type: 'PATCH',
-      contentType: 'application/json'
-  })
-}
-
 var elements = [
 <% Wen::Config.instance.config.neopixels.each do |wheel, layers| %>
   <% layers['colours'].each_pair do |layer, colour| %>
@@ -53,25 +26,25 @@ var elements = [
 <% end %>
 ]
 
-function refresh() {
-  var wheel
-  var layer
-
-  $.each(elements, function(i, element) {
-    var wheel = element[0]
-    var layer = element[1]
-
-    $.getJSON('/colours/' + wheel + '/' + layer, function(data) {
-      $('#' + wheel + '-' + layer + '-' + data['colour'].join('-')).attr('checked', 'checked')
-    })
+var picker_list = []
+$.each(elements, function(i, element) {
+  var wheel = element[0]
+  var layer = element[1]
+  $.getJSON('/colours/' + wheel + '/' + layer, function(data) {
+    $('#' + wheel + '-' + layer + '-inner').attr('style', 'background-color: rgb(' + data['colour'].join(', ') + ')')
+    $('#' + wheel + '-' + layer + '-picker').attr('value', 'rgb(' + data['colour'].join(', ') + ')')
   })
-}
 
-$('input:radio').change(function(data) {
-  d = data['currentTarget']['id'].split('-')
+  picker_list.push('#' + wheel + '-' + layer)
+})
 
+var picker = $(picker_list.join(', ')).colorpicker({ format: 'rgb', horizontal: true })
+picker.on('changeColor', function(ev){
+  d = ev.target.id.split('-')
+  c = ev.color.toRGB()
   x = {}
-  x[d[1]] = [parseInt(d[2]), parseInt(d[3]), parseInt(d[4])]
+  x[d[1]] = [c['r'], c['g'], c['b']]
+
   y = {}
   y[d[0]] = x
 

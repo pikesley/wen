@@ -30,13 +30,19 @@ led:
   invert:     false
 
 display-modes:
-  - shuffle
-  - swing
-  - boot_up
+  - method: shuffle
+  - method: swing
+  - method: roll_around
+    display_name: roll
+  - method: blink
+  - method: boot_up
+    display_name: start-up 
 
 pages:
-  - colours
-  - display
+  - name: colours
+    fa:   paint-brush
+  - name: display
+    fa:   desktop
 
 #google-analytics-tag: UA-00000000-0
 #github_url: https://github.com

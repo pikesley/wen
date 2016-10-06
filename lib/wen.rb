@@ -32,7 +32,7 @@ module Wen
 
       respond_to do |wants|
          wants.html do
-            redirect to '/display'
+            redirect to '/colours'
          end
       end
     end

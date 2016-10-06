@@ -3,9 +3,9 @@ module Wen
 
   describe App do
     it 'has a display page' do
-      get '/display'
+      get '/colours'
       expect(last_response).to be_ok
-      expect(last_response.body).to match /clock control/
+      expect(last_response.body).to match /colours/
     end
 
     it 'sets the time' do
@@ -16,7 +16,7 @@ module Wen
     it 'shuffles' do
       patch '/display', { mode: 'shuffle' }.to_json, JSON_HEADERS
       expect(ClockWorker).to have_enqueued_job 'display', {'mode' => 'shuffle'}
-      expect(Clock).to receive(:shuffle)
+      expect(Clock::Tricks).to receive(:shuffle)
       ClockWorker.drain
     end
 
