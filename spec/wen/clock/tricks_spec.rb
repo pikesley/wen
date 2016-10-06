@@ -32,6 +32,15 @@ module Wen
         described_class.boot_up
       end
 
+      it 'clears everything' do
+        expect(Neopixels.instance).to receive(:illuminate).exactly(1).times
+        described_class.clear
+      end
+
+      it 'sets a ring to a single colour' do
+      #  described_class.one_colour 'minutes', [255, 0, 255]
+      end
+
       # night mode?
       # ease into the actual time out of the trick modes?
       # blink mode

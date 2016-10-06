@@ -8910,3 +8910,8 @@ body {
 label {
   font-size: 1.2em;
 }
+
+/* line 56, ../sass/styles.scss */
+h2 {
+  margin-top: 5px;
+}

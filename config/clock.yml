@@ -35,8 +35,10 @@ display-modes:
   - boot_up
 
 pages:
-  - colours
-  - display
+  - name: colours
+    fa:   paint-brush
+  - name: display
+    fa:   desktop
 
 #google-analytics-tag: UA-00000000-0
 #github_url: https://github.com
