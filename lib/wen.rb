@@ -68,6 +68,10 @@ module Wen
       ClockWorker.perform_async 'display', JSON.parse(request.body.read)
     end
 
+    patch '/colours/reset/?' do
+      ClockWorker.perform_async 'reset', JSON.parse(request.body.read)
+    end
+
     patch '/colours/?' do
       ClockWorker.perform_async 'colours', JSON.parse(request.body.read)
     end

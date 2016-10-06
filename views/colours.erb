@@ -16,6 +16,7 @@
     </div>
   <% end %>
 <% end %>
+<button class='btn btn-default' onclick='reset()'>reset to defaults</button>
 
 <script>
 var elements = [
@@ -55,4 +56,13 @@ picker.on('changeColor', function(ev){
     contentType: 'application/json'
   })
 })
+
+function reset() {
+  $.ajax({
+    url: '/colours/reset',
+    data: JSON.stringify({reset: true}),
+    type: 'PATCH',
+    contentType: 'application/json'
+  })
+}
 </script>

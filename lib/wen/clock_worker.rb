@@ -9,6 +9,9 @@ module Wen
       when 'colours'
         Clock.send(:colours, params)
         Clock.time
+      when 'reset'
+        Wen.stash_colours
+        Clock.time
       end
     end
   end
