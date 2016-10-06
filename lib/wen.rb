@@ -43,6 +43,7 @@ module Wen
 
       respond_to do |wants|
         wants.html do
+          @title = 'Display Modes'
           erb :display, layout: :default
         end
       end
@@ -61,6 +62,7 @@ module Wen
 
       respond_to do |wants|
         wants.html do
+          @title = 'Colours » Expert Mode'
           erb :'colours/picker', layout: :default
         end
       end
@@ -71,6 +73,7 @@ module Wen
 
       respond_to do |wants|
         wants.html do
+          @title = 'Colours » Easy Mode'
           erb :'colours/spectrum', layout: :default
         end
       end
@@ -78,6 +81,7 @@ module Wen
 
     get '/colours/:wheel/:layer' do
       headers 'Vary' => 'Accept'
+
       {
         'colour' => Wen::Clock.fetch_colour(params[:wheel], params[:layer])
       }.to_json
