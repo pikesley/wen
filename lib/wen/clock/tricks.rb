@@ -32,7 +32,6 @@ module Wen
             Clock.time
             now += 3930
             sleep 0.05 if IS_PI
-
           end
         end
 

@@ -1,28 +1,30 @@
 <h2>colours</h2>
 <hr />
 <% ['minutes', 'hours'].each do |wheel| %>
-    <h3><%= wheel %></h3>
-    <% ['hands', 'face'].each do |layer| %>
-      <div class='row colours'>
-        <div class='col-xs-2 layer-label'>
-          <%= layer %>
-        </div>
-        <div class='col-xs-8 id='<%= wheel %>-<%= layer %>'>
+  <h3><%= wheel %></h3>
+  <% ['hands', 'face'].each do |layer| %>
+    <div class='row colours'>
+      <div class='col-xs-2 layer-label'>
+        <%= layer %>
+      </div>
+      <div class='col-xs-8 id='<%= wheel %>-<%= layer %>'>
+        <div class='input-group' id='<%= wheel %>-<%= layer %>'>
           <% Wen::Config.instance.config.colours.each_pair do |name, rgb| %>
-            <input type='radio'
-                   id='<%= wheel %>-<%= layer %>-<%= rgb.join('-') %>'
-                   name='<%= wheel %>-<%= layer %> %>'
-                   value='<%= rgb.join('-') %>' />
-            <label for='<%= wheel %>-<%= layer %>-<%= rgb.join('-') %>' style='color: rgb(<%= rgb.join(', ') %>)'>
-              <span class='fa-stack'>
-                <i class='fa fa-check-square fa-stack-1x'></i>
-                <i class='fa fa-square-o fa-stack-1x'></i>
-              </span>
-            </label>
+              <input type='radio'
+                     id='<%= wheel %>-<%= layer %>-<%= rgb.join('-') %>'
+                     name='<%= wheel %>-<%= layer %> %>'
+                     value='<%= rgb.join('-') %>' />
+              <label for='<%= wheel %>-<%= layer %>-<%= rgb.join('-') %>' style='color: rgb(<%= rgb.join(', ') %>)'>
+                <span class='fa-stack'>
+                  <i class='fa fa-check-square fa-stack-1x'></i>
+                  <i class='fa fa-square-o fa-stack-1x'></i>
+                </span>
+              </label>
           <% end %>
         </div>
       </div>
-    <% end %>
+    </div>
+  <% end %>
 <% end %>
 
 <a class='btn btn-default' href='/colours/picker'>expert mode</a>
@@ -31,16 +33,6 @@
 $( document ).ready(function() {
   refresh()
 })
-
-function submit(data) {
-  var parts = data.split('-')
-  $.ajax({
-      url: '/colours/',
-      data: JSON.stringify({ mode: mode }),
-      type: 'PATCH',
-      contentType: 'application/json'
-  })
-}
 
 var elements = [
 <% Wen::Config.instance.config.neopixels.each do |wheel, layers| %>

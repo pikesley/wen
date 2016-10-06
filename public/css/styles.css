@@ -8909,41 +8909,42 @@ body {
 /* line 52, ../sass/styles.scss */
 .layer-label, label {
   font-size: 1.2em;
+  font-weight: bold;
 }
 
-/* line 56, ../sass/styles.scss */
+/* line 57, ../sass/styles.scss */
 .layer-label {
   margin-left: 10px;
 }
 
-/* line 60, ../sass/styles.scss */
+/* line 61, ../sass/styles.scss */
 .fa-stack {
-  width: 1.2em;
-  height: 1em;
+  width: 1.6em;
+  height: 2em;
 }
 
-/* line 65, ../sass/styles.scss */
+/* line 66, ../sass/styles.scss */
 h2 {
   margin-top: 5px;
 }
 
 /* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */
-/* line 70, ../sass/styles.scss */
+/* line 71, ../sass/styles.scss */
 input[type="radio"] {
   display: none;
 }
 
-/* line 71, ../sass/styles.scss */
+/* line 72, ../sass/styles.scss */
 input[type="radio"] + label .fa-check-square {
   display: none;
 }
 
-/* line 72, ../sass/styles.scss */
+/* line 73, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-check-square {
   display: block;
 }
 
-/* line 73, ../sass/styles.scss */
+/* line 74, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-square-o {
   display: none;
 }

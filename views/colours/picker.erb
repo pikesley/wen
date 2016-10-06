@@ -1,68 +1,68 @@
 <h2>colours</h2>
-<hr />
+<hr/>
 <% ['minutes', 'hours'].each do |wheel| %>
   <h3><%= wheel %></h3>
-    <% ['hands', 'face'].each do |layer| %>
+  <% ['hands', 'face'].each do |layer| %>
     <div class='row colours'>
-      <div class='col-xs-2'>
-        <label for='<%= wheel %>-<%= layer %>'><%= layer %></label>
+      <div class='col-xs-2 layer-label'>
+        <%= layer %>
       </div>
       <div class='col-xs-8'>
         <div class='input-group' id='<%= wheel %>-<%= layer %>'>
-          <input type="text" name="<%= wheel %>-<%= layer %>-picker" id="<%= wheel %>-<%= layer %>-picker" value="" class="form-control" />
-          <span class="input-group-addon" id='<%= wheel %>-<%= layer %>-span'><i id='<%= wheel %>-<%= layer %>-inner'></i></span>
+          <input type="text" name="<%= wheel %>-<%= layer %>-picker" id="<%= wheel %>-<%= layer %>-picker" value="" class="form-control"/>
+          <span class="input-group-addon" id='<%= wheel %>-<%= layer %>-span'>
+            <i id='<%= wheel %>-<%= layer %>-inner'></i>
+          </span>
         </div>
       </div>
     </div>
   <% end %>
 <% end %>
+
 <a class='btn btn-default' href='/colours/spectrum'>easy mode</a>
 
 <script>
-var elements = [
-<% Wen::Config.instance.config.neopixels.each do |wheel, layers| %>
-  <% layers['colours'].each_pair do |layer, colour| %>
-  [ '<%= wheel %>', '<%= layer %>' ],
-  <% end %>
-<% end %>
-]
+  var elements = [
+    <% Wen::Config.instance.config.neopixels.each do |wheel, layers| %>
+    <% layers['colours'].each_pair do |layer, colour| %>
+    [
+      '<%= wheel %>', '<%= layer %>'
+    ],
+    <% end %>
+    <% end %>
+  ]
 
-var picker_list = []
-$.each(elements, function(i, element) {
-  var wheel = element[0]
-  var layer = element[1]
-  $.getJSON('/colours/' + wheel + '/' + layer, function(data) {
-    $('#' + wheel + '-' + layer + '-inner').attr('style', 'background-color: rgb(' + data['colour'].join(', ') + ')')
-    $('#' + wheel + '-' + layer + '-picker').attr('value', 'rgb(' + data['colour'].join(', ') + ')')
+  var picker_list = []
+  $.each(elements, function (i, element) {
+    var wheel = element[0]
+    var layer = element[1]
+    $.getJSON('/colours/' + wheel + '/' + layer, function (data) {
+      $('#' + wheel + '-' + layer + '-inner').attr('style', 'background-color: rgb(' + data['colour'].join(', ') + ')')
+      $('#' + wheel + '-' + layer + '-picker').attr('value', 'rgb(' + data['colour'].join(', ') + ')')
+    })
+
+    picker_list.push('#' + wheel + '-' + layer)
   })
 
-  picker_list.push('#' + wheel + '-' + layer)
-})
+  var picker = $(picker_list.join(', ')).colorpicker({format: 'rgb', horizontal: true})
+  picker.on('changeColor', function (ev) {
+    d = ev.target.id.split('-')
+    c = ev.color.toRGB()
+    x = {}
+    x[d[1]] = [c['r'], c['g'], c['b']]
 
-var picker = $(picker_list.join(', ')).colorpicker({ format: 'rgb', horizontal: true })
-picker.on('changeColor', function(ev){
-  d = ev.target.id.split('-')
-  c = ev.color.toRGB()
-  x = {}
-  x[d[1]] = [c['r'], c['g'], c['b']]
+    y = {}
+    y[d[0]] = x
 
-  y = {}
-  y[d[0]] = x
-
-  $.ajax({
-    url: '/colours/',
-    data: JSON.stringify(y),
-    type: 'PATCH',
-    contentType: 'application/json'
+    $.ajax({url: '/colours/', data: JSON.stringify(y), type: 'PATCH', contentType: 'application/json'})
   })
-})
 
-function reset() {
-  $.ajax({
-    url: '/colours/reset',
-    data: JSON.stringify({reset: true}),
-    type: 'PATCH',
-    contentType: 'application/json'
-  })
-}
+  function reset() {
+    $.ajax({
+      url: '/colours/reset',
+      data: JSON.stringify({reset: true}),
+      type: 'PATCH',
+      contentType: 'application/json'
+    })
+  }
 </script>
