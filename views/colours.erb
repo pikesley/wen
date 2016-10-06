@@ -1,18 +1,20 @@
 <h2>colours</h2>
 <hr />
 <% ['minutes', 'hours'].each do |wheel| %>
-  <div class='row'>
+  <h3><%= wheel %></h3>
     <% ['hands', 'face'].each do |layer| %>
-        <div class='col-xs-6 form-group'>
-          <label for='<%= wheel %>-<%= layer %>'><%= wheel %> <%= layer %></label>
-          <div class='input-group' id='<%= wheel %>-<%= layer %>'>
-            <input type="text" name="<%= wheel %>-<%= layer %>-picker" value="#fa8100" class="form-control" />
-            <span class="input-group-addon"><i></i></span>
-          </div>
-          <input type="hidden" name="textcolour" value="fa8100" />
+    <div class='row colours'>
+      <div class='col-xs-2'>
+        <label for='<%= wheel %>-<%= layer %>'><%= layer %></label>
+      </div>
+      <div class='col-xs-8'>
+        <div class='input-group' id='<%= wheel %>-<%= layer %>'>
+          <input type="text" name="<%= wheel %>-<%= layer %>-picker" id="<%= wheel %>-<%= layer %>-picker" value="" class="form-control" />
+          <span class="input-group-addon" id='<%= wheel %>-<%= layer %>-span'><i id='<%= wheel %>-<%= layer %>-inner'></i></span>
         </div>
-    <% end %>
-  </div>
+      </div>
+    </div>
+  <% end %>
 <% end %>
 
 <script>
@@ -24,47 +26,25 @@ var elements = [
 <% end %>
 ]
 
-$( document ).ready(function() {
-  refresh()
+var picker_list = []
+$.each(elements, function(i, element) {
+  var wheel = element[0]
+  var layer = element[1]
+  $.getJSON('/colours/' + wheel + '/' + layer, function(data) {
+    $('#' + wheel + '-' + layer + '-inner').attr('style', 'background-color: rgb(' + data['colour'].join(', ') + ')')
+    $('#' + wheel + '-' + layer + '-picker').attr('value', 'rgb(' + data['colour'].join(', ') + ')')
+  })
+
+  picker_list.push('#' + wheel + '-' + layer)
 })
 
-var picker = $('#hours-hands, #hours-face, #minutes-hands, #minutes-face').colorpicker({ format: 'rgb' })
+var picker = $(picker_list.join(', ')).colorpicker({ format: 'rgb' })
 picker.on('changeColor', function(ev){
   d = ev.target.id.split('-')
   c = ev.color.toRGB()
   x = {}
   x[d[1]] = [c['r'], c['g'], c['b']]
 
-  y = {}
-  y[d[0]] = x
-
-  $.ajax({
-    url: '/colours/',
-    data: JSON.stringify(y),
-    type: 'PATCH',
-    contentType: 'application/json'
-  })
-})
-
-function refresh() {
-  var wheel
-  var layer
-
-  $.each(elements, function(i, element) {
-    var wheel = element[0]
-    var layer = element[1]
-
-    $.getJSON('/colours/' + wheel + '/' + layer, function(data) {
-      $('#' + wheel + '-' + layer + '-' + data['colour'].join('-')).attr('checked', 'checked')
-    })
-  })
-}
-
-$('input:radio').change(function(data) {
-  d = data['currentTarget']['id'].split('-')
-
-  x = {}
-  x[d[1]] = [parseInt(d[2]), parseInt(d[3]), parseInt(d[4])]
   y = {}
   y[d[0]] = x
 
