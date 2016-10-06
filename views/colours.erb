@@ -2,49 +2,20 @@
 <hr />
 <% ['minutes', 'hours'].each do |wheel| %>
   <div class='row'>
-    <h3><%= wheel %></h3>
     <% ['hands', 'face'].each do |layer| %>
-      <div class='form-group'>
-        <div class='row'>
-          <div class='col-xs-1'></div>
-          <div class='col-xs-1'>
-            <%= layer %>
+        <div class='col-xs-6 form-group'>
+          <label for='<%= wheel %>-<%= layer %>'><%= wheel %> <%= layer %></label>
+          <div class='input-group' id='<%= wheel %>-<%= layer %>'>
+            <input type="text" name="<%= wheel %>-<%= layer %>-picker" value="#fa8100" class="form-control" />
+            <span class="input-group-addon"><i></i></span>
           </div>
-          <div class='col-xs-10' id='<%= wheel %>-<%= layer %>'>
-            <% Wen::Config.instance.config.colours.each_pair do |name, rgb| %>
-              <input type='radio'
-                     id='<%= wheel %>-<%= layer %>-<%= rgb.join('-') %>'
-                     name='<%= wheel %>-<%= layer %> %>'
-                     value='<%= rgb.join('-') %>' />
-              <label for='<%= wheel %>-<%= layer %>-<%= rgb.join('-') %>' style='color: rgb(<%= rgb.join(', ') %>)'>
-                <span class='fa-stack'>
-                  <i class='fa fa-check-square fa-stack-1x'></i>
-                  <i class='fa fa-square-o fa-stack-1x'></i>
-                </span>
-              </label>
-            <% end %>
-          </div>
+          <input type="hidden" name="textcolour" value="fa8100" />
         </div>
-      </div>
     <% end %>
   </div>
 <% end %>
 
 <script>
-$( document ).ready(function() {
-  refresh()
-})
-
-function submit(data) {
-  var parts = data.split('-')
-  $.ajax({
-      url: '/colours/',
-      data: JSON.stringify({ mode: mode }),
-      type: 'PATCH',
-      contentType: 'application/json'
-  })
-}
-
 var elements = [
 <% Wen::Config.instance.config.neopixels.each do |wheel, layers| %>
   <% layers['colours'].each_pair do |layer, colour| %>
@@ -52,6 +23,28 @@ var elements = [
   <% end %>
 <% end %>
 ]
+
+$( document ).ready(function() {
+  refresh()
+})
+
+var picker = $('#hours-hands, #hours-face, #minutes-hands, #minutes-face').colorpicker({ format: 'rgb' })
+picker.on('changeColor', function(ev){
+  d = ev.target.id.split('-')
+  c = ev.color.toRGB()
+  x = {}
+  x[d[1]] = [c['r'], c['g'], c['b']]
+
+  y = {}
+  y[d[0]] = x
+
+  $.ajax({
+    url: '/colours/',
+    data: JSON.stringify(y),
+    type: 'PATCH',
+    contentType: 'application/json'
+  })
+})
 
 function refresh() {
   var wheel
