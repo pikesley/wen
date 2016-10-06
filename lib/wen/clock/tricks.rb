@@ -26,12 +26,16 @@ module Wen
 
       def self.roll_around
         now = Clock.time.strftime('%s').to_i
-        tomorrow = now + 86400
-        while now <= tomorrow
+        future = now + 86400
+
+        delay = 1
+
+        100.times do
           Timecop.freeze DateTime.strptime(now.to_s, '%s') do
             Clock.time
             now += 3930
-            sleep 0.05 if IS_PI
+            sleep delay if IS_PI
+            delay = delay / 2
           end
         end
 
