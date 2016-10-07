@@ -83,7 +83,6 @@ module Wen
         self.clear
         sleep 1 if IS_PI
 
-
         a = []
         Config.instance.config.neopixels['minutes']['pins'].times do |i|
           a.push Config.instance.config['colours']['red']
@@ -97,7 +96,6 @@ module Wen
         end
         Neopixels.instance.illuminate a
         sleep 2 if IS_PI
-
 
         Clock.time
       end
