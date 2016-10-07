@@ -38,7 +38,7 @@ module Wen
         Clock.time
       end
 
-      def self.scramble iterations = 64
+      def self.disco iterations = 64
         iterations.times do
           Neopixels.instance.illuminate Array.new(
             Config.instance.config.neopixels['minutes']['pins'] +
