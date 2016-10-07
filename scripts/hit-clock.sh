@@ -7,8 +7,8 @@ do
   curl --request PATCH \
        --header "Content-Type:application/json" \
        --header "Accept: application/json" \
-       --data '{"mode":"time"}'
-       http://localhost:5000/display
+       --data '{"mode":"time"}' \
+       http://localhost/display
 
   sleep 10s
 done
