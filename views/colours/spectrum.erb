@@ -8,7 +8,7 @@
         <%= layer %>
       </div>
       <div class='col-xs-8 id='<%= wheel %>-<%= layer %>'>
-        <div class='input-group' id='<%= wheel %>-<%= layer %>'>
+        <div class='input-group spectrum-colours' id='<%= wheel %>-<%= layer %>'>
           <% Wen::Config.instance.config.colours.each_pair do |name, rgb| %>
               <input type='radio'
                      id='<%= wheel %>-<%= layer %>-<%= rgb.join('-') %>'

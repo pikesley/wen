@@ -60,12 +60,23 @@ body {
 }
 
 .fa-stack {
-  width: 1.6em;
-  height: 2em;
+  padding-top: 2px;
+  width: 1.8em;
+  height: 1.7em;
 }
 
 h2 {
   margin-top: $padding-small-vertical;
+}
+
+.colours {
+  height: $colours-row-height;
+}
+
+.spectrum-colours {
+  background-color: $light-grey;
+  border-radius: 4px;
+  height: 35px;
 }
 
 /* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */

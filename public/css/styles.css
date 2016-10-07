@@ -8920,32 +8920,45 @@ body {
 
 /* line 62, ../sass/styles.scss */
 .fa-stack {
-  width: 1.6em;
-  height: 2em;
+  padding-top: 2px;
+  width: 1.8em;
+  height: 1.7em;
 }
 
-/* line 67, ../sass/styles.scss */
+/* line 68, ../sass/styles.scss */
 h2 {
   margin-top: 5px;
 }
 
-/* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */
 /* line 72, ../sass/styles.scss */
+.colours {
+  height: 40px;
+}
+
+/* line 76, ../sass/styles.scss */
+.spectrum-colours {
+  background-color: #aaaaaa;
+  border-radius: 4px;
+  height: 35px;
+}
+
+/* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */
+/* line 83, ../sass/styles.scss */
 input[type="radio"] {
   display: none;
 }
 
-/* line 73, ../sass/styles.scss */
+/* line 84, ../sass/styles.scss */
 input[type="radio"] + label .fa-check-square {
   display: none;
 }
 
-/* line 74, ../sass/styles.scss */
+/* line 85, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-check-square {
   display: block;
 }
 
-/* line 75, ../sass/styles.scss */
+/* line 86, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-square-o {
   display: none;
 }
