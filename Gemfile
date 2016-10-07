@@ -13,6 +13,7 @@ gem 'puma'
 gem 'sidekiq'
 gem 'foreman'
 gem 'pixel_pi'
+gem 'httparty'
 
 group :test do
   gem 'rspec'

@@ -1,0 +1,13 @@
+[Unit]
+Description = Hit the clock URL
+After       = syslog.target
+
+[Service]
+User        = pi
+ExecStart   = /home/pi/wen/scripts/hit-clock.sh
+Restart     = always
+Type        = notify
+NotifyAccess= main
+
+[Install]
+WantedBy    = multi-user.target

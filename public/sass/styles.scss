@@ -6,6 +6,7 @@
 
 body {
   background-color: $brand-secondary;
+  background: url(/assets/images/cogs-blue.png);
   color: $brand-primary;
   font-family: $font-primary;
   text-align: center;
@@ -61,6 +62,9 @@ body {
 .fa-stack {
   width: 1.6em;
   height: 2em;
+  background-color: $brand-primary;
+  opa
+
 }
 
 h2 {
