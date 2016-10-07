@@ -45,7 +45,11 @@ module Wen
             Config.instance.config.neopixels['hours']['pins'],
             self.random_color
           )
+
+          sleep 0.2
         end
+
+        Clock.time
       end
 
       def self.random_color
