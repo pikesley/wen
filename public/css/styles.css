@@ -8921,7 +8921,7 @@ body {
 /* line 62, ../sass/styles.scss */
 .fa-stack {
   padding-top: 2px;
-  width: 1.8em;
+  width: 1.6em;
   height: 1.7em;
 }
 
@@ -8939,26 +8939,27 @@ h2 {
 .spectrum-colours {
   background-color: #aaaaaa;
   border-radius: 4px;
-  height: 35px;
+  height: 34px;
+  width: 245px;
 }
 
 /* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */
-/* line 83, ../sass/styles.scss */
+/* line 84, ../sass/styles.scss */
 input[type="radio"] {
   display: none;
 }
 
-/* line 84, ../sass/styles.scss */
+/* line 85, ../sass/styles.scss */
 input[type="radio"] + label .fa-check-square {
   display: none;
 }
 
-/* line 85, ../sass/styles.scss */
+/* line 86, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-check-square {
   display: block;
 }
 
-/* line 86, ../sass/styles.scss */
+/* line 87, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-square-o {
   display: none;
 }

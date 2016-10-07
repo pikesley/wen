@@ -19,7 +19,7 @@
   <% end %>
 <% end %>
 
-<a class='btn btn-default' href='/colours/spectrum'>easy mode</a>
+<a class='btn btn-default btn-block' href='/colours/spectrum'>easy mode</a>
 
 <script>
   var elements = [
@@ -44,7 +44,12 @@
     picker_list.push('#' + wheel + '-' + layer)
   })
 
-  var picker = $(picker_list.join(', ')).colorpicker({format: 'rgb', horizontal: true})
+  var picker = $(picker_list.join(', ')).colorpicker(
+    {
+      format: 'rgb',
+      horizontal: true
+    }
+  )
   picker.on('changeColor', function (ev) {
     d = ev.target.id.split('-')
     c = ev.color.toRGB()
