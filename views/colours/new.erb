@@ -1,0 +1,74 @@
+<h2>colours</h2>
+<hr/>
+<div id='colours'>
+  <% ['minutes', 'hours'].each do |wheel| %>
+    <h3><%= wheel %></h3>
+    <% ['hands', 'face'].each do |layer| %>
+      <div class='row'>
+        <div class='col-xs-2 layer-label'>
+          <%= layer %>
+        </div>
+        <div class='col-xs-8'>
+          <input type='text'
+                 id="<%= wheel %>-<%= layer %>"
+                 class='colour-picker'
+                 value='rgb(0, 0, 0)'/>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<script>
+var colours = [
+  <% Wen::Config.instance.config.colours.each do |name, rgb| %>
+    'rgb(<%= rgb.join(', ') %>)',
+  <% end %>
+]
+
+$('.colour-picker').spectrum({
+  showInput: true,
+  allowEmpty:true,
+  showPalette: true,
+  palette: [
+    colours
+  ],
+  showPaletteOnly: true,
+  togglePaletteOnly: true,
+  togglePaletteMoreText: 'more',
+  togglePaletteLessText: 'less',
+  hideAfterPaletteSelect:true,
+  showInitial: true,
+  showInput: true,
+  preferredFormat: "rgb",
+});
+
+$('#colours :input').each(function() {
+  var s = this.id.split('-')
+  $.getJSON('/colours/' + s[0] + '/' + s[1], function (data) {
+    $('#' + s[0] + '-' + s[1]).spectrum({
+      color: 'rgb(' + (data['colour'].join(', ')) + ')'
+    })
+  })
+})
+
+$(".colour-picker").on('move.spectrum', function (ev, tc) {
+  d = ev.target.id.split('-')
+  x = {}
+  x[d[1]] = [tc['_r'], tc['_g'], tc['_b']]
+  y = {}
+  y[d[0]] = x
+
+  $.ajax({
+    url: '/colours/',
+    data: JSON.stringify(y),
+    type: 'PATCH',
+    contentType: 'application/json'
+  }
+)
+})
+
+$( document ).ready(function() {
+
+})
+</script>

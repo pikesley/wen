@@ -79,6 +79,17 @@ module Wen
       end
     end
 
+    get '/colours/new' do
+      headers 'Vary' => 'Accept'
+
+      respond_to do |wants|
+        wants.html do
+          @title = 'Colours » Spectrum Mode'
+          erb :'colours/new', layout: :default
+        end
+      end
+    end
+
     get '/colours/:wheel/:layer' do
       headers 'Vary' => 'Accept'
 
