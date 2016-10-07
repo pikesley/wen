@@ -18,4 +18,23 @@ When all you have is a lathe, everything you make is round. It occurred to me th
 
 I was given to understand, from reading the specs, that a Pi would not be able to handle the timing requirements of the Neopixels, and I would need an [Arduino]() in between Pi and pixels. However, after a conversation with [Chris]() at a [very weird bar in South London]() I discovered that there are [some pins on a Pi]() that have enough grunt to drive the Neopixels, and that even better, there's a [Ruby Gem]() - no Arduino required.
 
-So I have physical 
+
+## Software
+
+### Installation
+
+    sudo apt-get update
+    sudo apt-get upgrade
+    sudo dpkg --purge nano
+    sudo apt-get install vim ruby2.1-dev redid-server
+    sudo gem install bundle
+    git clone https://github.com/pikesley/wen.git
+    cd wen/
+    bundle
+    sudo bundle exec foreman export systemd -u pi -a wen /etc/systemd/system/
+    sudo systemctl enable wen.target
+    sudo cp scripts/timekeeper.service /etc/systemd/system/
+    sudo systemctl enable timekeeper.service
+    echo "alias rewen='cd ~/wen && git pull && bundle && sudo systemctl restart wen.target'" >> ~/.bash_profile
+
+    sudo reboot
