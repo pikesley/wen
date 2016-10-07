@@ -52,12 +52,13 @@ module Wen
     get '/colours/?' do
       respond_to do |wants|
          wants.html do
-            redirect to '/colours/spectrum'
+           @title = 'Colours'
+           erb :'colours/spectrum', layout: :default
          end
       end
     end
 
-    get '/colours/picker' do
+    get '/colours/expert' do
       headers 'Vary' => 'Accept'
 
       respond_to do |wants|
@@ -68,24 +69,13 @@ module Wen
       end
     end
 
-    get '/colours/spectrum' do
+    get '/colours/easy' do
       headers 'Vary' => 'Accept'
 
       respond_to do |wants|
         wants.html do
           @title = 'Colours » Easy Mode'
-          erb :'colours/spectrum', layout: :default
-        end
-      end
-    end
-
-    get '/colours/new' do
-      headers 'Vary' => 'Accept'
-
-      respond_to do |wants|
-        wants.html do
-          @title = 'Colours » Spectrum Mode'
-          erb :'colours/new', layout: :default
+          erb :'colours/easy', layout: :default
         end
       end
     end

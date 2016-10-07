@@ -3,6 +3,7 @@
 @import 'variables';
 @import 'footer';
 @import 'github-corner';
+@import 'spectrum';
 
 body {
   background-color: $brand-secondary;
@@ -71,6 +72,12 @@ h2 {
 
 .colours {
   height: $colours-row-height;
+}
+
+#colours {
+  .row {
+    height: $colours-row-height;
+  }
 }
 
 .spectrum-colours {
