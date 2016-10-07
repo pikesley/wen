@@ -22,32 +22,29 @@
 <script>
 var colours = [
   <% Wen::Config.instance.config.colours.each do |name, rgb| %>
-    'rgb(<%= rgb.join(', ') %>)',
+    'rgb(<%= rgb.join(', ') %>);',
   <% end %>
 ]
-
-$('.colour-picker').spectrum({
-  showInput: true,
-  allowEmpty:true,
-  showPalette: true,
-  palette: [
-    colours
-  ],
-  showPaletteOnly: true,
-  togglePaletteOnly: true,
-  togglePaletteMoreText: 'more',
-  togglePaletteLessText: 'less',
-  hideAfterPaletteSelect:true,
-  showInitial: true,
-  showInput: true,
-  preferredFormat: "rgb",
-});
 
 $('#colours :input').each(function() {
   var s = this.id.split('-')
   $.getJSON('/colours/' + s[0] + '/' + s[1], function (data) {
     $('#' + s[0] + '-' + s[1]).spectrum({
-      color: 'rgb(' + (data['colour'].join(', ')) + ')'
+      color: 'rgb(' + (data['colour'].join(', ')) + ')',
+      showInput: true,
+      allowEmpty:true,
+      showPalette: true,
+      palette: [
+        colours
+      ],
+      showPaletteOnly: true,
+      togglePaletteOnly: true,
+      togglePaletteMoreText: 'more',
+      togglePaletteLessText: 'less',
+      hideAfterPaletteSelect:true,
+      showInitial: true,
+      showInput: true,
+      preferredFormat: "rgb"
     })
   })
 })
@@ -64,11 +61,6 @@ $(".colour-picker").on('move.spectrum', function (ev, tc) {
     data: JSON.stringify(y),
     type: 'PATCH',
     contentType: 'application/json'
-  }
-)
-})
-
-$( document ).ready(function() {
-
+  })
 })
 </script>
