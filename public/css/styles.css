@@ -8894,7 +8894,40 @@ body {
   right: 80px;
 }
 
-/* line 8, ../sass/styles.scss */
+/* line 1, ../sass/_d3clock.scss */
+svg.clock {
+  stroke-linecap: round;
+}
+
+/* line 5, ../sass/_d3clock.scss */
+.face {
+  stroke: #aac;
+  stroke-width: 6;
+}
+
+/* line 13, ../sass/_d3clock.scss */
+.minutetick.face {
+  stroke-width: 2;
+}
+
+/* line 17, ../sass/_d3clock.scss */
+.hand {
+  stroke: #336;
+  stroke-width: 8;
+}
+
+/* line 22, ../sass/_d3clock.scss */
+.hour.hand {
+  stroke-width: 12;
+}
+
+/* line 29, ../sass/_d3clock.scss */
+.second.hand {
+  stroke: red;
+  stroke-width: 4;
+}
+
+/* line 9, ../sass/styles.scss */
 body {
   background-color: #0644a8;
   background: url(/assets/images/cogs-black.png);
@@ -8903,7 +8936,7 @@ body {
   text-align: center;
 }
 
-/* line 16, ../sass/styles.scss */
+/* line 17, ../sass/styles.scss */
 .btn-default {
   background-color: #fa8100;
   border-color: #fa8100;
@@ -8911,78 +8944,78 @@ body {
   margin-top: 5px;
 }
 
-/* line 23, ../sass/styles.scss */
+/* line 24, ../sass/styles.scss */
 .btn:hover {
   background-color: #c76700;
   border-color: #944c00;
 }
 
-/* line 28, ../sass/styles.scss */
+/* line 29, ../sass/styles.scss */
 #main-nav {
   padding-top: 5px;
 }
 
-/* line 32, ../sass/styles.scss */
+/* line 33, ../sass/styles.scss */
 .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
   background-color: #fa8100;
   border-color: #fa8100;
   color: #0644a8;
 }
 
-/* line 38, ../sass/styles.scss */
+/* line 39, ../sass/styles.scss */
 .nav-pills > li > a {
   background-color: #944c00;
   border-color: #613200;
   color: #0644a8;
 }
 
-/* line 44, ../sass/styles.scss */
+/* line 45, ../sass/styles.scss */
 .nav-pills > li > a:focus, .nav-pills > li > a:hover {
   background-color: #c76700;
   border-color: #944c00;
   color: #0644a8;
 }
 
-/* line 50, ../sass/styles.scss */
+/* line 51, ../sass/styles.scss */
 .colours {
   margin-bottom: 5px;
 }
 
-/* line 54, ../sass/styles.scss */
+/* line 55, ../sass/styles.scss */
 .layer-label, label {
   font-size: 1.2em;
   font-weight: bold;
 }
 
-/* line 59, ../sass/styles.scss */
+/* line 60, ../sass/styles.scss */
 .layer-label {
   margin-left: 10px;
 }
 
-/* line 63, ../sass/styles.scss */
+/* line 64, ../sass/styles.scss */
 .fa-stack {
   padding-top: 2px;
   width: 1.6em;
   height: 1.7em;
 }
 
-/* line 69, ../sass/styles.scss */
+/* line 70, ../sass/styles.scss */
 h2 {
   font-size: 1.5em;
   margin-top: 5px;
 }
 
-/* line 74, ../sass/styles.scss */
+/* line 75, ../sass/styles.scss */
 .colours {
   height: 40px;
 }
 
-/* line 79, ../sass/styles.scss */
+/* line 80, ../sass/styles.scss */
 #colours .row {
   height: 40px;
 }
 
-/* line 84, ../sass/styles.scss */
+/* line 85, ../sass/styles.scss */
 .spectrum-colours {
   background-color: #b7b7b7;
   border-radius: 4px;
@@ -8991,22 +9024,22 @@ h2 {
 }
 
 /* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */
-/* line 92, ../sass/styles.scss */
+/* line 93, ../sass/styles.scss */
 input[type="radio"] {
   display: none;
 }
 
-/* line 93, ../sass/styles.scss */
+/* line 94, ../sass/styles.scss */
 input[type="radio"] + label .fa-check-square {
   display: none;
 }
 
-/* line 94, ../sass/styles.scss */
+/* line 95, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-check-square {
   display: block;
 }
 
-/* line 95, ../sass/styles.scss */
+/* line 96, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-square-o {
   display: none;
 }

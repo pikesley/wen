@@ -80,6 +80,17 @@ module Wen
       end
     end
 
+    get '/colours/d3' do
+      headers 'Vary' => 'Accept'
+
+      respond_to do |wants|
+        wants.html do
+          @title = 'Colours » d3 mode'
+          erb :'colours/d3', layout: :default
+        end
+      end
+    end
+
     get '/colours/:wheel/:layer' do
       headers 'Vary' => 'Accept'
 

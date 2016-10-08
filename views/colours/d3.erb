@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Clock</title>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+        <link href="d3clock.css" rel="stylesheet">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+var showD3Clock = function() {
+
+  var w = 320             // Width of SVG element
+  var h = 320             // Height of SVG element
+
+  var cx = w / 2          // Center x
+  var cy = h / 2          // Center y
+  var margin = 20
+  var r = w / 2 - margin  // Radius of clock face
+  var innerRadius = 88
+  var outerRadius = 128
+  var sw = 20 // stroke width
+
+  var svg = d3.select("body").append("svg")
+    .attr("class", "clock")
+    .attr("width", w)
+    .attr("height", h)
+
+  makeClockFace()
+
+  function makeClockFace() {
+    svg.append('a').attr("xlink:href", '#')
+        .append('svg:circle')
+        .attr('id', 'huh')
+        .attr('r', outerRadius)
+        .attr('cx', cx)
+        .attr('cy', cy)
+        .attr('fill', 'none')
+        .attr('stroke', '#fff')
+        .attr('stroke-width', sw)
+        .attr('shape-rendering', 'auto')
+
+    svg.append('a').attr("xlink:href", '#')
+        .append('svg:circle')
+        .attr('r', innerRadius)
+        .attr('cx', cx)
+        .attr('cy', cy)
+        .attr('fill', 'none')
+        .attr('stroke', '#fff')
+        .attr('stroke-width', sw)
+        .attr('shape-rendering', 'auto')
+
+    var outerOriginX = cx + ((outerRadius) * Math.sin(0));
+    var outerOriginY = cy - ((outerRadius) * Math.cos(0));
+
+    var outerBlob = svg.append("svg:circle").attr({
+      cx: outerOriginX,
+      cy: outerOriginY,
+      opacity: 1,
+      r: 20,
+      fill: "#f00"
+    });
+
+    var now = new Date()
+    var mins = now.getMinutes()
+
+    outerBlob.attr('transform', 'rotate(' + mins * 6 + ', ' + cx + ', ' + cy + ')')
+
+    var innerOriginX = cx + ((innerRadius) * Math.sin(0));
+    var innerOriginY = cy - ((innerRadius) * Math.cos(0));
+
+    var innerBlob = svg.append("svg:circle").attr({
+      cx: innerOriginX,
+      cy: innerOriginY,
+      opacity: 1,
+      r: 20,
+      fill: "#f00"
+    });
+
+    var hours = now.getHours()
+
+    innerBlob.attr('transform', 'rotate(' + hours * 30 + ', ' + cx + ', ' + cy + ')')
+  }
+
+  function getTimeOfDay() {
+    var now = new Date()
+    var hr = now.getHours()
+    var min = now.getMinutes()
+    var sec = now.getSeconds()
+    return [
+      [ "hour",   hr + (min / 60) + (sec / 3600) ],
+      [ "minute", min + (sec / 60) ],
+      [ "second", sec ]
+    ]
+  }
+}
+
+showD3Clock()
+
+$("#huh").spectrum({
+    color: "#dd3333",
+    show: function() {
+
+    },
+    hide: function() {
+
+    }
+});
+</script>
