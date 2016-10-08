@@ -49,7 +49,6 @@ module Wen
     end
 
     def self.colours params
-      puts params unless IS_PI
       params.each_pair do |wheel, values|
         values.each_pair do |layer, colour|
           $redis.set "#{wheel}/#{layer}", colour.join(', ')
