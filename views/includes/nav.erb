@@ -2,10 +2,9 @@
   <% Wen::Config.instance.config['pages'].each do |page| %>
     <li role='presentation' <%= "class='active'" if request.path.include? page['name'] %>>
       <a href="/<%= page['name'] %>">
-        <%= page['name'] %>
+        <!--<%= page['name'] %>-->
         <i class='fa fa-<%= page["fa"] %>'></i>
       </a>
     </li>
   <% end %>
 </ul>
-<hr />

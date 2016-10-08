@@ -1,5 +1,10 @@
-$brand-primary: #fa8100;
-$brand-secondary: #0644a8;
+@import 'palette';
+
+$brand-primary: $color-primary-0;
+$brand-secondary: $color-primary-1;
+
+$brand-third: $color-primary-2;
+$brand-fourth: $color-primary-3;
 
 $grey: #777;
 $light-grey: lighten($grey, 25%);
