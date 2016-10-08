@@ -53,7 +53,7 @@ module Wen
       respond_to do |wants|
          wants.html do
            @title = 'Colours'
-           erb :'colours/spectrum', layout: :default
+           erb :'colours/d3', layout: :default
          end
       end
     end
@@ -80,13 +80,13 @@ module Wen
       end
     end
 
-    get '/colours/d3' do
+    get '/colours/spectrum' do
       headers 'Vary' => 'Accept'
 
       respond_to do |wants|
         wants.html do
-          @title = 'Colours » d3 mode'
-          erb :'colours/d3', layout: :default
+          @title = 'Colours » Spectrum mode'
+          erb :'colours/spectrum', layout: :default
         end
       end
     end
