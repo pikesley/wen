@@ -2,7 +2,7 @@
 <div id='circles'>
   <% ['minutes', 'hours'].each do |wheel| %>
     <div class='row'>
-      <% ['face', 'hands'].each do |layer| %>
+      <% ['hands', 'face'].each do |layer| %>
         <div class='wrapper'>
           <div id='<%= wheel %>-<%= layer %>-circle' class='col-xs-6 member'></div>
           <div class='selecter' id='<%= wheel %>-<%= layer %>-selecter'>
@@ -35,10 +35,12 @@ $('#circles .member').each(function(){
   minutesWheel.move(10, 10)
   minutesWheel.opacity(0.4)
   minutesWheel.stroke({color: minStroke, width: 10})
+  minutesWheel.attr('class', 'minutes-hands-disc')
   var hoursWheel = draw.circle(100)
   hoursWheel.move(35, 35)
   hoursWheel.opacity(0.4)
   hoursWheel.stroke({color: hourStroke, width: 10})
+  minutesWheel.attr('class', 'hours-hands-disc')
 
   if(this.id.includes('minutes-hands')) {
     var blob = draw.nested()
@@ -46,18 +48,21 @@ $('#circles .member').each(function(){
     blob.fill('#fff')
     blob.opacity(0.6)
     blob.move(22, 22)
+    blob.attr('class', 'minutes-hands-blob')
 
     var bloc = draw.nested()
     bloc.circle(20)
     bloc.fill('#fff')
     bloc.opacity(0.6)
     bloc.move(42, 8)
+    bloc.attr('class', 'minutes-hands-blob')
 
-    var bloc = draw.nested()
-    bloc.circle(20)
-    bloc.fill('#fff')
-    bloc.opacity(0.6)
-    bloc.move(8, 42)
+    var blod = draw.nested()
+    blod.circle(20)
+    blod.fill('#fff')
+    blod.opacity(0.6)
+    blod.move(8, 42)
+    blod.attr('class', 'minutes-hands-blob')
   }
 
   if(this.id.includes('hours-hands')) {
@@ -66,6 +71,7 @@ $('#circles .member').each(function(){
     blob.fill('#fff')
     blob.opacity(0.6)
     blob.move(110, 40)
+    blob.attr('class', 'hours-hands-blob')
   }
 })
 
@@ -78,6 +84,7 @@ var colours = [
 $('#circles :input').each(function() {
   var s = this.id.split('-')
   $.getJSON('/colours/' + s[0] + '/' + s[1], function (data) {
+    $('.' + s[0] + '-' + s[1] + '-blob').attr('fill', 'rgb(' + (data['colour'].join(', ')) + ')')
     $('#' + s[0] + '-' + s[1]).spectrum({
       color: 'rgb(' + (data['colour'].join(', ')) + ')',
       showPalette: true,
