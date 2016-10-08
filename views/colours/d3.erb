@@ -108,9 +108,11 @@ function refresh() {
 $('.picker').each(function() {
   var s = this.id.split('-')
   $.getJSON('/colours/' + s[0] + '/' + s[1], function (data) {
-    $('.' + s[0] + '-' + s[1]).attr('fill', 'rgb(' + (data['colour'].join(', ')) + ')')
-  //  $('.' + s[0] + '-' + s[1] + '-disc').attr('stroke', 'rgb(' + (data['colour'].join(', ')) + ')')
-
+    if(s[1] == 'face') {
+      $('#' + s[0] + '-' + s[1]).attr('stroke', 'rgb(' + (data['colour'].join(', ')) + ')')
+    } else {
+      $('#' + s[0] + '-' + s[1]).attr('fill', 'rgb(' + (data['colour'].join(', ')) + ')')
+    }
     $('#' + s[0] + '-' + s[1]).spectrum({
       color: 'rgb(' + (data['colour'].join(', ')) + ')',
       showPalette: true,
