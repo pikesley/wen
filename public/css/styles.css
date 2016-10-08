@@ -8870,6 +8870,30 @@ body {
   border: 0;
 }
 
+/* line 18, ../sass/_spectrum.scss */
+.wrapper {
+  position: relative;
+}
+
+/* line 26, ../sass/_spectrum.scss */
+.selecter {
+  position: absolute;
+  top: 70px;
+  z-index: 10;
+}
+
+/* line 32, ../sass/_spectrum.scss */
+#minutes-hands-selecter, #hours-hands-selecter {
+  position: absolute;
+  left: 75px;
+}
+
+/* line 37, ../sass/_spectrum.scss */
+#minutes-face-selecter, #hours-face-selecter {
+  position: absolute;
+  right: 80px;
+}
+
 /* line 8, ../sass/styles.scss */
 body {
   background-color: #0644a8;
@@ -8944,20 +8968,21 @@ body {
 
 /* line 69, ../sass/styles.scss */
 h2 {
+  font-size: 1.5em;
   margin-top: 5px;
 }
 
-/* line 73, ../sass/styles.scss */
+/* line 74, ../sass/styles.scss */
 .colours {
   height: 40px;
 }
 
-/* line 78, ../sass/styles.scss */
+/* line 79, ../sass/styles.scss */
 #colours .row {
   height: 40px;
 }
 
-/* line 83, ../sass/styles.scss */
+/* line 84, ../sass/styles.scss */
 .spectrum-colours {
   background-color: #b7b7b7;
   border-radius: 4px;
@@ -8966,22 +8991,22 @@ h2 {
 }
 
 /* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */
-/* line 91, ../sass/styles.scss */
+/* line 92, ../sass/styles.scss */
 input[type="radio"] {
   display: none;
 }
 
-/* line 92, ../sass/styles.scss */
+/* line 93, ../sass/styles.scss */
 input[type="radio"] + label .fa-check-square {
   display: none;
 }
 
-/* line 93, ../sass/styles.scss */
+/* line 94, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-check-square {
   display: block;
 }
 
-/* line 94, ../sass/styles.scss */
+/* line 95, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-square-o {
   display: none;
 }

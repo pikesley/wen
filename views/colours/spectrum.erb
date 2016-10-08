@@ -1,32 +1,81 @@
 <h2>colours</h2>
-<hr/>
-<div id='colours'>
+<div id='circles'>
   <% ['minutes', 'hours'].each do |wheel| %>
-    <% ['hands', 'face'].each do |layer| %>
     <div class='row'>
-
-        <div class='col-xs-6 layer-label'>
-          <%= wheel %> <%= layer %>
+      <% ['face', 'hands'].each do |layer| %>
+        <div class='wrapper'>
+          <div id='<%= wheel %>-<%= layer %>-circle' class='col-xs-6 member'></div>
+          <div class='selecter' id='<%= wheel %>-<%= layer %>-selecter'>
+            <input type='text'
+                   id="<%= wheel %>-<%= layer %>"
+                   class='colour-picker'
+                   value='rgb(0, 0, 0)'/>
+          </div>
         </div>
-        <div class='col-xs-5'>
-          <input type='text'
-                 id="<%= wheel %>-<%= layer %>"
-                 class='colour-picker'
-                 value='rgb(0, 0, 0)'/>
-        </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   <% end %>
 </div>
 
 <script>
+$('#circles .member').each(function(){
+  var minStroke = '#666'
+  var hourStroke = '#666'
+
+  if(this.id.includes('minutes-face')) {
+    minStroke = '#fff'
+  }
+
+  if(this.id.includes('hours-face')) {
+    hourStroke = '#fff'
+  }
+
+  var draw = SVG(this.id).size('100%', 200)
+  var minutesWheel = draw.circle(150)
+  minutesWheel.move(10, 10)
+  minutesWheel.opacity(0.4)
+  minutesWheel.stroke({color: minStroke, width: 10})
+  var hoursWheel = draw.circle(100)
+  hoursWheel.move(35, 35)
+  hoursWheel.opacity(0.4)
+  hoursWheel.stroke({color: hourStroke, width: 10})
+
+  if(this.id.includes('minutes-hands')) {
+    var blob = draw.nested()
+    blob.circle(20)
+    blob.fill('#fff')
+    blob.opacity(0.6)
+    blob.move(22, 22)
+
+    var bloc = draw.nested()
+    bloc.circle(20)
+    bloc.fill('#fff')
+    bloc.opacity(0.6)
+    bloc.move(42, 8)
+
+    var bloc = draw.nested()
+    bloc.circle(20)
+    bloc.fill('#fff')
+    bloc.opacity(0.6)
+    bloc.move(8, 42)
+  }
+
+  if(this.id.includes('hours-hands')) {
+    var blob = draw.nested()
+    blob.circle(20)
+    blob.fill('#fff')
+    blob.opacity(0.6)
+    blob.move(110, 40)
+  }
+})
+
 var colours = [
   <% Wen::Config.instance.config.colours.each do |name, rgb| %>
     'rgb(<%= rgb.join(', ') %>);',
   <% end %>
 ]
 
-$('#colours :input').each(function() {
+$('#circles :input').each(function() {
   var s = this.id.split('-')
   $.getJSON('/colours/' + s[0] + '/' + s[1], function (data) {
     $('#' + s[0] + '-' + s[1]).spectrum({

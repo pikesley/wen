@@ -11,3 +11,30 @@
 .sp-preview {
   border: 0;
 }
+
+.member {
+}
+
+.wrapper {
+  position: relative;
+}
+
+$left-offset: 75px;
+$right-offset: 80px;
+$top-offset: 70px;
+
+.selecter {
+  position: absolute;
+  top: $top-offset;
+  z-index: 10;
+}
+
+#minutes-hands-selecter, #hours-hands-selecter {
+  position: absolute;
+  left: $left-offset;
+}
+
+#minutes-face-selecter, #hours-face-selecter {
+  position: absolute;
+  right: $right-offset;
+}
