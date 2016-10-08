@@ -24,9 +24,7 @@ $(".picker").on('change.spectrum', function (ev, tc) {
     data: JSON.stringify(y),
     type: 'PATCH',
     contentType: 'application/json',
-    complete: refresh()
+    complete: refresh
   })
-
-  //refresh()
 })
 </script>
