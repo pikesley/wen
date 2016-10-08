@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>D3 Clock</title>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
-        <link href="d3clock.css" rel="stylesheet">
-    </head>
-    <body>
-    </body>
-</html>
+<h2>colours</h2>
+
+<div id='clock'></div>
 
 <script>
 var showD3Clock = function() {
@@ -24,8 +16,7 @@ var showD3Clock = function() {
   var outerRadius = 128
   var sw = 20 // stroke width
 
-  var svg = d3.select("body").append("svg")
-    .attr("class", "clock")
+  var svg = d3.select("#clock").append("svg")
     .attr("width", w)
     .attr("height", h)
 
