@@ -8806,7 +8806,7 @@ body {
   bottom: 0;
   width: 100%;
   margin-top: 10px;
-  background: #fa8100;
+  background: #AA5939;
   color: white;
   height: 40px;
   padding: 10px 16px;
@@ -8818,7 +8818,7 @@ body {
 
 /* line 1, ../sass/_github-corner.scss */
 .octo-background {
-  fill: #fa8100;
+  fill: #AA5939;
 }
 
 /* line 5, ../sass/_github-corner.scss */
@@ -8856,13 +8856,13 @@ body {
 /* line 1, ../sass/_spectrum.scss */
 .sp-replacer, .sp-container {
   border-radius: 4px;
-  background-color: #fa8100;
-  border-color: #fa8100;
+  background-color: #AA5939;
+  border-color: #AA5939;
 }
 
 /* line 7, ../sass/_spectrum.scss */
 .sp-preview-inner {
-  background-color: #fa8100;
+  background-color: #AA5939;
 }
 
 /* line 11, ../sass/_spectrum.scss */
@@ -8894,128 +8894,96 @@ body {
   right: 80px;
 }
 
-/* line 1, ../sass/_d3clock.scss */
-svg.clock {
-  stroke-linecap: round;
-}
-
-/* line 5, ../sass/_d3clock.scss */
-.face {
-  stroke: #aac;
-  stroke-width: 6;
-}
-
-/* line 13, ../sass/_d3clock.scss */
-.minutetick.face {
-  stroke-width: 2;
-}
-
-/* line 17, ../sass/_d3clock.scss */
-.hand {
-  stroke: #336;
-  stroke-width: 8;
-}
-
-/* line 22, ../sass/_d3clock.scss */
-.hour.hand {
-  stroke-width: 12;
-}
-
-/* line 29, ../sass/_d3clock.scss */
-.second.hand {
-  stroke: red;
-  stroke-width: 4;
-}
-
-/* line 9, ../sass/styles.scss */
+/* line 8, ../sass/styles.scss */
 body {
-  background-color: #0644a8;
-  background: url(/assets/images/cogs-black.png);
-  color: #fa8100;
+  background-color: white;
+  background: url(/assets/images/retina_wood.png);
+  color: #AA5939;
   font-family: "Droid Sans Mono";
   text-align: center;
 }
 
-/* line 17, ../sass/styles.scss */
+/* line 16, ../sass/styles.scss */
 .btn-default {
-  background-color: #fa8100;
-  border-color: #fa8100;
-  color: #0644a8;
+  background-color: #AA5939;
+  border-color: #AA5939;
+  color: #FFC2AA;
   margin-top: 5px;
 }
 
-/* line 24, ../sass/styles.scss */
+/* line 23, ../sass/styles.scss */
 .btn:hover {
-  background-color: #c76700;
-  border-color: #944c00;
+  background-color: #84452c;
+  border-color: #5e311f;
 }
 
-/* line 29, ../sass/styles.scss */
+/* line 31, ../sass/styles.scss */
 #main-nav {
   padding-top: 5px;
+  height: 40px;
 }
 
-/* line 33, ../sass/styles.scss */
+/* line 36, ../sass/styles.scss */
 .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
-  background-color: #fa8100;
-  border-color: #fa8100;
-  color: #0644a8;
+  background-color: transparent;
+  border-color: transparent;
+  color: #803315;
 }
 
-/* line 39, ../sass/styles.scss */
+/* line 42, ../sass/styles.scss */
 .nav-pills > li > a {
-  background-color: #944c00;
-  border-color: #613200;
-  color: #0644a8;
+  background-color: transparent;
+  border-color: transparent;
+  color: #D4886A;
 }
 
-/* line 45, ../sass/styles.scss */
+/* line 48, ../sass/styles.scss */
 .nav-pills > li > a:focus, .nav-pills > li > a:hover {
-  background-color: #c76700;
-  border-color: #944c00;
-  color: #0644a8;
+  background-color: transparent;
+  border-color: transparent;
+  color: #54220e;
 }
 
-/* line 51, ../sass/styles.scss */
+/* line 54, ../sass/styles.scss */
 .colours {
   margin-bottom: 5px;
 }
 
-/* line 55, ../sass/styles.scss */
+/* line 58, ../sass/styles.scss */
 .layer-label, label {
   font-size: 1.2em;
   font-weight: bold;
 }
 
-/* line 60, ../sass/styles.scss */
+/* line 63, ../sass/styles.scss */
 .layer-label {
   margin-left: 10px;
 }
 
-/* line 64, ../sass/styles.scss */
+/* line 67, ../sass/styles.scss */
 .fa-stack {
   padding-top: 2px;
   width: 1.6em;
   height: 1.7em;
 }
 
-/* line 70, ../sass/styles.scss */
+/* line 73, ../sass/styles.scss */
 h2 {
   font-size: 1.5em;
   margin-top: 5px;
 }
 
-/* line 75, ../sass/styles.scss */
+/* line 78, ../sass/styles.scss */
 .colours {
   height: 40px;
 }
 
-/* line 80, ../sass/styles.scss */
+/* line 83, ../sass/styles.scss */
 #colours .row {
   height: 40px;
 }
 
-/* line 85, ../sass/styles.scss */
+/* line 88, ../sass/styles.scss */
 .spectrum-colours {
   background-color: #b7b7b7;
   border-radius: 4px;
@@ -9024,22 +8992,22 @@ h2 {
 }
 
 /* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */
-/* line 93, ../sass/styles.scss */
+/* line 96, ../sass/styles.scss */
 input[type="radio"] {
   display: none;
 }
 
-/* line 94, ../sass/styles.scss */
+/* line 97, ../sass/styles.scss */
 input[type="radio"] + label .fa-check-square {
   display: none;
 }
 
-/* line 95, ../sass/styles.scss */
+/* line 98, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-check-square {
   display: block;
 }
 
-/* line 96, ../sass/styles.scss */
+/* line 99, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-square-o {
   display: none;
 }

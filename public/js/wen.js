@@ -83,8 +83,8 @@ function makeBlob(svg, id, cx, cy, radius, blobSize, now) {
       opacity: 1,
       r: blobSize,
       fill: "#000",
-      opacity: 0.8,
-      stroke: '#000'
+      opacity: 0.9,
+      stroke: '#777'
     });
 
   var mins = now.getMinutes()
