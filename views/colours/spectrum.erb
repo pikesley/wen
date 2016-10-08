@@ -18,6 +18,8 @@
 </div>
 
 <script>
+refresh()
+
 $('#circles .member').each(function(){
   var minStroke = '#666'
   var hourStroke = '#666'
@@ -35,12 +37,16 @@ $('#circles .member').each(function(){
   minutesWheel.move(10, 10)
   minutesWheel.opacity(0.4)
   minutesWheel.stroke({color: minStroke, width: 10})
-  minutesWheel.attr('class', 'minutes-hands-disc')
+  if(this.id.includes('minutes-face')) {
+    minutesWheel.attr('class', 'minutes-face-disc')
+  }
   var hoursWheel = draw.circle(100)
   hoursWheel.move(35, 35)
   hoursWheel.opacity(0.4)
   hoursWheel.stroke({color: hourStroke, width: 10})
-  minutesWheel.attr('class', 'hours-hands-disc')
+  if(this.id.includes('hours-face')) {
+    hoursWheel.attr('class', 'hours-face-disc')
+  }
 
   if(this.id.includes('minutes-hands')) {
     var blob = draw.nested()
@@ -81,10 +87,12 @@ var colours = [
   <% end %>
 ]
 
+function refresh() {
 $('#circles :input').each(function() {
   var s = this.id.split('-')
   $.getJSON('/colours/' + s[0] + '/' + s[1], function (data) {
     $('.' + s[0] + '-' + s[1] + '-blob').attr('fill', 'rgb(' + (data['colour'].join(', ')) + ')')
+    $('.' + s[0] + '-' + s[1] + '-disc').attr('stroke', 'rgb(' + (data['colour'].join(', ')) + ')')
     $('#' + s[0] + '-' + s[1]).spectrum({
       color: 'rgb(' + (data['colour'].join(', ')) + ')',
       showPalette: true,
@@ -101,7 +109,7 @@ $('#circles :input').each(function() {
     })
   })
 })
-
+}
 $(".colour-picker").on('move.spectrum', function (ev, tc) {
   d = ev.target.id.split('-')
   x = {}
@@ -115,5 +123,7 @@ $(".colour-picker").on('move.spectrum', function (ev, tc) {
     type: 'PATCH',
     contentType: 'application/json'
   })
+
+  refresh()
 })
 </script>
