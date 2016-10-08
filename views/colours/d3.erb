@@ -34,7 +34,8 @@ var showD3Clock = function() {
   function makeClockFace() {
     svg.append('a').attr("xlink:href", '#')
         .append('svg:circle')
-        .attr('id', 'huh')
+        .attr('id', 'minutes-face')
+        .attr('class', 'picker')
         .attr('r', outerRadius)
         .attr('cx', cx)
         .attr('cy', cy)
@@ -45,6 +46,8 @@ var showD3Clock = function() {
 
     svg.append('a').attr("xlink:href", '#')
         .append('svg:circle')
+        .attr('id', 'hours-face')
+        .attr('class', 'picker')
         .attr('r', innerRadius)
         .attr('cx', cx)
         .attr('cy', cy)
@@ -56,7 +59,7 @@ var showD3Clock = function() {
     var outerOriginX = cx + ((outerRadius) * Math.sin(0));
     var outerOriginY = cy - ((outerRadius) * Math.cos(0));
 
-    var outerBlob = svg.append("svg:circle").attr({
+    var outerBlob = svg.append('a').attr("xlink:href", '#').append("svg:circle").attr({
       cx: outerOriginX,
       cy: outerOriginY,
       opacity: 1,
@@ -68,11 +71,14 @@ var showD3Clock = function() {
     var mins = now.getMinutes()
 
     outerBlob.attr('transform', 'rotate(' + mins * 6 + ', ' + cx + ', ' + cy + ')')
+              .attr("xlink:href", '#')
+              .attr('id', 'minutes-hands')
+              .attr('class', 'picker')
 
     var innerOriginX = cx + ((innerRadius) * Math.sin(0));
     var innerOriginY = cy - ((innerRadius) * Math.cos(0));
 
-    var innerBlob = svg.append("svg:circle").attr({
+    var innerBlob = svg.append('a').attr("xlink:href", '#').append("svg:circle").attr({
       cx: innerOriginX,
       cy: innerOriginY,
       opacity: 1,
@@ -83,30 +89,59 @@ var showD3Clock = function() {
     var hours = now.getHours()
 
     innerBlob.attr('transform', 'rotate(' + hours * 30 + ', ' + cx + ', ' + cy + ')')
-  }
-
-  function getTimeOfDay() {
-    var now = new Date()
-    var hr = now.getHours()
-    var min = now.getMinutes()
-    var sec = now.getSeconds()
-    return [
-      [ "hour",   hr + (min / 60) + (sec / 3600) ],
-      [ "minute", min + (sec / 60) ],
-      [ "second", sec ]
-    ]
+              .attr("xlink:href", '#')
+              .attr('id', 'hours-hands')
+              .attr('class', 'picker')
   }
 }
 
 showD3Clock()
+refresh()
 
-$("#huh").spectrum({
-    color: "#dd3333",
-    show: function() {
+var colours = [
+  <% Wen::Config.instance.config.colours.each do |name, rgb| %>
+    'rgb(<%= rgb.join(', ') %>);',
+  <% end %>
+]
 
-    },
-    hide: function() {
+function refresh() {
+$('.picker').each(function() {
+  var s = this.id.split('-')
+  $.getJSON('/colours/' + s[0] + '/' + s[1], function (data) {
+    $('.' + s[0] + '-' + s[1]).attr('fill', 'rgb(' + (data['colour'].join(', ')) + ')')
+  //  $('.' + s[0] + '-' + s[1] + '-disc').attr('stroke', 'rgb(' + (data['colour'].join(', ')) + ')')
 
-    }
-});
+    $('#' + s[0] + '-' + s[1]).spectrum({
+      color: 'rgb(' + (data['colour'].join(', ')) + ')',
+      showPalette: true,
+      palette: [
+        colours
+      ],
+      showPaletteOnly: true,
+      togglePaletteOnly: true,
+      togglePaletteMoreText: 'more',
+      togglePaletteLessText: 'less',
+      hideAfterPaletteSelect:true,
+      showInitial: true,
+      preferredFormat: "rgb"
+    })
+  })
+})
+}
+$(".picker").on('change.spectrum', function (ev, tc) {
+  d = ev.target.id.split('-')
+  x = {}
+  x[d[1]] = [tc['_r'], tc['_g'], tc['_b']]
+  y = {}
+  y[d[0]] = x
+
+  $.ajax({
+    url: '/colours/',
+    data: JSON.stringify(y),
+    type: 'PATCH',
+    contentType: 'application/json'
+  })
+
+  refresh()
+})
 </script>
