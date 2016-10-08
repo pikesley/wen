@@ -110,7 +110,7 @@ $('#circles :input').each(function() {
   })
 })
 }
-$(".colour-picker").on('move.spectrum', function (ev, tc) {
+$(".colour-picker").on('change.spectrum', function (ev, tc) {
   d = ev.target.id.split('-')
   x = {}
   x[d[1]] = [tc['_r'], tc['_g'], tc['_b']]
