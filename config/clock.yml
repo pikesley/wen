@@ -47,7 +47,7 @@ pages:
   - name: colours
     fa:   paint-brush
   - name: display
-    fa:   clock-o
+    fa:   random
 
 #google-analytics-tag: UA-00000000-0
 #github_url: https://github.com

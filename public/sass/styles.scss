@@ -1,54 +1,18 @@
 @import 'bootstrap';
 @import 'fonts';
+@import 'colours';
 @import 'variables';
 @import 'footer';
 @import 'github-corner';
+@import 'buttons';
+@import 'nav';
 @import 'spectrum';
 
 body {
-  background-color: white;
   background: url(/assets/images/retina_wood.png);
   color: $brand-primary;
   font-family: $font-primary;
   text-align: center;
-}
-
-.btn-default {
-  background-color: $brand-primary;
-  border-color: $brand-primary;
-  color: $brand-secondary;
-  margin-top: $padding-small-vertical;
-}
-
-.btn:hover {
-  background-color: darken($brand-primary, 10%);
-  border-color: darken($brand-primary, 20%);
-}
-
-$nav-primary: $brand-fourth;
-$nav-secondary: $brand-third;
-
-#main-nav {
-  padding-top: $padding-small-vertical;
-  height: $footer-height;
-}
-
-.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
-  background-color: transparent;
-  border-color: transparent;
-  color: $nav-primary;
-}
-
-.nav-pills>li>a {
-  background-color: transparent;
-  border-color: transparent;
-  color: $nav-secondary;
-}
-
-.nav-pills>li>a:focus, .nav-pills>li>a:hover {
-  background-color: transparent;
-  border-color: transparent;
-  color: darken($nav-primary, 10%);
 }
 
 .colours {
@@ -83,13 +47,6 @@ h2 {
   .row {
     height: $colours-row-height;
   }
-}
-
-.spectrum-colours {
-  background-color: $light-grey;
-  border-radius: 4px;
-  height: 34px;
-  width: 245px;
 }
 
 /* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */

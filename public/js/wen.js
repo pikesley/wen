@@ -16,10 +16,10 @@ function refresh() {
         ],
         showPaletteOnly: true,
         togglePaletteOnly: true,
-        togglePaletteMoreText: 'more',
-        togglePaletteLessText: 'less',
+        togglePaletteMoreText: 'expert mode',
+        togglePaletteLessText: 'easy mode',
         hideAfterPaletteSelect:true,
-        showInitial: true,
+      //  showInitial: true,
         preferredFormat: "rgb"
       })
     })

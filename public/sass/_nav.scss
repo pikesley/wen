@@ -1,0 +1,29 @@
+$nav-colours: (
+  fg: $brand-secondary-1,
+  bg: transparent,
+  alt: $brand-secondary-2,
+);
+
+
+#main-nav {
+  padding-top: $padding-small-vertical;
+  height: $footer-height;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+  background-color: map-get($nav-colours, bg);
+  border-color: map-get($nav-colours, bg);
+  color: map-get($nav-colours, fg);
+}
+
+.nav-pills>li>a {
+  background-color: map-get($nav-colours, bg);
+  border-color: map-get($nav-colours, bg);
+  color: map-get($nav-colours, alt);
+}
+
+.nav-pills>li>a:focus, .nav-pills>li>a:hover {
+  background-color: map-get($nav-colours, bg);
+  border-color: map-get($nav-colours, bg);
+  color: darken(map-get($nav-colours, fg), 10%);
+}

@@ -1,7 +1,7 @@
 <h2>colours</h2>
 <div id='clock'></div>
 
-<a href='#' class='btn btn-default' id='reset'>reset to defaults</a>
+<a href='#' class='btn btn-default' onclick='reset()'>reset to defaults</a>
 
 <script>
 var colours = [
@@ -30,12 +30,12 @@ $(".picker").on('change.spectrum', function (ev, tc) {
   })
 })
 
-$('#reset').click(function() {
+function reset() {
   $.ajax({
     url: '/colours/reset',
     type: 'PATCH',
     contentType: 'application/json',
     complete: refresh
   })
-})
+}
 </script>
