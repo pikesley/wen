@@ -5,7 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-@import "https://fonts.googleapis.com/css?family=Raleway";
+@import "https://fonts.googleapis.com/css?family=Josefin+Slab";
 /* line 9, ../../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_normalize.scss */
 html {
   font-family: sans-serif;
@@ -9085,7 +9085,7 @@ body {
   bottom: 0;
   width: 100%;
   margin-top: 10px;
-  background: #aa7339;
+  background: #246c60;
   color: white;
   height: 40px;
   padding: 10px 16px;
@@ -9097,7 +9097,7 @@ body {
 
 /* line 1, ../sass/_github-corner.scss */
 .octo-background {
-  fill: #aa7339;
+  fill: #246c60;
 }
 
 /* line 5, ../sass/_github-corner.scss */
@@ -9135,19 +9135,20 @@ body {
 /* line 6, ../sass/_buttons.scss */
 .btn-default, .btn:focus, .wen-picker button:focus,
 .wen-picker .sp-cancel:focus {
-  background-color: #aa7339;
-  border-color: #aa7339;
-  color: #104050;
+  background-color: #246c60;
+  border-color: #246c60;
+  color: #ffccaa;
 }
 
 /* line 12, ../sass/_buttons.scss */
 .btn:hover, .wen-picker button:hover,
 .wen-picker .sp-cancel:hover {
-  background-color: #84592c;
-  border-color: #5e3f1f;
+  background-color: #17463e;
+  border-color: #17463e;
+  color: #ffccaa;
 }
 
-/* line 17, ../sass/_buttons.scss */
+/* line 19, ../sass/_buttons.scss */
 .btn, .wen-picker button,
 .wen-picker button:active,
 .wen-picker button:hover,
@@ -9165,28 +9166,28 @@ body {
 .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
   background-color: transparent;
   border-color: transparent;
-  color: #aa8939;
+  color: #aa3c39;
 }
 
 /* line 19, ../sass/_nav.scss */
 .nav-pills > li > a {
   background-color: transparent;
   border-color: transparent;
-  color: #303c74;
+  color: #2d8632;
 }
 
 /* line 25, ../sass/_nav.scss */
 .nav-pills > li > a:focus, .nav-pills > li > a:hover {
   background-color: transparent;
   border-color: transparent;
-  color: #846a2c;
+  color: #842f2c;
 }
 
 /* line 5, ../sass/_spectrum.scss */
 .wen-picker {
   border-radius: 4px;
-  background-color: #104050;
-  border-color: #104050;
+  background-color: #ffccaa;
+  border-color: #ffccaa;
 }
 /* line 10, ../sass/_spectrum.scss */
 .wen-picker button,
@@ -9194,7 +9195,7 @@ body {
 .wen-picker button:hover,
 .wen-picker .sp-cancel {
   text-shadow: none;
-  font-family: "Raleway";
+  font-family: "Josefin Slab";
   background-color: transparent;
   border: none;
 }
@@ -9240,8 +9241,8 @@ button.sp-choose:focus {
 /* line 11, ../sass/styles.scss */
 body {
   background: url(/assets/images/retina_wood.png);
-  color: #aa7339;
-  font-family: "Raleway";
+  color: #246c60;
+  font-family: "Josefin Slab";
   text-align: center;
 }
 
