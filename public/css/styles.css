@@ -5,7 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-@import "https://fonts.googleapis.com/css?family=Droid+Sans+Mono";
+@import "https://fonts.googleapis.com/css?family=Raleway";
 /* line 9, ../../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_normalize.scss */
 html {
   font-family: sans-serif;
@@ -8899,7 +8899,7 @@ body {
   background-color: white;
   background: url(/assets/images/retina_wood.png);
   color: #AA5939;
-  font-family: "Droid Sans Mono";
+  font-family: "Raleway";
   text-align: center;
 }
 
@@ -8907,7 +8907,7 @@ body {
 .btn-default {
   background-color: #AA5939;
   border-color: #AA5939;
-  color: #FFC2AA;
+  color: #29506D;
   margin-top: 5px;
 }
 
@@ -8927,21 +8927,21 @@ body {
 .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
   background-color: transparent;
   border-color: transparent;
-  color: #803315;
+  color: #277553;
 }
 
 /* line 42, ../sass/styles.scss */
 .nav-pills > li > a {
   background-color: transparent;
   border-color: transparent;
-  color: #D4886A;
+  color: #AA7939;
 }
 
 /* line 48, ../sass/styles.scss */
 .nav-pills > li > a:focus, .nav-pills > li > a:hover {
   background-color: transparent;
   border-color: transparent;
-  color: #54220e;
+  color: #1a4f38;
 }
 
 /* line 54, ../sass/styles.scss */
