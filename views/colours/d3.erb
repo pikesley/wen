@@ -1,6 +1,8 @@
 <h2>colours</h2>
 <div id='clock'></div>
 
+<a href='#' class='btn btn-default' id='reset'>reset to defaults</a>
+
 <script>
 var colours = [
   <% Wen::Config.instance.config.colours.each do |name, rgb| %>
@@ -22,6 +24,15 @@ $(".picker").on('change.spectrum', function (ev, tc) {
   $.ajax({
     url: '/colours/',
     data: JSON.stringify(y),
+    type: 'PATCH',
+    contentType: 'application/json',
+    complete: refresh
+  })
+})
+
+$('#reset').click(function() {
+  $.ajax({
+    url: '/colours/reset',
     type: 'PATCH',
     contentType: 'application/json',
     complete: refresh

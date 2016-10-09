@@ -2,7 +2,7 @@ module Wen
   class ClockWorker
     include Sidekiq::Worker
 
-    def perform action, params
+    def perform action, params = {params: 'none'}
       puts "#{action}: #{params}" unless IS_PI
       case action
       when 'display'

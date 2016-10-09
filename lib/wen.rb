@@ -104,7 +104,7 @@ module Wen
     end
 
     patch '/colours/reset/?' do
-      ClockWorker.perform_async 'reset', JSON.parse(request.body.read)
+      ClockWorker.perform_async 'reset'
     end
 
     patch '/colours/?' do
