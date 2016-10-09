@@ -2,31 +2,61 @@ $spectrum-colours: (
   bg: $brand-complement
 );
 
-.sp-replacer, .sp-container {
+.wen-picker {
+  border-radius: 4px;
+  background-color: map-get($spectrum-colours, bg);
+  border-color: map-get($spectrum-colours, bg);
+
+  button,
+  button:active,
+  button:hover,
+  .sp-cancel {
+    @extend .btn;
+    @extend .btn-link;
+    @extend .btn-xs;
+
+    text-shadow: none;
+    font-family: $font-primary;
+    background-color: transparent;
+    border: none;
+  }
+
+  .sp-thumb-el, .sp-thumb-inner {
+    border-radius: 10px;
+  }
+}
+
+/*.sp-replacer, .sp-container {
   border-radius: 4px;
   background-color: map-get($spectrum-colours, bg);
   border-color: map-get($spectrum-colours, bg);
 }
 
-button {
-}
-
-button.sp-palette-toggle, button.sp-choose {
+button.sp-palette-toggle,
+button.sp-choose, .sp-cancel,
+button.sp-palette-toggle:hover,
+button.sp-choose:hover,
+button.sp-palette-toggle:active,
+button.sp-choose:active,
+button.sp-palette-toggle:focus,
+button.sp-choose:focus {
   @extend .btn;
-  @extend .btn-default;
-  @extend .btn-sm;
+  @extend .btn-link;
+  @extend .btn-xs;
 
   text-shadow: none;
   font-family: $font-primary;
+  background-color: transparent;
+  border: none;
 }
 
-button.sp-palette-toggle:hover, button.sp-choose:hover {
-  @extend .btn;
-  @extend .btn-default:hover;
-  @extend .btn-sm;
+//button.sp-palette-toggle:hover, button.sp-choose:hover {
+//  @extend .btn;
+//  @extend .btn-default:hover;
+//  @extend .btn-xs;
 
-  text-shadow: none;
+//  text-shadow: none;
+//}
 
-//  background-color: darken(map-get($button-colours, bg), 10%);
-//  border-color: darken(map-get($button-colours, bg), 20%);
-}
+
+*/

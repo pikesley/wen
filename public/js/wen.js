@@ -15,12 +15,13 @@ function refresh() {
           colours
         ],
         showPaletteOnly: true,
-        togglePaletteOnly: true,
+        //togglePaletteOnly: true,
         togglePaletteMoreText: 'expert mode',
         togglePaletteLessText: 'easy mode',
         hideAfterPaletteSelect:true,
       //  showInitial: true,
-        preferredFormat: "rgb"
+        preferredFormat: "rgb",
+        containerClassName: 'wen-picker'
       })
     })
   })
