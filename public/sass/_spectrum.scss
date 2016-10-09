@@ -1,40 +1,32 @@
+$spectrum-colours: (
+  bg: $brand-complement
+);
+
 .sp-replacer, .sp-container {
   border-radius: 4px;
-  background-color: $brand-primary;
-  border-color: $brand-primary;
+  background-color: map-get($spectrum-colours, bg);
+  border-color: map-get($spectrum-colours, bg);
 }
 
-.sp-preview-inner {
-  background-color: $brand-primary;
+button {
 }
 
-.sp-preview {
-  border: 0;
+button.sp-palette-toggle, button.sp-choose {
+  @extend .btn;
+  @extend .btn-default;
+  @extend .btn-sm;
+
+  text-shadow: none;
+  font-family: $font-primary;
 }
 
-.member {
-}
+button.sp-palette-toggle:hover, button.sp-choose:hover {
+  @extend .btn;
+  @extend .btn-default:hover;
+  @extend .btn-sm;
 
-.wrapper {
-  position: relative;
-}
+  text-shadow: none;
 
-$left-offset: 75px;
-$right-offset: 80px;
-$top-offset: 70px;
-
-.selecter {
-  position: absolute;
-  top: $top-offset;
-  z-index: 10;
-}
-
-#minutes-hands-selecter, #hours-hands-selecter {
-  position: absolute;
-  left: $left-offset;
-}
-
-#minutes-face-selecter, #hours-face-selecter {
-  position: absolute;
-  right: $right-offset;
+//  background-color: darken(map-get($button-colours, bg), 10%);
+//  border-color: darken(map-get($button-colours, bg), 20%);
 }

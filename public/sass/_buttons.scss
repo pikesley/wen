@@ -1,0 +1,19 @@
+$button-colours: (
+  bg: $brand-primary,
+  fg: $brand-complement
+);
+
+.btn-default, .btn:focus {
+  background-color: map-get($button-colours, bg);
+  border-color: map-get($button-colours, bg);
+  color: map-get($button-colours, fg);
+}
+
+.btn:hover {
+  background-color: darken(map-get($button-colours, bg), 10%);
+  border-color: darken(map-get($button-colours, bg), 20%);
+}
+
+.btn {
+  margin-top: $padding-small-vertical;
+}
