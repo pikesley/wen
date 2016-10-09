@@ -11,7 +11,9 @@ $button-colours: (
 
 .btn:hover {
   background-color: darken(map-get($button-colours, bg), 10%);
-  border-color: darken(map-get($button-colours, bg), 20%);
+  border-color: darken(map-get($button-colours, bg), 10%);
+  color: map-get($button-colours, fg);
+
 }
 
 .btn {
