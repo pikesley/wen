@@ -1,22 +1,21 @@
 <h2><%= @title %></h2>
 <div class='row'>
-  <% Wen::Config.instance.config['trick-modes'].each do |mode| %>
+  <% Wen::Config.instance.config['trick-modes'].each do |trick| %>
     <div class='col-xs-12'>
-      <button class='btn btn-default btn-block' id='display-<%= mode["method"] %>' onclick='submit("<%= mode["method"] %>")'>
-        <% display_name = mode['method'] %>
-        <% display_name = mode['display_name'] if mode['display_name'] %>
+      <button class='btn btn-default btn-block' id='display-<%= trick["method"] %>' onclick='submit("<%= trick["method"] %>")'>
+        <% display_name = trick['method'] %>
+        <% display_name = trick['display_name'] if trick['display_name'] %>
         <%= display_name %>
-        <!--<i class='fa fa-<%= mode["fa"] %>'></i>-->
       </button>
     </div>
   <% end %>
 </div>
 
 <script>
-function submit(mode) {
+function submit(trick) {
   $.ajax({
       url: '/tricks/',
-      data: JSON.stringify({ mode: mode }),
+      data: JSON.stringify({ trick: trick }),
       type: 'POST',
       contentType: 'application/json'
   })
