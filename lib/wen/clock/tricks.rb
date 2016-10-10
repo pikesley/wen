@@ -73,12 +73,15 @@ module Wen
       end
 
       def self.shuffle iterations = 64
+        current_mode = Clock.mode
+        Clock.mode = 'vague'
         iterations.times do
           Clock.time DateTime.strptime(Random.rand(86400).to_s, '%s')
           sleep 0.05 if IS_PI
 
         end
 
+        Clock.mode = current_mode
         Clock.time
       end
 

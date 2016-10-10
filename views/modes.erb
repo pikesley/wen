@@ -1,21 +1,35 @@
 <h2><%= @title %></h2>
-<div class='row'>
+<div class='row' id='modes'>
   <% Wen::Config.instance.config['clock-modes'].each do |mode| %>
     <div class='col-xs-12'>
-      <button class='btn btn-default btn-block' id='clock-<%= mode["method"] %>' onclick='submit("<%= mode %>")'>
-        <%= mode %>
+      <button class='btn btn-default btn-block' id='<%= mode %>-mode' onclick='submit("<%= mode %>")'>
+        <%= mode %><span id='<%= mode %>-mode-active' class='active'></span>
       </button>
     </div>
   <% end %>
 </div>
 
 <script>
+refresh()
+
 function submit(mode) {
   $.ajax({
-      url: '/mode/',
-      data: JSON.stringify({ mode: mode }),
-      type: 'POST',
-      contentType: 'application/json'
+    url: '/mode/',
+    data: JSON.stringify({ mode: mode }),
+    type: 'POST',
+    contentType: 'application/json',
+    complete: refresh
+  })
+}
+
+function refresh() {
+  $('.active').each(function() {
+    $(this).html('')
+  })
+
+  $.getJSON('/mode/', function(data) {
+    target = data['mode'] + '-mode-active'
+    $('#' + target).html(' <i class="fa fa-check"></i>')
   })
 }
 </script>

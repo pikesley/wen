@@ -3,7 +3,7 @@ module Wen
     before :each do
       Clock.mode= 'vague'
     end
-    
+
     it 'takes an arbitrary time' do
       Timecop.freeze DateTime.parse '19:00' do
         expect(Neopixels.instance).to receive(:illuminate).with [
@@ -29,7 +29,7 @@ module Wen
   module Clock
     describe Tricks do
       it 'shuffles' do
-        expect(Neopixels.instance).to receive(:illuminate).exactly(65).times
+        expect(Neopixels.instance).to receive(:illuminate).at_least(65).times
         described_class.shuffle
       end
 

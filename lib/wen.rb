@@ -62,6 +62,12 @@ module Wen
           @title = 'Clock Modes'
           erb :modes, layout: :default
         end
+
+        wants.json do
+          {
+            mode: Clock.mode
+          }.to_json
+        end
       end
     end
 

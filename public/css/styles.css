@@ -9148,7 +9148,7 @@ body {
   color: #ffccaa;
 }
 
-/* line 19, ../sass/_buttons.scss */
+/* line 18, ../sass/_buttons.scss */
 .btn, .wen-picker button,
 .wen-picker button:active,
 .wen-picker button:hover,
@@ -9202,6 +9202,7 @@ body {
 /* line 24, ../sass/_spectrum.scss */
 .wen-picker .sp-thumb-el, .wen-picker .sp-thumb-inner {
   border-radius: 10px;
+  border: 0;
 }
 
 /*.sp-replacer, .sp-container {

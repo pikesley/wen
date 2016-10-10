@@ -25,28 +25,3 @@ function hourEnds(angle) {
     end: angle
   }
 }
-
-function refresh() {
-  $('.picker').each(function() {
-    var id = this.id
-    var s = id.split('-')
-    $.getJSON('/colours/' + s[0] + '/' + s[1], function (data) {
-      $('#' + id).attr('fill', 'rgb(' + (data['colour'].join(', ')) + ')')
-      $('#' + id).spectrum({
-        color: 'rgb(' + (data['colour'].join(', ')) + ')',
-        showPalette: true,
-        palette: [
-          colours
-        ],
-        showPaletteOnly: true,
-        //togglePaletteOnly: true,
-        togglePaletteMoreText: 'expert mode',
-        togglePaletteLessText: 'easy mode',
-        hideAfterPaletteSelect:true,
-      //  showInitial: true,
-        preferredFormat: "rgb",
-        containerClassName: 'wen-picker'
-      })
-    })
-  })
-}
