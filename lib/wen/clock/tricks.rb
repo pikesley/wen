@@ -25,6 +25,8 @@ module Wen
       end
 
       def self.roll_around
+        current_mode = Clock.mode
+        Clock.mode = 'vague'
         now = Clock.time.strftime('%s').to_i
         tomorrow = now + 86400
         while now <= tomorrow
@@ -35,6 +37,7 @@ module Wen
           end
         end
 
+        Clock.mode = current_mode
         Clock.time
       end
 

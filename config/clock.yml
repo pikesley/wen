@@ -22,7 +22,7 @@ neopixels:
         - 0
         - 255
 
-clock_modes:
+clock-modes:
   - range
   - vague
   - strict
@@ -34,7 +34,7 @@ led:
   brightness: 16 # DOES FUCK ALL
   invert:     false
 
-display-modes:
+trick-modes:
   - method: shuffle
     fa: random
   - method: disco
@@ -51,7 +51,9 @@ display-modes:
 pages:
   - name: colours
     fa:   paint-brush
-  - name: display
+  - name: mode
+    fa:   clock-o
+  - name: tricks
     fa:   random
 
 #google-analytics-tag: UA-00000000-0

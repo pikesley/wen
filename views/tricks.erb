@@ -1,6 +1,6 @@
-<h2>display mode</h2>
+<h2><%= @title %></h2>
 <div class='row'>
-  <% Wen::Config.instance.config['display-modes'].each do |mode| %>
+  <% Wen::Config.instance.config['trick-modes'].each do |mode| %>
     <div class='col-xs-12'>
       <button class='btn btn-default btn-block' id='display-<%= mode["method"] %>' onclick='submit("<%= mode["method"] %>")'>
         <% display_name = mode['method'] %>
@@ -17,7 +17,7 @@ function submit(mode) {
   $.ajax({
       url: '/display/',
       data: JSON.stringify({ mode: mode }),
-      type: 'PATCH',
+      type: 'POST',
       contentType: 'application/json'
   })
 }

@@ -38,22 +38,11 @@ module Wen
       end
     end
 
-    get '/display/?' do
-      headers 'Vary' => 'Accept'
-
-      respond_to do |wants|
-        wants.html do
-          @title = 'Display Modes'
-          erb :display, layout: :default
-        end
-      end
-    end
-
     get '/colours/?' do
       respond_to do |wants|
          wants.html do
            @title = 'Colours'
-           erb :'colours/d3', layout: :default
+           erb :'colours', layout: :default
          end
       end
     end
@@ -63,6 +52,28 @@ module Wen
       {
         'colour' => Wen::Clock.fetch_colour(params[:wheel], params[:layer])
       }.to_json
+    end
+
+    get '/mode/?' do
+      headers 'Vary' => 'Accept'
+
+      respond_to do |wants|
+        wants.html do
+          @title = 'Clock Modes'
+          erb :modes, layout: :default
+        end
+      end
+    end
+
+    get '/tricks/?' do
+      headers 'Vary' => 'Accept'
+
+      respond_to do |wants|
+        wants.html do
+          @title = 'Trick Modes'
+          erb :tricks, layout: :default
+        end
+      end
     end
 
     post '/time/?' do
@@ -99,7 +110,7 @@ module Wen
       end
     end
 
-    $redis.set 'clock_mode',
-               Wen::Config.instance.config['clock_modes'].first
+    $redis.set 'clock-mode',
+               Wen::Config.instance.config['clock-modes'].first
   end
 end

@@ -8,6 +8,10 @@
 @import 'nav';
 @import 'spectrum';
 
+html {
+  text-transform: lowercase;
+}
+
 body {
   background: url(/assets/images/retina_wood.png);
   color: $brand-primary;

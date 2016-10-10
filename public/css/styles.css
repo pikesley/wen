@@ -9239,6 +9239,11 @@ button.sp-choose:focus {
 
 */
 /* line 11, ../sass/styles.scss */
+html {
+  text-transform: lowercase;
+}
+
+/* line 15, ../sass/styles.scss */
 body {
   background: url(/assets/images/retina_wood.png);
   color: #246c60;
@@ -9246,62 +9251,62 @@ body {
   text-align: center;
 }
 
-/* line 18, ../sass/styles.scss */
+/* line 22, ../sass/styles.scss */
 .colours {
   margin-bottom: 5px;
 }
 
-/* line 22, ../sass/styles.scss */
+/* line 26, ../sass/styles.scss */
 .layer-label, label {
   font-size: 1.2em;
   font-weight: bold;
 }
 
-/* line 27, ../sass/styles.scss */
+/* line 31, ../sass/styles.scss */
 .layer-label {
   margin-left: 10px;
 }
 
-/* line 31, ../sass/styles.scss */
+/* line 35, ../sass/styles.scss */
 .fa-stack {
   padding-top: 2px;
   width: 1.6em;
   height: 1.7em;
 }
 
-/* line 37, ../sass/styles.scss */
+/* line 41, ../sass/styles.scss */
 h2 {
   font-size: 1.5em;
   margin-top: 5px;
 }
 
-/* line 42, ../sass/styles.scss */
+/* line 46, ../sass/styles.scss */
 .colours {
   height: 40px;
 }
 
-/* line 47, ../sass/styles.scss */
+/* line 51, ../sass/styles.scss */
 #colours .row {
   height: 40px;
 }
 
 /* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */
-/* line 53, ../sass/styles.scss */
+/* line 57, ../sass/styles.scss */
 input[type="radio"] {
   display: none;
 }
 
-/* line 54, ../sass/styles.scss */
+/* line 58, ../sass/styles.scss */
 input[type="radio"] + label .fa-check-square {
   display: none;
 }
 
-/* line 55, ../sass/styles.scss */
+/* line 59, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-check-square {
   display: block;
 }
 
-/* line 56, ../sass/styles.scss */
+/* line 60, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-square-o {
   display: none;
 }

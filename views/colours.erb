@@ -1,4 +1,4 @@
-<h2>colours</h2>
+<h2><%= @title %></h2>
 <div id='clock'></div>
 
 <a href='#' class='btn btn-default' onclick='reset()'>reset to defaults</a>
@@ -146,7 +146,7 @@ $(".picker").on('change.spectrum', function (ev, tc) {
   $.ajax({
     url: '/colours/',
     data: JSON.stringify(y),
-    type: 'PATCH',
+    type: 'POST',
     contentType: 'application/json',
     complete: refresh
   })
@@ -155,7 +155,7 @@ $(".picker").on('change.spectrum', function (ev, tc) {
 function reset() {
   $.ajax({
     url: '/colours/reset',
-    type: 'PATCH',
+    type: 'POST',
     contentType: 'application/json',
     complete: refresh
   })

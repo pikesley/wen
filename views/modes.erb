@@ -1,0 +1,21 @@
+<h2><%= @title %></h2>
+<div class='row'>
+  <% Wen::Config.instance.config['clock-modes'].each do |mode| %>
+    <div class='col-xs-12'>
+      <button class='btn btn-default btn-block' id='clock-<%= mode["method"] %>' onclick='submit("<%= mode %>")'>
+        <%= mode %>
+      </button>
+    </div>
+  <% end %>
+</div>
+
+<script>
+function submit(mode) {
+  $.ajax({
+      url: '/mode/',
+      data: JSON.stringify({ mode: mode }),
+      type: 'POST',
+      contentType: 'application/json'
+  })
+}
+</script>

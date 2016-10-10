@@ -2,7 +2,7 @@ module Wen
   describe Clock do
     context 'show the time' do
       before :each do
-        Clock.mode= 'vague'
+        Clock.mode = 'vague'
       end
 
       it 'shows an on-the-hour time' do

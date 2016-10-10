@@ -30,7 +30,7 @@ module Wen
 
     def self.minutes_pins time
       total_pins = Config.instance.config.neopixels['minutes']['pins']
-      case $redis.get 'clock_mode'
+      case Clock.mode
       when 'range'
         (0..(total_pins / 60.0) * time.minute).map { |i| i }
       when 'vague'
@@ -64,7 +64,11 @@ module Wen
     end
 
     def self.mode= mode
-      $redis.set 'clock_mode', mode
+      $redis.set 'clock-mode', mode
+    end
+
+    def self.mode
+      $redis.get 'clock-mode'
     end
   end
 end
