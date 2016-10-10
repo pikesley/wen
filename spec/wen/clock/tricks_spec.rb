@@ -1,5 +1,9 @@
 module Wen
   describe Clock do
+    before :each do
+      Clock.mode= 'vague'
+    end
+    
     it 'takes an arbitrary time' do
       Timecop.freeze DateTime.parse '19:00' do
         expect(Neopixels.instance).to receive(:illuminate).with [

@@ -1,5 +1,9 @@
 module Wen
   describe Clock do
+    before :each do
+      Clock.mode= 'vague'
+    end
+    
     it 'sets colours' do
       described_class.colours ({
         'hours' => {

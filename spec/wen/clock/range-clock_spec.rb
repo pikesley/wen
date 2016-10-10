@@ -2,11 +2,7 @@ module Wen
   describe Clock do
     context 'show the time as a range' do
       before :each do
-        Config.instance.config.clock_type = :range
-      end
-
-      after :each do
-        Config.instance.config.clock_type = nil
+        Clock.mode= 'range'
       end
 
       it 'shows an on-the-hour time' do

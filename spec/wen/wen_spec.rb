@@ -24,9 +24,10 @@ module Wen
       expect(Wen::Config.instance.config).to be_a OpenStruct
     end
 
-    it 'stores colours' do
-      Wen.stash_colours
+    it 'stores defaults' do
+      Wen.stash_defaults
       expect($redis.get 'hours/hands').to eq "255, 0, 0"
+      expect($redis.get 'clock_mode').to eq 'range'
     end
   end
 end

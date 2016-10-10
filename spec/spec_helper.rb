@@ -22,7 +22,7 @@ RSpec.configure do |config|
 
   config.before :each do
     $redis.flushdb
-    Wen.stash_colours
+    Wen.stash_defaults
   end
 
   include Rack::Test::Methods

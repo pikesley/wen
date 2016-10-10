@@ -1,6 +1,10 @@
 module Wen
   describe Clock do
     context 'show the time' do
+      before :each do
+        Clock.mode= 'vague'
+      end
+
       it 'shows an on-the-hour time' do
         Timecop.freeze DateTime.parse '13:00' do
           expect(Neopixels.instance).to receive(:illuminate).with [

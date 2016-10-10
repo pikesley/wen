@@ -22,6 +22,10 @@ neopixels:
         - 0
         - 255
 
+clock_modes:
+  - range
+  - vague
+
 led:
   pin:        18
   freq:       800000
