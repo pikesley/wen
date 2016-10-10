@@ -1,13 +1,37 @@
+function degreesToRadians(degrees) {
+  return degrees * (Math.PI / 180)
+}
+
+function minutesToDegrees(mins) {
+  return (mins * 6).toFixed(2) / 1
+}
+
+function hoursToDegrees(hours, mins) {
+  var wholeHours = (hours % 12) * 30
+  var fraction
+  if (mins == 0) {
+    fraction = 0
+  } else {
+    fraction = 30 * (mins / 60.0)
+  }
+
+  return (wholeHours + fraction).toFixed(2) / 1
+}
+
+function hourEnds(angle) {
+  var start = 0 - (360 - angle)
+  return {
+    start: start,
+    end: angle
+  }
+}
+
 function refresh() {
   $('.picker').each(function() {
     var id = this.id
     var s = id.split('-')
     $.getJSON('/colours/' + s[0] + '/' + s[1], function (data) {
-      if(s[1] == 'face') {
-        $('#' + id).attr('stroke', 'rgb(' + (data['colour'].join(', ')) + ')')
-      } else {
-        $('#' + id).attr('fill', 'rgb(' + (data['colour'].join(', ')) + ')')
-      }
+      $('#' + id).attr('fill', 'rgb(' + (data['colour'].join(', ')) + ')')
       $('#' + id).spectrum({
         color: 'rgb(' + (data['colour'].join(', ')) + ')',
         showPalette: true,
@@ -76,7 +100,26 @@ function makeBlob(svg, id, cx, cy, radius, blobSize, now) {
   var x = cx
   var y = cy - radius
 
-  var blob = svg.append('a')
+  var arc = d3.svg.arc()
+    //.attr('cx', cx)
+    //.attr('cy', cy)
+    //.attr('fill', '#000')
+  //  strokeWidth: 10,
+    .innerRadius(radius - (blobSize / 2))
+    .outerRadius(radius + (blobSize / 2))
+    .cx(cx)
+
+    .startAngle(3)
+    .endAngle(4)
+
+    svg.append('path')
+    .attr('d', arc)
+    .attr('cx', cx)
+    .attr('cy', cy)
+    .attr('fill', '#f00')
+
+
+/*  var blob = svg.append('a')
     .attr("xlink:href", '#')
     .append("svg:circle").attr({
       cx: x,
@@ -98,5 +141,5 @@ function makeBlob(svg, id, cx, cy, radius, blobSize, now) {
   blob.attr('transform', 'rotate(' + angle + ', ' + cx + ', ' + cy + ')')
       .attr("xlink:href", '#')
       .attr('id', id)
-      .attr('class', 'picker')
+      .attr('class', 'picker')*/
 }

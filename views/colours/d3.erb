@@ -11,6 +11,128 @@ var colours = [
 ]
 
 makeClockPicker()
+function makeClockPicker() {
+  var w = 320             // Width of SVG element
+  var h = 320             // Height of SVG element
+  var cx = w / 2          // Center x
+  var cy = h / 2          // Center y
+  var littleRadius = 72
+  var bigRadius = 128
+  var thickness = 32 // stroke width
+  var cornerRadius = thickness / 2
+  var buffer = 2
+  var lampRadius = 17
+
+  var now = new Date()
+
+  var svg = d3.select("#clock").append("svg")
+                               .attr("width", w).attr("height", h)
+
+  var minsHands = d3.svg.arc()
+                   .outerRadius(bigRadius)
+                   .innerRadius(bigRadius - thickness)
+                   .cornerRadius(cornerRadius)
+                   .startAngle(0)
+                   .endAngle(
+                     degreesToRadians(
+                       minutesToDegrees(
+                         now.getMinutes()
+                       )
+                     )
+                   )
+
+  svg.append('a').attr("xlink:href", '#')
+     .append('path')
+     .attr('d', minsHands)
+     .attr('fill', '#000')
+     .attr('transform', 'translate(' + cx + ', ' + cy +')')
+     .attr('id', 'minutes-hands')
+     .attr('class', 'picker')
+     .attr('opacity', 0.7)
+
+  var minsFace = d3.svg.arc()
+                  .outerRadius(bigRadius)
+                  .innerRadius(bigRadius - thickness)
+                  .cornerRadius(cornerRadius)
+                  .startAngle(
+                    degreesToRadians(
+                      minutesToDegrees(
+                        now.getMinutes()
+                      ) + buffer
+                    )
+                  )
+                  .endAngle(degreesToRadians(360 - buffer))
+
+  svg.append('a').attr("xlink:href", '#')
+     .append('path')
+     .attr('d', minsFace)
+     .attr('fill', '#000')
+     .attr('transform', 'translate(' + cx + ', ' + cy +')')
+     .attr('id', 'minutes-face')
+     .attr('class', 'picker')
+     .attr('opacity', 0.7)
+
+  var hoursHands = d3.svg.arc()
+                   .outerRadius(littleRadius)
+                   .innerRadius(littleRadius - thickness)
+                   .cornerRadius(cornerRadius)
+                   .startAngle(
+                     degreesToRadians(
+                       hoursToDegrees(
+                         now.getHours(),
+                         now.getMinutes()
+                       ) - lampRadius
+                     )
+                   )
+                   .endAngle(
+                     degreesToRadians(
+                       hoursToDegrees(
+                         now.getHours(),
+                         now.getMinutes()
+                       ) + lampRadius
+                     )
+                   )
+
+
+  svg.append('a').attr("xlink:href", '#')
+     .append('path')
+     .attr('d', hoursHands)
+     .attr('fill', '#000')
+     .attr('transform', 'translate(' + cx + ', ' + cy +')')
+     .attr('id', 'hours-hands')
+     .attr('class', 'picker')
+     .attr('opacity', 0.7)
+
+    var he = hourEnds(
+      hoursToDegrees(
+        now.getHours(),
+        now.getMinutes()
+      )
+    )
+    var hoursFace = d3.svg.arc()
+                    .outerRadius(littleRadius)
+                    .innerRadius(littleRadius - thickness)
+                    .cornerRadius(cornerRadius)
+                    .startAngle(
+                      degreesToRadians(
+                        he['start'] + (buffer * 2) + lampRadius
+                      )
+                    )
+                    .endAngle(
+                      degreesToRadians(
+                        he['end'] - ((buffer * 2) + lampRadius)
+                      )
+                    )
+
+    svg.append('a').attr("xlink:href", '#')
+      .append('path')
+      .attr('d', hoursFace)
+      .attr('fill', '#000')
+      .attr('transform', 'translate(' + cx + ', ' + cy +')')
+      .attr('id', 'hours-face')
+      .attr('class', 'picker')
+      .attr('opacity', 0.7)
+}
 
 refresh()
 
