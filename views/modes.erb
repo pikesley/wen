@@ -3,7 +3,7 @@
   <% Wen::Config.instance.config['clock-modes'].each do |mode| %>
     <div class='col-xs-12'>
       <button class='btn btn-default btn-block' id='<%= mode %>-mode' onclick='submit("<%= mode %>")'>
-        <%= mode %><span id='<%= mode %>-mode-active' class='active'></span>
+        <%= mode %><span id='<%= mode %>-mode-active' class='activeness'></span>
       </button>
     </div>
   <% end %>
@@ -23,7 +23,7 @@ function submit(mode) {
 }
 
 function refresh() {
-  $('.active').each(function() {
+  $('.activeness').each(function() {
     $(this).html('')
   })
 
