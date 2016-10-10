@@ -65,6 +65,7 @@ module Wen
 
     def self.mode= mode
       $redis.set 'clock-mode', mode
+      Clock.time
     end
 
     def self.mode
