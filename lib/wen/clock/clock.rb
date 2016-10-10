@@ -35,6 +35,8 @@ module Wen
         (0..(total_pins / 60.0) * time.minute).map { |i| i }
       when 'vague'
         Clock.bracketise ((total_pins / 60.0) * time.minute).to_i, total_pins
+      else
+        [(total_pins / 60.0) * time.minute]
       end
     end
 

@@ -25,6 +25,7 @@ neopixels:
 clock_modes:
   - range
   - vague
+  - strict
 
 led:
   pin:        18
