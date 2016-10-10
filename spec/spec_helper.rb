@@ -8,6 +8,7 @@ require 'timecop'
 
 ENV['TZ'] = 'UTC'
 ENV['environment'] = 'test'
+JSON_HEADERS = { 'HTTP_ACCEPT' => 'application/json' }
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

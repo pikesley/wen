@@ -58,56 +58,30 @@ module Wen
       end
     end
 
-    get '/colours/expert' do
-      headers 'Vary' => 'Accept'
-
-      respond_to do |wants|
-        wants.html do
-          @title = 'Colours » Expert Mode'
-          erb :'colours/picker', layout: :default
-        end
-      end
-    end
-
-    get '/colours/easy' do
-      headers 'Vary' => 'Accept'
-
-      respond_to do |wants|
-        wants.html do
-          @title = 'Colours » Easy Mode'
-          erb :'colours/easy', layout: :default
-        end
-      end
-    end
-
-    get '/colours/spectrum' do
-      headers 'Vary' => 'Accept'
-
-      respond_to do |wants|
-        wants.html do
-          @title = 'Colours » Spectrum mode'
-          erb :'colours/spectrum', layout: :default
-        end
-      end
-    end
-
     get '/colours/:wheel/:layer' do
       headers 'Vary' => 'Accept'
-
       {
         'colour' => Wen::Clock.fetch_colour(params[:wheel], params[:layer])
       }.to_json
     end
 
-    patch '/display/?' do
-      ClockWorker.perform_async 'display', JSON.parse(request.body.read)
+    post '/time/?' do
+      ClockWorker.perform_async 'time'
     end
 
-    patch '/colours/reset/?' do
+    post '/mode/?' do
+      ClockWorker.perform_async 'mode', JSON.parse(request.body.read)
+    end
+
+    post '/tricks/?' do
+      ClockWorker.perform_async 'tricks', JSON.parse(request.body.read)
+    end
+
+    post '/colours/reset/?' do
       ClockWorker.perform_async 'reset'
     end
 
-    patch '/colours/?' do
+    post '/colours/?' do
       ClockWorker.perform_async 'colours', JSON.parse(request.body.read)
     end
 

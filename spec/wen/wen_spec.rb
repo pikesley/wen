@@ -1,6 +1,4 @@
 module Wen
-  JSON_HEADERS = { 'HTTP_ACCEPT' => 'application/json' }
-
   describe App do
     it 'has a display page' do
       get '/colours/'
@@ -8,14 +6,14 @@ module Wen
       expect(last_response.body).to match /colours/
     end
 
-    it 'sets the time' do
-      patch '/display', { mode: 'time' }.to_json, JSON_HEADERS
-      expect(ClockWorker).to have_enqueued_job 'display', {'mode' => 'time'}
+    it 'requests the time' do
+      post '/time', nil, JSON_HEADERS
+      expect(ClockWorker).to have_enqueued_job 'time'
     end
 
     it 'shuffles' do
-      patch '/display', { mode: 'shuffle' }.to_json, JSON_HEADERS
-      expect(ClockWorker).to have_enqueued_job 'display', {'mode' => 'shuffle'}
+      post '/tricks', { trick: 'shuffle' }.to_json, JSON_HEADERS
+      expect(ClockWorker).to have_enqueued_job 'tricks', {'trick' => 'shuffle'}
       expect(Clock::Tricks).to receive(:shuffle)
       ClockWorker.drain
     end

@@ -1,10 +1,8 @@
 module Wen
-  JSON_HEADERS = { 'HTTP_ACCEPT' => 'application/json' }
-
   describe App do
     context 'set colours' do
       it 'sets the time' do
-        patch '/colours', { hours: {hands: [0, 255, 0] } }.to_json, JSON_HEADERS
+        post '/colours', { hours: {hands: [0, 255, 0] } }.to_json, JSON_HEADERS
         expect(ClockWorker).to have_enqueued_job 'colours', {
           'hours' => {
             'hands' => [
