@@ -104,7 +104,7 @@ It also  _Accepts_ a PATCH with some JSON like
 
 #### Wait, there's a queue in here too?
 
-How else would you do this? The [ClockWorker](https://github.com/pikesley/wen/blob/master/lib/wen/clock_worker.rb) pulls the jobs off the queue and throws them at the [Clock](https://github.com/pikesley/wen/blob/master/lib/wen/clock/clock.rb) class, which passes them to the [Neopixels](https://github.com/pikesley/wen/blob/master/lib/wen/clock/neopixels.rb) singleton, which talks to PixelPi, which actually makes the lights come on. I'm actually genuinely amazed at how much bullshit a 4 quid, 65x23mm computer can handle.
+How else would you do this? The [ClockWorker](https://github.com/pikesley/wen/blob/master/lib/wen/clock_worker.rb) pulls the jobs off the queue and throws them at the [Clock](https://github.com/pikesley/wen/blob/master/lib/wen/clock/clock.rb) class, which passes them to the [Neopixels](https://github.com/pikesley/wen/blob/master/lib/wen/clock/neopixels.rb) singleton, which talks to PixelPi, which then makes the lights come on. I'm actually genuinely amazed at how much bullshit a 4 quid, 65x23mm computer can handle.
 
 ## What else?
 
