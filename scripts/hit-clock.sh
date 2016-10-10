@@ -4,7 +4,7 @@ while [ 1 ]
 do
   echo `date` >> /tmp/hit-clock
 
-  curl --request PUT \
+  curl --request POST \
        --header "Content-Type:application/json" \
        --header "Accept: application/json" \
        http://localhost/time
