@@ -100,7 +100,17 @@ It also  _Accepts_ a PATCH with some JSON like
       mode: 'shuffle'
     }
 
-(which is what happens behind the buttons). All of these _PATCH_ requests then get pushed onto the [Sidekiq](http://sidekiq.org/) queue for asynchro...
+(which is what happens behind the buttons).
+
+If it receives
+
+    {
+      mode: 'time'
+    }
+
+then it asks the clock to show the current time, and this is how the clock actually works: [this systemd config](https://github.com/pikesley/wen/blob/master/scripts/timekeeper.service) calls [this cURL script](https://github.com/pikesley/wen/blob/master/scripts/hit-clock.sh) which hits this URL every 10 seconds.
+
+All of these _PATCH_ requests then get pushed onto the [Sidekiq](http://sidekiq.org/) queue for asynchro...
 
 #### Wait, there's a queue in here too?
 
