@@ -19,7 +19,10 @@ module Wen
         Clock.time
 
       when 'reset'
-        Wen.stash_defaults
+        case params['reset']
+        when 'colours'
+          Wen.stash_colours
+        end
         Clock.time
       end
     end

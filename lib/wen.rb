@@ -89,7 +89,7 @@ module Wen
     end
 
     post '/colours/reset/?' do
-      ClockWorker.perform_async 'reset'
+      ClockWorker.perform_async 'reset', {'reset' => 'colours'}
     end
 
     post '/colours/?' do
@@ -103,14 +103,17 @@ module Wen
   end
 
   def self.stash_defaults
+    self.stash_colours
+
+    $redis.set 'clock-mode', Wen::Config.instance.config['clock-modes'].first
+  end
+
+  def self.stash_colours
     Wen::Config.instance.config.neopixels.each_pair do |wheel, data|
       data['colours'].keys.each do |layer|
         key = "#{wheel}/#{layer}"
         $redis.set key, data['colours'][layer].join(', ')
       end
     end
-
-    $redis.set 'clock-mode',
-               Wen::Config.instance.config['clock-modes'].first
   end
 end
