@@ -70,7 +70,7 @@ module Wen
         Clock.time
       end
 
-      def self.rotator iterations = 64
+      def self.rotator iterations = 32
         require "pry" ; binding.pry
         white = Config.instance.config.colours['white']
         black = Config.instance.config.colours['black']
