@@ -52,6 +52,8 @@ trick-modes:
   - method: boot_up
     display_name: start-up
     fa: hourglass-start
+  - method: rotator
+    fa: wheel
 
 pages:
   - name: colours

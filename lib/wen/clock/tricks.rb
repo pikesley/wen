@@ -70,6 +70,23 @@ module Wen
         Clock.time
       end
 
+      def self.rotator iterations = 64
+        white = Config.colours['white']
+        black = Config.colours['black']
+        length = (Config.instance.config.neopixels['minutes']['pins'] + Config.instance.config.neopixels['hours']['pins']) / 2
+        iterations.times do
+          [
+            [white, black],
+            [black, white]
+          ].each do |pair|
+            Neopixels.instance.illuminate pair * length
+            sleep 0.2
+          end
+        end
+
+        Clock.time
+      end
+
       def self.random_color
         [
           Random.rand(255),
