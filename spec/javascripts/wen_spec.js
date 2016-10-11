@@ -44,24 +44,4 @@ describe('Wen', function() {
       expect(hoursToDegrees(18, 30)).toEqual(195)
     })
   })
-
-  describe('hourEnds', function() {
-    it('gets the ends for 90', function() {
-      expect(hourEnds(90)).toEqual(
-        {
-          start: -270,
-          end: 90
-        }
-      )
-    })
-
-    it('gets the ends for 180', function() {
-      expect(hourEnds(180)).toEqual(
-        {
-          start: -180,
-          end: 180
-        }
-      )
-    })
-  })
 })

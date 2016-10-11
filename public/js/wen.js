@@ -18,10 +18,48 @@ function hoursToDegrees(hours, mins) {
   return (wholeHours + fraction).toFixed(2) / 1
 }
 
-function hourEnds(angle) {
-  var start = 0 - (360 - angle)
+function minuteEnds(minutes, buffer) {
+  var shim = 1 / 1000
+
+  if (minutes > 55) {
+    minutes = 55
+  }
+
+  he = ((minutes + shim) * 6).toFixed(2) / 1
+  if (he > 327) {
+    he = he - 2
+  }
+
+  fs = (minutes * 6) + buffer
+  if (fs > 343) {
+    fs = (fs - shim) - 2
+  }
+
   return {
-    start: start,
-    end: angle
+    'hands': {
+      'start': 0,
+      'end': he
+    },
+    'face': {
+      'start': fs,
+      'end': 360 - buffer
+    }
+  }
+}
+
+function hourEnds(hours, minutes, buffer) {
+  var shim = 1 / 1000
+  var hs = hoursToDegrees(hours, minutes)
+  var he = hs + shim
+
+  return {
+    'hands': {
+      'start': hs,
+      'end': he
+    },
+    'face': {
+      'start': hs + 28,
+      'end': hs + 332
+    }
   }
 }
