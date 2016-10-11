@@ -40,6 +40,8 @@ led:
 trick-modes:
   - method: shuffle
     fa: random
+  - method: chaos
+    fa: random
   - method: disco
     fa: sun-o
   - method: roll_around
