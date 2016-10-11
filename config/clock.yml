@@ -44,6 +44,8 @@ trick-modes:
     fa: random
   - method: disco
     fa: sun-o
+  - method: rotator
+    fa: wheel
   - method: roll_around
     display_name: roll
     fa: circle-o
@@ -52,8 +54,6 @@ trick-modes:
   - method: boot_up
     display_name: start-up
     fa: hourglass-start
-  - method: rotator
-    fa: wheel
 
 pages:
   - name: colours

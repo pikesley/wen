@@ -71,8 +71,9 @@ module Wen
       end
 
       def self.rotator iterations = 64
-        white = Config.colours['white']
-        black = Config.colours['black']
+        require "pry" ; binding.pry
+        white = Config.instance.config.colours['white']
+        black = Config.instance.config.colours['black']
         length = (Config.instance.config.neopixels['minutes']['pins'] + Config.instance.config.neopixels['hours']['pins']) / 2
         iterations.times do
           [
