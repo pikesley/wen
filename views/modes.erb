@@ -2,8 +2,8 @@
 <div class='row' id='modes'>
   <% Wen::Config.instance.config['clock-modes'].each do |mode| %>
     <div class='col-xs-12'>
-      <button class='btn btn-default btn-block' id='<%= mode %>-mode' onclick='submit("<%= mode %>")'>
-        <%= mode %><span id='<%= mode %>-mode-active' class='activeness'></span>
+      <button class='btn btn-block btn-default' id='<%= mode %>-mode' onclick='submit("<%= mode %>")'>
+        <%= mode %>
       </button>
     </div>
   <% end %>
@@ -23,13 +23,16 @@ function submit(mode) {
 }
 
 function refresh() {
-  $('.activeness').each(function() {
-    $(this).html('')
+  $('#modes button').each(function() {
+    $(this).removeClass('btn-active').addClass('btn-default')
   })
 
   $.getJSON('/mode/', function(data) {
-    target = data['mode'] + '-mode-active'
-    $('#' + target).html(' <i class="fa fa-check"></i>')
+    $('#' + data['mode'] + '-mode').removeClass('btn-default').addClass('btn-active')
+  })
+
+  $("#modes button").mouseup(function() {
+    $(this).blur()
   })
 }
 </script>
