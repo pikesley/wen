@@ -45,11 +45,11 @@ trick-modes:
   - method: roll_around
     display_name: roll
   - method: blink
-  - method: wipe
-  - method: theatre_chase
-    display_name: theater chase
-  - method: rainbow_chase
-    display_name: rainbow chase
+#  - method: wipe
+#  - method: theatre_chase
+#    display_name: theater chase
+#  - method: rainbow_chase
+#    display_name: rainbow chase
   - method: boot_up
     display_name: start-up
 
