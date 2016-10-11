@@ -111,7 +111,7 @@ module Wen
   def self.stash_defaults
     self.stash_colours
 
-    $redis.set 'clock-mode', Wen::Config.instance.config['clock-modes'].first
+    $redis.set 'clock-mode', Wen::Config.instance.config['clock-modes'].first['name']
   end
 
   def self.stash_colours

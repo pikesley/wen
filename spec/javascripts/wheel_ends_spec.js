@@ -146,7 +146,7 @@ describe('Wen', function() {
           },
           "face":{
             "start":163,
-            "end":46
+            "end":467
           }
         }
       )

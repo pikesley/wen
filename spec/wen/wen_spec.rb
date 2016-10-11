@@ -9,6 +9,8 @@ module Wen
     it 'requests the time' do
       post '/time', nil, JSON_HEADERS
       expect(ClockWorker).to have_enqueued_job 'time'
+      expect(Clock).to receive(:time)
+      ClockWorker.drain
     end
 
     it 'shuffles' do
