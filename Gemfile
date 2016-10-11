@@ -14,6 +14,8 @@ gem 'sidekiq'
 gem 'foreman'
 gem 'pixel_pi'
 gem 'httparty'
+gem 'travis'
+gem 'git'
 
 group :test do
   gem 'rspec'

@@ -23,6 +23,7 @@ GEM
     addressable (2.4.0)
     autoprefixer-rails (6.5.0.1)
       execjs
+    backports (3.6.4)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -61,11 +62,25 @@ GEM
     diff-lcs (1.2.5)
     docile (1.1.5)
     erubis (2.7.0)
+    ethon (0.9.1)
+      ffi (>= 1.3.0)
     execjs (2.7.0)
+    faraday (0.9.2)
+      multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.9.1)
+      faraday (>= 0.7.4, < 0.10)
     ffi (1.9.14)
     foreman (0.82.0)
       thor (~> 0.19.1)
     formatador (0.2.5)
+    gh (0.13.2)
+      addressable
+      backports
+      faraday (~> 0.8)
+      multi_json (~> 1.0)
+      net-http-persistent (>= 2.7)
+      net-http-pipeline
+    git (1.2.7)
     guard (2.14.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -88,6 +103,7 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    highline (1.7.2)
     httparty (0.14.0)
       multi_xml (>= 0.5.2)
     i18n (0.7.0)
@@ -98,6 +114,8 @@ GEM
       rake
     jasmine-core (2.5.2)
     json (1.8.3)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -112,7 +130,10 @@ GEM
     minitest (5.9.1)
     multi_json (1.12.1)
     multi_xml (0.5.5)
+    multipart-post (2.0.0)
     nenv (0.3.0)
+    net-http-persistent (2.9.4)
+    net-http-pipeline (1.0.1)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
@@ -127,6 +148,9 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     puma (3.6.0)
+    pusher-client (0.6.0)
+      json
+      websocket (~> 1.0)
     rack (1.6.4)
     rack-conneg (0.1.5)
       rack (>= 1.0)
@@ -191,8 +215,20 @@ GEM
     tilt (2.0.5)
     timecop (0.8.1)
     tins (1.12.0)
+    travis (1.8.2)
+      backports
+      faraday (~> 0.9)
+      faraday_middleware (~> 0.9, >= 0.9.1)
+      gh (~> 0.13)
+      highline (~> 1.6)
+      launchy (~> 2.1)
+      pusher-client (~> 0.4)
+      typhoeus (~> 0.6, >= 0.6.8)
+    typhoeus (0.8.0)
+      ethon (>= 0.8.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    websocket (1.2.1)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -207,6 +243,7 @@ DEPENDENCIES
   coveralls
   erubis
   foreman
+  git
   guard
   guard-jasmine
   guard-rspec
@@ -223,6 +260,7 @@ DEPENDENCIES
   sidekiq
   sinatra (~> 1.4)
   timecop
+  travis
 
 RUBY VERSION
    ruby 2.1.5p273
