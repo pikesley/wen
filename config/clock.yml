@@ -23,9 +23,12 @@ neopixels:
         - 255
 
 clock-modes:
-  - range
-  - vague
-  - strict
+  - name: range
+    what: The minutes accumulate throughout the hour
+  - name: vague
+    what: The lights on either side of the current pin are also illuminated
+  - name: strict
+    what: Only the pin closest to the current minute is illuminated
 
 led:
   pin:        18

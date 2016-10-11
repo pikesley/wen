@@ -2,8 +2,11 @@
 <div class='row' id='modes'>
   <% Wen::Config.instance.config['clock-modes'].each do |mode| %>
     <div class='col-xs-12'>
-      <button class='btn btn-block btn-default' id='<%= mode %>-mode' onclick='submit("<%= mode %>")'>
-        <%= mode %>
+      <button class='btn btn-block btn-default'
+              id='<%= mode["name"] %>-mode'
+              title='<%= mode["what"] %>'
+              onclick='submit("<%= mode["name"] %>")'>
+        <%= mode["name"] %>
       </button>
     </div>
   <% end %>
