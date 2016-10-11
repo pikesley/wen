@@ -38,6 +38,8 @@ module Wen
       end
     end
 
+### colours
+
     get '/colours/?' do
       respond_to do |wants|
          wants.html do
@@ -53,6 +55,16 @@ module Wen
         'colour' => Wen::Clock.fetch_colour(params[:wheel], params[:layer])
       }.to_json
     end
+
+    post '/colours/reset/?' do
+      ClockWorker.perform_async 'reset', {'reset' => 'colours'}
+    end
+
+    post '/colours/?' do
+      ClockWorker.perform_async 'colours', JSON.parse(request.body.read)
+    end
+
+### modes
 
     get '/mode/?' do
       headers 'Vary' => 'Accept'
@@ -71,6 +83,12 @@ module Wen
       end
     end
 
+    post '/mode/?' do
+      ClockWorker.perform_async 'mode', JSON.parse(request.body.read)
+    end
+
+### tricks
+
     get '/tricks/?' do
       headers 'Vary' => 'Accept'
 
@@ -82,24 +100,14 @@ module Wen
       end
     end
 
-    post '/time/?' do
-      ClockWorker.perform_async 'time'
-    end
-
-    post '/mode/?' do
-      ClockWorker.perform_async 'mode', JSON.parse(request.body.read)
-    end
-
     post '/tricks/?' do
       ClockWorker.perform_async 'tricks', JSON.parse(request.body.read)
     end
 
-    post '/colours/reset/?' do
-      ClockWorker.perform_async 'reset', {'reset' => 'colours'}
-    end
+### time
 
-    post '/colours/?' do
-      ClockWorker.perform_async 'colours', JSON.parse(request.body.read)
+    post '/time/?' do
+      ClockWorker.perform_async 'time'
     end
 
     # start the server if ruby file executed directly
