@@ -58,14 +58,13 @@ module Wen
       def self.chaos iterations = 64
         iterations.times do
           a = []
-          Config.instance.config.neopixels['minutes']['pins'] +
-          Config.instance.config.neopixels['hours']['pins'].times do
+          (Config.instance.config.neopixels['minutes']['pins'] + Config.instance.config.neopixels['hours']['pins']).times do
             a.push self.random_color
           end
 
           Neopixels.instance.illuminate a
 
-          sleep 0.2
+          sleep 0.1
         end
 
         Clock.time
