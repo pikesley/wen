@@ -14,12 +14,12 @@ body {
 
   margin-top: $padding-large-vertical;
   background: $brand-primary;
-  color: white;
+  color: $brand-complement;
   height: $footer-height;
 
   padding: $padding-large-vertical $padding-large-horizontal;
 
   a {
-    color: white;
+    color: $brand-complement;
   }
 }

@@ -18,31 +18,67 @@ function hoursToDegrees(hours, mins) {
   return (wholeHours + fraction).toFixed(2) / 1
 }
 
-function minuteEnds(minutes, buffer) {
+function minuteEnds(minutes, buffer, mode) {
+  if(mode === undefined) {
+    mode = 'range'
+  }
+
   var shim = 1 / 1000
 
-  if (minutes > 55) {
-    minutes = 55
+  hs = 0
+  if (mode == 'strict') {
+    hs = (minutes * 6).toFixed(2) / 1
+  }
+
+  if (mode == 'vague') {
+    hs = (minutes * 6) - 6
+  }
+
+  if (mode == 'range') {
+    if (minutes > 55) {
+      minutes = 55
+    }
   }
 
   he = ((minutes + shim) * 6).toFixed(2) / 1
-  if (he > 327) {
-    he = he - 2
+  if (mode == 'range') {
+    if (he > 327) {
+      he = he - 2
+    }
+  }
+
+  if (mode == 'vague') {
+    he = (minutes * 6) + 6
   }
 
   fs = (minutes * 6) + buffer
-  if (fs > 343) {
-    fs = (fs - shim) - 2
+  if (mode == 'range') {
+    if (fs > 343) {
+      fs = (fs - shim) - 2
+    }
+  }
+
+  if (mode == 'vague') {
+    fs = he + buffer
+  }
+
+  fe = 360 - buffer
+  if (mode == 'strict') {
+    fe = 360 + (minutes * 6) - buffer
+  }
+
+  if (mode == 'vague') {
+    fe = hs - buffer + 360
   }
 
   return {
     'hands': {
-      'start': 0,
+      'start': hs,
       'end': he
     },
     'face': {
       'start': fs,
-      'end': 360 - buffer
+      'end': fe
     }
   }
 }

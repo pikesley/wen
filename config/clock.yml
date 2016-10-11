@@ -39,21 +39,19 @@ led:
 
 trick-modes:
   - method: shuffle
-    fa: random
   - method: chaos
-    fa: random
   - method: disco
-    fa: sun-o
   - method: rotator
-    fa: wheel
   - method: roll_around
     display_name: roll
-    fa: circle-o
   - method: blink
-    fa: eye
+  - method: wipe
+  - method: theatre_chase
+    display_name: theater chase
+  - method: rainbow_chase
+    display_name: rainbow chase
   - method: boot_up
     display_name: start-up
-    fa: hourglass-start
 
 pages:
   - name: colours

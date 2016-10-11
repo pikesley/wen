@@ -104,6 +104,102 @@ describe('Wen', function() {
         }
       )
     })
+
+    describe('different modes', function() {
+      describe('strict mode', function() {
+        it('gets the ends for 0 minutes', function() {
+          expect(minuteEnds(0, 16, 'strict')).toEqual(
+            {
+              "hands":{
+                "start":0,
+                "end":0.01
+              },
+              "face":{
+                "start":16,
+                "end":344
+              }
+            }
+          )
+        })
+
+        it('gets the ends for 1 minutes', function() {
+          expect(minuteEnds(1, 16, 'strict')).toEqual(
+            {
+              "hands":{
+                "start":6,
+                "end":6.01
+              },
+              "face":{
+                "start":22,
+                "end":350
+              }
+            }
+          )
+        })
+
+        it('gets the ends for 54 minutes', function() {
+          expect(minuteEnds(54, 16, 'strict')).toEqual(
+            {
+              "hands":{
+                "start":324,
+                "end":324.01
+              },
+              "face":{
+                "start":340,
+                "end":668
+              }
+            }
+          )
+        })
+
+        it('gets the ends for 55 minutes', function() {
+          expect(minuteEnds(55, 16, 'strict')).toEqual(
+            {
+              "hands":{
+                "start":330,
+                "end":330.01
+              },
+              "face":{
+                "start":346,
+                "end":674
+              }
+            }
+          )
+        })
+      })
+
+      describe('vague mode', function() {
+        it('gets the ends for 0 minutes', function() {
+          expect(minuteEnds(0, 16, 'vague')).toEqual(
+            {
+              "hands":{
+                "start":-6,
+                "end":6
+              },
+              "face":{
+                "start":22,
+                "end":338
+              }
+            }
+          )
+        })
+
+        it('gets the ends for 30 minutes', function() {
+          expect(minuteEnds(30, 16, 'vague')).toEqual(
+            {
+              "hands":{
+                "start":174,
+                "end":186
+              },
+              "face":{
+                "start":202,
+                "end":518
+              }
+            }
+          )
+        })
+      })
+    })
   })
 
   describe('hourEnds', function() {

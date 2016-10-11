@@ -11,7 +11,9 @@ var colours = [
 ]
 
 makeClockPicker()
+
 function makeClockPicker() {
+  var mode = '<%= Wen::Clock.mode %>'
   var w = 320             // Width of SVG element
   var h = 320             // Height of SVG element
   var cx = w / 2          // Center x
@@ -26,7 +28,7 @@ function makeClockPicker() {
   var minutes = now.getMinutes()
   var hours = now.getHours()
 
-  var me = minuteEnds(minutes, buffer)
+  var me = minuteEnds(minutes, buffer, mode)
   var he = hourEnds(hours, minutes, buffer)
   var svg = d3.select("#clock").append("svg")
                                .attr("width", w).attr("height", h)

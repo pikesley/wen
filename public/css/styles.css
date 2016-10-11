@@ -9146,13 +9146,13 @@ body {
   width: 100%;
   margin-top: 10px;
   background: #246c60;
-  color: white;
+  color: #ffccaa;
   height: 40px;
   padding: 10px 16px;
 }
 /* line 22, ../sass/_footer.scss */
 .footer a {
-  color: white;
+  color: #ffccaa;
 }
 
 /* line 1, ../sass/_github-corner.scss */
@@ -9221,6 +9221,7 @@ body {
 .wen-picker button:hover,
 .wen-picker .sp-cancel {
   margin-top: 5px;
+  font-family: "Josefin Slab";
 }
 
 /* line 8, ../sass/_nav.scss */

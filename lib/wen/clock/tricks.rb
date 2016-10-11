@@ -3,23 +3,23 @@ require 'timecop'
 module Wen
   module Clock
     module Tricks
+      TOTAL_LENGTH = Config.instance.config.neopixels['minutes']['pins'] +
+                     Config.instance.config.neopixels['hours']['pins']
+      ITERATIONS = 64
+
       def self.one_colour colour
         Neopixels.instance.illuminate(
-          Array.new(
-            Config.instance.config.neopixels['minutes']['pins'] +
-            Config.instance.config.neopixels['hours']['pins'],
-            colour
-          )
+          Array.new(TOTAL_LENGTH, colour)
         )
       end
 
       def self.blink duration = 1
         self.clear
-        sleep duration / 10.0
+        sleep duration / 10.0 if IS_PI
         self.one_colour Clock.fetch_colour 'minutes', 'hands'
         sleep duration if IS_PI
         self.clear
-        sleep duration / 10.0
+        sleep duration / 10.0 if IS_PI
 
         Clock.time
       end
@@ -44,8 +44,7 @@ module Wen
       def self.disco iterations = 64
         iterations.times do
           Neopixels.instance.illuminate Array.new(
-            Config.instance.config.neopixels['minutes']['pins'] +
-            Config.instance.config.neopixels['hours']['pins'],
+            TOTAL_LENGTH,
             self.random_color
           )
 
@@ -58,12 +57,10 @@ module Wen
       def self.chaos iterations = 64
         iterations.times do
           a = []
-          (Config.instance.config.neopixels['minutes']['pins'] + Config.instance.config.neopixels['hours']['pins']).times do
+          (TOTAL_LENGTH).times do
             a.push self.random_color
           end
-
           Neopixels.instance.illuminate a
-
           sleep 0.1
         end
 
@@ -71,10 +68,9 @@ module Wen
       end
 
       def self.rotator iterations = 32
-        require "pry" ; binding.pry
         white = Config.instance.config.colours['white']
         black = Config.instance.config.colours['black']
-        length = (Config.instance.config.neopixels['minutes']['pins'] + Config.instance.config.neopixels['hours']['pins']) / 2
+        length = (TOTAL_LENGTH) / 2
         iterations.times do
           [
             [white, black],
@@ -97,11 +93,7 @@ module Wen
       end
 
       def self.clear
-        c = Array.new(
-          Config.instance.config.neopixels['minutes']['pins'] +
-          Config.instance.config.neopixels['hours']['pins'],
-          [0,0,0]
-        )
+        c = Array.new(TOTAL_LENGTH, [0,0,0])
         Neopixels.instance.illuminate c
       end
 
@@ -137,6 +129,60 @@ module Wen
         sleep 1 if IS_PI
 
         Clock.time
+      end
+
+# from pixel_pi demo mode
+
+      def self.wipe
+        a = []
+        colour = Clock.fetch_colour 'minutes', 'hands'
+        TOTAL_LENGTH.times do |i|
+          a[i] = colour
+          Neopixels.instance.illuminate a
+          sleep 75 / 1000.0
+        end
+      end
+
+      def self.theatre_chase spacing = 3
+        a = []
+        colour = Clock.fetch_colour 'minutes', 'hands'
+        ITERATIONS.times do
+          spacing.times do |sp|
+            self.clear
+            (sp..TOTAL_LENGTH).step(spacing) do |ii|
+              a[ii] = color
+            end
+            Neopixels.instance.illuminate a
+            sleep 75 / 1000.0
+          end
+        end
+      end
+
+      def self.wheel pos
+        pos = pos & 0xff
+        if pos < 85
+          return [pos * 3, 255 - pos * 3, 0]
+        elsif pos < 170
+          pos -= 85
+          return [255 - pos * 3, 0, pos * 3]
+        else
+          pos -= 170
+          return [0, pos * 3, 255 - pos * 3]
+        end
+      end
+
+      def self.rainbow_chase spacing = 3
+        256.times do |jj|
+          spacing.times do |sp|
+            a = []
+            (sp..TOTAL_LENGTH).step(spacing) do |ii|
+              a[ii] = wheel((ii + jj) % 255)
+            end
+            Neopixels.instance.illuminate a
+
+            sleep 75 / 1000.0
+          end
+        end
       end
     end
   end
