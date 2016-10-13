@@ -3,7 +3,7 @@ $spectrum-colours: (
 );
 
 .wen-picker {
-  border-radius: 4px;
+  border-radius: 15px;
   background-color: map-get($spectrum-colours, bg);
   border-color: map-get($spectrum-colours, bg);
 
@@ -27,9 +27,9 @@ $spectrum-colours: (
   }
 }
 
-.picker {
+/*.picker {
   stroke-linejoin: round;
-}
+}*/
 
 .sp-palette-container {
   max-width: 90px;

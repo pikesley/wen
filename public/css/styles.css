@@ -9253,7 +9253,7 @@ body {
 
 /* line 5, ../sass/_spectrum.scss */
 .wen-picker {
-  border-radius: 4px;
+  border-radius: 15px;
   background-color: #246c60;
   border-color: #246c60;
 }
@@ -9273,11 +9273,9 @@ body {
   border: 0;
 }
 
-/* line 30, ../sass/_spectrum.scss */
-.picker {
+/*.picker {
   stroke-linejoin: round;
-}
-
+}*/
 /* line 34, ../sass/_spectrum.scss */
 .sp-palette-container {
   max-width: 90px;
