@@ -59,24 +59,32 @@ render = function(data) {
   clockGroup.selectAll('faces').remove()
 
   mh = {
-    'radius': bigRadius,
-    'scale': scaleMins
+    radius: bigRadius,
+    startAngle: function(number) {
+      return scaleMins(number) - handspan
+    },
+    endAngle: function(number) {
+      return scaleMins(number) + handspan
+    }
   }
-  minuteHand = makeWheel(mh)
 
   hh = {
-    'radius': littleRadius,
-    'scale': scaleHours
+    radius: littleRadius,
+    startAngle: function(number) {
+      return scaleHours(number) - handspan
+    },
+    endAngle: function(number) {
+      return scaleHours(number) + handspan
+    }
   }
-  hourHand = makeWheel(hh)
 
   mf = {
-    'radius': bigRadius,
-    'scale': scaleMins,
+    radius: bigRadius,
+    scale: scaleMins,
     'offset': (pi * 2),
     'margin': margin
   }
-  minuteFace = makeWheel(mf)
+//  minuteFace = makeWheel(mf)
 
   hf = {
     'radius': littleRadius,
@@ -84,18 +92,18 @@ render = function(data) {
     'offset': (pi * 2),
     'margin': margin
   }
-  hourFace = makeWheel(hf)
+//  hourFace = makeWheel(hf)
 
   hands = {
     'name': 'hands',
     'wheels': {
-      'minutes': minuteHand,
-      'hours': hourHand
+      'minutes': makeWheel(mh),
+      'hours': makeWheel(hh)
     }
   }
   makeGroup(hands)
 
-  faces = {
+/*  faces = {
     'name': 'faces',
     'wheels': {
       'minutes': minuteFace,
@@ -103,7 +111,7 @@ render = function(data) {
     },
     'id': 'face'
   }
-  makeGroup(faces)
+  makeGroup(faces)*/
 }
 
 //setInterval(function() {
@@ -136,13 +144,20 @@ function makeWheel(params) {
            .outerRadius(params['radius'])
            .innerRadius(params['radius'] - thickness)
            .cornerRadius(cornerRadius)
+          // .startAngle(function(d) {
+          //   return (params['offset'] || 0) + params['scale'](d.numeric) - (handspan + (params['margin'] || 0))
+          // })
            .startAngle(function(d) {
-             return (params['offset'] || 0) + params['scale'](d.numeric) - (handspan + (params['margin'] || 0))
+             return params.startAngle(d.numeric)
            })
            .endAngle(function(d) {
-             return params['scale'](d.numeric) + (handspan + (params['margin'] || 0))
+             return params.endAngle(d.numeric)
            })
+        //   .endAngle(function(d) {
+        //     return params['scale'](d.numeric) + (handspan + (params['margin'] || 0))
+        //   })
 }
+
 function makeGroup(params) {
   clockGroup.selectAll(params['name'])
             .data(data)
