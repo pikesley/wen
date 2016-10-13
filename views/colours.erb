@@ -52,93 +52,58 @@ vis = d3.select('#clock')
         .attr('width', width)
         .attr('height', height)
 
-clockGroup = vis.append('svg:g')
-                .attr('transform', 'translate(' + cx + ', ' + cy + ')')
+clockGroup = vis.append('svg:g').attr('transform', 'translate(' + cx + ', ' + cy + ')')
 
 render = function(data) {
   clockGroup.selectAll('hands').remove()
   clockGroup.selectAll('faces').remove()
 
-  minuteHand = d3.svg.arc()
-                  .outerRadius(bigRadius)
-                  .innerRadius(bigRadius - thickness)
-                  .cornerRadius(cornerRadius)
-                  .startAngle(function(d) {
-                    return scaleMins(d.numeric) - handspan
-                  })
-                  .endAngle(function(d) {
-                    return scaleMins(d.numeric) + handspan
-                  })
+  mh = {
+    'radius': bigRadius,
+    'scale': scaleMins
+  }
+  minuteHand = makeWheel(mh)
 
-  minuteFace = d3.svg.arc()
-                   .outerRadius(bigRadius)
-                   .innerRadius(bigRadius - thickness)
-                   .cornerRadius(cornerRadius)
-                   .startAngle(function(d) {
-                     return (pi * 2) + scaleMins(d.numeric) - (handspan + margin)
-                   })
-                   .endAngle(function(d) {
-                     return scaleMins(d.numeric) + (handspan + margin)
-                   })
+  hh = {
+    'radius': littleRadius,
+    'scale': scaleHours
+  }
+  hourHand = makeWheel(hh)
 
-  hourHand = d3.svg.arc()
-               .outerRadius(littleRadius)
-               .innerRadius(littleRadius - thickness)
-               .cornerRadius(cornerRadius)
-               .startAngle(function(d) {
-                 return scaleHours(d.numeric % 12) - handspan
-               })
-               .endAngle(function(d) {
-                 return scaleHours(d.numeric % 12) + handspan
-               })
+  mf = {
+    'radius': bigRadius,
+    'scale': scaleMins,
+    'offset': (pi * 2),
+    'margin': margin
+  }
+  minuteFace = makeWheel(mf)
 
+  hf = {
+    'radius': littleRadius,
+    'scale': scaleHours,
+    'offset': (pi * 2),
+    'margin': margin
+  }
+  hourFace = makeWheel(hf)
 
-  hourFace = d3.svg.arc()
-               .outerRadius(littleRadius)
-               .innerRadius(littleRadius - thickness)
-               .cornerRadius(cornerRadius)
-               .startAngle(function(d) {
-                 return (pi * 2) + scaleHours(d.numeric) - (handspan + margin)
-               })
-               .endAngle(function(d) {
-                 return scaleHours(d.numeric) + (handspan + margin)
-               })
+  hands = {
+    'name': 'hands',
+    'wheels': {
+      'minutes': minuteHand,
+      'hours': hourHand
+    }
+  }
+  makeGroup(hands)
 
- clockGroup.selectAll('hands')
-           .data(data)
-           .enter()
-           .append('a').attr("xlink:href", '#')
-           .append('svg:path')
-           .attr('d', function(d) {
-             if (d.unit === 'minutes') {
-               return minuteHand(d)
-             } else if (d.unit === 'hours') {
-               return hourHand(d)
-             }
-           })
-           .attr('class', 'picker')
-           .attr('id', function(d) {
-             return d.unit + '-hands'
-           })
-           .attr('opacity', 0.7)
-
-  clockGroup.selectAll('faces')
-            .data(data)
-            .enter()
-            .append('a').attr("xlink:href", '#')
-            .append('svg:path')
-            .attr('d', function(d) {
-              if (d.unit === 'minutes') {
-                return minuteFace(d)
-              } else if (d.unit === 'hours') {
-                return hourFace(d)
-              }
-            })
-            .attr('class', 'picker')
-            .attr('id', function(d) {
-              return d.unit + '-face'
-            })
-            .attr('opacity', 0.7)
+  faces = {
+    'name': 'faces',
+    'wheels': {
+      'minutes': minuteFace,
+      'hours': hourFace
+    },
+    'id': 'face'
+  }
+  makeGroup(faces)
 }
 
 //setInterval(function() {
@@ -165,6 +130,38 @@ $(".picker").on('change.spectrum', function (ev, tc) {
     complete: refresh
   })
 })
+
+function makeWheel(params) {
+  return d3.svg.arc()
+           .outerRadius(params['radius'])
+           .innerRadius(params['radius'] - thickness)
+           .cornerRadius(cornerRadius)
+           .startAngle(function(d) {
+             return (params['offset'] || 0) + params['scale'](d.numeric) - (handspan + (params['margin'] || 0))
+           })
+           .endAngle(function(d) {
+             return params['scale'](d.numeric) + (handspan + (params['margin'] || 0))
+           })
+}
+function makeGroup(params) {
+  clockGroup.selectAll(params['name'])
+            .data(data)
+            .enter()
+            .append('a').attr("xlink:href", '#')
+            .append('svg:path')
+            .attr('d', function(d) {
+              if (d.unit === 'minutes') {
+                return params['wheels']['minutes'](d)
+              } else if (d.unit === 'hours') {
+                return params['wheels']['hours'](d)
+              }
+            })
+            .attr('class', 'picker')
+            .attr('id', function(d) {
+              return d.unit + '-' + (params['id'] || params['name'])
+            })
+            .attr('opacity', 0.7)
+}
 
 function refresh() {
   $('.picker').each(function() {
