@@ -80,19 +80,26 @@ render = function(data) {
 
   mf = {
     radius: bigRadius,
-    scale: scaleMins,
-    'offset': (pi * 2),
-    'margin': margin
+    startAngle: function(number) {
+      return (pi * 2) + scaleMins(number) - (handspan + margin)
+    },
+    endAngle: function(number) {
+      return scaleMins(number) + (handspan + margin)
+    }
   }
-//  minuteFace = makeWheel(mf)
 
   hf = {
     'radius': littleRadius,
     'scale': scaleHours,
     'offset': (pi * 2),
-    'margin': margin
+    'margin': margin,
+    startAngle: function(number) {
+      return (pi * 2) + scaleHours(number) - (handspan + margin)
+    },
+    endAngle: function(number) {
+      return scaleHours(number) + (handspan + margin)
+    }
   }
-//  hourFace = makeWheel(hf)
 
   hands = {
     'name': 'hands',
@@ -103,15 +110,15 @@ render = function(data) {
   }
   makeGroup(hands)
 
-/*  faces = {
+  faces = {
     'name': 'faces',
     'wheels': {
-      'minutes': minuteFace,
-      'hours': hourFace
+      'minutes': makeWheel(mf),
+      'hours': makeWheel(hf)
     },
     'id': 'face'
   }
-  makeGroup(faces)*/
+  makeGroup(faces)
 }
 
 //setInterval(function() {
@@ -144,18 +151,12 @@ function makeWheel(params) {
            .outerRadius(params['radius'])
            .innerRadius(params['radius'] - thickness)
            .cornerRadius(cornerRadius)
-          // .startAngle(function(d) {
-          //   return (params['offset'] || 0) + params['scale'](d.numeric) - (handspan + (params['margin'] || 0))
-          // })
-           .startAngle(function(d) {
+             .startAngle(function(d) {
              return params.startAngle(d.numeric)
            })
            .endAngle(function(d) {
              return params.endAngle(d.numeric)
            })
-        //   .endAngle(function(d) {
-        //     return params['scale'](d.numeric) + (handspan + (params['margin'] || 0))
-        //   })
 }
 
 function makeGroup(params) {
