@@ -34,10 +34,9 @@ pi = Math.PI
 
 width = 320
 height = 320
-cx = width / 2          // Center x
-cy = height / 2          // Center y
+cx = width / 2
+cy = height / 2
 margin = 8 / 100
-sizestep = width / 7
 handSpan = (pi) / 12
 stroke = 2
 
@@ -60,14 +59,69 @@ render = function(data) {
   clockGroup.selectAll('hand').remove()
   clockGroup.selectAll('faces').remove()
 
-  mh = {
-    radius: bigRadius,
-    startAngle: function(number) {
-      return scaleMins(number) - handSpan
-    },
-    endAngle: function(number) {
-      return scaleMins(number) + handSpan
-    }
+  mh = {}; mh.radius = bigRadius
+  mf = {}; mf.radius = bigRadius
+
+  switch(mode) {
+    case 'strict':
+      $.extend(mh, {
+        startAngle: function(number) {
+          return scaleMins(number) - handSpan
+        },
+        endAngle: function(number) {
+          return scaleMins(number) + handSpan
+        }
+      })
+
+      $.extend(mf, {
+        startAngle: function(number) {
+          return (pi * 2) + scaleMins(number) - (handSpan + margin)
+        },
+        endAngle: function(number) {
+          return scaleMins(number) + (handSpan + margin)
+        }
+      })
+      break
+
+    case 'vague':
+      $.extend(mh, {
+        startAngle: function(number) {
+          return scaleMins(number) - handSpan * 2
+        },
+        endAngle: function(number) {
+          return scaleMins(number) + handSpan * 2
+        }
+      })
+
+      $.extend(mf, {
+        startAngle: function(number) {
+          return (pi * 2) + scaleMins(number) - (handSpan * 2 + margin)
+        },
+        endAngle: function(number) {
+          return scaleMins(number) + (handSpan * 2 + margin)
+        }
+      })
+      break
+
+    case 'range':
+      $.extend(mh, {
+        startAngle: function(number) {
+          return 0
+        },
+        endAngle: function(number) {
+          return scaleMins(limit(number)) + handSpan
+        }
+      })
+
+      $.extend(mf, {
+        startAngle: function(number) {
+          return scaleMins(limit(number)) + handSpan + margin
+        },
+        endAngle: function(number) {
+          return (pi * 2) - margin
+        }
+      })
+      break
   }
 
   hh = {
@@ -77,16 +131,6 @@ render = function(data) {
     },
     endAngle: function(number) {
       return scaleHours(number) + handSpan
-    }
-  }
-
-  mf = {
-    radius: bigRadius,
-    startAngle: function(number) {
-      return (pi * 2) + scaleMins(number) - (handSpan + margin)
-    },
-    endAngle: function(number) {
-      return scaleMins(number) + (handSpan + margin)
     }
   }
 
@@ -176,6 +220,13 @@ function makeGroup(params) {
               return d.unit + '-' + params['name']
             })
             .attr('opacity', 0.7)
+}
+
+function limit(number) {
+  if (number > 53) {
+    return 53
+  }
+  return number
 }
 
 function refresh() {
