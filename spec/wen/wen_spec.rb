@@ -26,7 +26,7 @@ module Wen
 
     it 'stores defaults' do
       Wen.stash_defaults
-      expect($redis.get 'hours/hands').to eq "255, 0, 0"
+      expect($redis.get 'hours/hand').to eq "255, 0, 0"
       expect($redis.get 'clock-mode').to eq 'range'
     end
   end

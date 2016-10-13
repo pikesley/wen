@@ -75,7 +75,7 @@ It also  _Accepts_ a **POST** with some JSON like
 
     {
       hours: {
-        hands:
+        hand:
           [0, 255, 0]
         }
       }    

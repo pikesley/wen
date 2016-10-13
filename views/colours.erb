@@ -4,11 +4,13 @@
 <a href='#' class='btn btn-default' onclick='reset()'>reset to defaults</a>
 
 <script>
-var colours = [
+colours = [
   <% Wen::Config.instance.config.colours.each do |name, rgb| %>
     'rgb(<%= rgb.join(', ') %>);',
   <% end %>
 ]
+
+mode = '<%= Wen::Clock.mode %>'
 
 fields = function() {
   currentTime = new Date()
@@ -55,7 +57,7 @@ vis = d3.select('#clock')
 clockGroup = vis.append('svg:g').attr('transform', 'translate(' + cx + ', ' + cy + ')')
 
 render = function(data) {
-  clockGroup.selectAll('hands').remove()
+  clockGroup.selectAll('hand').remove()
   clockGroup.selectAll('faces').remove()
 
   mh = {
@@ -99,22 +101,21 @@ render = function(data) {
     }
   }
 
-  hands = {
-    'name': 'hands',
+  hand = {
+    'name': 'hand',
     'wheels': {
       'minutes': makeWheel(mh),
       'hours': makeWheel(hh)
     }
   }
-  makeGroup(hands)
+  makeGroup(hand)
 
   faces = {
-    'name': 'faces',
+    'name': 'face',
     'wheels': {
       'minutes': makeWheel(mf),
       'hours': makeWheel(hf)
-    },
-    'id': 'face'
+    }
   }
   makeGroup(faces)
 }
@@ -172,7 +173,7 @@ function makeGroup(params) {
             })
             .attr('class', 'picker')
             .attr('id', function(d) {
-              return d.unit + '-' + (params['id'] || params['name'])
+              return d.unit + '-' + params['name']
             })
             .attr('opacity', 0.7)
 }

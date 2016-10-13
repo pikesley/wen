@@ -2,7 +2,7 @@ neopixels:
   minutes:
     pins: 24
     colours:
-      hands:
+      hand:
         - 255
         - 0
         - 0
@@ -13,7 +13,7 @@ neopixels:
   hours:
     pins: 12
     colours:
-      hands:
+      hand:
         - 255
         - 0
         - 0

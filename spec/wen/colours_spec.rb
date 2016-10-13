@@ -2,17 +2,17 @@ module Wen
   describe App do
     context 'set colours' do
       it 'sets the time' do
-        post '/colours', { hours: {hands: [0, 255, 0] } }.to_json, JSON_HEADERS
+        post '/colours', { hours: {hand: [0, 255, 0] } }.to_json, JSON_HEADERS
         expect(ClockWorker).to have_enqueued_job 'colours', {
           'hours' => {
-            'hands' => [
+            'hand' => [
               0, 255, 0
             ]
           }
         }
         expect(Clock).to receive(:colours).with ({
           'hours' => {
-            'hands' => [
+            'hand' => [
               0, 255, 0
             ]
           }
@@ -23,7 +23,7 @@ module Wen
 
     context 'get colours' do
       it 'returns a colour' do
-        get '/colours/hours/hands', nil, JSON_HEADERS
+        get '/colours/hours/hand', nil, JSON_HEADERS
         expect(last_response).to be_ok
         expect(JSON.parse last_response.body).to eq (
           {
