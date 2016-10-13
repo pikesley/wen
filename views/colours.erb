@@ -38,7 +38,7 @@ cx = width / 2
 cy = height / 2
 margin = 8 / 100
 handSpan = (pi) / 12
-stroke = 2
+stroke = 1.5
 
 bigRadius = 150
 littleRadius = 90
@@ -223,6 +223,7 @@ function makeGroup(params) {
               return d.unit + '-' + params['name']
             })
             .attr('opacity', 0.7)
+            .attr('stroke-width', stroke)
 }
 
 function limit(number) {
