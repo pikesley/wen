@@ -21,7 +21,7 @@ function submit(mode) {
     data: JSON.stringify({ mode: mode }),
     type: 'POST',
     contentType: 'application/json',
-    complete: refresh
+    complete: $(location).attr('href', '/colours')
   })
 }
 

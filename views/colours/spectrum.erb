@@ -2,7 +2,7 @@
 <div id='circles'>
   <% ['minutes', 'hours'].each do |wheel| %>
     <div class='row'>
-      <% ['hands', 'face'].each do |layer| %>
+      <% ['hand', 'face'].each do |layer| %>
         <div class='wrapper'>
           <div id='<%= wheel %>-<%= layer %>-circle' class='col-xs-6 member'></div>
           <div class='selecter' id='<%= wheel %>-<%= layer %>-selecter'>
@@ -48,36 +48,36 @@ $('#circles .member').each(function(){
     hoursWheel.attr('class', 'hours-face-disc')
   }
 
-  if(this.id.includes('minutes-hands')) {
+  if(this.id.includes('minutes-hand')) {
     var blob = draw.nested()
     blob.circle(20)
     blob.fill('#fff')
     blob.opacity(0.6)
     blob.move(22, 22)
-    blob.attr('class', 'minutes-hands-blob')
+    blob.attr('class', 'minutes-hand-blob')
 
     var bloc = draw.nested()
     bloc.circle(20)
     bloc.fill('#fff')
     bloc.opacity(0.6)
     bloc.move(42, 8)
-    bloc.attr('class', 'minutes-hands-blob')
+    bloc.attr('class', 'minutes-hand-blob')
 
     var blod = draw.nested()
     blod.circle(20)
     blod.fill('#fff')
     blod.opacity(0.6)
     blod.move(8, 42)
-    blod.attr('class', 'minutes-hands-blob')
+    blod.attr('class', 'minutes-hand-blob')
   }
 
-  if(this.id.includes('hours-hands')) {
+  if(this.id.includes('hours-hand')) {
     var blob = draw.nested()
     blob.circle(20)
     blob.fill('#fff')
     blob.opacity(0.6)
     blob.move(110, 40)
-    blob.attr('class', 'hours-hands-blob')
+    blob.attr('class', 'hours-hand-blob')
   }
 })
 

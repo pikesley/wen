@@ -7,19 +7,19 @@ module Wen
     it 'sets colours' do
       described_class.colours ({
         'hours' => {
-          'hands' => [
+          'hand' => [
             0, 255, 0
           ]
         }
       })
 
-      expect($redis.get 'hours/hands').to eq '0, 255, 0'
+      expect($redis.get 'hours/hand').to eq '0, 255, 0'
     end
 
     specify 'colours remain' do
       described_class.colours ({
         'minutes' => {
-          'hands' => [
+          'hand' => [
             250, 129, 0
           ],
           'face' => [
@@ -27,7 +27,7 @@ module Wen
           ]
         },
         'hours' => {
-          'hands' => [
+          'hand' => [
             255, 0, 255
           ],
           'face' => [

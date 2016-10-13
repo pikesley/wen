@@ -4,78 +4,177 @@
 <a href='#' class='btn btn-default' onclick='reset()'>reset to defaults</a>
 
 <script>
-var colours = [
+colours = [
   <% Wen::Config.instance.config.colours.each do |name, rgb| %>
     'rgb(<%= rgb.join(', ') %>);',
   <% end %>
 ]
 
-makeClockPicker()
+mode = '<%= Wen::Clock.mode %>'
 
-function makeClockPicker() {
-  var mode = '<%= Wen::Clock.mode %>'
-  var w = 320             // Width of SVG element
-  var h = 320             // Height of SVG element
-  var cx = w / 2          // Center x
-  var cy = h / 2          // Center y
-  var littleRadius = 72
-  var bigRadius = 128
-  var thickness = 32 // stroke width
-  var buffer = thickness / 2
+fields = function() {
+  currentTime = new Date()
+  second = currentTime.getSeconds()
+  minute = currentTime.getMinutes() + second / 60
+  hour = currentTime.getHours() + minute / 60
 
-  var now = new Date()
-
-  var minutes = now.getMinutes()
-  var hours = now.getHours()
-
-  var me = minuteEnds(minutes, buffer, mode)
-  var he = hourEnds(hours, minutes, buffer)
-  var svg = d3.select("#clock").append("svg")
-                               .attr("width", w).attr("height", h)
-
-  //svg.append('svg:line').attr('x1', cx).attr('x2', cx).attr('y1', 0).attr('y2', h).attr('stroke-width', 1).attr('stroke', '#000')
-  //svg.append('svg:line').attr('x1', 0).attr('x2', w).attr('y1', cy).attr('y2', cy).attr('stroke-width', 1).attr('stroke', '#000')
-
-  addArc(svg, bigRadius, thickness,
-        me['hands']['start'],
-        me['hands']['end'],
-        cx, cy, 'minutes-hands')
-
-  addArc(svg, bigRadius, thickness,
-        me['face']['start'],
-        me['face']['end'],
-        cx, cy, 'minutes-face')
-
-  addArc(svg, littleRadius, thickness,
-        he['hands']['start'],
-        he['hands']['end'],
-        cx, cy, 'hours-hands')
-
-  addArc(svg, littleRadius, thickness,
-        he['face']['start'],
-        he['face']['end'],
-        cx, cy, 'hours-face')
+  return data = [
+    {
+      'unit': 'minutes',
+      'numeric': minute
+    },
+    {
+      'unit': 'hours',
+      'numeric': hour
+    }
+  ]
 }
 
-function addArc(svg, radius, thickness, start, end, cx, cy, id) {
-  var myArc = d3.svg.arc()
-                   .outerRadius(radius)
-                   .innerRadius(radius)
-                   .startAngle(degreesToRadians(start))
-                   .endAngle(degreesToRadians(end))
+pi = Math.PI
 
-  svg.append('a').attr("xlink:href", '#')
-     .append('path')
-     .attr('d', myArc)
-     .attr('fill', '#000')
-     .attr('transform', 'translate(' + cx + ', ' + cy +')')
-     .attr('id', id)
-     .attr('class', 'picker')
-     .attr('opacity', 0.7)
-     .attr('stroke-width', thickness)
+width = 320
+height = 320
+cx = width / 2
+cy = height / 2
+margin = 8 / 100
+handSpan = (pi) / 12
+stroke = 1.5
+
+bigRadius = 150
+littleRadius = 90
+thickness = 40
+cornerRadius = 16
+
+scaleMins = d3.scale.linear().domain([0, 59 + 59/60]).range([0, 2 * pi])
+scaleHours = d3.scale.linear().domain([0, 11 + 59/60]).range([0, 2 * pi])
+
+vis = d3.select('#clock')
+        .append('svg:svg')
+        .attr('width', width)
+        .attr('height', height)
+
+clockGroup = vis.append('svg:g').attr('transform', 'translate(' + cx + ', ' + cy + ')')
+
+render = function(data) {
+  clockGroup.selectAll('.hand').remove()
+  clockGroup.selectAll('.face').remove()
+
+  mh = {}; mh.radius = bigRadius
+  mf = {}; mf.radius = bigRadius
+
+  switch(mode) {
+    case 'strict':
+      $.extend(mh, {
+        startAngle: function(number) {
+          return scaleMins(number) - handSpan
+        },
+        endAngle: function(number) {
+          return scaleMins(number) + handSpan
+        }
+      })
+
+      $.extend(mf, {
+        startAngle: function(number) {
+          return (pi * 2) + scaleMins(number) - (handSpan + margin)
+        },
+        endAngle: function(number) {
+          return scaleMins(number) + (handSpan + margin)
+        }
+      })
+      break
+
+    case 'vague':
+      $.extend(mh, {
+        startAngle: function(number) {
+          return scaleMins(number) - handSpan * 2
+        },
+        endAngle: function(number) {
+          return scaleMins(number) + handSpan * 2
+        }
+      })
+
+      $.extend(mf, {
+        startAngle: function(number) {
+          return (pi * 2) + scaleMins(number) - (handSpan * 2 + margin)
+        },
+        endAngle: function(number) {
+          return scaleMins(number) + (handSpan * 2 + margin)
+        }
+      })
+      break
+
+    case 'range':
+      $.extend(mh, {
+        startAngle: function(number) {
+          return 0
+        },
+        endAngle: function(number) {
+          return scaleMins(limit(number)) + handSpan
+        }
+      })
+
+      $.extend(mf, {
+        startAngle: function(number) {
+          return scaleMins(limit(number)) + handSpan + margin
+        },
+        endAngle: function(number) {
+          return (pi * 2) - margin
+        }
+      })
+      break
+  }
+
+  hh = {
+    radius: littleRadius,
+    startAngle: function(number) {
+      return scaleHours(number) - handSpan
+    },
+    endAngle: function(number) {
+      return scaleHours(number) + handSpan
+    }
+  }
+
+  hf = {
+    radius: littleRadius,
+    scale: scaleHours,
+    startAngle: function(number) {
+      return (pi * 2) + scaleHours(number) - (handSpan + margin)
+    },
+    endAngle: function(number) {
+      return scaleHours(number) + (handSpan + margin)
+    }
+  }
+
+  hand = {
+    'name': 'hand',
+    'wheels': {
+      'minutes': makeWheel(mh),
+      'hours': makeWheel(hh)
+    }
+  }
+  makeGroup(hand)
+
+  faces = {
+    'name': 'face',
+    'wheels': {
+      'minutes': makeWheel(mf),
+      'hours': makeWheel(hf)
+    }
+  }
+  makeGroup(faces)
+
+  refresh()
 }
 
-refresh()
+/*
+setInterval(function() {
+  data = fields()
+  return render(data)
+}, 1000)
+*/
+
+data = fields()
+render(data)
 
 $(".picker").on('change.spectrum', function (ev, tc) {
   d = ev.target.id.split('-')
@@ -93,12 +192,54 @@ $(".picker").on('change.spectrum', function (ev, tc) {
   })
 })
 
+function makeWheel(params) {
+  return d3.svg.arc()
+           .outerRadius(params['radius'])
+           .innerRadius(params['radius'] - thickness)
+           .cornerRadius(cornerRadius)
+             .startAngle(function(d) {
+             return params.startAngle(d.numeric)
+           })
+           .endAngle(function(d) {
+             return params.endAngle(d.numeric)
+           })
+}
+
+function makeGroup(params) {
+  clockGroup.selectAll('.' + params['name'])
+            .data(data)
+            .enter()
+            .append('a').attr("xlink:href", '#')
+            .append('svg:path')
+            .attr('d', function(d) {
+              if (d.unit === 'minutes') {
+                return params['wheels']['minutes'](d)
+              } else if (d.unit === 'hours') {
+                return params['wheels']['hours'](d)
+              }
+            })
+            .attr('class', 'picker')
+            .attr('id', function(d) {
+              return d.unit + '-' + params['name']
+            })
+            .attr('opacity', 0.7)
+            .attr('stroke-width', stroke)
+}
+
+function limit(number) {
+  if (number > 53) {
+    return 53
+  }
+  return number
+}
+
 function refresh() {
   $('.picker').each(function() {
     var id = this.id
     var s = id.split('-')
     $.getJSON('/colours/' + s[0] + '/' + s[1], function (data) {
-      $('#' + id).attr('stroke', 'rgb(' + (data['colour'].join(', ')) + ')')
+      $('#' + id).attr('fill', tinycolor('rgb(' + (data['colour'].join(', '))).toString())
+      $('#' + id).attr('stroke', tinycolor('rgb(' + (data['colour'].join(', '))).darken(30).toString())
       $('#' + id).spectrum({
         color: 'rgb(' + (data['colour'].join(', ')) + ')',
         showPalette: true,

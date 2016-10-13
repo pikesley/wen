@@ -9,13 +9,13 @@ module Wen
       config = Config.instance.config
       l = []
 
-      hands = fetch_colour type, 'hands'
+      hand = fetch_colour type, 'hand'
       face = fetch_colour type, 'face'
 
       config.neopixels[type]['pins'].times do
         l.push face
       end
-      Clock.send(:"#{type}_pins", time).map { |i| l[i] = hands }
+      Clock.send(:"#{type}_pins", time).map { |i| l[i] = hand }
 
       l
     end

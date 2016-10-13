@@ -16,7 +16,7 @@ module Wen
       def self.blink duration = 1
         self.clear
         sleep duration / 10.0 if IS_PI
-        self.one_colour Clock.fetch_colour 'minutes', 'hands'
+        self.one_colour Clock.fetch_colour 'minutes', 'hand'
         sleep duration if IS_PI
         self.clear
         sleep duration / 10.0 if IS_PI
@@ -135,7 +135,7 @@ module Wen
 
       def self.wipe
         a = []
-        colour = Clock.fetch_colour 'minutes', 'hands'
+        colour = Clock.fetch_colour 'minutes', 'hand'
         TOTAL_LENGTH.times do |i|
           a[i] = colour
           Neopixels.instance.illuminate a
@@ -145,12 +145,12 @@ module Wen
 
       def self.theatre_chase spacing = 3
         a = []
-        colour = Clock.fetch_colour 'minutes', 'hands'
+        colour = Clock.fetch_colour 'minutes', 'hand'
         ITERATIONS.times do
           spacing.times do |sp|
             self.clear
             (sp..TOTAL_LENGTH).step(spacing) do |ii|
-              a[ii] = color
+              a[ii] = colour
             end
             Neopixels.instance.illuminate a
             sleep 75 / 1000.0
