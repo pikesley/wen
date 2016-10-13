@@ -34,15 +34,15 @@ width = 320
 height = 320
 cx = width / 2          // Center x
 cy = height / 2          // Center y
-margin = 16
+margin = 8 / 100
 sizestep = width / 7
 handspan = (pi) / 12
-stroke = margin / 16
+stroke = 2
 
 bigRadius = 150
 littleRadius = 90
 thickness = 40
-cornerRadius = 10
+cornerRadius = 15
 
 scaleMins = d3.scale.linear().domain([0, 59 + 59/60]).range([0, 2 * pi])
 scaleHours = d3.scale.linear().domain([0, 11 + 59/60]).range([0, 2 * pi])
@@ -75,10 +75,10 @@ render = function(data) {
                    .innerRadius(bigRadius - thickness)
                    .cornerRadius(cornerRadius)
                    .startAngle(function(d) {
-                     return (pi * 2) + scaleMins(d.numeric) - (handspan + margin / 100)
+                     return (pi * 2) + scaleMins(d.numeric) - (handspan + margin)
                    })
                    .endAngle(function(d) {
-                     return scaleMins(d.numeric) + (handspan + margin / 100)
+                     return scaleMins(d.numeric) + (handspan + margin)
                    })
 
   hourHand = d3.svg.arc()
@@ -98,10 +98,10 @@ render = function(data) {
                .innerRadius(littleRadius - thickness)
                .cornerRadius(cornerRadius)
                .startAngle(function(d) {
-                 return (pi * 2) + scaleHours(d.numeric) - (handspan + margin / 100)
+                 return (pi * 2) + scaleHours(d.numeric) - (handspan + margin)
                })
                .endAngle(function(d) {
-                 return scaleHours(d.numeric) + (handspan + margin / 100)
+                 return scaleHours(d.numeric) + (handspan + margin)
                })
 
  clockGroup.selectAll('hands')
@@ -171,7 +171,10 @@ function refresh() {
     var id = this.id
     var s = id.split('-')
     $.getJSON('/colours/' + s[0] + '/' + s[1], function (data) {
-      $('#' + id).attr('fill', 'rgb(' + (data['colour'].join(', ')) + ')')
+  //    $('#' + id).attr('fill', 'rgb(' + (data['colour'].join(', ')) + ')')
+//  debugger
+      $('#' + id).attr('fill', tinycolor('rgb(' + (data['colour'].join(', '))).toString())
+      $('#' + id).attr('stroke', tinycolor('rgb(' + (data['colour'].join(', '))).darken(50).toString())
       $('#' + id).spectrum({
         color: 'rgb(' + (data['colour'].join(', ')) + ')',
         showPalette: true,

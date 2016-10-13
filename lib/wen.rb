@@ -46,6 +46,10 @@ module Wen
            @title = 'Colours'
            erb :'colours', layout: :default
          end
+
+          wants.json do
+            Config.instance.config.colours.to_json
+          end
       end
     end
 
