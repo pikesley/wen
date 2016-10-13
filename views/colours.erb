@@ -56,8 +56,8 @@ vis = d3.select('#clock')
 clockGroup = vis.append('svg:g').attr('transform', 'translate(' + cx + ', ' + cy + ')')
 
 render = function(data) {
-  clockGroup.selectAll('hand').remove()
-  clockGroup.selectAll('faces').remove()
+  clockGroup.selectAll('.hand').remove()
+  clockGroup.selectAll('.face').remove()
 
   mh = {}; mh.radius = bigRadius
   mf = {}; mf.radius = bigRadius
@@ -162,16 +162,19 @@ render = function(data) {
     }
   }
   makeGroup(faces)
+
+  refresh()
 }
 
-//setInterval(function() {
-//  var data
+/*
+setInterval(function() {
   data = fields()
-//  return
-  render(data)
-//}, 10)
+  return render(data)
+}, 1000)
+*/
 
-refresh()
+data = fields()
+render(data)
 
 $(".picker").on('change.spectrum', function (ev, tc) {
   d = ev.target.id.split('-')
@@ -203,7 +206,7 @@ function makeWheel(params) {
 }
 
 function makeGroup(params) {
-  clockGroup.selectAll(params['name'])
+  clockGroup.selectAll('.' + params['name'])
             .data(data)
             .enter()
             .append('a').attr("xlink:href", '#')
@@ -235,7 +238,7 @@ function refresh() {
     var s = id.split('-')
     $.getJSON('/colours/' + s[0] + '/' + s[1], function (data) {
       $('#' + id).attr('fill', tinycolor('rgb(' + (data['colour'].join(', '))).toString())
-      $('#' + id).attr('stroke', tinycolor('rgb(' + (data['colour'].join(', '))).darken(50).toString())
+      $('#' + id).attr('stroke', tinycolor('rgb(' + (data['colour'].join(', '))).darken(30).toString())
       $('#' + id).spectrum({
         color: 'rgb(' + (data['colour'].join(', ')) + ')',
         showPalette: true,
