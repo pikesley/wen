@@ -89,10 +89,8 @@ render = function(data) {
   }
 
   hf = {
-    'radius': littleRadius,
-    'scale': scaleHours,
-    'offset': (pi * 2),
-    'margin': margin,
+    radius: littleRadius,
+    scale: scaleHours,
     startAngle: function(number) {
       return (pi * 2) + scaleHours(number) - (handspan + margin)
     },
