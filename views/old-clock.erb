@@ -1,0 +1,129 @@
+<h2><%= @title %></h2>
+<div id='clock'></div>
+
+<a href='#' class='btn btn-default' onclick='reset()'>reset to defaults</a>
+
+<script>
+var colours = [
+  <% Wen::Config.instance.config.colours.each do |name, rgb| %>
+    'rgb(<%= rgb.join(', ') %>);',
+  <% end %>
+]
+
+makeClockPicker()
+
+function makeClockPicker() {
+  var mode = '<%= Wen::Clock.mode %>'
+  var w = 320             // Width of SVG element
+  var h = 320             // Height of SVG element
+  var cx = w / 2          // Center x
+  var cy = h / 2          // Center y
+  var littleRadius = 72
+  var bigRadius = 128
+  var thickness = 32 // stroke width
+  var buffer = thickness / 2
+
+  var now = new Date()
+
+  var minutes = now.getMinutes()
+  var hours = now.getHours()
+
+  var me = minuteEnds(minutes, buffer, mode)
+  var he = hourEnds(hours, minutes, buffer)
+  var svg = d3.select("#clock").append("svg")
+                               .attr("width", w).attr("height", h)
+
+  //svg.append('svg:line').attr('x1', cx).attr('x2', cx).attr('y1', 0).attr('y2', h).attr('stroke-width', 1).attr('stroke', '#000')
+  //svg.append('svg:line').attr('x1', 0).attr('x2', w).attr('y1', cy).attr('y2', cy).attr('stroke-width', 1).attr('stroke', '#000')
+
+  addArc(svg, bigRadius, thickness,
+        me['hands']['start'],
+        me['hands']['end'],
+        cx, cy, 'minutes-hands')
+
+  addArc(svg, bigRadius, thickness,
+        me['face']['start'],
+        me['face']['end'],
+        cx, cy, 'minutes-face')
+
+  addArc(svg, littleRadius, thickness,
+        he['hands']['start'],
+        he['hands']['end'],
+        cx, cy, 'hours-hands')
+
+  addArc(svg, littleRadius, thickness,
+        he['face']['start'],
+        he['face']['end'],
+        cx, cy, 'hours-face')
+}
+
+function addArc(svg, radius, thickness, start, end, cx, cy, id) {
+  var myArc = d3.svg.arc()
+                   .outerRadius(radius)
+                   .innerRadius(radius)
+                   .startAngle(degreesToRadians(start))
+                   .endAngle(degreesToRadians(end))
+
+  svg.append('a').attr("xlink:href", '#')
+     .append('path')
+     .attr('d', myArc)
+     .attr('fill', '#000')
+     .attr('transform', 'translate(' + cx + ', ' + cy +')')
+     .attr('id', id)
+     .attr('class', 'picker')
+     .attr('opacity', 0.7)
+     .attr('stroke-width', thickness)
+}
+
+refresh()
+
+$(".picker").on('change.spectrum', function (ev, tc) {
+  d = ev.target.id.split('-')
+  x = {}
+  x[d[1]] = [tc['_r'], tc['_g'], tc['_b']]
+  y = {}
+  y[d[0]] = x
+
+  $.ajax({
+    url: '/colours/',
+    data: JSON.stringify(y),
+    type: 'POST',
+    contentType: 'application/json',
+    complete: refresh
+  })
+})
+
+function refresh() {
+  $('.picker').each(function() {
+    var id = this.id
+    var s = id.split('-')
+    $.getJSON('/colours/' + s[0] + '/' + s[1], function (data) {
+      $('#' + id).attr('stroke', 'rgb(' + (data['colour'].join(', ')) + ')')
+      $('#' + id).spectrum({
+        color: 'rgb(' + (data['colour'].join(', ')) + ')',
+        showPalette: true,
+        palette: [
+          colours
+        ],
+        showPaletteOnly: true,
+        //togglePaletteOnly: true,
+        togglePaletteMoreText: 'expert mode',
+        togglePaletteLessText: 'easy mode',
+        hideAfterPaletteSelect:true,
+      //  showInitial: true,
+        preferredFormat: "rgb",
+        containerClassName: 'wen-picker'
+      })
+    })
+  })
+}
+
+function reset() {
+  $.ajax({
+    url: '/colours/reset',
+    type: 'POST',
+    contentType: 'application/json',
+    complete: refresh
+  })
+}
+</script>

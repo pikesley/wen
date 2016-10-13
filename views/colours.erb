@@ -10,70 +10,133 @@ var colours = [
   <% end %>
 ]
 
-makeClockPicker()
+fields = function() {
+  currentTime = new Date()
+  second = currentTime.getSeconds()
+  minute = currentTime.getMinutes() + second / 60
+  hour = currentTime.getHours() + minute / 60
 
-function makeClockPicker() {
-  var mode = '<%= Wen::Clock.mode %>'
-  var w = 320             // Width of SVG element
-  var h = 320             // Height of SVG element
-  var cx = w / 2          // Center x
-  var cy = h / 2          // Center y
-  var littleRadius = 72
-  var bigRadius = 128
-  var thickness = 32 // stroke width
-  var buffer = thickness / 2
-
-  var now = new Date()
-
-  var minutes = now.getMinutes()
-  var hours = now.getHours()
-
-  var me = minuteEnds(minutes, buffer, mode)
-  var he = hourEnds(hours, minutes, buffer)
-  var svg = d3.select("#clock").append("svg")
-                               .attr("width", w).attr("height", h)
-
-  //svg.append('svg:line').attr('x1', cx).attr('x2', cx).attr('y1', 0).attr('y2', h).attr('stroke-width', 1).attr('stroke', '#000')
-  //svg.append('svg:line').attr('x1', 0).attr('x2', w).attr('y1', cy).attr('y2', cy).attr('stroke-width', 1).attr('stroke', '#000')
-
-  addArc(svg, bigRadius, thickness,
-        me['hands']['start'],
-        me['hands']['end'],
-        cx, cy, 'minutes-hands')
-
-  addArc(svg, bigRadius, thickness,
-        me['face']['start'],
-        me['face']['end'],
-        cx, cy, 'minutes-face')
-
-  addArc(svg, littleRadius, thickness,
-        he['hands']['start'],
-        he['hands']['end'],
-        cx, cy, 'hours-hands')
-
-  addArc(svg, littleRadius, thickness,
-        he['face']['start'],
-        he['face']['end'],
-        cx, cy, 'hours-face')
+  return data = [
+    {
+      'unit': 'minutes',
+      'numeric': minute
+    },
+    {
+      'unit': 'hours',
+      'numeric': hour
+    }
+  ]
 }
 
-function addArc(svg, radius, thickness, start, end, cx, cy, id) {
-  var myArc = d3.svg.arc()
-                   .outerRadius(radius)
-                   .innerRadius(radius)
-                   .startAngle(degreesToRadians(start))
-                   .endAngle(degreesToRadians(end))
+width = 320
+height = 320
+cx = width / 2          // Center x
+cy = height / 2          // Center y
+margin = 16
+sizestep = width / 7
+handspan = 0.3
+stroke = margin / 16
 
-  svg.append('a').attr("xlink:href", '#')
-     .append('path')
-     .attr('d', myArc)
-     .attr('fill', '#000')
-     .attr('transform', 'translate(' + cx + ', ' + cy +')')
-     .attr('id', id)
-     .attr('class', 'picker')
-     .attr('opacity', 0.7)
-     .attr('stroke-width', thickness)
+pi = Math.PI
+
+scaleMins = d3.scale.linear().domain([0, 59 + 59/60]).range([0, 2 * pi])
+scaleHours = d3.scale.linear().domain([0, 11 + 59/60]).range([0, 2 * pi])
+
+vis = d3.select('#clock')
+        .append('svg:svg')
+        .attr('width', width)
+        .attr('height', height)
+
+clockGroup = vis.append('svg:g')
+                .attr('transform', 'translate(' + cx + ', ' + cy + ')')
+
+render = function(data) {
+  clockGroup.selectAll('hands').remove()
+  clockGroup.selectAll('faces').remove()
+
+  minuteHand = d3.svg.arc()
+                  .outerRadius(sizestep * 2)
+                  .innerRadius(sizestep * 1 + margin)
+                  .startAngle(function(d) {
+                    return scaleMins(d.numeric) - handspan
+                  })
+                  .endAngle(function(d) {
+                    return scaleMins(d.numeric) + handspan
+                  })
+
+  minuteFace = d3.svg.arc()
+                   .outerRadius(sizestep * 2)
+                   .innerRadius(sizestep * 1 + margin)
+                   .startAngle(function(d) {
+                     return (pi * 2) + scaleMins(d.numeric) - (handspan + margin / 100)
+                   })
+                   .endAngle(function(d) {
+                     return scaleMins(d.numeric) + (handspan + margin / 100)
+                   })
+
+  hourHand = d3.svg.arc()
+               .outerRadius(sizestep * 1)
+               .innerRadius(sizestep * 0 + margin)
+               .startAngle(function(d) {
+                 return scaleHours(d.numeric % 12) - handspan
+               })
+               .endAngle(function(d) {
+                 return scaleHours(d.numeric % 12) + handspan
+               })
+
+
+  hourFace = d3.svg.arc()
+               .outerRadius(sizestep * 1)
+               .innerRadius(sizestep * 0 + margin)
+               .startAngle(function(d) {
+                 return (pi * 2) + scaleHours(d.numeric) - (handspan + margin / 100)
+               })
+               .endAngle(function(d) {
+                 return scaleHours(d.numeric) + (handspan + margin / 100)
+               })
+
+ clockGroup.selectAll('hands')
+           .data(data)
+           .enter()
+           .append('a').attr("xlink:href", '#')
+           .append('svg:path')
+           .attr('d', function(d) {
+             if (d.unit === 'minutes') {
+               return minuteHand(d)
+             } else if (d.unit === 'hours') {
+               return hourHand(d)
+             }
+           })
+           .attr('class', 'picker')
+           .attr('id', function(d) {
+             return d.unit + '-hands'
+           })
+
+  clockGroup.selectAll('faces')
+            .data(data)
+            .enter()
+            .append('a').attr("xlink:href", '#')
+            .append('svg:path')
+            .attr('d', function(d) {
+              if (d.unit === 'minutes') {
+                return minuteFace(d)
+              } else if (d.unit === 'hours') {
+                return hourFace(d)
+              }
+            })
+            .attr('class', 'picker')
+            .attr('id', function(d) {
+              return d.unit + '-face'
+            })
+
 }
+
+//setInterval(function() {
+//  var data
+  data = fields()
+//  return
+  render(data)
+//}, 10)
 
 refresh()
 
@@ -98,7 +161,7 @@ function refresh() {
     var id = this.id
     var s = id.split('-')
     $.getJSON('/colours/' + s[0] + '/' + s[1], function (data) {
-      $('#' + id).attr('stroke', 'rgb(' + (data['colour'].join(', ')) + ')')
+      $('#' + id).attr('fill', 'rgb(' + (data['colour'].join(', ')) + ')')
       $('#' + id).spectrum({
         color: 'rgb(' + (data['colour'].join(', ')) + ')',
         showPalette: true,

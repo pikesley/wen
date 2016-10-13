@@ -150,7 +150,7 @@ module Wen
           spacing.times do |sp|
             self.clear
             (sp..TOTAL_LENGTH).step(spacing) do |ii|
-              a[ii] = color
+              a[ii] = colour
             end
             Neopixels.instance.illuminate a
             sleep 75 / 1000.0
