@@ -28,16 +28,21 @@ fields = function() {
   ]
 }
 
+pi = Math.PI
+
 width = 320
 height = 320
 cx = width / 2          // Center x
 cy = height / 2          // Center y
 margin = 16
 sizestep = width / 7
-handspan = 0.3
+handspan = (pi) / 12
 stroke = margin / 16
 
-pi = Math.PI
+bigRadius = 150
+littleRadius = 90
+thickness = 40
+cornerRadius = 10
 
 scaleMins = d3.scale.linear().domain([0, 59 + 59/60]).range([0, 2 * pi])
 scaleHours = d3.scale.linear().domain([0, 11 + 59/60]).range([0, 2 * pi])
@@ -55,8 +60,9 @@ render = function(data) {
   clockGroup.selectAll('faces').remove()
 
   minuteHand = d3.svg.arc()
-                  .outerRadius(sizestep * 2)
-                  .innerRadius(sizestep * 1 + margin)
+                  .outerRadius(bigRadius)
+                  .innerRadius(bigRadius - thickness)
+                  .cornerRadius(cornerRadius)
                   .startAngle(function(d) {
                     return scaleMins(d.numeric) - handspan
                   })
@@ -65,8 +71,9 @@ render = function(data) {
                   })
 
   minuteFace = d3.svg.arc()
-                   .outerRadius(sizestep * 2)
-                   .innerRadius(sizestep * 1 + margin)
+                   .outerRadius(bigRadius)
+                   .innerRadius(bigRadius - thickness)
+                   .cornerRadius(cornerRadius)
                    .startAngle(function(d) {
                      return (pi * 2) + scaleMins(d.numeric) - (handspan + margin / 100)
                    })
@@ -75,8 +82,9 @@ render = function(data) {
                    })
 
   hourHand = d3.svg.arc()
-               .outerRadius(sizestep * 1)
-               .innerRadius(sizestep * 0 + margin)
+               .outerRadius(littleRadius)
+               .innerRadius(littleRadius - thickness)
+               .cornerRadius(cornerRadius)
                .startAngle(function(d) {
                  return scaleHours(d.numeric % 12) - handspan
                })
@@ -86,8 +94,9 @@ render = function(data) {
 
 
   hourFace = d3.svg.arc()
-               .outerRadius(sizestep * 1)
-               .innerRadius(sizestep * 0 + margin)
+               .outerRadius(littleRadius)
+               .innerRadius(littleRadius - thickness)
+               .cornerRadius(cornerRadius)
                .startAngle(function(d) {
                  return (pi * 2) + scaleHours(d.numeric) - (handspan + margin / 100)
                })
@@ -111,6 +120,7 @@ render = function(data) {
            .attr('id', function(d) {
              return d.unit + '-hands'
            })
+           .attr('opacity', 0.7)
 
   clockGroup.selectAll('faces')
             .data(data)
@@ -128,7 +138,7 @@ render = function(data) {
             .attr('id', function(d) {
               return d.unit + '-face'
             })
-
+            .attr('opacity', 0.7)
 }
 
 //setInterval(function() {
