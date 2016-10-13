@@ -36,7 +36,7 @@ cx = width / 2          // Center x
 cy = height / 2          // Center y
 margin = 8 / 100
 sizestep = width / 7
-handspan = (pi) / 12
+handSpan = (pi) / 12
 stroke = 2
 
 bigRadius = 150
@@ -61,30 +61,30 @@ render = function(data) {
   mh = {
     radius: bigRadius,
     startAngle: function(number) {
-      return scaleMins(number) - handspan
+      return scaleMins(number) - handSpan
     },
     endAngle: function(number) {
-      return scaleMins(number) + handspan
+      return scaleMins(number) + handSpan
     }
   }
 
   hh = {
     radius: littleRadius,
     startAngle: function(number) {
-      return scaleHours(number) - handspan
+      return scaleHours(number) - handSpan
     },
     endAngle: function(number) {
-      return scaleHours(number) + handspan
+      return scaleHours(number) + handSpan
     }
   }
 
   mf = {
     radius: bigRadius,
     startAngle: function(number) {
-      return (pi * 2) + scaleMins(number) - (handspan + margin)
+      return (pi * 2) + scaleMins(number) - (handSpan + margin)
     },
     endAngle: function(number) {
-      return scaleMins(number) + (handspan + margin)
+      return scaleMins(number) + (handSpan + margin)
     }
   }
 
@@ -92,10 +92,10 @@ render = function(data) {
     radius: littleRadius,
     scale: scaleHours,
     startAngle: function(number) {
-      return (pi * 2) + scaleHours(number) - (handspan + margin)
+      return (pi * 2) + scaleHours(number) - (handSpan + margin)
     },
     endAngle: function(number) {
-      return scaleHours(number) + (handspan + margin)
+      return scaleHours(number) + (handSpan + margin)
     }
   }
 
@@ -182,8 +182,6 @@ function refresh() {
     var id = this.id
     var s = id.split('-')
     $.getJSON('/colours/' + s[0] + '/' + s[1], function (data) {
-  //    $('#' + id).attr('fill', 'rgb(' + (data['colour'].join(', ')) + ')')
-//  debugger
       $('#' + id).attr('fill', tinycolor('rgb(' + (data['colour'].join(', '))).toString())
       $('#' + id).attr('stroke', tinycolor('rgb(' + (data['colour'].join(', '))).darken(50).toString())
       $('#' + id).spectrum({
