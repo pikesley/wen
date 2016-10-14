@@ -186,7 +186,7 @@ module Wen
             (sp..TOTAL_LENGTH).step(spacing) do |ii|
               a[ii] = colour
             end
-            Wen::Neopixels.instance.illuminate a.map { |i| unless i then i = [0,0,0] else i = i end }
+            Wen::Neopixels.instance.illuminate array_filler(a)
             sleep 75 / 1000.0
           end
         end
@@ -212,7 +212,7 @@ module Wen
             (sp..TOTAL_LENGTH).step(spacing) do |ii|
               a[ii] = Wen::Clock::Tricks.wheel((ii + jj) % 255)
             end
-            Wen::Neopixels.instance.illuminate a.map { |i| unless i then i = [0,0,0] else i = i end }
+            Wen::Neopixels.instance.illuminate array_filler(a)
 
             sleep 75 / 1000.0
           end
