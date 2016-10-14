@@ -134,13 +134,18 @@ module Wen
 # from pixel_pi demo mode
 
       def self.wipe
+        self.clear
         a = []
-        colour = Clock.fetch_colour 'minutes', 'hand'
-        TOTAL_LENGTH.times do |i|
-          a[i] = colour
-          Neopixels.instance.illuminate a
-          sleep 75 / 1000.0
+        Config.instance.config.colours.keys[3..-1].each do |key|
+          TOTAL_LENGTH.times do |i|
+            a[i] = Config.instance.config.colours[key]
+            Neopixels.instance.illuminate a
+            sleep 75 / 1000.0
+          end
         end
+
+        sleep 1
+        Clock.time
       end
 
       def self.theatre_chase spacing = 3
