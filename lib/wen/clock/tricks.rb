@@ -160,7 +160,6 @@ module Wen
 
       # Reverse version?
       def self.super_wipe
-        self.clear
         a = []
         (Wen::Config.instance.config.colours.keys[3..-1] + ['black']).each do |key|
           Wen::Config.instance.config.neopixels['minutes']['pins'].times do |i|
@@ -173,7 +172,6 @@ module Wen
           end
         end
 
-        sleep 1
         Clock.time
       end
 
