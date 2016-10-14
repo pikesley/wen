@@ -155,7 +155,7 @@ module Wen
           else
             i = i
           end
-        }
+        end
       end
 
       # Reverse version?
