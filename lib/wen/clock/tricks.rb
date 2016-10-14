@@ -162,7 +162,7 @@ module Wen
       def self.super_wipe
         self.clear
         a = []
-        (Wen::Config.instance.config.colours.keys[3..-1] + Array.new(36, [0, 0, 0])).each do |key|
+        (Wen::Config.instance.config.colours.keys[3..-1] + ['black']).each do |key|
           Wen::Config.instance.config.neopixels['minutes']['pins'].times do |i|
             a[i] = Wen::Config.instance.config.colours[key]
             if i % 2 == 1
