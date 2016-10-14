@@ -140,7 +140,7 @@ module Wen
           TOTAL_LENGTH.times do |i|
             a[i] = Config.instance.config.colours[key]
             Neopixels.instance.illuminate a
-            sleep 50 / 1000.0
+            sleep 25 / 1000.0
           end
         end
 

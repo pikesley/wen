@@ -50,8 +50,8 @@ trick-modes:
 #    display_name: theater chase
 #  - method: rainbow_chase
 #    display_name: rainbow chase
-  - method: boot_up
-    display_name: start-up
+#  - method: boot_up
+#    display_name: start-up
 
 pages:
   - name: colours
