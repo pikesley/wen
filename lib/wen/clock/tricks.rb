@@ -177,13 +177,13 @@ module Wen
       end
 
       def self.rainbow_chase spacing = 3
-        256.times do |jj|
+        ITERATIONS.times do |jj|
           spacing.times do |sp|
             a = []
             (sp..TOTAL_LENGTH).step(spacing) do |ii|
-              a[ii] = wheel((ii + jj) % 255)
+              a[ii] = Wen::Clock::Tricks.wheel((ii + jj) % 255)
             end
-            Neopixels.instance.illuminate a
+            Wen::Neopixels.instance.illuminate a.map { |i| unless i then i = [0,0,0] else i = i end }
 
             sleep 75 / 1000.0
           end
