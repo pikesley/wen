@@ -42,12 +42,14 @@ trick-modes:
   - method: chaos
   - method: disco
   - method: rotator
+  - method: rainbow_chase
+    display_name: rainbow rotator
   - method: roll_around
     display_name: roll
   - method: blink
-  - method: wipe
-  - method: rainbow_chase
-    display_name: rainbow rotator
+  - method: super_wipe
+    display_name: wipe
+
 #  - method: theatre_chase
 #    display_name: theater chase
 #  - method: rainbow_chase

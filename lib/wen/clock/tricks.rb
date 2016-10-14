@@ -136,10 +136,39 @@ module Wen
       def self.wipe
         self.clear
         a = []
-        Config.instance.config.colours.keys[3..-1].each do |key|
+        Wen::Config.instance.config.colours.keys[3..-1].each do |key|
           TOTAL_LENGTH.times do |i|
-            a[i] = Config.instance.config.colours[key]
-            Neopixels.instance.illuminate a
+            a[i] = Wen::Config.instance.config.colours[key]
+            Wen::Neopixels.instance.illuminate a
+            sleep 25 / 1000.0
+          end
+        end
+
+        sleep 1
+        Clock.time
+      end
+
+      def self.array_filler a
+        a.map do |i|
+          unless i
+            i = [0, 0, 0]
+          else
+            i = i
+          end
+        }
+      end
+
+      # Reverse version?
+      def self.super_wipe
+        self.clear
+        a = []
+        Wen::Config.instance.config.colours.keys[3..-1].each do |key|
+          Wen::Config.instance.config.neopixels['minutes']['pins'].times do |i|
+            a[i] = Wen::Config.instance.config.colours[key]
+            if i % 2 == 1
+              a[Wen::Config.instance.config.neopixels['minutes']['pins'] + i / 2] = Wen::Config.instance.config.colours[key]
+            end
+            Wen::Neopixels.instance.illuminate array_filler(a)
             sleep 25 / 1000.0
           end
         end
@@ -150,14 +179,14 @@ module Wen
 
       def self.theatre_chase spacing = 3
         a = []
-        colour = Clock.fetch_colour 'minutes', 'hand'
+        colour = Wen::Clock.fetch_colour 'minutes', 'hand'
         ITERATIONS.times do
           spacing.times do |sp|
-            self.clear
+            Wen::Clock::Tricks.clear
             (sp..TOTAL_LENGTH).step(spacing) do |ii|
               a[ii] = colour
             end
-            Neopixels.instance.illuminate a
+            Wen::Neopixels.instance.illuminate a.map { |i| unless i then i = [0,0,0] else i = i end }
             sleep 75 / 1000.0
           end
         end
