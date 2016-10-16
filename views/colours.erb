@@ -1,7 +1,24 @@
-<h2><%= @title %></h2>
-<div id='clock'></div>
+<div class='row'>
+  <div class='col-xs-2'>
+    <h2><%= @title %></h2>
+  </div>
 
-<a href='#' class='btn btn-default' onclick='reset()'>reset to defaults</a>
+  <div class='col-xs-1'>
+    <div class='dropdown'>
+      <a class='dropdown-toggle' id='reset-dropdown' data-toggle='dropdown' aria-haspopup='true'>
+        <h2><i class='fa fa-caret-down'></i></h2>
+      </a>
+
+      <ul class='dropdown-menu dropdown-menu-right' aria-labelledby='reset-dropdown'>
+        <li>
+          <a href='#' onclick='reset()'>reset to defaults</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id='clock'></div>
 
 <script>
 colours = [
@@ -176,7 +193,7 @@ setInterval(function() {
 data = fields()
 render(data)
 
-$(".picker").on('change.spectrum', function (ev, tc) {
+$('.picker').on('change.spectrum', function (ev, tc) {
   d = ev.target.id.split('-')
   x = {}
   x[d[1]] = [tc['_r'], tc['_g'], tc['_b']]
@@ -209,7 +226,7 @@ function makeGroup(params) {
   clockGroup.selectAll('.' + params['name'])
             .data(data)
             .enter()
-            .append('a').attr("xlink:href", '#')
+            .append('a').attr('xlink:href', '#')
             .append('svg:path')
             .attr('d', function(d) {
               if (d.unit === 'minutes') {
@@ -252,7 +269,7 @@ function refresh() {
         togglePaletteLessText: 'easy mode',
         hideAfterPaletteSelect:true,
       //  showInitial: true,
-        preferredFormat: "rgb",
+        preferredFormat: 'rgb',
         containerClassName: 'wen-picker'
       })
     })
