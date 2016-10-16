@@ -53,6 +53,15 @@ h2 {
   }
 }
 
+#reset-modal {
+  top: 10%;
+}
+
+.modal-content {
+  background-color: $brand-complement;
+  opacity: 0.9;
+}
+
 /* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */
 input[type="radio"] { display: none; }
 input[type="radio"] + label .fa-check-square { display: none; }

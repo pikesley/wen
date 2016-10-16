@@ -9367,23 +9367,34 @@ h2 {
   height: 40px;
 }
 
+/* line 56, ../sass/styles.scss */
+#reset-modal {
+  top: 10%;
+}
+
+/* line 60, ../sass/styles.scss */
+.modal-content {
+  background-color: #ffccaa;
+  opacity: 0.9;
+}
+
 /* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */
-/* line 57, ../sass/styles.scss */
+/* line 66, ../sass/styles.scss */
 input[type="radio"] {
   display: none;
 }
 
-/* line 58, ../sass/styles.scss */
+/* line 67, ../sass/styles.scss */
 input[type="radio"] + label .fa-check-square {
   display: none;
 }
 
-/* line 59, ../sass/styles.scss */
+/* line 68, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-check-square {
   display: block;
 }
 
-/* line 60, ../sass/styles.scss */
+/* line 69, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-square-o {
   display: none;
 }
