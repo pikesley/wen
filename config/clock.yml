@@ -27,16 +27,18 @@ clock-modes:
     what: Only the pin closest to the current minute is illuminated
 
 trick-modes:
-  - method: shuffle
-  - method: chaos
-  - method: disco
-  - method: rotator
-  - method: rainbow_chase
-    display_name: rainbow rotator
-  - method: roll_around
+  - method:       shuffle
+  - method:       disco
+    display_name: disco lights
+  - method:       chaos
+  - method:       rotator
+    display_name: theatre chase (white)
+  - method:       rainbow_chase
+    display_name: theatre chase (rainbow)
+  - method:       roll_around
     display_name: roll
-  - method: blink
-  - method: super_wipe
+  - method:       blink
+  - method:       super_wipe
     display_name: wipe
 
 pages:

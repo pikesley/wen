@@ -19,6 +19,10 @@ body {
   text-align: center;
 }
 
+a {
+  color: $brand-secondary-1;
+}
+
 .colours {
   margin-bottom: $padding-small-vertical;
 }
@@ -38,9 +42,36 @@ body {
   height: 1.7em;
 }
 
+h1 {
+  font-size: 2em;
+  margin-top: $padding-small-vertical;
+}
+
 h2 {
   font-size: 1.5em;
-  margin-top: $padding-small-vertical;
+}
+
+hr {
+  border-color: $brand-secondary-1;
+  opacity: 0.5;
+}
+
+a.modal-trigger {
+  color: $brand-primary;
+}
+
+a.modal-trigger:hover, a.modal-trigger:focus {
+  color: $brand-secondary-1;
+}
+
+#build-data {
+  font-size: 0.8em;
+  position: fixed;
+  bottom: $footer-height;
+
+  dl {
+    color: $grey;
+  }
 }
 
 .colours {
@@ -67,3 +98,21 @@ input[type="radio"] { display: none; }
 input[type="radio"] + label .fa-check-square { display: none; }
 input[type="radio"]:checked + label .fa-check-square { display: block; }
 input[type="radio"]:checked + label .fa-square-o { display: none; }
+
+
+// cargo-culted straight outta bootstrap
+.dl-horizontal {
+  @media (min-width: 0) {
+    dt {
+      float: left;
+      width: ($dl-horizontal-offset - 90);
+      clear: left;
+      text-align: right;
+      @include text-overflow();
+    }
+    dd {
+      margin-left: $dl-horizontal-offset - 65;
+      text-align: left;
+    }
+  }
+}

@@ -54,8 +54,9 @@ This sets up _everything_, including the [systemd](https://wiki.debian.org/syste
 
 Optionally, you can get the clock to keep up-to-date with the latest version of the software with
 
-    echo "MAILTO=''" > /var/spool/cron/crontabs/pi
-    echo "*/5 * * * *       cd /home/pi/wen && /usr/local/bin/rake code:update" >> /var/spool/cron/crontabs/pi
+    sudo cp scripts/crontab /var/spool/cron/crontabs/pi
+    sudo chown pi:crontab /var/spool/cron/crontabs/pi
+    sudo chmod 600 /var/spool/cron/crontabs/pi
 
 ### Internals
 

@@ -1,0 +1,31 @@
+<h1>About Wen</h1>
+
+<hr />
+
+<h2>Code</h2>
+
+Wen is built and maintained by <a href='http://sam.pikesley.org'>Sam Pikesley</a>. The code is <a href='https://github.com/pikesley/wen'>on Github</a>, released under the <a href='https://pikesley.mit-license.org/'>MIT License</a>
+
+<hr />
+
+<h2>Documentation</h2>
+
+The full documentation for the project can be found at <a href='http://sam.pikesley.org/projects/wen/'>http://sam.pikesley.org/projects/wen/</a>. There is a also <a href='https://www.youtube.com/watch?v=FGRnSwF10Dw&feature=youtu.be'>a movie</a>
+
+<hr />
+
+<h2>Issues</h2>
+
+Issues / suggestions / pull-requests can be submitted <a href='https://github.com/pikesley/wen/issues'>here</a>
+
+<hr />
+
+<div id='build-data'>
+  <% g = Git.open('.').log.first %>
+  <dl class='dl-horizontal'>
+    <dt>Current SHA:</dt>
+    <dd><%= g.sha %></dd>
+    <dt>Date:</dt>
+    <dd><%= g.date.strftime '%Y-%m-%d %H:%M:%S UTC' %></dd>
+  </dl>
+</div>

@@ -6,6 +6,7 @@ require 'sidekiq'
 require 'pixel_pi'
 require 'singleton'
 require 'ostruct'
+require 'git'
 
 require_relative 'wen/clock/clock'
 require_relative 'wen/clock/config'
@@ -38,13 +39,24 @@ module Wen
       end
     end
 
+    get '/about' do
+      headers 'Vary' => 'Accept'
+
+      respond_to do |wants|
+         wants.html do
+            @title = 'About'
+            erb :'about', layout: :'layouts/default'
+         end
+      end
+    end
+
 ### colours
 
     get '/colours/?' do
       respond_to do |wants|
          wants.html do
            @title = 'Colours'
-           erb :'colours', layout: :default
+           erb :'colours', layout: :'layouts/default'
          end
 
           wants.json do
@@ -76,7 +88,7 @@ module Wen
       respond_to do |wants|
         wants.html do
           @title = 'Clock Modes'
-          erb :modes, layout: :default
+          erb :modes, layout: :'layouts/default'
         end
 
         wants.json do
@@ -99,7 +111,7 @@ module Wen
       respond_to do |wants|
         wants.html do
           @title = 'Trick Modes'
-          erb :tricks, layout: :default
+          erb :tricks, layout: :'layouts/default'
         end
       end
     end
