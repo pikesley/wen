@@ -2,25 +2,21 @@ neopixels:
   minutes:
     pins: 24
     colours:
-      hand:
-        - 255
-        - 0
-        - 0
-      face:
-        - 0
-        - 0
-        - 255
+      hand: [255,   0,   0]
+      face: [  0,   0, 255]
+
   hours:
     pins: 12
     colours:
-      hand:
-        - 255
-        - 0
-        - 0
-      face:
-        - 0
-        - 0
-        - 255
+      hand: [255,   0,   0]
+      face: [  0,   0, 255]
+
+led:
+  pin:        18
+  freq:       800000
+  dma:        5
+  brightness: 16 # DOES FUCK ALL AFAICT
+  invert:     false
 
 clock-modes:
   - name: range
@@ -29,13 +25,6 @@ clock-modes:
     what: The lights on either side of the current pin are also illuminated
   - name: strict
     what: Only the pin closest to the current minute is illuminated
-
-led:
-  pin:        18
-  freq:       800000
-  dma:        5
-  brightness: 16 # DOES FUCK ALL
-  invert:     false
 
 trick-modes:
   - method: shuffle
@@ -50,13 +39,6 @@ trick-modes:
   - method: super_wipe
     display_name: wipe
 
-#  - method: theatre_chase
-#    display_name: theater chase
-#  - method: rainbow_chase
-#    display_name: rainbow chase
-#  - method: boot_up
-#    display_name: start-up
-
 pages:
   - name: colours
     fa:   paint-brush
@@ -64,9 +46,8 @@ pages:
     fa:   clock-o
   - name: tricks
     fa:   random
-
-#google-analytics-tag: UA-00000000-0
-#github_url: https://github.com
+  - name: about
+    fa:   question-circle-o
 
 colours:
   black:        [  0,   0,   0]
