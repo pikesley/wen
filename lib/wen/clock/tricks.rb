@@ -188,6 +188,8 @@ module Wen
             sleep 75 / 1000.0
           end
         end
+
+        Clock.time
       end
 
       def self.wheel pos
