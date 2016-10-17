@@ -44,6 +44,10 @@ The code is all [on Github](https://github.com/pikesley/wen). To get it up and r
     sudo systemctl enable wen.target
     sudo cp scripts/timekeeper.service /etc/systemd/system/
     sudo systemctl enable timekeeper.service
+
+    sudo rm /etc/nginx/sites-enabled/*
+    sudo cp scripts/vhost /etc/nginx/sites-enabled/wen
+    
     sudo timedatectl set-timezone Europe/London
     echo "alias rewen='cd ~/wen && git pull && bundle && sudo systemctl restart wen.target'" >> ~/.bash_profile
     echo "alias console='cd ~/wen && sudo bundle exec irb -r ./lib/wen'" >> ~/.bash_profile
