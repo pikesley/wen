@@ -22,4 +22,8 @@ body {
   a {
     color: $brand-complement;
   }
+
+  a:hover {
+    color: lighten($brand-secondary-1, 20%);
+  }
 }

@@ -9154,6 +9154,10 @@ body {
 .footer a {
   color: #ffccaa;
 }
+/* line 26, ../sass/_footer.scss */
+.footer a:hover {
+  color: #d27a77;
+}
 
 /* line 1, ../sass/_github-corner.scss */
 .octo-background {
