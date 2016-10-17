@@ -1,16 +1,9 @@
-<div class='row'>
-  <div class='col-xs-2'>
-    <h2><%= @title %></h2>
-  </div>
-
-  <div class='col-xs-1'>
-    <div class='dropdown'>
-      <a data-target='#reset-modal' data-toggle='modal'>
-        <h2><i class='fa fa-caret-down'></i></h2>
-      </a>
-    </div>
-  </div>
-</div>
+<h2>
+  <%= @title %>
+  <a data-target='#reset-modal' data-toggle='modal'>
+    <i class='fa fa-caret-down'></i>
+  </a>
+</h2>
 
 <div class='modal fade' id='reset-modal' role='dialog'>
   <div class='modal-dialog modal-sm'>
