@@ -1,0 +1,27 @@
+upstream wen {
+  server localhost:8080;
+}
+
+server {
+  listen 80;
+
+  root /home/pi/wen/public;
+  access_log /var/log/nginx/access.log;
+  error_log /var/log/nginx/error.log info;
+
+  error_page  502 /502.html;
+
+  location = /502.html {
+    root /home/pi/wen/public/html;
+  }
+
+  location / {
+    try_files $uri @wen;
+  }
+
+  location @wen {
+    include proxy_params;
+
+    proxy_pass http://wen;
+  }
+}
