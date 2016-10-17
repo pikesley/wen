@@ -52,6 +52,11 @@ The code is all [on Github](https://github.com/pikesley/wen). To get it up and r
 
 This sets up _everything_, including the [systemd](https://wiki.debian.org/systemd) startup scripts. It also deletes nano, installs the full version of vim, and gives you a shell alias called `rewen` which checks out the latest code from Github and restarts the service.
 
+Optionally, you can get the clock to keep up-to-date with the latest version of the software with
+
+    echo "MAILTO=''" > /var/spool/cron/crontabs/pi
+    echo "*/5 * * * *       cd /home/pi/wen && /usr/local/bin/rake code:update" >> /var/spool/cron/crontabs/pi
+
 ### Internals
 
 Getting a computer to tell you the time is very easy: in [Ruby](https://www.ruby-lang.org/en/), we just do `DateTime.now` and there it is. Translating that into lighting the correct lights on a string of LEDs is slightly more challenging, but not much, and I had a crude script working in about an hour. But I quickly fell into the over-engineering rabbit hole, so here's what I have now:
