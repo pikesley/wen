@@ -6,12 +6,6 @@ module Wen
     set :public_folder, 'public'
     set :views, 'views'
 
-    if Wen::Config.instance.config['google-analytics-tag']
-      use Rack::Tracker do
-        handler :google_analytics, { tracker: CONFIG['google-analytics-tag'] }
-      end
-    end
-
     use Rack::Conneg do |conneg|
       conneg.set :accept_all_extensions, true
       conneg.set :fallback, :html
