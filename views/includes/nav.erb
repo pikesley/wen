@@ -1,9 +1,13 @@
-<ul class='nav nav-pills' id='main-nav'>
-  <% Wen::Config.instance.config['pages'].each do |page| %>
-    <li role='presentation' <%= "class='active'" if request.path.include? page['name'] %>>
-      <a href="/<%= page['name'] %>">
-        <i class='fa fa-<%= page["fa"] %>'></i>
-      </a>
-    </li>
-  <% end %>
-</ul>
+<nav class='navbar navbar-default' id='main-nav'>
+  <div class='container-fluid'>
+    <ul class='nav nav-pills'>
+      <% Wen::Config.instance.config['pages'].each do |page| %>
+        <li role='presentation' class='nav-item' <%= "class='active'" if request.path.include? page['name'] %>>
+          <a href="/<%= page['name'] %>">
+            <i class='fa fa-<%= page["fa"] %>'></i>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

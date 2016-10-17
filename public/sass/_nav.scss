@@ -4,10 +4,17 @@ $nav-colours: (
   alt: $brand-secondary-2,
 );
 
-
 #main-nav {
   padding-top: $padding-small-vertical;
   height: $footer-height;
+  background-color: map-get($nav-colours, bg);
+  border: none;
+}
+
+.nav-item {
+  width: 24%;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
