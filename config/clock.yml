@@ -44,12 +44,16 @@ trick-modes:
 pages:
   - name: colours
     fa:   paint-brush
+    text: adjust colours
   - name: mode
     fa:   clock-o
+    text: change clock mode
   - name: tricks
     fa:   random
+    text: select trick modes
   - name: about
-    fa:   question-circle-o
+    fa:   info
+    text: about wen
 
 colours:
   black:        [  0,   0,   0]
