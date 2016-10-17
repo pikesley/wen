@@ -5,6 +5,7 @@ do
   echo `date` >> /tmp/hit-clock
 
   curl --request POST \
+       --silent \
        --header "Content-Type:application/json" \
        --header "Accept: application/json" \
        http://localhost/time
