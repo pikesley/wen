@@ -50,17 +50,6 @@ module Wen
       end
     end
 
-    get '/error' do
-      headers 'Vary' => 'Accept'
-
-      respond_to do |wants|
-         wants.html do
-            @title = 'Hold on...'
-            erb :'error', layout: :'layouts/default'
-         end
-      end
-    end
-
 ### colours
 
     get '/colours/?' do

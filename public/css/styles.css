@@ -9245,7 +9245,7 @@ body {
 }
 
 /* line 24, ../sass/_nav.scss */
-.nav-pills > li.inactive > a {
+.nav-pills > li.inactive {
   color: #b2b2b2;
   opacity: 0.7;
 }
