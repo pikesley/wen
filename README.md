@@ -33,7 +33,7 @@ The code is all [on Github](https://github.com/pikesley/wen). To get it up and r
     sudo apt-get update
     sudo apt-get upgrade
     sudo dpkg --purge nano
-    sudo apt-get install vim git ruby2.1 ruby2.1-dev redis-server
+    sudo apt-get install vim git ruby2.1 ruby2.1-dev redis-server nginx
     sudo update-alternatives --install /usr/bin/ruby ruby `which ruby2.1` 1
     sudo update-alternatives --install /usr/bin/gem gem `which gem2.1` 1
     sudo gem install bundle

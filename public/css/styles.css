@@ -9245,13 +9245,19 @@ body {
 }
 
 /* line 24, ../sass/_nav.scss */
+.nav-pills > li.inactive > a {
+  color: #b2b2b2;
+  opacity: 0.7;
+}
+
+/* line 29, ../sass/_nav.scss */
 .nav-pills > li > a {
   background-color: transparent;
   border-color: transparent;
   color: #2d8632;
 }
 
-/* line 30, ../sass/_nav.scss */
+/* line 35, ../sass/_nav.scss */
 .nav-pills > li > a:focus, .nav-pills > li > a:hover {
   background-color: transparent;
   border-color: transparent;

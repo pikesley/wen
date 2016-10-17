@@ -21,6 +21,11 @@ $nav-colours: (
   color: map-get($nav-colours, fg);
 }
 
+.nav-pills>li.inactive>a {
+  color: lighten($grey, 20%);
+  opacity: 0.7;
+}
+
 .nav-pills>li>a {
   background-color: map-get($nav-colours, bg);
   border-color: map-get($nav-colours, bg);
