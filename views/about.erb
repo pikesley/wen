@@ -26,6 +26,6 @@ Issues / suggestions / pull-requests can be submitted <a href='https://github.co
     <dt>Current SHA:</dt>
     <dd><%= g.sha %></dd>
     <dt>Date:</dt>
-    <dd><%= g.date.strftime '%Y-%m-%d %H:%M:%S UTC' %></dd>
+    <dd><%= g.date.utc.strftime '%Y-%m-%d %H:%M:%S UTC' %></dd>
   </dl>
 </div>
