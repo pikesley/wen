@@ -22,11 +22,13 @@ namespace :code do
     g = Git.open '.'
     remote = g.remotes.first.url.sub(/.*github.com./, '').split('.').first
     repository = Travis::Repository.find remote
-    last_good_build = repository.builds.select { |b| b.state == 'passed' }.first.id
+    last_good_build = repository.builds.select do |b|
+      b.branch_info == 'master' && b.state == 'passed'
+    end.first.id
 
     unless $redis.get('last-good-build').to_i == last_good_build
       puts 'New build found'
-      `cd ~/wen && git pull && /usr/local/bin/bundle && sudo systemctl restart wen.target`
+    #  `cd ~/wen && git pull && /usr/local/bin/bundle && sudo systemctl restart wen.target`
       $redis.set 'last-good-build', last_good_build
     end
   end
