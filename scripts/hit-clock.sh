@@ -8,7 +8,7 @@ do
        --silent \
        --header "Content-Type:application/json" \
        --header "Accept: application/json" \
-       http://localhost/time
+       http://localhost:8080/time
 
   sleep 10s
 done
