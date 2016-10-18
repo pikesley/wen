@@ -49,7 +49,7 @@ module Wen
       respond_to do |wants|
          wants.html do
             @title = 'About'
-            erb :'about', layout: :'layouts/default'
+            erb :'about'
          end
       end
     end
@@ -60,7 +60,7 @@ module Wen
       respond_to do |wants|
          wants.html do
            @title = 'Colours'
-           erb :'colours', layout: :'layouts/default'
+           erb :'colours'
          end
 
           wants.json do
@@ -92,7 +92,7 @@ module Wen
       respond_to do |wants|
         wants.html do
           @title = 'Clock Modes'
-          erb :modes, layout: :'layouts/default'
+          erb :modes
         end
 
         wants.json do
@@ -115,7 +115,7 @@ module Wen
       respond_to do |wants|
         wants.html do
           @title = 'Trick Modes'
-          erb :tricks, layout: :'layouts/default'
+          erb :tricks
         end
       end
     end
