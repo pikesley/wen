@@ -134,6 +134,12 @@ module Wen
     if app_file == $0
       run!
     end
+
+    not_found do
+      status 404
+      @title = '4:04'
+      erb :oops
+    end
   end
 
   def self.stash_defaults

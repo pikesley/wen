@@ -9352,55 +9352,60 @@ a {
 }
 
 /* line 26, ../sass/styles.scss */
+img {
+  max-width: 80%;
+}
+
+/* line 30, ../sass/styles.scss */
 .colours {
   margin-bottom: 5px;
 }
 
-/* line 30, ../sass/styles.scss */
+/* line 34, ../sass/styles.scss */
 .layer-label, label {
   font-size: 1.2em;
   font-weight: bold;
 }
 
-/* line 35, ../sass/styles.scss */
+/* line 39, ../sass/styles.scss */
 .layer-label {
   margin-left: 10px;
 }
 
-/* line 39, ../sass/styles.scss */
+/* line 43, ../sass/styles.scss */
 .fa-stack {
   padding-top: 2px;
   width: 1.6em;
   height: 1.7em;
 }
 
-/* line 45, ../sass/styles.scss */
+/* line 49, ../sass/styles.scss */
 h1 {
   font-size: 2em;
   margin-top: 5px;
 }
 
-/* line 50, ../sass/styles.scss */
+/* line 54, ../sass/styles.scss */
 h2 {
   font-size: 1.5em;
 }
 
-/* line 54, ../sass/styles.scss */
+/* line 58, ../sass/styles.scss */
 hr {
   border-color: #d27a77;
 }
 
-/* line 58, ../sass/styles.scss */
+/* line 62, ../sass/styles.scss */
 a.modal-trigger {
   color: #246c60;
 }
 
-/* line 62, ../sass/styles.scss */
+/* line 66, ../sass/styles.scss */
 a.modal-trigger:hover, a.modal-trigger:focus {
   color: #aa3c39;
 }
 
-/* line 66, ../sass/styles.scss */
+/* line 70, ../sass/styles.scss */
 #build-data {
   font-size: 0.6em;
   font-family: "Source Code Pro";
@@ -9412,67 +9417,67 @@ a.modal-trigger:hover, a.modal-trigger:focus {
   width: 80%;
   padding-top: 5px;
 }
-/* line 77, ../sass/styles.scss */
+/* line 81, ../sass/styles.scss */
 #build-data th, #build-data td, #build-data tbody {
   border-color: #b2b2b2;
   color: #7f7f7f;
   text-align: center;
   background-color: rgba(204, 204, 204, 0.7);
 }
-/* line 84, ../sass/styles.scss */
+/* line 88, ../sass/styles.scss */
 #build-data tbody {
   border-top: none;
 }
-/* line 88, ../sass/styles.scss */
+/* line 92, ../sass/styles.scss */
 #build-data td.key {
   text-align: right;
 }
-/* line 92, ../sass/styles.scss */
+/* line 96, ../sass/styles.scss */
 #build-data td.value {
   text-align: left;
 }
-/* line 96, ../sass/styles.scss */
+/* line 100, ../sass/styles.scss */
 #build-data th {
   padding-top: 8px;
 }
 
-/* line 101, ../sass/styles.scss */
+/* line 105, ../sass/styles.scss */
 .colours {
   height: 40px;
 }
 
-/* line 106, ../sass/styles.scss */
+/* line 110, ../sass/styles.scss */
 #colours .row {
   height: 40px;
 }
 
-/* line 111, ../sass/styles.scss */
+/* line 115, ../sass/styles.scss */
 #reset-modal {
   top: 15%;
 }
 
-/* line 115, ../sass/styles.scss */
+/* line 119, ../sass/styles.scss */
 .modal-content {
   background-color: rgba(255, 204, 170, 0.5);
 }
 
 /* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */
-/* line 120, ../sass/styles.scss */
+/* line 124, ../sass/styles.scss */
 input[type="radio"] {
   display: none;
 }
 
-/* line 121, ../sass/styles.scss */
+/* line 125, ../sass/styles.scss */
 input[type="radio"] + label .fa-check-square {
   display: none;
 }
 
-/* line 122, ../sass/styles.scss */
+/* line 126, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-check-square {
   display: block;
 }
 
-/* line 123, ../sass/styles.scss */
+/* line 127, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-square-o {
   display: none;
 }
