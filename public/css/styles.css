@@ -9411,23 +9411,6 @@ a.modal-trigger:hover, a.modal-trigger:focus {
   right: 0;
   width: 80%;
   padding-top: 5px;
-  /*  th {
-      .show-ctrl {
-        display: none;
-      }
-      .hide-ctrl {
-        display: inline;
-      }
-  
-      &.collapsed {
-        .show-ctrl {
-          display: block;
-        }
-        .hide-ctrl {
-          display: inline;
-        }
-      }
-    }*/
 }
 /* line 77, ../sass/styles.scss */
 #build-data th, #build-data td, #build-data tbody {
@@ -9437,52 +9420,56 @@ a.modal-trigger:hover, a.modal-trigger:focus {
   background-color: rgba(204, 204, 204, 0.7);
 }
 /* line 84, ../sass/styles.scss */
+#build-data tbody {
+  border-top: none;
+}
+/* line 88, ../sass/styles.scss */
 #build-data td.key {
   text-align: right;
 }
-/* line 88, ../sass/styles.scss */
+/* line 92, ../sass/styles.scss */
 #build-data td.value {
   text-align: left;
 }
 
-/* line 111, ../sass/styles.scss */
+/* line 97, ../sass/styles.scss */
 .colours {
   height: 40px;
 }
 
-/* line 116, ../sass/styles.scss */
+/* line 102, ../sass/styles.scss */
 #colours .row {
   height: 40px;
 }
 
-/* line 121, ../sass/styles.scss */
+/* line 107, ../sass/styles.scss */
 #reset-modal {
   top: 10%;
 }
 
-/* line 125, ../sass/styles.scss */
+/* line 111, ../sass/styles.scss */
 .modal-content {
   background-color: #ffccaa;
   opacity: 0.9;
 }
 
 /* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */
-/* line 131, ../sass/styles.scss */
+/* line 117, ../sass/styles.scss */
 input[type="radio"] {
   display: none;
 }
 
-/* line 132, ../sass/styles.scss */
+/* line 118, ../sass/styles.scss */
 input[type="radio"] + label .fa-check-square {
   display: none;
 }
 
-/* line 133, ../sass/styles.scss */
+/* line 119, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-check-square {
   display: block;
 }
 
-/* line 134, ../sass/styles.scss */
+/* line 120, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-square-o {
   display: none;
 }
