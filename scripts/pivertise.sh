@@ -1,6 +1,8 @@
 #!/bin/bash
 
-if [ `sudo /sbin/ifconfig | grep wlan0` ]; then
+sudo /sbin/ifconfig | grep wlan0
+
+if [ ${?} == 0 ] ; then
   INTERFACE=wlan0
 else
   INTERFACE=eth0
