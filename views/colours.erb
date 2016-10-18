@@ -215,7 +215,7 @@ function makeWheel(params) {
            .outerRadius(params['radius'])
            .innerRadius(params['radius'] - thickness)
            .cornerRadius(cornerRadius)
-             .startAngle(function(d) {
+           .startAngle(function(d) {
              return params.startAngle(d.numeric)
            })
            .endAngle(function(d) {
