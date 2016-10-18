@@ -20,8 +20,10 @@ function submit(mode) {
     url: '/mode/',
     data: JSON.stringify({ mode: mode }),
     type: 'POST',
+    async: false,
     contentType: 'application/json',
-    complete: $(location).attr('href', '/colours')
+    //complete: $(location).attr('href', '/colours')
+    complete: refresh
   })
 }
 
