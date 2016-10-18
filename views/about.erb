@@ -20,12 +20,17 @@ Issues / suggestions / pull-requests can be submitted <a href='https://github.co
 
 <hr />
 
-<div id='build-data'>
-  <% g = Git.open('.').log.first %>
-  <dl class='dl-horizontal'>
-    <dt>Current SHA:</dt>
-    <dd><%= g.sha %></dd>
-    <dt>Date:</dt>
-    <dd><%= g.date.utc.strftime '%Y-%m-%d %H:%M:%S UTC' %></dd>
-  </dl>
-</div>
+<% g = Git.open('.').log.first %>
+<table class='table table-condensed table-bordered' id='build-data'>
+  <tr>
+    <th colspan='2'>Build</th>
+  </tr>
+  <tr>
+    <td class='key'>SHA</td>
+    <td class='value'><%= g.sha %></td>
+  </tr>
+  <tr>
+    <td class='key'>Date</td>
+    <td class='value'><%= g.date.utc.strftime '%Y-%m-%d %H:%M:%S UTC' %></td>
+  </tr>
+</table>

@@ -6,6 +6,7 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 @import "https://fonts.googleapis.com/css?family=Josefin+Slab";
+@import "https://fonts.googleapis.com/css?family=Source+Code+Pro";
 /* line 9, ../../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_normalize.scss */
 html {
   font-family: sans-serif;
@@ -9386,87 +9387,84 @@ h2 {
 
 /* line 54, ../sass/styles.scss */
 hr {
-  border-color: #aa3c39;
-  opacity: 0.5;
+  border-color: #d27a77;
 }
 
-/* line 59, ../sass/styles.scss */
+/* line 58, ../sass/styles.scss */
 a.modal-trigger {
   color: #246c60;
 }
 
-/* line 63, ../sass/styles.scss */
+/* line 62, ../sass/styles.scss */
 a.modal-trigger:hover, a.modal-trigger:focus {
   color: #aa3c39;
 }
 
-/* line 67, ../sass/styles.scss */
+/* line 66, ../sass/styles.scss */
 #build-data {
-  font-size: 0.8em;
-  position: fixed;
-  bottom: 40px;
+  font-size: 0.6em;
+  font-family: "Source Code Pro";
+  bottom: 45px;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 70%;
 }
-/* line 72, ../sass/styles.scss */
-#build-data dl {
+/* line 76, ../sass/styles.scss */
+#build-data th, #build-data td {
+  border-color: #b2b2b2;
   color: #7f7f7f;
+  text-align: center;
+  background-color: rgba(204, 204, 204, 0.7);
+}
+/* line 83, ../sass/styles.scss */
+#build-data td.key {
+  text-align: right;
+}
+/* line 87, ../sass/styles.scss */
+#build-data td.value {
+  text-align: left;
 }
 
-/* line 77, ../sass/styles.scss */
+/* line 92, ../sass/styles.scss */
 .colours {
   height: 40px;
 }
 
-/* line 82, ../sass/styles.scss */
+/* line 97, ../sass/styles.scss */
 #colours .row {
   height: 40px;
 }
 
-/* line 87, ../sass/styles.scss */
+/* line 102, ../sass/styles.scss */
 #reset-modal {
   top: 10%;
 }
 
-/* line 91, ../sass/styles.scss */
+/* line 106, ../sass/styles.scss */
 .modal-content {
   background-color: #ffccaa;
   opacity: 0.9;
 }
 
 /* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */
-/* line 97, ../sass/styles.scss */
+/* line 112, ../sass/styles.scss */
 input[type="radio"] {
   display: none;
 }
 
-/* line 98, ../sass/styles.scss */
+/* line 113, ../sass/styles.scss */
 input[type="radio"] + label .fa-check-square {
   display: none;
 }
 
-/* line 99, ../sass/styles.scss */
+/* line 114, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-check-square {
   display: block;
 }
 
-/* line 100, ../sass/styles.scss */
+/* line 115, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-square-o {
   display: none;
-}
-
-@media (min-width: 0) {
-  /* line 106, ../sass/styles.scss */
-  .dl-horizontal dt {
-    float: left;
-    width: 90px;
-    clear: left;
-    text-align: right;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  /* line 113, ../sass/styles.scss */
-  .dl-horizontal dd {
-    margin-left: 115px;
-    text-align: left;
-  }
 }
