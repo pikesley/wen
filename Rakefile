@@ -28,7 +28,7 @@ namespace :code do
 
     unless $redis.get('last-good-build').to_i == last_good_build
       puts 'New build found'
-      `cd ~/wen && git pull && /usr/local/bin/bundle && sudo systemctl restart wen.target`
+      `cd ~/wen/scripts && ./provision.sh`
       $redis.set 'last-good-build', last_good_build
     end
   end
