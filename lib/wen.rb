@@ -29,6 +29,10 @@ module Wen
       include Wen::Helpers
     end
 
+    get '/static/:something' do
+      File.read(File.join('public', 'html', "#{params[:something]}.html"))
+    end
+
     get '/' do
       headers 'Vary' => 'Accept'
 
