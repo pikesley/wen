@@ -92,6 +92,10 @@ a.modal-trigger:hover, a.modal-trigger:focus {
   td.value {
     text-align: left;
   }
+
+  th {
+    padding-top: 8px;
+  }
 }
 
 .colours {
@@ -105,12 +109,11 @@ a.modal-trigger:hover, a.modal-trigger:focus {
 }
 
 #reset-modal {
-  top: 10%;
+  top: 15%;
 }
 
 .modal-content {
-  background-color: $brand-complement;
-  opacity: 0.9;
+  background-color: transparentize($brand-complement, 0.5);
 }
 
 /* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */

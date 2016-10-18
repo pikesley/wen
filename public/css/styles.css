@@ -9250,7 +9250,7 @@ body {
 }
 
 /* line 24, ../sass/_nav.scss */
-.nav-pills > li.inactive {
+.nav-pills > li.inactive > a, .nav-pills > li.inactive > a:hover {
   color: #b2b2b2;
   opacity: 0.7;
 }
@@ -9431,45 +9431,48 @@ a.modal-trigger:hover, a.modal-trigger:focus {
 #build-data td.value {
   text-align: left;
 }
+/* line 96, ../sass/styles.scss */
+#build-data th {
+  padding-top: 8px;
+}
 
-/* line 97, ../sass/styles.scss */
+/* line 101, ../sass/styles.scss */
 .colours {
   height: 40px;
 }
 
-/* line 102, ../sass/styles.scss */
+/* line 106, ../sass/styles.scss */
 #colours .row {
   height: 40px;
 }
 
-/* line 107, ../sass/styles.scss */
+/* line 111, ../sass/styles.scss */
 #reset-modal {
-  top: 10%;
+  top: 15%;
 }
 
-/* line 111, ../sass/styles.scss */
+/* line 115, ../sass/styles.scss */
 .modal-content {
-  background-color: #ffccaa;
-  opacity: 0.9;
+  background-color: rgba(255, 204, 170, 0.5);
 }
 
 /* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */
-/* line 117, ../sass/styles.scss */
+/* line 120, ../sass/styles.scss */
 input[type="radio"] {
   display: none;
 }
 
-/* line 118, ../sass/styles.scss */
+/* line 121, ../sass/styles.scss */
 input[type="radio"] + label .fa-check-square {
   display: none;
 }
 
-/* line 119, ../sass/styles.scss */
+/* line 122, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-check-square {
   display: block;
 }
 
-/* line 120, ../sass/styles.scss */
+/* line 123, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-square-o {
   display: none;
 }

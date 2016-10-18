@@ -21,7 +21,7 @@ $nav-colours: (
   color: map-get($nav-colours, fg);
 }
 
-.nav-pills>li.inactive {
+.nav-pills>li.inactive>a, .nav-pills>li.inactive>a:hover,  {
   color: lighten($grey, 20%);
   opacity: 0.7;
 }
