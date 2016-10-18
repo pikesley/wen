@@ -9205,6 +9205,11 @@ body {
 }
 
 /* line 14, ../sass/_buttons.scss */
+.btn-warning {
+  background-color: #d46d6a;
+}
+
+/* line 18, ../sass/_buttons.scss */
 .btn-default, .btn:focus, .btn-active:focus, .wen-picker button:focus,
 .wen-picker .sp-cancel:focus {
   background-color: #246c60;
@@ -9212,7 +9217,7 @@ body {
   color: #ffccaa;
 }
 
-/* line 20, ../sass/_buttons.scss */
+/* line 24, ../sass/_buttons.scss */
 .btn:hover, .btn-active:hover, .wen-picker button:hover,
 .wen-picker .sp-cancel:hover {
   background-color: #17463e;
@@ -9220,7 +9225,7 @@ body {
   color: #ffccaa;
 }
 
-/* line 26, ../sass/_buttons.scss */
+/* line 30, ../sass/_buttons.scss */
 .btn, .btn-active, .wen-picker button,
 .wen-picker button:active,
 .wen-picker button:hover,
@@ -9452,32 +9457,32 @@ a.modal-trigger:hover, a.modal-trigger:focus {
 }
 
 /* line 115, ../sass/styles.scss */
-#reset-modal {
+#reset-modal, .mode-modal {
   top: 15%;
 }
 
-/* line 119, ../sass/styles.scss */
+/* line 120, ../sass/styles.scss */
 .modal-content {
-  background-color: rgba(255, 204, 170, 0.5);
+  background-color: rgba(255, 204, 170, 0.95);
 }
 
 /* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */
-/* line 124, ../sass/styles.scss */
+/* line 125, ../sass/styles.scss */
 input[type="radio"] {
   display: none;
 }
 
-/* line 125, ../sass/styles.scss */
+/* line 126, ../sass/styles.scss */
 input[type="radio"] + label .fa-check-square {
   display: none;
 }
 
-/* line 126, ../sass/styles.scss */
+/* line 127, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-check-square {
   display: block;
 }
 
-/* line 127, ../sass/styles.scss */
+/* line 128, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-square-o {
   display: none;
 }

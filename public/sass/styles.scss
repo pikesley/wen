@@ -112,12 +112,13 @@ a.modal-trigger:hover, a.modal-trigger:focus {
   }
 }
 
-#reset-modal {
+#reset-modal, .mode-modal {
   top: 15%;
+  //max-width: 80%;
 }
 
 .modal-content {
-  background-color: transparentize($brand-complement, 0.5);
+  background-color: transparentize($brand-complement, 0.05);
 }
 
 /* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */

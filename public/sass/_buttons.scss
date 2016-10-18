@@ -11,6 +11,10 @@ $button-colours: (
   color: map-get($button-colours, fg);
 }
 
+.btn-warning {
+  background-color: $rgba-secondary-1-2;
+}
+
 .btn-default, .btn:focus {
   background-color: map-get($button-colours, bg);
   border-color: map-get($button-colours, bg);

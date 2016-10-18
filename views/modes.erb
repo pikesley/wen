@@ -1,16 +1,50 @@
 <h1><%= @title %></h1>
-<div class='row' id='modes'>
+<div id='modes'>
   <% Wen::Config.instance.config['clock-modes'].each do |mode| %>
-    <div class='col-xs-12'>
-      <button class='btn btn-block btn-default'
-              id='<%= mode["name"] %>-mode'
-              title='<%= mode["what"] %>'
-              onclick='submit("<%= mode["name"] %>")'>
-        <%= mode["name"] %>
-      </button>
+    <div class='row'>
+      <div class='col-xs-9'>
+        <button class='btn btn-block btn-default'
+                id='<%= mode["name"] %>-mode'
+                title='<%= mode["what"] %>'
+                onclick='submit("<%= mode["name"] %>")'>
+          <%= mode["name"] %>
+        </button>
+      </div>
+      <div class='col-xs-3'>
+        <button class='btn btn-default'>
+          <a data-target='#<%= mode["name"] %>-modal' data-toggle='modal'>
+            <i class='fa fa-ellipsis-h'></i>
+          </a>
+        </button>
+      </div>
     </div>
   <% end %>
 </div>
+
+<% Wen::Config.instance.config['clock-modes'].each do |mode| %>
+  <div class='modal fade mode-modal' id='<%= mode["name"] %>-modal' role='dialog'>
+    <div class='modal-dialog modal-sm'>
+      <div class='modal-content'>
+        <div class='modal-body'>
+          <h2><%= mode["name"] %></h2>
+          <p>
+            <%= mode['what'] %>
+          </p>
+          <button class='btn btn-default'
+                  id='<%= mode["name"] %>-mode'
+                  title='<%= mode["what"] %>'
+                  onclick='submit("<%= mode["name"] %>")'
+                  data-dismiss='modal'>
+            select
+          </button>
+          <button class='btn btn-warning' data-dismiss='modal' aria-label='Close'>
+            cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
 
 <script>
 refresh()
