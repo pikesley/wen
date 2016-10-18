@@ -71,9 +71,10 @@ a.modal-trigger:hover, a.modal-trigger:focus {
   position: absolute;
   left: 0;
   right: 0;
-  width: 70%;
+  width: 80%;
+  padding-top: $padding-small-vertical;
 
-  th, td {
+  th, td, tbody {
     border-color: lighten($grey, 20%);
     color: $grey;
     text-align: center;
@@ -87,6 +88,24 @@ a.modal-trigger:hover, a.modal-trigger:focus {
   td.value {
     text-align: left;
   }
+
+/*  th {
+    .show-ctrl {
+      display: none;
+    }
+    .hide-ctrl {
+      display: inline;
+    }
+
+    &.collapsed {
+      .show-ctrl {
+        display: block;
+      }
+      .hide-ctrl {
+        display: inline;
+      }
+    }
+  }*/
 }
 
 .colours {

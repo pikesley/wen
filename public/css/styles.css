@@ -9409,62 +9409,80 @@ a.modal-trigger:hover, a.modal-trigger:focus {
   position: absolute;
   left: 0;
   right: 0;
-  width: 70%;
+  width: 80%;
+  padding-top: 5px;
+  /*  th {
+      .show-ctrl {
+        display: none;
+      }
+      .hide-ctrl {
+        display: inline;
+      }
+  
+      &.collapsed {
+        .show-ctrl {
+          display: block;
+        }
+        .hide-ctrl {
+          display: inline;
+        }
+      }
+    }*/
 }
-/* line 76, ../sass/styles.scss */
-#build-data th, #build-data td {
+/* line 77, ../sass/styles.scss */
+#build-data th, #build-data td, #build-data tbody {
   border-color: #b2b2b2;
   color: #7f7f7f;
   text-align: center;
   background-color: rgba(204, 204, 204, 0.7);
 }
-/* line 83, ../sass/styles.scss */
+/* line 84, ../sass/styles.scss */
 #build-data td.key {
   text-align: right;
 }
-/* line 87, ../sass/styles.scss */
+/* line 88, ../sass/styles.scss */
 #build-data td.value {
   text-align: left;
 }
 
-/* line 92, ../sass/styles.scss */
+/* line 111, ../sass/styles.scss */
 .colours {
   height: 40px;
 }
 
-/* line 97, ../sass/styles.scss */
+/* line 116, ../sass/styles.scss */
 #colours .row {
   height: 40px;
 }
 
-/* line 102, ../sass/styles.scss */
+/* line 121, ../sass/styles.scss */
 #reset-modal {
   top: 10%;
 }
 
-/* line 106, ../sass/styles.scss */
+/* line 125, ../sass/styles.scss */
 .modal-content {
   background-color: #ffccaa;
   opacity: 0.9;
 }
 
 /* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */
-/* line 112, ../sass/styles.scss */
+/* line 131, ../sass/styles.scss */
 input[type="radio"] {
   display: none;
 }
 
-/* line 113, ../sass/styles.scss */
+/* line 132, ../sass/styles.scss */
 input[type="radio"] + label .fa-check-square {
   display: none;
 }
 
-/* line 114, ../sass/styles.scss */
+/* line 133, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-check-square {
   display: block;
 }
 
-/* line 115, ../sass/styles.scss */
+/* line 134, ../sass/styles.scss */
 input[type="radio"]:checked + label .fa-square-o {
   display: none;
 }
