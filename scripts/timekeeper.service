@@ -5,7 +5,7 @@ After       = syslog.target
 [Service]
 User         = pi
 Type         = simple
-ExecStart    = /home/pi/wen/scripts/hit-clock.sh
+ExecStart    = /home/pi/wen/current/scripts/hit-clock.sh
 KillMode     = mixed
 RestartSec   = 10
 Restart      = always

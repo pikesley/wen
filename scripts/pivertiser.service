@@ -4,7 +4,7 @@ After       = network-online.target
 
 [Service]
 Type        = oneshot
-ExecStart   = /home/pi/wen/scripts/pivertise.sh
+ExecStart   = /home/pi/wen/current/scripts/pivertise.sh
 
 [Install]
 WantedBy    = multi-user.target
