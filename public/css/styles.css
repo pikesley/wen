@@ -5,6 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+@import "https://fonts.googleapis.com/css?family=Nixie+One";
 @import "https://fonts.googleapis.com/css?family=Josefin+Slab";
 @import "https://fonts.googleapis.com/css?family=Cutive+Mono";
 /* line 9, ../../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_normalize.scss */
@@ -9187,17 +9188,18 @@ body {
 .wen-picker button:hover,
 .wen-picker .sp-cancel {
   margin-top: 5px;
-  font-family: "Josefin Slab";
+  font-family: "Nixie One";
+  font-size: 0.9em;
 }
 
-/* line 25, ../sass/_buttons.scss */
+/* line 26, ../sass/_buttons.scss */
 .btn-active, .btn-active:focus {
   background-color: #aa3c39;
   border-color: #973533;
   color: #ffccaa;
 }
 
-/* line 33, ../sass/_buttons.scss */
+/* line 34, ../sass/_buttons.scss */
 .btn-active:hover {
   background-color: #973533;
   border-color: #973533;
@@ -9256,7 +9258,7 @@ body {
 .wen-picker button:hover,
 .wen-picker .sp-cancel {
   text-shadow: none;
-  font-family: "Josefin Slab";
+  font-family: "Nixie One";
   background-color: transparent;
   border: none;
 }
@@ -9280,7 +9282,7 @@ html {
 body {
   background: url(/assets/images/retina_wood.png);
   color: #246c60;
-  font-family: "Josefin Slab";
+  font-family: "Nixie One";
   text-align: center;
 }
 
@@ -9313,7 +9315,7 @@ hr {
 /* line 42, ../sass/styles.scss */
 #build-data {
   background: url(/assets/images/brushed_steel.jpg);
-  font-size: 0.8em;
+  font-size: 0.7em;
   font-family: "Cutive Mono";
   bottom: 45px;
   margin: auto;
