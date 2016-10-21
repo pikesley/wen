@@ -4,8 +4,8 @@ $spectrum-colours: (
 
 .wen-picker {
   border-radius: 15px;
-  background-color: map-get($spectrum-colours, bg);
-  border-color: map-get($spectrum-colours, bg);
+  background-color: $brand-primary;
+  border-color: darken($brand-primary, 5%);
 
   button,
   button:active,
@@ -27,44 +27,6 @@ $spectrum-colours: (
   }
 }
 
-/*.picker {
-  stroke-linejoin: round;
-}*/
-
 .sp-palette-container {
   max-width: 90px;
 }
-/*.sp-replacer, .sp-container {
-  border-radius: 4px;
-  background-color: map-get($spectrum-colours, bg);
-  border-color: map-get($spectrum-colours, bg);
-}
-
-button.sp-palette-toggle,
-button.sp-choose, .sp-cancel,
-button.sp-palette-toggle:hover,
-button.sp-choose:hover,
-button.sp-palette-toggle:active,
-button.sp-choose:active,
-button.sp-palette-toggle:focus,
-button.sp-choose:focus {
-  @extend .btn;
-  @extend .btn-link;
-  @extend .btn-xs;
-
-  text-shadow: none;
-  font-family: $font-primary;
-  background-color: transparent;
-  border: none;
-}
-
-//button.sp-palette-toggle:hover, button.sp-choose:hover {
-//  @extend .btn;
-//  @extend .btn-default:hover;
-//  @extend .btn-xs;
-
-//  text-shadow: none;
-//}
-
-
-*/

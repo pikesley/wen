@@ -3,7 +3,6 @@
 @import 'colours';
 @import 'variables';
 @import 'footer';
-@import 'github-corner';
 @import 'buttons';
 @import 'nav';
 @import 'spectrum';
@@ -27,27 +26,8 @@ img {
   max-width: 80%;
 }
 
-.colours {
-  margin-bottom: $padding-small-vertical;
-}
-
-.layer-label, label {
-  font-size: 1.2em;
-  font-weight: bold;
-}
-
-.layer-label {
-  margin-left: 10px;
-}
-
-.fa-stack {
-  padding-top: 2px;
-  width: 1.6em;
-  height: 1.7em;
-}
-
 h1 {
-  font-size: 2em;
+  font-size: 3em;
   margin-top: $padding-small-vertical;
 }
 
@@ -59,16 +39,9 @@ hr {
   border-color: lighten($brand-secondary-1, 20%);
 }
 
-a.modal-trigger {
-  color: $brand-primary;
-}
-
-a.modal-trigger:hover, a.modal-trigger:focus {
-  color: $brand-secondary-1;
-}
-
 #build-data {
-  font-size: 0.6em;
+  background: url(/assets/images/brushed_steel.jpg);
+  font-size: 0.8em;
   font-family: $font-fixed;
   bottom: $footer-height + $padding-small-vertical;
   margin: auto;
@@ -77,12 +50,14 @@ a.modal-trigger:hover, a.modal-trigger:focus {
   right: 0;
   width: 80%;
   padding-top: $padding-small-vertical;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.5);
+
+  text-shadow: -1px -1px 0px rgba(255,255,255,.5);
 
   th, td, tbody {
     border-color: lighten($grey, 20%);
     color: $grey;
     text-align: center;
-    background-color: transparentize(lighten($grey, 30%), 0.3);
   }
 
   tbody {
@@ -102,16 +77,6 @@ a.modal-trigger:hover, a.modal-trigger:focus {
   }
 }
 
-.colours {
-  height: $colours-row-height;
-}
-
-#colours {
-  .row {
-    height: $colours-row-height;
-  }
-}
-
 #reset-modal, .mode-modal {
   top: 15%;
   //max-width: 80%;
@@ -120,9 +85,3 @@ a.modal-trigger:hover, a.modal-trigger:focus {
 .modal-content {
   background-color: transparentize($brand-complement, 0.05);
 }
-
-/* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */
-input[type="radio"] { display: none; }
-input[type="radio"] + label .fa-check-square { display: none; }
-input[type="radio"]:checked + label .fa-check-square { display: block; }
-input[type="radio"]:checked + label .fa-square-o { display: none; }

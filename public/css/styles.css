@@ -6,7 +6,7 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 @import "https://fonts.googleapis.com/css?family=Josefin+Slab";
-@import "https://fonts.googleapis.com/css?family=Source+Code+Pro";
+@import "https://fonts.googleapis.com/css?family=Cutive+Mono";
 /* line 9, ../../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_normalize.scss */
 html {
   font-family: sans-serif;
@@ -4466,7 +4466,7 @@ select[multiple].input-lg,
 }
 
 /* line 9, ../../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_buttons.scss */
-.btn, .btn-active, .wen-picker button,
+.btn, .btn-active, .btn-active:focus, .btn-active:hover, .wen-picker button,
 .wen-picker button:active,
 .wen-picker button:hover,
 .wen-picker .sp-cancel {
@@ -9160,78 +9160,48 @@ body {
   color: #d27a77;
 }
 
-/* line 1, ../sass/_github-corner.scss */
-.octo-background {
-  fill: #246c60;
+/* line 4, ../sass/_buttons.scss */
+.btn-warning {
+  background-color: #319282;
 }
 
-/* line 5, ../sass/_github-corner.scss */
-.octo-arm, .octo-body {
-  fill: white;
-}
-
-/* line 9, ../sass/_github-corner.scss */
-.github-corner:hover .octo-arm {
-  animation: octocat-wave 560ms ease-in-out;
-}
-
-@keyframes octocat-wave {
-  0%, 100% {
-    transform: rotate(0);
-  }
-  20%, 60% {
-    transform: rotate(-25deg);
-  }
-  40%, 80% {
-    transform: rotate(10deg);
-  }
-}
-@media (max-width: 500px) {
-  /* line 28, ../sass/_github-corner.scss */
-  .github-corner:hover .octo-arm {
-    animation: none;
-  }
-
-  /* line 32, ../sass/_github-corner.scss */
-  .github-corner .octo-arm {
-    animation: octocat-wave 560ms ease-in-out;
-  }
-}
-/* line 6, ../sass/_buttons.scss */
-.btn-active {
-  background-color: #aa3c39;
-  border-color: #aa3c39;
+/* line 8, ../sass/_buttons.scss */
+.btn-default, .btn:focus, .btn-active:focus, .wen-picker button:focus,
+.wen-picker .sp-cancel:focus {
+  background-color: #246c60;
+  border-color: #1e594f;
   color: #ffccaa;
 }
 
 /* line 14, ../sass/_buttons.scss */
-.btn-warning {
-  background-color: #d46d6a;
-}
-
-/* line 18, ../sass/_buttons.scss */
-.btn-default, .btn:focus, .btn-active:focus, .wen-picker button:focus,
-.wen-picker .sp-cancel:focus {
-  background-color: #246c60;
-  border-color: #246c60;
-  color: #ffccaa;
-}
-
-/* line 24, ../sass/_buttons.scss */
 .btn:hover, .btn-active:hover, .wen-picker button:hover,
 .wen-picker .sp-cancel:hover {
-  background-color: #17463e;
-  border-color: #17463e;
+  background-color: #1e594f;
+  border-color: #1e594f;
   color: #ffccaa;
 }
 
-/* line 30, ../sass/_buttons.scss */
-.btn, .btn-active, .wen-picker button,
+/* line 20, ../sass/_buttons.scss */
+.btn, .btn-active, .btn-active:focus, .btn-active:hover, .wen-picker button,
 .wen-picker button:active,
 .wen-picker button:hover,
 .wen-picker .sp-cancel {
   margin-top: 5px;
   font-family: "Josefin Slab";
+}
+
+/* line 25, ../sass/_buttons.scss */
+.btn-active, .btn-active:focus {
+  background-color: #aa3c39;
+  border-color: #973533;
+  color: #ffccaa;
+}
+
+/* line 33, ../sass/_buttons.scss */
+.btn-active:hover {
+  background-color: #973533;
+  border-color: #973533;
+  color: #ffccaa;
 }
 
 /* line 7, ../sass/_nav.scss */
@@ -9278,7 +9248,7 @@ body {
 .wen-picker {
   border-radius: 15px;
   background-color: #246c60;
-  border-color: #246c60;
+  border-color: #1e594f;
 }
 /* line 10, ../sass/_spectrum.scss */
 .wen-picker button,
@@ -9296,54 +9266,17 @@ body {
   border: 0;
 }
 
-/*.picker {
-  stroke-linejoin: round;
-}*/
-/* line 34, ../sass/_spectrum.scss */
+/* line 30, ../sass/_spectrum.scss */
 .sp-palette-container {
   max-width: 90px;
 }
 
-/*.sp-replacer, .sp-container {
-  border-radius: 4px;
-  background-color: map-get($spectrum-colours, bg);
-  border-color: map-get($spectrum-colours, bg);
-}
-
-button.sp-palette-toggle,
-button.sp-choose, .sp-cancel,
-button.sp-palette-toggle:hover,
-button.sp-choose:hover,
-button.sp-palette-toggle:active,
-button.sp-choose:active,
-button.sp-palette-toggle:focus,
-button.sp-choose:focus {
-  @extend .btn;
-  @extend .btn-link;
-  @extend .btn-xs;
-
-  text-shadow: none;
-  font-family: $font-primary;
-  background-color: transparent;
-  border: none;
-}
-
-//button.sp-palette-toggle:hover, button.sp-choose:hover {
-//  @extend .btn;
-//  @extend .btn-default:hover;
-//  @extend .btn-xs;
-
-//  text-shadow: none;
-//}
-
-
-*/
-/* line 11, ../sass/styles.scss */
+/* line 10, ../sass/styles.scss */
 html {
   text-transform: lowercase;
 }
 
-/* line 15, ../sass/styles.scss */
+/* line 14, ../sass/styles.scss */
 body {
   background: url(/assets/images/retina_wood.png);
   color: #246c60;
@@ -9351,69 +9284,37 @@ body {
   text-align: center;
 }
 
-/* line 22, ../sass/styles.scss */
+/* line 21, ../sass/styles.scss */
 a {
   color: #aa3c39;
 }
 
-/* line 26, ../sass/styles.scss */
+/* line 25, ../sass/styles.scss */
 img {
   max-width: 80%;
 }
 
-/* line 30, ../sass/styles.scss */
-.colours {
-  margin-bottom: 5px;
-}
-
-/* line 34, ../sass/styles.scss */
-.layer-label, label {
-  font-size: 1.2em;
-  font-weight: bold;
-}
-
-/* line 39, ../sass/styles.scss */
-.layer-label {
-  margin-left: 10px;
-}
-
-/* line 43, ../sass/styles.scss */
-.fa-stack {
-  padding-top: 2px;
-  width: 1.6em;
-  height: 1.7em;
-}
-
-/* line 49, ../sass/styles.scss */
+/* line 29, ../sass/styles.scss */
 h1 {
-  font-size: 2em;
+  font-size: 3em;
   margin-top: 5px;
 }
 
-/* line 54, ../sass/styles.scss */
+/* line 34, ../sass/styles.scss */
 h2 {
   font-size: 1.5em;
 }
 
-/* line 58, ../sass/styles.scss */
+/* line 38, ../sass/styles.scss */
 hr {
   border-color: #d27a77;
 }
 
-/* line 62, ../sass/styles.scss */
-a.modal-trigger {
-  color: #246c60;
-}
-
-/* line 66, ../sass/styles.scss */
-a.modal-trigger:hover, a.modal-trigger:focus {
-  color: #aa3c39;
-}
-
-/* line 70, ../sass/styles.scss */
+/* line 42, ../sass/styles.scss */
 #build-data {
-  font-size: 0.6em;
-  font-family: "Source Code Pro";
+  background: url(/assets/images/brushed_steel.jpg);
+  font-size: 0.8em;
+  font-family: "Cutive Mono";
   bottom: 45px;
   margin: auto;
   position: absolute;
@@ -9421,68 +9322,38 @@ a.modal-trigger:hover, a.modal-trigger:focus {
   right: 0;
   width: 80%;
   padding-top: 5px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.5);
 }
-/* line 81, ../sass/styles.scss */
+/* line 57, ../sass/styles.scss */
 #build-data th, #build-data td, #build-data tbody {
   border-color: #b2b2b2;
   color: #7f7f7f;
   text-align: center;
-  background-color: rgba(204, 204, 204, 0.7);
 }
-/* line 88, ../sass/styles.scss */
+/* line 63, ../sass/styles.scss */
 #build-data tbody {
   border-top: none;
 }
-/* line 92, ../sass/styles.scss */
+/* line 67, ../sass/styles.scss */
 #build-data td.key {
   text-align: right;
 }
-/* line 96, ../sass/styles.scss */
+/* line 71, ../sass/styles.scss */
 #build-data td.value {
   text-align: left;
 }
-/* line 100, ../sass/styles.scss */
+/* line 75, ../sass/styles.scss */
 #build-data th {
   padding-top: 8px;
 }
 
-/* line 105, ../sass/styles.scss */
-.colours {
-  height: 40px;
-}
-
-/* line 110, ../sass/styles.scss */
-#colours .row {
-  height: 40px;
-}
-
-/* line 115, ../sass/styles.scss */
+/* line 80, ../sass/styles.scss */
 #reset-modal, .mode-modal {
   top: 15%;
 }
 
-/* line 120, ../sass/styles.scss */
+/* line 85, ../sass/styles.scss */
 .modal-content {
   background-color: rgba(255, 204, 170, 0.95);
-}
-
-/* http://cssdeck.com/labs/custom-radiobutton-and-checkbox-with-fontawesome-full-style-solution */
-/* line 125, ../sass/styles.scss */
-input[type="radio"] {
-  display: none;
-}
-
-/* line 126, ../sass/styles.scss */
-input[type="radio"] + label .fa-check-square {
-  display: none;
-}
-
-/* line 127, ../sass/styles.scss */
-input[type="radio"]:checked + label .fa-check-square {
-  display: block;
-}
-
-/* line 128, ../sass/styles.scss */
-input[type="radio"]:checked + label .fa-square-o {
-  display: none;
 }

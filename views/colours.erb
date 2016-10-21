@@ -1,24 +1,8 @@
-<h1>
-  <%= @title %>
-  <a data-target='#reset-modal' data-toggle='modal' class='modal-trigger'>
-    <i class='fa fa-caret-down'></i>
-  </a>
-</h1>
+<h1><%= @title %></h1>
 
-<div class='modal fade' id='reset-modal' role='dialog'>
-  <div class='modal-dialog modal-sm'>
-    <div class='modal-content'>
-      <div class='modal-body'>
-        <a href='#' class='btn btn-default' onclick='reset()' data-dismiss='modal'>reset to defaults</a>
-
-        <button class='btn btn-warning' data-dismiss='modal' aria-label='Close'>
-          cancel
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
 <div id='clock'></div>
+
+<a href='#' class='btn btn-default' onclick='reset()'>reset to defaults</a>
 
 <script>
 colours = [

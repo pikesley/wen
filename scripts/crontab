@@ -1,2 +1,0 @@
-MAILTO=''
-*/5 * * * *       cd /home/pi/wen && /usr/local/bin/rake code:update

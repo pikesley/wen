@@ -1,24 +1,22 @@
 <h1><%= @title %></h1>
 <div id='modes'>
-  <% Wen::Config.instance.config['clock-modes'].each do |mode| %>
-    <div class='row'>
-      <div class='col-xs-9'>
-        <button class='btn btn-block btn-default'
-                id='<%= mode["name"] %>-mode'
-                title='<%= mode["what"] %>'
-                onclick='submit("<%= mode["name"] %>")'>
-          <%= mode["name"] %>
-        </button>
-      </div>
-      <div class='col-xs-3'>
-        <button class='btn btn-default'>
-          <a data-target='#<%= mode["name"] %>-modal' data-toggle='modal'>
-            <i class='fa fa-ellipsis-h'></i>
-          </a>
-        </button>
-      </div>
-    </div>
-  <% end %>
+  <div class='row'>
+    <% Wen::Config.instance.config['clock-modes'].each do |mode| %>
+        <div class='col-xs-4'>
+          <div class="btn-group">
+            <button type='button' class='btn btn-default <%= mode["name"] %>-mode'
+                    id='<%= mode["name"] %>-mode'
+                    title='<%= mode["what"] %>'
+                    onclick='submit("<%= mode["name"] %>")'>
+              <%= mode["name"] %>
+            </button>
+            <button type='button' class='btn btn-default modal-toggle <%= mode["name"] %>-mode' data-target='#<%= mode["name"] %>-modal' data-toggle='modal'>
+                <i class='fa fa-ellipsis-h'></i>
+            </button>
+          </div>
+        </div>
+    <% end %>
+  </div>
 </div>
 
 <% Wen::Config.instance.config['clock-modes'].each do |mode| %>
@@ -31,7 +29,6 @@
             <%= mode['what'] %>
           </p>
           <button class='btn btn-default'
-                  id='<%= mode["name"] %>-mode'
                   title='<%= mode["what"] %>'
                   onclick='submit("<%= mode["name"] %>")'
                   data-dismiss='modal'>
@@ -67,11 +64,12 @@ function refresh() {
   })
 
   $.getJSON('/mode/', function(data) {
-    $('#' + data['mode'] + '-mode').removeClass('btn-default').addClass('btn-active')
+    $('.' + data['mode'] + '-mode').removeClass('btn-default').addClass('btn-active')
   })
 
-  $("#modes button").mouseup(function() {
-    $(this).blur()
+  $("#modes button").focus(function() {
+    this.blur()
   })
+
 }
 </script>

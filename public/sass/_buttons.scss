@@ -1,33 +1,39 @@
-$button-colours: (
-  bg: $brand-primary,
-  fg: $brand-complement
-);
-
-.btn-active {
-  @extend .btn;
-
-  background-color: $brand-secondary-1;
-  border-color: $brand-secondary-1;
-  color: map-get($button-colours, fg);
-}
+$border-darken: 5%;
+$hover-darken: 5%;
 
 .btn-warning {
-  background-color: $rgba-secondary-1-2;
+  background-color: lighten($brand-primary, 10%);
 }
 
 .btn-default, .btn:focus {
-  background-color: map-get($button-colours, bg);
-  border-color: map-get($button-colours, bg);
-  color: map-get($button-colours, fg);
+  background-color: $brand-primary;
+  border-color: darken($brand-primary, $border-darken);
+  color: $brand-complement;
 }
 
 .btn:hover {
-  background-color: darken(map-get($button-colours, bg), 10%);
-  border-color: darken(map-get($button-colours, bg), 10%);
-  color: map-get($button-colours, fg);
+  background-color: darken($brand-primary, $hover-darken);
+  border-color: darken($brand-primary, $hover-darken);
+  color: $brand-complement;
 }
 
 .btn {
   margin-top: $padding-small-vertical;
   font-family: $font-secondary;
+}
+
+.btn-active, .btn-active:focus {
+  @extend .btn;
+
+  background-color: $brand-secondary-1;
+  border-color: darken($brand-secondary-1, $border-darken);
+  color: $brand-complement;
+}
+
+.btn-active:hover {
+  @extend .btn;
+
+  background-color: darken($brand-secondary-1, $hover-darken);
+  border-color: darken($brand-secondary-1, $border-darken);
+  color: $brand-complement;
 }
