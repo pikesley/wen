@@ -163,3 +163,5 @@ This is definitely a prototype: I can certainly turn a better clock body, and th
 ## There's a movie, too
 
 [![Wen, the Movie](http://i.imgur.com/GmuLpRC.png)](https://youtu.be/FGRnSwF10Dw)
+
+knife bootstrap --ssh-user pi -t template <node ip>
