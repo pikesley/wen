@@ -29,14 +29,14 @@
             <%= mode['what'] %>
           </p>
           <p class='current-mode' id='<%= mode["name"] %>-is-current'>This mode is currently selected</p>
-          <button class='btn btn-default <%= mode["name"] %>-mode'
+          <button class='btn btn-default <%= mode["name"] %>-mode mode-picker'
                   id='<%= mode["name"] %>-mode-modal-button'
                   title='<%= mode["what"] %>'
                   onclick='submit("<%= mode["name"] %>")'
                   data-dismiss='modal'>
             pick this
           </button>
-          <button class='btn btn-warning' id='<%= mode["name"] %>-mode-modal-cancel' data-dismiss='modal' aria-label='Close'>
+          <button class='btn btn-warning mode-canceller' id='<%= mode["name"] %>-mode-modal-cancel' data-dismiss='modal' aria-label='Close'>
             leave things as they are for now
           </button>
         </div>
@@ -63,6 +63,19 @@ function submit(mode) {
 function refresh() {
   $('#modes button').each(function() {
     $(this).removeClass('btn-active').addClass('btn-default')
+  })
+
+  $('.mode-picker').each(function() {
+    $(this).show()
+    $(this).removeClass('btn-active').addClass('btn-default')
+  })
+
+  $('.mode-canceller').each(function() {
+    $(this).text('leave things as they are for now')
+  })
+
+  $('.current-mode').each(function() {
+    $(this).hide()
   })
 
   $.getJSON('/mode/', function(data) {
