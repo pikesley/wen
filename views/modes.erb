@@ -28,13 +28,15 @@
           <p>
             <%= mode['what'] %>
           </p>
-          <button class='btn btn-default'
+          <p class='current-mode' id='<%= mode["name"] %>-is-current'>This mode is currently selected</p>
+          <button class='btn btn-default <%= mode["name"] %>-mode'
+                  id='<%= mode["name"] %>-mode-modal-button'
                   title='<%= mode["what"] %>'
                   onclick='submit("<%= mode["name"] %>")'
                   data-dismiss='modal'>
             pick this
           </button>
-          <button class='btn btn-warning' data-dismiss='modal' aria-label='Close'>
+          <button class='btn btn-warning' id='<%= mode["name"] %>-mode-modal-cancel' data-dismiss='modal' aria-label='Close'>
             leave things as they are for now
           </button>
         </div>
@@ -65,6 +67,9 @@ function refresh() {
 
   $.getJSON('/mode/', function(data) {
     $('.' + data['mode'] + '-mode').removeClass('btn-default').addClass('btn-active')
+    $('#' + data['mode'] + '-is-current').show()
+    $('#' + data['mode'] + '-mode-modal-button').hide()
+    $('#' + data['mode'] + '-mode-modal-cancel').text('this button closes this window')
   })
 
   $("#modes button").focus(function() {
