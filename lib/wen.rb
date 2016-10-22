@@ -15,7 +15,6 @@ require_relative 'wen/clock/neopixels'
 require_relative 'wen/clock/tricks'
 
 require_relative 'wen/helpers'
-require_relative 'wen/logger'
 require_relative 'wen/racks'
 require_relative 'wen/clock_worker'
 
