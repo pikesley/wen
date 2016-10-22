@@ -9298,7 +9298,7 @@ img {
 
 /* line 29, ../sass/styles.scss */
 h1 {
-  font-size: 3em;
+  font-size: 2.2em;
   margin-top: 5px;
 }
 
@@ -9313,6 +9313,12 @@ hr {
 }
 
 /* line 42, ../sass/styles.scss */
+p {
+  text-align: justify;
+  font-size: 0.9em;
+}
+
+/* line 47, ../sass/styles.scss */
 #build-data {
   background: url(/assets/images/brushed_steel.jpg);
   font-size: 0.7em;
@@ -9324,37 +9330,36 @@ hr {
   right: 0;
   width: 80%;
   padding-top: 5px;
-  text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.5);
 }
-/* line 57, ../sass/styles.scss */
+/* line 62, ../sass/styles.scss */
 #build-data th, #build-data td, #build-data tbody {
   border-color: #b2b2b2;
   color: #7f7f7f;
   text-align: center;
 }
-/* line 63, ../sass/styles.scss */
+/* line 68, ../sass/styles.scss */
 #build-data tbody {
   border-top: none;
 }
-/* line 67, ../sass/styles.scss */
+/* line 72, ../sass/styles.scss */
 #build-data td.key {
   text-align: right;
 }
-/* line 71, ../sass/styles.scss */
+/* line 76, ../sass/styles.scss */
 #build-data td.value {
   text-align: left;
 }
-/* line 75, ../sass/styles.scss */
+/* line 80, ../sass/styles.scss */
 #build-data th {
   padding-top: 8px;
 }
 
-/* line 80, ../sass/styles.scss */
+/* line 85, ../sass/styles.scss */
 #reset-modal, .mode-modal {
   top: 15%;
 }
 
-/* line 85, ../sass/styles.scss */
+/* line 90, ../sass/styles.scss */
 .modal-content {
   background-color: rgba(255, 204, 170, 0.95);
 }

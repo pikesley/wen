@@ -27,7 +27,7 @@ img {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2.2em;
   margin-top: $padding-small-vertical;
 }
 
@@ -37,6 +37,11 @@ h2 {
 
 hr {
   border-color: lighten($brand-secondary-1, 20%);
+}
+
+p {
+  text-align: justify;
+  font-size: 0.9em;
 }
 
 #build-data {
@@ -52,7 +57,7 @@ hr {
   padding-top: $padding-small-vertical;
   //box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 
-  text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.5);
+  //text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.5);
 
   th, td, tbody {
     border-color: lighten($grey, 20%);
