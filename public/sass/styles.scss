@@ -92,9 +92,12 @@ p {
   background-color: transparentize($brand-complement, 0.05);
 }
 
+.modal p {
+  text-align: center;  
+}
+
 .current-mode {
   display: none;
   font-style: italic;
   color: $brand-secondary-1;
-  text-align: center;
 }

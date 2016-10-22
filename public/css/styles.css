@@ -9366,9 +9366,13 @@ p {
 }
 
 /* line 95, ../sass/styles.scss */
+.modal p {
+  text-align: center;
+}
+
+/* line 99, ../sass/styles.scss */
 .current-mode {
   display: none;
   font-style: italic;
   color: #aa3c39;
-  text-align: center;
 }
