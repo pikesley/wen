@@ -45,7 +45,8 @@ p {
 }
 
 #build-data {
-  background: url(/assets/images/brushed_steel.jpg);
+  //background: url(/assets/images/brushed_steel.jpg);
+  background-color: $light-grey;
   font-size: 0.7em;
   font-family: $font-fixed;
   bottom: $footer-height + $padding-small-vertical;
@@ -57,7 +58,7 @@ p {
   padding-top: $padding-small-vertical;
   //box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 
-  //text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.5);
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
 
   th, td, tbody {
     border-color: lighten($grey, 20%);
