@@ -13,6 +13,25 @@ module Wen
         )
       end
 
+      def self.align_clock
+        a = []
+        c = Config.instance.config['colours']['magenta']
+
+        [
+          0,
+          Config.instance.config.neopixels['minutes']['pins'] / 2,
+          Config.instance.config.neopixels['minutes']['pins'],
+          Config.instance.config.neopixels['minutes']['pins'] + (Config.instance.config.neopixels['hours']['pins'] / 2)
+        ].each do |i|
+          a[i] = c
+        end
+
+        Wen::Neopixels.instance.illuminate array_filler(a)
+        sleep 10
+
+        Clock.time
+      end
+
       def self.blink duration = 1
         self.clear
         sleep duration / 10.0 if IS_PI
