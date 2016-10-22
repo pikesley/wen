@@ -14,6 +14,7 @@ module Wen
       end
 
       def self.align_clock
+        self.clear
         a = []
         c = Config.instance.config['colours']['magenta']
 
