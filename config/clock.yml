@@ -74,3 +74,5 @@ colours:
   green-yellow: [127, 255, 127]
   yellow:       [255, 255,   0]
   yellow-red:   [255, 127,   0]
+
+github_url: http://github.com/pikesley/wen
