@@ -1,4 +1,4 @@
-IS_PI = RUBY_PLATFORM =~ /arm.*-linux/
+IS_PI = RUBY_PLATFORM =~ /linux/
 
 module Wen
 
