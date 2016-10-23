@@ -9206,7 +9206,7 @@ body {
   color: #ffccaa;
 }
 
-/* line 7, ../sass/_nav.scss */
+/* line 1, ../sass/_nav.scss */
 #main-nav {
   padding-top: 5px;
   height: 40px;
@@ -9214,33 +9214,30 @@ body {
   border: none;
 }
 
-/* line 14, ../sass/_nav.scss */
+/* line 8, ../sass/_nav.scss */
 .nav-item {
   width: 24%;
 }
 
-/* line 18, ../sass/_nav.scss */
-.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+/* line 14, ../sass/_nav.scss */
+.nav-pills li.active a, .nav-pills li.active a:focus, .nav-pills li.active a:hover {
   background-color: transparent;
   border-color: transparent;
   color: #aa3c39;
 }
-
-/* line 24, ../sass/_nav.scss */
-.nav-pills > li.inactive > a, .nav-pills > li.inactive > a:hover {
+/* line 22, ../sass/_nav.scss */
+.nav-pills li.inactive a, .nav-pills li.inactive a:hover {
   color: #b2b2b2;
   opacity: 0.7;
 }
-
 /* line 29, ../sass/_nav.scss */
-.nav-pills > li > a {
+.nav-pills li a {
   background-color: transparent;
   border-color: transparent;
   color: #2d8632;
 }
-
 /* line 35, ../sass/_nav.scss */
-.nav-pills > li > a:focus, .nav-pills > li > a:hover {
+.nav-pills li a:focus, .nav-pills li a:hover {
   background-color: transparent;
   border-color: transparent;
   color: #842f2c;

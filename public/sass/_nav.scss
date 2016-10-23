@@ -1,13 +1,7 @@
-$nav-colours: (
-  fg: $brand-secondary-1,
-  bg: transparent,
-  alt: $brand-secondary-2,
-);
-
 #main-nav {
   padding-top: $padding-small-vertical;
   height: $footer-height;
-  background-color: map-get($nav-colours, bg);
+  background-color: transparent;
   border: none;
 }
 
@@ -15,25 +9,33 @@ $nav-colours: (
   width: 24%;
 }
 
-.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
-  background-color: map-get($nav-colours, bg);
-  border-color: map-get($nav-colours, bg);
-  color: map-get($nav-colours, fg);
-}
+.nav-pills {
+  li.active {
+    a, a:focus, a:hover {
+      background-color: transparent;
+      border-color: transparent;
+      color: $brand-secondary-1;
+    }
+  }
 
-.nav-pills>li.inactive>a, .nav-pills>li.inactive>a:hover,  {
-  color: lighten($grey, 20%);
-  opacity: 0.7;
-}
+  li.inactive {
+    a, a:hover {
+      color: lighten($grey, 20%);
+      opacity: 0.7;
+    }
+  }
 
-.nav-pills>li>a {
-  background-color: map-get($nav-colours, bg);
-  border-color: map-get($nav-colours, bg);
-  color: map-get($nav-colours, alt);
-}
+  li {
+    a {
+      background-color: transparent;
+      border-color: transparent;
+      color: $brand-secondary-2;
+    }
 
-.nav-pills>li>a:focus, .nav-pills>li>a:hover {
-  background-color: map-get($nav-colours, bg);
-  border-color: map-get($nav-colours, bg);
-  color: darken(map-get($nav-colours, fg), 10%);
+    a:focus, a:hover {
+      background-color: transparent;
+      border-color: transparent;
+      color: darken($brand-secondary-1, 10%);
+    }
+  }
 }
