@@ -6,7 +6,7 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 @import "https://fonts.googleapis.com/css?family=Nixie+One";
-@import "https://fonts.googleapis.com/css?family=Josefin+Slab";
+@import "https://fonts.googleapis.com/css?family=Fredoka+One";
 @import "https://fonts.googleapis.com/css?family=Cutive+Mono";
 /* line 9, ../../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_normalize.scss */
 html {
@@ -9147,39 +9147,39 @@ body {
   bottom: 0;
   width: 100%;
   margin-top: 10px;
-  background: #246c60;
-  color: #ffccaa;
+  background: #582a72;
+  color: #ffffaa;
   height: 40px;
   padding: 10px 16px;
 }
 /* line 22, ../sass/_footer.scss */
 .footer a {
-  color: #ffccaa;
+  color: #ffffaa;
 }
 /* line 26, ../sass/_footer.scss */
 .footer a:hover {
-  color: #d27a77;
+  color: #d2c277;
 }
 
 /* line 4, ../sass/_buttons.scss */
 .btn-warning {
-  background-color: #319282;
+  background-color: #753897;
 }
 
 /* line 8, ../sass/_buttons.scss */
 .btn-default, .btn:focus, .btn-active:focus, .wen-picker button:focus,
 .wen-picker .sp-cancel:focus {
-  background-color: #246c60;
-  border-color: #1e594f;
-  color: #ffccaa;
+  background-color: #582a72;
+  border-color: #4a235f;
+  color: #ffffaa;
 }
 
 /* line 14, ../sass/_buttons.scss */
 .btn:hover, .btn-active:hover, .wen-picker button:hover,
 .wen-picker .sp-cancel:hover {
-  background-color: #1e594f;
-  border-color: #1e594f;
-  color: #ffccaa;
+  background-color: #4a235f;
+  border-color: #4a235f;
+  color: #ffffaa;
 }
 
 /* line 20, ../sass/_buttons.scss */
@@ -9194,19 +9194,19 @@ body {
 
 /* line 26, ../sass/_buttons.scss */
 .btn-active, .btn-active:focus {
-  background-color: #aa3c39;
-  border-color: #973533;
-  color: #ffccaa;
+  background-color: #aa9739;
+  border-color: #978633;
+  color: #ffffaa;
 }
 
 /* line 34, ../sass/_buttons.scss */
 .btn-active:hover {
-  background-color: #973533;
-  border-color: #973533;
-  color: #ffccaa;
+  background-color: #978633;
+  border-color: #978633;
+  color: #ffffaa;
 }
 
-/* line 7, ../sass/_nav.scss */
+/* line 1, ../sass/_nav.scss */
 #main-nav {
   padding-top: 5px;
   height: 40px;
@@ -9214,43 +9214,40 @@ body {
   border: none;
 }
 
-/* line 14, ../sass/_nav.scss */
+/* line 8, ../sass/_nav.scss */
 .nav-item {
   width: 24%;
 }
 
-/* line 18, ../sass/_nav.scss */
-.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+/* line 14, ../sass/_nav.scss */
+.nav-pills li.active a, .nav-pills li.active a:focus, .nav-pills li.active a:hover {
   background-color: transparent;
   border-color: transparent;
-  color: #aa3c39;
+  color: #aa9739;
 }
-
-/* line 24, ../sass/_nav.scss */
-.nav-pills > li.inactive > a, .nav-pills > li.inactive > a:hover {
+/* line 22, ../sass/_nav.scss */
+.nav-pills li.inactive a, .nav-pills li.inactive a:hover {
   color: #b2b2b2;
   opacity: 0.7;
 }
-
 /* line 29, ../sass/_nav.scss */
-.nav-pills > li > a {
+.nav-pills li a {
   background-color: transparent;
   border-color: transparent;
-  color: #2d8632;
+  color: #403075;
 }
-
 /* line 35, ../sass/_nav.scss */
-.nav-pills > li > a:focus, .nav-pills > li > a:hover {
+.nav-pills li a:focus, .nav-pills li a:hover {
   background-color: transparent;
   border-color: transparent;
-  color: #842f2c;
+  color: #84752c;
 }
 
 /* line 5, ../sass/_spectrum.scss */
 .wen-picker {
   border-radius: 15px;
-  background-color: #246c60;
-  border-color: #1e594f;
+  background-color: #582a72;
+  border-color: #4a235f;
 }
 /* line 10, ../sass/_spectrum.scss */
 .wen-picker button,
@@ -9281,14 +9278,14 @@ html {
 /* line 14, ../sass/styles.scss */
 body {
   background: url(/assets/images/retina_wood.png);
-  color: #246c60;
+  color: #582a72;
   font-family: "Nixie One";
   text-align: center;
 }
 
 /* line 21, ../sass/styles.scss */
 a {
-  color: #aa3c39;
+  color: #aa9739;
 }
 
 /* line 25, ../sass/styles.scss */
@@ -9300,25 +9297,27 @@ img {
 h1 {
   font-size: 2.2em;
   margin-top: 5px;
+  color: #aa9739;
 }
 
-/* line 34, ../sass/styles.scss */
+/* line 36, ../sass/styles.scss */
 h2 {
   font-size: 1.5em;
 }
 
-/* line 38, ../sass/styles.scss */
+/* line 40, ../sass/styles.scss */
 hr {
-  border-color: #d27a77;
+  border-color: #d2c277;
 }
 
-/* line 42, ../sass/styles.scss */
+/* line 44, ../sass/styles.scss */
 p {
   text-align: justify;
   font-size: 0.9em;
+  font-family: "Nixie One";
 }
 
-/* line 47, ../sass/styles.scss */
+/* line 50, ../sass/styles.scss */
 #build-data {
   background-color: #bfbfbf;
   font-size: 0.7em;
@@ -9332,58 +9331,58 @@ p {
   padding-top: 5px;
   text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
 }
-/* line 63, ../sass/styles.scss */
+/* line 66, ../sass/styles.scss */
 #build-data a {
   color: #7f7f7f;
   text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.5);
 }
-/* line 68, ../sass/styles.scss */
+/* line 71, ../sass/styles.scss */
 #build-data a:hover, #build-data a:active {
   color: #7f7f7f;
   text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
   text-decoration: none;
 }
-/* line 74, ../sass/styles.scss */
+/* line 77, ../sass/styles.scss */
 #build-data th, #build-data td, #build-data tbody {
   border-color: #b2b2b2;
   color: #7f7f7f;
   text-align: center;
 }
-/* line 80, ../sass/styles.scss */
+/* line 83, ../sass/styles.scss */
 #build-data tbody {
   border-top: none;
 }
-/* line 84, ../sass/styles.scss */
+/* line 87, ../sass/styles.scss */
 #build-data td.key {
   text-align: right;
 }
-/* line 88, ../sass/styles.scss */
+/* line 91, ../sass/styles.scss */
 #build-data td.value {
   text-align: left;
 }
-/* line 92, ../sass/styles.scss */
+/* line 95, ../sass/styles.scss */
 #build-data th {
   padding-top: 8px;
 }
 
-/* line 97, ../sass/styles.scss */
+/* line 100, ../sass/styles.scss */
 #reset-modal, .mode-modal {
   top: 15%;
 }
 
-/* line 102, ../sass/styles.scss */
+/* line 105, ../sass/styles.scss */
 .modal-content {
-  background-color: rgba(255, 204, 170, 0.95);
+  background-color: rgba(255, 255, 170, 0.95);
 }
 
-/* line 106, ../sass/styles.scss */
+/* line 109, ../sass/styles.scss */
 .modal p {
   text-align: center;
 }
 
-/* line 110, ../sass/styles.scss */
+/* line 113, ../sass/styles.scss */
 .current-mode {
   display: none;
   font-style: italic;
-  color: #aa3c39;
+  color: #aa9739;
 }

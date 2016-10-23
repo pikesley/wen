@@ -29,6 +29,8 @@ img {
 h1 {
   font-size: 2.2em;
   margin-top: $padding-small-vertical;
+
+	color: $brand-secondary-1;
 }
 
 h2 {
@@ -42,6 +44,7 @@ hr {
 p {
   text-align: justify;
   font-size: 0.9em;
+  font-family: $font-secondary;
 }
 
 #build-data {
