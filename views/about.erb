@@ -42,7 +42,7 @@ Issues / suggestions / pull-requests can be submitted <a href='https://github.co
   <tbody class="collapse collapsed-build-rows">
     <tr>
       <td class='key'>SHA</td>
-      <td class='value'><%= g.sha %></td>
+      <td class='value'><a href='<%= "#{Wen::Config.instance.config['github_url']}/tree/#{g.sha}" %>'><%= g.sha %></a></td>
     </tr>
     <tr>
       <td class='key'>Date</td>
