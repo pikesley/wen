@@ -47,7 +47,7 @@ pages:
   - name: colours
     fa:   paint-brush
     text: adjust colours
-  - name: mode
+  - name: modes
     fa:   clock-o
     text: change clock mode
   - name: tricks

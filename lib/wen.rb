@@ -81,7 +81,7 @@ module Wen
 
 ### modes
 
-    get '/mode/?' do
+    get '/modes/?' do
       headers 'Vary' => 'Accept'
 
       respond_to do |wants|
@@ -98,7 +98,7 @@ module Wen
       end
     end
 
-    post '/mode/?' do
+    post '/modes/?' do
       ClockWorker.perform_async 'mode', JSON.parse(request.body.read)
     end
 

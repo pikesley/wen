@@ -2,7 +2,7 @@ module Wen
   describe App do
     context 'set the mode' do
       it 'sets the mode' do
-        post '/mode', { mode: 'vague' }.to_json, JSON_HEADERS
+        post '/modes', { mode: 'vague' }.to_json, JSON_HEADERS
         expect(ClockWorker).to have_enqueued_job 'mode', {
           mode: 'vague'
         }
@@ -12,7 +12,7 @@ module Wen
 
       it 'gets the mode' do
         Clock.mode = 'strict'
-        get '/mode', nil, JSON_HEADERS
+        get '/modes', nil, JSON_HEADERS
         expect(JSON.parse last_response.body).to eq (
           {
             'mode' => 'strict'
