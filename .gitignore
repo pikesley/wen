@@ -2,3 +2,7 @@ coverage/
 .sass-cache
 .vagrant/
 log/
+.env/
+
+# nightwatch cruft
+spec/javascripts/nightwatch/reports
