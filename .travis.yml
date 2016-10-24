@@ -15,7 +15,7 @@ install:
   - bundle
 
 before_script:
-  - bundle exec rackup -p 9291 &
+  - bundle exec rackup -p 9292 &
 script:
   - bundle exec rake
   - nightwatch --config spec/javascripts/support/nightwatch.js
