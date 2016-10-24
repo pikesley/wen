@@ -11,13 +11,4 @@
   <% end %>
 </div>
 
-<script>
-function submit(trick) {
-  $.ajax({
-      url: '/tricks/',
-      data: JSON.stringify({ trick: trick }),
-      type: 'POST',
-      contentType: 'application/json'
-  })
-}
-</script>
+<%= erb :'javascript/tricks.js' %>
