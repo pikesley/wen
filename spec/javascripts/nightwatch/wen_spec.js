@@ -6,7 +6,7 @@ module.exports = {
       .assert.containsText('h1', 'modes')
       .click('button[id=vague-mode]')
       .click('button[id=about-vague-mode]')
-      .pause(100)
+      .pause(1000)
       .assert.cssClassPresent('#about-vague-mode', 'btn-active')
       .assert.containsText('#vague-is-current', 'this mode is currently selected')
       .assert.hidden('#range-is-current')
