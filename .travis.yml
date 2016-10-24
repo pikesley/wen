@@ -12,13 +12,13 @@ addons:
 install:
   - nvm install 4.0
   - npm install -g nightwatch
-  - bundle
+#  - bundle
 
 before_script:
   - bundle exec rackup -p 9291 &
 script:
   - bundle exec rake
-  - nightwatch --config spec/nightwatch.js
+  - nightwatch --config spec/javascripts/support/nightwatch.js
   - pkill ruby
 
 env:
