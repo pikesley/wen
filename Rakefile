@@ -26,8 +26,6 @@ namespace :nightwatch do
   end
 
   task :travis do
-    sh "nvm install 4.0"
-    sh "npm install -g nightwatch"
     sh "bundle exec sidekiq -r ./lib/wen.rb &"
     sh "bundle exec rackup -p 9292 &"
     sh "sh 'nightwatch --config spec/javascripts/support/nightwatch.js'"
