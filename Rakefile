@@ -10,7 +10,7 @@ unless ENV['RACK_ENV'] == 'production'
   RSpec::Core::RakeTask.new
   Coveralls::RakeTask.new
 
-  task :default => [:spec, 'jasmine:ci', 'nightwatch:travis', 'coveralls:push']
+  task :default => [:spec, 'jasmine:ci', 'coveralls:push']
 end
 
 namespace :nightwatch do
@@ -18,17 +18,18 @@ namespace :nightwatch do
     require 'dotenv'
     Dotenv.load
 
-    #sh "sc -u #{ENV['SAUCE_USERNAME']} -k #{ENV['SAUCE_ACCESS_KEY']} &"
     pid = Process.spawn "selenium-server -log /tmp/selenium.log &"
     sleep 3
     sh "nightwatch --config spec/javascripts/support/nightwatch.js --env local"
     sh "pkill -f selenium"
   end
 
-  task :travis do
-    sh "bundle exec sidekiq -r ./lib/wen.rb &"
-    sh "bundle exec rackup -p 9292 &"
-    sh "sh 'nightwatch --config spec/javascripts/support/nightwatch.js'"
-    sh "pkill ruby"
-  end
+  #task :travis do
+  #  sh "nvm install 4.0"
+  #  sh "npm install -g nightwatch"
+  #  sh "bundle exec sidekiq -r ./lib/wen.rb &"
+  #  sh "bundle exec rackup -p 9292 &"
+  #  sh "sh 'nightwatch --config spec/javascripts/support/nightwatch.js'"
+  #  sh "pkill ruby"
+  #end
 end
