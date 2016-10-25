@@ -15,7 +15,9 @@ install:
   - bundle
 
 before_script:
+  - bundle exec sidekiq -r ./lib/wen.rb
   - bundle exec rackup -p 9292 &
+  
 script:
   - bundle exec rake
   - nightwatch --config spec/javascripts/support/nightwatch.js
