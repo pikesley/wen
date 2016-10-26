@@ -14,6 +14,7 @@ unless ENV['RACK_ENV'] == 'production'
 end
 
 namespace :nightwatch do
+  desc 'spin up selenium, run the nightwatch tests, tear down selenium'
   task :local do
     require 'dotenv'
     Dotenv.load
@@ -22,6 +23,11 @@ namespace :nightwatch do
     sleep 3
     sh "nightwatch --config spec/javascripts/support/nightwatch.js --env local"
     sh "pkill -f selenium"
+  end
+
+  desc 'just run the nightwatch tests (requires a running selenium)'
+  task :test do
+    sh "nightwatch --config spec/javascripts/support/nightwatch.js --env local"
   end
 
   #task :travis do
