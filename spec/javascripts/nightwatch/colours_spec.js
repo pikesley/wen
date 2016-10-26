@@ -17,7 +17,7 @@ module.exports = {
       .assert.attributeContains('#hours-hand', 'fill', 'rgb(255, 0, 127)')
 
       .end()
-  },
+/*  },
 
   'Multiple colour change': function(browser) {
     browser
@@ -41,6 +41,6 @@ module.exports = {
       .assert.attributeContains('#minutes-hand', 'fill', 'rgb(255, 0, 255)')
       .assert.attributeContains('#hours-hand', 'fill', 'rgb(255, 255, 255)')
 
-      .end()
+      .end()*/
   }
 }
