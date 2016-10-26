@@ -16,9 +16,6 @@ end
 namespace :nightwatch do
   desc 'spin up selenium, run the nightwatch tests, tear down selenium'
   task :local do
-    require 'dotenv'
-    Dotenv.load
-
     pid = Process.spawn "selenium-server -log /tmp/selenium.log &"
     sleep 3
     sh "nightwatch --config spec/javascripts/support/nightwatch.js --env local"
@@ -28,6 +25,14 @@ namespace :nightwatch do
   desc 'just run the nightwatch tests (requires a running selenium)'
   task :test do
     sh "nightwatch --config spec/javascripts/support/nightwatch.js --env local"
+  end
+
+  desc 'take screenshots'
+  task :screenshots do
+    pid = Process.spawn "selenium-server -log /tmp/selenium.log &"
+    sleep 3
+    sh "nightwatch --config spec/javascripts/support/nightwatch.js --env local --test spec/javascripts/screenshots/screenshots.js"
+    sh "pkill -f selenium"
   end
 
   #task :travis do
