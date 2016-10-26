@@ -3,7 +3,7 @@ module Wen
     include Sidekiq::Worker
 
     def perform action, params = {params: 'none'}
-      puts "#{action}: #{params}" unless (IS_PI || ENV['RACK_ENV'] == 'test')
+      puts "#{action}: #{params}" unless ($is_pi || ENV['RACK_ENV'] == 'test')
 
       case action
       when 'time'
