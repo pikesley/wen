@@ -1,4 +1,4 @@
-const timeout = 1000
+const timeout = 2000
 
 module.exports = {
   'Single colour change': function(browser) {
@@ -27,12 +27,19 @@ module.exports = {
       .click('a[id=reset]')
       .pause(timeout)
 
-      .click('#minutes-face')
-    //  .pause(timeout)
-      .waitForElementVisible('.minutes-face-picker', timeout)
-      .click('.minutes-face-picker div div div span[title="rgb(255, 0, 255)"] span')
+      .click('#minutes-hand')
+      .waitForElementVisible('.minutes-hand-picker', timeout)
+      .click('.minutes-hand-picker div div div span[title="rgb(255, 0, 255)"] span')
       .pause(timeout)
-      .assert.attributeContains('#minutes-face', 'fill', 'rgb(255, 0, 255)')
+
+
+      .click('#hours-hand')
+      .waitForElementVisible('.hours-hand-picker', timeout)
+      .click('.hours-hand-picker div div div span[title="rgb(255, 255, 255)"] span')
+      .pause(timeout)
+
+      .assert.attributeContains('#minutes-hand', 'fill', 'rgb(255, 0, 255)')
+      .assert.attributeContains('#hours-hand', 'fill', 'rgb(255, 255, 255)')
 
       .end()
   }
