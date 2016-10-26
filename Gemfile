@@ -29,4 +29,5 @@ group :test do
   gem 'pry'
   gem 'actionpack'
   gem 'timecop'
+  gem 'dotenv'
 end
