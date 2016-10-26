@@ -61,16 +61,16 @@ p {
   padding-top: $padding-small-vertical;
   //box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 
-  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+  //text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
 
   a {
     color: $grey;
-    text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.5);
+  //  text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.5);
   }
 
   a:hover, a:active {
     color: $grey;
-    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+  //  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
     text-decoration: none;
   }
 
