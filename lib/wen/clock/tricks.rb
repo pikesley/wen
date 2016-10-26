@@ -28,18 +28,18 @@ module Wen
         end
 
         Wen::Neopixels.instance.illuminate array_filler(a)
-        sleep 10
+        self.kip 10
 
         Clock.time
       end
 
       def self.blink duration = 1
         self.clear
-        sleep duration / 10.0 if IS_PI
+        self.kip duration / 10.0
         self.one_colour Clock.fetch_colour 'minutes', 'hand'
-        sleep duration if IS_PI
+        self.kip duration
         self.clear
-        sleep duration / 10.0 if IS_PI
+        self.kip duration / 10.0
 
         Clock.time
       end
@@ -53,7 +53,7 @@ module Wen
           Timecop.freeze DateTime.strptime(now.to_s, '%s') do
             Clock.time
             now += 3930
-            sleep 0.05 if IS_PI
+            self.kip 0.05
           end
         end
 
@@ -68,7 +68,7 @@ module Wen
             self.random_color
           )
 
-          sleep 0.2
+          self.kip 0.2
         end
 
         Clock.time
@@ -81,7 +81,7 @@ module Wen
             a.push self.random_color
           end
           Neopixels.instance.illuminate a
-          sleep 0.1
+          self.kip 0.1
         end
 
         Clock.time
@@ -97,7 +97,7 @@ module Wen
             [black, white]
           ].each do |pair|
             Neopixels.instance.illuminate pair * length
-            sleep 0.2
+            self.kip 0.2
           end
         end
 
@@ -122,7 +122,7 @@ module Wen
         Clock.mode = 'vague'
         iterations.times do
           Clock.time DateTime.strptime(Random.rand(86400).to_s, '%s')
-          sleep 0.05 if IS_PI
+          self.kip 0.05
 
         end
 
@@ -132,13 +132,13 @@ module Wen
 
       def self.boot_up
         self.clear
-        sleep 1 if IS_PI
+        self.kip 1
 
         a = []
         Config.instance.config.neopixels['minutes']['pins'].times do |i|
           a.push Config.instance.config['colours']['red']
           Neopixels.instance.illuminate a
-          sleep 0.25 if IS_PI
+          self.kip 0.25
 
         end
 
@@ -146,7 +146,7 @@ module Wen
           a.push Config.instance.config['colours']['blue']
         end
         Neopixels.instance.illuminate a
-        sleep 1 if IS_PI
+        self.kip 1
 
         Clock.time
       end
@@ -160,11 +160,11 @@ module Wen
           TOTAL_LENGTH.times do |i|
             a[i] = Wen::Config.instance.config.colours[key]
             Wen::Neopixels.instance.illuminate a
-            sleep 25 / 1000.0
+            self.kip 25 / 1000.0
           end
         end
 
-        sleep 1
+        self.kip 1
         Clock.time
       end
 
@@ -188,7 +188,7 @@ module Wen
               a[Wen::Config.instance.config.neopixels['minutes']['pins'] + i / 2] = Wen::Config.instance.config.colours[key]
             end
             Wen::Neopixels.instance.illuminate array_filler(a)
-            sleep 25 / 1000.0
+            self.kip 25 / 1000.0
           end
         end
 
@@ -205,7 +205,7 @@ module Wen
               a[ii] = colour
             end
             Wen::Neopixels.instance.illuminate array_filler(a)
-            sleep 75 / 1000.0
+            self.kip 75 / 1000.0
           end
         end
 
@@ -234,11 +234,15 @@ module Wen
             end
             Wen::Neopixels.instance.illuminate array_filler(a)
 
-            sleep 75 / 1000.0
+            self.kip 75 / 1000.0
           end
         end
 
         Clock.time
+      end
+
+      def self.kip time
+        sleep time if $is_pi
       end
     end
   end
