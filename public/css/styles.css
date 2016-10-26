@@ -9329,17 +9329,14 @@ p {
   right: 0;
   width: 80%;
   padding-top: 5px;
-  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
 }
 /* line 66, ../sass/styles.scss */
 #build-data a {
   color: #7f7f7f;
-  text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.5);
 }
 /* line 71, ../sass/styles.scss */
 #build-data a:hover, #build-data a:active {
   color: #7f7f7f;
-  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
   text-decoration: none;
 }
 /* line 77, ../sass/styles.scss */

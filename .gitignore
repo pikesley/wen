@@ -6,3 +6,5 @@ log/
 
 # nightwatch cruft
 spec/javascripts/nightwatch/reports
+
+screenshot/
