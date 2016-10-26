@@ -13,23 +13,23 @@ unless ENV['RACK_ENV'] == 'production'
   task :default => [:spec, 'jasmine:ci', 'coveralls:push']
 end
 
-namespace :code do
-  desc 'Check for and install new code'
-  task :update do
-    require 'travis'
-    require 'git'
+namespace :nightwatch do
+  task :local do
+    require 'dotenv'
+    Dotenv.load
 
-    g = Git.open '.'
-    remote = g.remotes.first.url.sub(/.*github.com./, '').split('.').first
-    repository = Travis::Repository.find remote
-    last_good_build = repository.builds.select do |b|
-      b.branch_info == 'master' && b.state == 'passed'
-    end.first.id
-
-    unless $redis.get('last-good-build').to_i == last_good_build
-      puts 'New build found'
-      `cd ~/wen/scripts && ./provision.sh`
-      $redis.set 'last-good-build', last_good_build
-    end
+    pid = Process.spawn "selenium-server -log /tmp/selenium.log &"
+    sleep 3
+    sh "nightwatch --config spec/javascripts/support/nightwatch.js --env local"
+    sh "pkill -f selenium"
   end
+
+  #task :travis do
+  #  sh "nvm install 4.0"
+  #  sh "npm install -g nightwatch"
+  #  sh "bundle exec sidekiq -r ./lib/wen.rb &"
+  #  sh "bundle exec rackup -p 9292 &"
+  #  sh "sh 'nightwatch --config spec/javascripts/support/nightwatch.js'"
+  #  sh "pkill ruby"
+  #end
 end

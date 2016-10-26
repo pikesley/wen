@@ -2,7 +2,7 @@
 
 <div id='clock'></div>
 
-<a href='#' class='btn btn-default' onclick='reset()'>reset</a>
+<a href='#' class='btn btn-default' id='reset' onclick='reset()'>reset</a>
 
 <script>
 colours = [
@@ -248,13 +248,9 @@ function refresh() {
           colours
         ],
         showPaletteOnly: true,
-        //togglePaletteOnly: true,
-        togglePaletteMoreText: 'expert mode',
-        togglePaletteLessText: 'easy mode',
         hideAfterPaletteSelect:true,
-      //  showInitial: true,
         preferredFormat: 'rgb',
-        containerClassName: 'wen-picker'
+        containerClassName: 'wen-picker ' + id + '-picker'
       })
     })
   })
