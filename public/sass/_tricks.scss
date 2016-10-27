@@ -1,0 +1,34 @@
+$trick-box-colour: $rgba-primary-4;
+$trick-box-text: $rgba-primary-1;
+$trick-box-alt: $rgba-secondary-1-4;
+
+.grid-item {
+  a {
+    color: $trick-box-text;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  :hover, :active {
+    background-color: $trick-box-alt;
+  }
+}
+
+.grid-item-content {
+  font-family: $font-tricks;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: $padding-small-vertical;
+  margin-bottom: $padding-large-vertical;
+  height: 80px;
+  cursor: pointer;
+  background-color: $trick-box-colour;
+  border-radius: 15px;
+}
+
+.trick-buttons {
+}

@@ -6,7 +6,7 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 @import "https://fonts.googleapis.com/css?family=Nixie+One";
-@import "https://fonts.googleapis.com/css?family=Fredoka+One";
+@import "https://fonts.googleapis.com/css?family=Orbitron";
 @import "https://fonts.googleapis.com/css?family=Cutive+Mono";
 /* line 9, ../../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_normalize.scss */
 html {
@@ -9271,6 +9271,33 @@ body {
   max-width: 90px;
 }
 
+/* line 6, ../sass/_tricks.scss */
+.grid-item a {
+  color: #6ca299;
+}
+/* line 10, ../sass/_tricks.scss */
+.grid-item a:hover {
+  text-decoration: none;
+}
+/* line 14, ../sass/_tricks.scss */
+.grid-item :hover, .grid-item :active {
+  background-color: #550200;
+}
+
+/* line 19, ../sass/_tricks.scss */
+.grid-item-content {
+  font-family: "Orbitron";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  margin-bottom: 10px;
+  height: 80px;
+  cursor: pointer;
+  background-color: #00362d;
+  border-radius: 15px;
+}
+
 /* line 1, ../sass/_build-box.scss */
 #build-data {
   width: 90%;
@@ -9327,12 +9354,12 @@ body {
   transition: 0.3s;
 }
 
-/* line 11, ../sass/styles.scss */
+/* line 12, ../sass/styles.scss */
 html {
   text-transform: lowercase;
 }
 
-/* line 15, ../sass/styles.scss */
+/* line 16, ../sass/styles.scss */
 body {
   background: url(/assets/images/retina_wood.png);
   color: #246c60;
@@ -9340,56 +9367,56 @@ body {
   text-align: center;
 }
 
-/* line 22, ../sass/styles.scss */
+/* line 23, ../sass/styles.scss */
 a {
   color: #aa3c39;
 }
 
-/* line 26, ../sass/styles.scss */
+/* line 27, ../sass/styles.scss */
 img {
   max-width: 80%;
 }
 
-/* line 30, ../sass/styles.scss */
+/* line 31, ../sass/styles.scss */
 h1 {
   font-size: 2.2em;
   margin-top: 5px;
   color: #246c60;
 }
 
-/* line 37, ../sass/styles.scss */
+/* line 38, ../sass/styles.scss */
 h2 {
   font-size: 1.5em;
 }
 
-/* line 41, ../sass/styles.scss */
+/* line 42, ../sass/styles.scss */
 hr {
   border-color: #d27a77;
 }
 
-/* line 45, ../sass/styles.scss */
+/* line 46, ../sass/styles.scss */
 p {
   text-align: justify;
   font-size: 0.8em;
   font-family: "Nixie One";
 }
 
-/* line 51, ../sass/styles.scss */
+/* line 52, ../sass/styles.scss */
 #reset-modal, .mode-modal {
   top: 15%;
 }
 
-/* line 56, ../sass/styles.scss */
+/* line 57, ../sass/styles.scss */
 .modal-content {
   background-color: rgba(255, 204, 170, 0.95);
 }
 
-/* line 60, ../sass/styles.scss */
+/* line 61, ../sass/styles.scss */
 .modal p {
   text-align: center;
 }
 
-/* line 64, ../sass/styles.scss */
+/* line 65, ../sass/styles.scss */
 .current-mode {
   display: none;
   font-style: italic;
