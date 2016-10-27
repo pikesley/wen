@@ -47,21 +47,19 @@ Issues / suggestions / pull-requests can be submitted <a href='https://github.co
   <% g = Git.open('.').log.first %>
   <table class='table table-condensed table-bordered'>
     <tr>
-      <th colspan='2' class='show-build-data'>About this build</th>
+      <th colspan='4' class='show-build-data'>About this build</th>
       <td rowspan='4' id='build-slide-tab' class='clickable' onclick="showHide()">
       </td>
     </tr>
       <tr>
         <td class='key'>SHA</td>
-        <td class='value'><a href='<%= "#{Wen::Config.instance.config['github_url']}/tree/#{g.sha}" %>'><%= g.sha %></a></td>
-      </tr>
-      <tr>
-        <td class='key'>Date</td>
-        <td class='value'><%= g.date.utc.strftime '%Y-%m-%d %H:%M:%S UTC' %></td>
+        <td class='value' colspan='3'><a href='<%= "#{Wen::Config.instance.config['github_url']}/tree/#{g.sha}" %>'><%= g.sha %></a></td>
       </tr>
       <tr>
         <td class='key'>Author</td>
         <td class='value'><%= g.author.name %></td>
+        <td class='key'>Date</td>
+        <td class='value'><%= g.date.utc.strftime '%Y-%m-%d %H:%M:%S UTC' %></td>
       </tr>
   </table>
 </div>

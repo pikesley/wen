@@ -9,9 +9,10 @@ transition: 1s;
 transition-timing-function: ease;
 
   table {
-    background-color: transparentize($light-grey, 0.5);
+    background-color: transparentize($light-grey, 0.2);
     font-size: 0.7em;
     font-family: $font-fixed;
+    margin: 0;
 
     a {
       color: $grey;
