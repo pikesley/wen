@@ -44,6 +44,11 @@ transition-timing-function: ease;
       width: 5%;
       cursor: pointer;
       vertical-align: middle;
+
+      :hover {
+        color: darken($grey, 20%);
+        transition: 0.3s;
+      }
     }
   }
 }

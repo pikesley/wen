@@ -9320,6 +9320,11 @@ body {
   cursor: pointer;
   vertical-align: middle;
 }
+/* line 48, ../sass/_build-box.scss */
+#build-data table #build-slide-tab :hover {
+  color: #4c4c4c;
+  transition: 0.3s;
+}
 
 /* line 11, ../sass/styles.scss */
 html {
