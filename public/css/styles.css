@@ -9273,51 +9273,52 @@ body {
 
 /* line 1, ../sass/_build-box.scss */
 #build-data {
-  width: 80%;
+  width: 90%;
   position: fixed;
   z-index: 1;
   bottom: 40px;
-  left: -75%;
-  transition: 0.5s;
+  right: 95%;
+  transition: 1s;
+  transition-timing-function: ease;
 }
 /* line 11, ../sass/_build-box.scss */
 #build-data table {
-  background-color: #bfbfbf;
+  background-color: rgba(191, 191, 191, 0.5);
   font-size: 0.7em;
   font-family: "Cutive Mono";
 }
-/* line 20, ../sass/_build-box.scss */
+/* line 16, ../sass/_build-box.scss */
 #build-data table a {
   color: #7f7f7f;
 }
-/* line 25, ../sass/_build-box.scss */
+/* line 20, ../sass/_build-box.scss */
 #build-data table a:hover, #build-data table a:active {
   color: #7f7f7f;
   text-decoration: none;
 }
-/* line 31, ../sass/_build-box.scss */
+/* line 25, ../sass/_build-box.scss */
 #build-data table th, #build-data table td {
   border-color: #b2b2b2;
   color: #7f7f7f;
   text-align: center;
 }
-/* line 37, ../sass/_build-box.scss */
+/* line 31, ../sass/_build-box.scss */
 #build-data table td.key {
   text-align: right;
 }
-/* line 41, ../sass/_build-box.scss */
+/* line 35, ../sass/_build-box.scss */
 #build-data table td.value {
   text-align: left;
 }
-/* line 45, ../sass/_build-box.scss */
+/* line 39, ../sass/_build-box.scss */
 #build-data table th {
   padding-top: 8px;
 }
-/* line 49, ../sass/_build-box.scss */
+/* line 43, ../sass/_build-box.scss */
 #build-data table #build-slide-tab {
-  min-width: 30px;
-  max-width: 30px;
+  width: 5%;
   cursor: pointer;
+  vertical-align: middle;
 }
 
 /* line 11, ../sass/styles.scss */

@@ -43,12 +43,14 @@ Issues / suggestions / pull-requests can be submitted <a href='https://github.co
 <hr />
 -->
 
-<div id='build-data'>
+<div id='build-data' class='unshown'>
   <% g = Git.open('.').log.first %>
   <table class='table table-condensed table-bordered'>
     <tr>
       <th colspan='2' class='show-build-data'>About this build</th>
-      <td rowspan='4' id='build-slide-tab' class='clickable' onclick="showHide()">build</td>
+      <td rowspan='4' id='build-slide-tab' class='clickable' onclick="showHide()">
+        <i class='fa fa-arrow-circle-right'></i>
+      </td>
     </tr>
       <tr>
         <td class='key'>SHA</td>
@@ -76,10 +78,12 @@ function submit(trick) {
 }
 
 function showHide() {
-  if ($('#build-data').attr('style') == 'left: 0' ) {
-    $('#build-data').attr('style', 'left: -75%')
+  if ($('#build-data').attr('style') == 'right: 5%' ) {
+    $('#build-data').attr('style', 'right: 95%')
+    $('#build-slide-tab').html("<i class='fa fa-arrow-circle-right'></i>")
   } else {
-    $('#build-data').attr('style', 'left: 0')
+    $('#build-data').attr('style', 'right: 5%')
+    $('#build-slide-tab').html("<i class='fa fa-arrow-circle-left'></i>")
   }
 }
 
