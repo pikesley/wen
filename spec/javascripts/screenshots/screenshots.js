@@ -16,7 +16,7 @@ module.exports = {
       .url('http://localhost:9292/modes')
       .waitForElementVisible('body', 1000)
       .resizeWindow(400, 700)
-      .click('#range-mode')
+      .click('#range-mode-picker')
       .saveScreenshot('./screenshot/modes.png')
       .end()
   },
