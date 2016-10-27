@@ -9147,39 +9147,39 @@ body {
   bottom: 0;
   width: 100%;
   margin-top: 10px;
-  background: #582a72;
-  color: #ffffaa;
+  background: #246c60;
+  color: #ffccaa;
   height: 40px;
   padding: 10px 16px;
 }
 /* line 22, ../sass/_footer.scss */
 .footer a {
-  color: #ffffaa;
+  color: #ffccaa;
 }
 /* line 26, ../sass/_footer.scss */
 .footer a:hover {
-  color: #d2c277;
+  color: #d27a77;
 }
 
 /* line 4, ../sass/_buttons.scss */
 .btn-warning {
-  background-color: #753897;
+  background-color: #319282;
 }
 
 /* line 8, ../sass/_buttons.scss */
 .btn-default, .btn:focus, .btn-active:focus, .wen-picker button:focus,
 .wen-picker .sp-cancel:focus {
-  background-color: #582a72;
-  border-color: #4a235f;
-  color: #ffffaa;
+  background-color: #246c60;
+  border-color: #1e594f;
+  color: #ffccaa;
 }
 
 /* line 14, ../sass/_buttons.scss */
 .btn:hover, .btn-active:hover, .wen-picker button:hover,
 .wen-picker .sp-cancel:hover {
-  background-color: #4a235f;
-  border-color: #4a235f;
-  color: #ffffaa;
+  background-color: #1e594f;
+  border-color: #1e594f;
+  color: #ffccaa;
 }
 
 /* line 20, ../sass/_buttons.scss */
@@ -9194,16 +9194,16 @@ body {
 
 /* line 26, ../sass/_buttons.scss */
 .btn-active, .btn-active:focus {
-  background-color: #aa9739;
-  border-color: #978633;
-  color: #ffffaa;
+  background-color: #aa3c39;
+  border-color: #973533;
+  color: #ffccaa;
 }
 
 /* line 34, ../sass/_buttons.scss */
 .btn-active:hover {
-  background-color: #978633;
-  border-color: #978633;
-  color: #ffffaa;
+  background-color: #973533;
+  border-color: #973533;
+  color: #ffccaa;
 }
 
 /* line 1, ../sass/_nav.scss */
@@ -9223,7 +9223,7 @@ body {
 .nav-pills li.active a, .nav-pills li.active a:focus, .nav-pills li.active a:hover {
   background-color: transparent;
   border-color: transparent;
-  color: #aa9739;
+  color: #aa3c39;
 }
 /* line 22, ../sass/_nav.scss */
 .nav-pills li.inactive a, .nav-pills li.inactive a:hover {
@@ -9234,21 +9234,21 @@ body {
 .nav-pills li a {
   background-color: transparent;
   border-color: transparent;
-  color: #403075;
+  color: #2d8632;
   transition: 0.5s;
 }
 /* line 36, ../sass/_nav.scss */
 .nav-pills li a:focus, .nav-pills li a:hover {
   background-color: transparent;
   border-color: transparent;
-  color: #84752c;
+  color: #842f2c;
 }
 
 /* line 5, ../sass/_spectrum.scss */
 .wen-picker {
   border-radius: 15px;
-  background-color: #582a72;
-  border-color: #4a235f;
+  background-color: #246c60;
+  border-color: #1e594f;
 }
 /* line 10, ../sass/_spectrum.scss */
 .wen-picker button,
@@ -9334,14 +9334,14 @@ html {
 /* line 15, ../sass/styles.scss */
 body {
   background: url(/assets/images/retina_wood.png);
-  color: #582a72;
+  color: #246c60;
   font-family: "Nixie One";
   text-align: center;
 }
 
 /* line 22, ../sass/styles.scss */
 a {
-  color: #aa9739;
+  color: #aa3c39;
 }
 
 /* line 26, ../sass/styles.scss */
@@ -9353,7 +9353,7 @@ img {
 h1 {
   font-size: 2.2em;
   margin-top: 5px;
-  color: #582a72;
+  color: #246c60;
 }
 
 /* line 37, ../sass/styles.scss */
@@ -9363,7 +9363,7 @@ h2 {
 
 /* line 41, ../sass/styles.scss */
 hr {
-  border-color: #d2c277;
+  border-color: #d27a77;
 }
 
 /* line 45, ../sass/styles.scss */
@@ -9380,7 +9380,7 @@ p {
 
 /* line 56, ../sass/styles.scss */
 .modal-content {
-  background-color: rgba(255, 255, 170, 0.95);
+  background-color: rgba(255, 204, 170, 0.95);
 }
 
 /* line 60, ../sass/styles.scss */
@@ -9392,5 +9392,5 @@ p {
 .current-mode {
   display: none;
   font-style: italic;
-  color: #aa9739;
+  color: #aa3c39;
 }
