@@ -9271,6 +9271,17 @@ body {
   max-width: 90px;
 }
 
+/* line 8, ../sass/_tricks.scss */
+.grid-item {
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Likely future */
+}
 /* line 9, ../sass/_tricks.scss */
 .grid-item a {
   color: rgba(46, 24, 0, 0.7);
@@ -9284,7 +9295,7 @@ body {
   background-color: rgba(148, 76, 0, 0.7);
 }
 
-/* line 22, ../sass/_tricks.scss */
+/* line 27, ../sass/_tricks.scss */
 .grid-item-content {
   font-family: "VT323";
   font-size: 1.5em;
@@ -9302,7 +9313,7 @@ body {
   border: 2px rgba(46, 24, 0, 0.7) solid;
 }
 
-/* line 40, ../sass/_tricks.scss */
+/* line 44, ../sass/_tricks.scss */
 .trick-buttons {
   padding: 10px;
   border: 2px rgba(46, 24, 0, 0.7) solid;
