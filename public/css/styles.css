@@ -6,8 +6,8 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 @import "https://fonts.googleapis.com/css?family=Nixie+One";
-@import "https://fonts.googleapis.com/css?family=Orbitron";
 @import "https://fonts.googleapis.com/css?family=Cutive+Mono";
+@import "https://fonts.googleapis.com/css?family=VT323";
 /* line 9, ../../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_normalize.scss */
 html {
   font-family: sans-serif;
@@ -9271,31 +9271,43 @@ body {
   max-width: 90px;
 }
 
-/* line 6, ../sass/_tricks.scss */
+/* line 9, ../sass/_tricks.scss */
 .grid-item a {
-  color: #6ca299;
+  color: rgba(46, 24, 0, 0.7);
 }
-/* line 10, ../sass/_tricks.scss */
+/* line 13, ../sass/_tricks.scss */
 .grid-item a:hover {
   text-decoration: none;
 }
-/* line 14, ../sass/_tricks.scss */
+/* line 17, ../sass/_tricks.scss */
 .grid-item :hover, .grid-item :active {
-  background-color: #550200;
+  background-color: rgba(148, 76, 0, 0.7);
 }
 
-/* line 19, ../sass/_tricks.scss */
+/* line 22, ../sass/_tricks.scss */
 .grid-item-content {
-  font-family: "Orbitron";
+  font-family: "VT323";
+  font-size: 1.5em;
   display: flex;
   align-items: center;
   justify-content: center;
+  line-height: 1em;
   padding: 5px;
   margin-bottom: 10px;
+  margin-top: 10px;
   height: 80px;
   cursor: pointer;
-  background-color: #00362d;
+  background-color: rgba(250, 129, 0, 0.7);
   border-radius: 15px;
+  border: 2px rgba(46, 24, 0, 0.7) solid;
+}
+
+/* line 40, ../sass/_tricks.scss */
+.trick-buttons {
+  padding: 10px;
+  border: 2px rgba(46, 24, 0, 0.7) solid;
+  border-radius: 15px;
+  background-color: rgba(5, 126, 255, 0.2);
 }
 
 /* line 1, ../sass/_build-box.scss */
