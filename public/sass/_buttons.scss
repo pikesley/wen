@@ -1,10 +1,6 @@
 $border-darken: 5%;
 $hover-darken: 5%;
 
-.btn-warning {
-  background-color: lighten($brand-primary, 10%);
-}
-
 .btn-default, .btn:focus {
   background-color: $brand-primary;
   border-color: darken($brand-primary, $border-darken);

@@ -9162,11 +9162,6 @@ body {
 }
 
 /* line 4, ../sass/_buttons.scss */
-.btn-warning {
-  background-color: #319282;
-}
-
-/* line 8, ../sass/_buttons.scss */
 .btn-default, .btn:focus, .btn-active:focus, .wen-picker button:focus,
 .wen-picker .sp-cancel:focus {
   background-color: #246c60;
@@ -9174,7 +9169,7 @@ body {
   color: #ffccaa;
 }
 
-/* line 14, ../sass/_buttons.scss */
+/* line 10, ../sass/_buttons.scss */
 .btn:hover, .btn-active:hover, .wen-picker button:hover,
 .wen-picker .sp-cancel:hover {
   background-color: #1e594f;
@@ -9182,7 +9177,7 @@ body {
   color: #ffccaa;
 }
 
-/* line 20, ../sass/_buttons.scss */
+/* line 16, ../sass/_buttons.scss */
 .btn, .btn-active, .btn-active:focus, .btn-active:hover, .wen-picker button,
 .wen-picker button:active,
 .wen-picker button:hover,
@@ -9192,14 +9187,14 @@ body {
   font-size: 0.9em;
 }
 
-/* line 26, ../sass/_buttons.scss */
+/* line 22, ../sass/_buttons.scss */
 .btn-active, .btn-active:focus {
   background-color: #aa3c39;
   border-color: #973533;
   color: #ffccaa;
 }
 
-/* line 34, ../sass/_buttons.scss */
+/* line 30, ../sass/_buttons.scss */
 .btn-active:hover {
   background-color: #973533;
   border-color: #973533;
@@ -9321,6 +9316,17 @@ body {
   background-color: rgba(5, 126, 255, 0.2);
 }
 
+/* line 1, ../sass/_modes.scss */
+.mode-button {
+  width: 200px;
+}
+
+/* line 5, ../sass/_modes.scss */
+.mode-canceller {
+  background-color: #d27a77;
+  border-color: #aa3c39;
+}
+
 /* line 1, ../sass/_build-box.scss */
 #build-data {
   width: 90%;
@@ -9377,12 +9383,12 @@ body {
   transition: 0.3s;
 }
 
-/* line 12, ../sass/styles.scss */
+/* line 13, ../sass/styles.scss */
 html {
   text-transform: lowercase;
 }
 
-/* line 16, ../sass/styles.scss */
+/* line 17, ../sass/styles.scss */
 body {
   background: url(/assets/images/retina_wood.png);
   color: #246c60;
@@ -9390,56 +9396,56 @@ body {
   text-align: center;
 }
 
-/* line 23, ../sass/styles.scss */
+/* line 24, ../sass/styles.scss */
 a {
   color: #aa3c39;
 }
 
-/* line 27, ../sass/styles.scss */
+/* line 28, ../sass/styles.scss */
 img {
   max-width: 80%;
 }
 
-/* line 31, ../sass/styles.scss */
+/* line 32, ../sass/styles.scss */
 h1 {
   font-size: 2.2em;
   margin-top: 5px;
   color: #246c60;
 }
 
-/* line 38, ../sass/styles.scss */
+/* line 39, ../sass/styles.scss */
 h2 {
   font-size: 1.5em;
 }
 
-/* line 42, ../sass/styles.scss */
+/* line 43, ../sass/styles.scss */
 hr {
   border-color: #d27a77;
 }
 
-/* line 46, ../sass/styles.scss */
+/* line 47, ../sass/styles.scss */
 p {
   text-align: justify;
   font-size: 0.8em;
   font-family: "Nixie One";
 }
 
-/* line 52, ../sass/styles.scss */
+/* line 53, ../sass/styles.scss */
 #reset-modal, .mode-modal {
   top: 15%;
 }
 
-/* line 57, ../sass/styles.scss */
+/* line 58, ../sass/styles.scss */
 .modal-content {
   background-color: rgba(255, 204, 170, 0.95);
 }
 
-/* line 61, ../sass/styles.scss */
+/* line 62, ../sass/styles.scss */
 .modal p {
   text-align: center;
 }
 
-/* line 65, ../sass/styles.scss */
+/* line 66, ../sass/styles.scss */
 .current-mode {
   display: none;
   font-style: italic;
