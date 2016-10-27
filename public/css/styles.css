@@ -9291,7 +9291,7 @@ body {
   text-decoration: none;
 }
 /* line 17, ../sass/_tricks.scss */
-.grid-item :hover, .grid-item :active {
+.grid-item :active {
   background-color: rgba(148, 76, 0, 0.7);
 }
 
