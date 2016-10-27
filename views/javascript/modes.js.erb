@@ -1,42 +1,42 @@
 <script>
-function submit(mode) {
-  $.ajax({
-    url: '/modes/',
-    data: JSON.stringify({ mode: mode }),
-    type: 'POST',
-    async: false,
-    contentType: 'application/json',
-    complete: refresh
-  })
-}
+  function submit(mode) {
+    $.ajax({
+      url: '/modes/',
+      data: JSON.stringify({mode: mode}),
+      type: 'POST',
+      async: false,
+      contentType: 'application/json',
+      complete: refresh
+    })
+  }
 
-function refresh() {
-  $('#modes button').each(function() {
-    $(this).removeClass('btn-active').addClass('btn-default')
-  })
+  function refresh() {
+    $('#modes button').each(function () {
+      $(this).removeClass('btn-active').addClass('btn-default')
+    })
 
-  $('.mode-picker').each(function() {
-    $(this).show()
-    $(this).removeClass('btn-active').addClass('btn-default')
-  })
+    $('#modals button').each(function () {
+      $(this).show()
+      $(this).removeClass('btn-active').addClass('btn-default')
+    })
 
-  $('.mode-canceller').each(function() {
-    $(this).text('leave things as they are for now')
-  })
+    $('.mode-canceller').each(function () {
+      $(this).text('leave things as they are for now')
+    })
 
-  $('.current-mode').each(function() {
-    $(this).hide()
-  })
+    $('.current-mode').each(function () {
+      $(this).hide()
+    })
 
-  $.getJSON('/modes/', function(data) {
-    $('.' + data['mode'] + '-mode').removeClass('btn-default').addClass('btn-active')
-    $('#' + data['mode'] + '-is-current').show()
-    $('#' + data['mode'] + '-mode-modal-button').hide()
-    $('#' + data['mode'] + '-mode-modal-cancel').text('this button closes this window')
-  })
+    $.getJSON('/modes/', function (data) {
+      $('.' + data['mode'] + '-mode').removeClass('btn-default').addClass('btn-active')
+      $('#' + data['mode'] + '-is-current').show()
+      $('#' + data['mode'] + '-mode-modal-picker').hide()
+      $('#' + data['mode'] + '-mode-modal-cancel').text('this button closes this window')
+    })
 
-  $("#modes button").focus(function() {
-    this.blur()
-  })
-}
+    $("#modes button").focus(function () {
+      this.blur()
+    })
+  }
 </script>
