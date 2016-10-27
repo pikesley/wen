@@ -32,9 +32,9 @@ trick-modes:
     display_name: disco lights
   - method:       chaos
   - method:       rotator
-    display_name: theatre chase (white)
+    display_name: theatre chase
   - method:       rainbow_chase
-    display_name: theatre chase (rainbow)
+    display_name: rainbow chase
   - method:       roll_around
     display_name: roll
   - method:       blink

@@ -1,14 +1,30 @@
 <h1><%= @title %></h1>
-<div class='row'>
-  <% Wen::Config.instance.config['trick-modes'].each do |trick| %>
-    <div class='col-xs-12'>
-      <button class='btn btn-default btn-block' id='display-<%= trick["method"] %>' onclick='submit("<%= trick["method"] %>")'>
-        <% display_name = trick['method'] %>
-        <% display_name = trick['display_name'] if trick['display_name'] %>
-        <%= display_name %>
-      </button>
-    </div>
-  <% end %>
+<div class='container-fluid'>
+  <div class='trick-buttons'>
+  <div class='grid'>
+    <div class='grid-sizer col-xs-4 col-sm-6 col-md-1'></div>
+    <% Wen::Config.instance.config['trick-modes'].each do |trick| %>
+      <div class='col-xs-4 col-sm-12 col-md-4 grid-item'>
+        <a id='display-<%= trick["method"] %>' onclick='submit("<%= trick["method"] %>")'>
+          <div class='grid-item-content'>
+            <% display_name = trick['method'] %>
+            <% display_name = trick['display_name'] if trick['display_name'] %>
+            <%= display_name %>
+          </div>
+        </a>
+      </div>
+    <% end %>
+  </div>
+</div>
 </div>
 
 <%= erb :'javascript/tricks.js' %>
+
+<script>
+$('.grid').masonry({
+  itemSelector: '.grid-item',
+  columnWidth: '.grid-sizer',
+  percentPosition: true,
+  stagger: 30
+})
+</script>
