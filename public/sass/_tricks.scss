@@ -14,7 +14,7 @@ $trick-box-text: darken($trick-box-alt, 20%);
     text-decoration: none;
   }
 
-  :hover, :active {
+  :active {
     background-color: $trick-box-alt;
   }
 
