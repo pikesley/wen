@@ -6,6 +6,7 @@
 @import 'buttons';
 @import 'nav';
 @import 'spectrum';
+@import 'build-box';
 
 html {
   text-transform: lowercase;
@@ -45,56 +46,6 @@ p {
   text-align: justify;
   font-size: 0.8em;
   font-family: $font-secondary;
-}
-
-#build-data {
-  //background: url(/assets/images/brushed_steel.jpg);
-  background-color: $light-grey;
-  font-size: 0.7em;
-  font-family: $font-fixed;
-  bottom: $footer-height + $padding-small-vertical;
-  margin: auto;
-  position: absolute;
-  left: 0;
-  right: 0;
-  width: 80%;
-  padding-top: $padding-small-vertical;
-  //box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-
-  //text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
-
-  a {
-    color: $grey;
-  //  text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.5);
-  }
-
-  a:hover, a:active {
-    color: $grey;
-  //  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
-    text-decoration: none;
-  }
-
-  th, td, tbody {
-    border-color: lighten($grey, 20%);
-    color: $grey;
-    text-align: center;
-  }
-
-  tbody {
-    border-top: none;
-  }
-
-  td.key {
-    text-align: right;
-  }
-
-  td.value {
-    text-align: left;
-  }
-
-  th {
-    padding-top: 8px;
-  }
 }
 
 #reset-modal, .mode-modal {

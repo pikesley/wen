@@ -9235,8 +9235,9 @@ body {
   background-color: transparent;
   border-color: transparent;
   color: #403075;
+  transition: 0.5s;
 }
-/* line 35, ../sass/_nav.scss */
+/* line 36, ../sass/_nav.scss */
 .nav-pills li a:focus, .nav-pills li a:hover {
   background-color: transparent;
   border-color: transparent;
@@ -9270,12 +9271,61 @@ body {
   max-width: 90px;
 }
 
-/* line 10, ../sass/styles.scss */
+/* line 1, ../sass/_build-box.scss */
+#build-data {
+  width: 80%;
+  position: fixed;
+  z-index: 1;
+  bottom: 40px;
+  left: -75%;
+  transition: 0.5s;
+}
+/* line 11, ../sass/_build-box.scss */
+#build-data table {
+  background-color: #bfbfbf;
+  font-size: 0.7em;
+  font-family: "Cutive Mono";
+}
+/* line 20, ../sass/_build-box.scss */
+#build-data table a {
+  color: #7f7f7f;
+}
+/* line 25, ../sass/_build-box.scss */
+#build-data table a:hover, #build-data table a:active {
+  color: #7f7f7f;
+  text-decoration: none;
+}
+/* line 31, ../sass/_build-box.scss */
+#build-data table th, #build-data table td {
+  border-color: #b2b2b2;
+  color: #7f7f7f;
+  text-align: center;
+}
+/* line 37, ../sass/_build-box.scss */
+#build-data table td.key {
+  text-align: right;
+}
+/* line 41, ../sass/_build-box.scss */
+#build-data table td.value {
+  text-align: left;
+}
+/* line 45, ../sass/_build-box.scss */
+#build-data table th {
+  padding-top: 8px;
+}
+/* line 49, ../sass/_build-box.scss */
+#build-data table #build-slide-tab {
+  min-width: 30px;
+  max-width: 30px;
+  cursor: pointer;
+}
+
+/* line 11, ../sass/styles.scss */
 html {
   text-transform: lowercase;
 }
 
-/* line 14, ../sass/styles.scss */
+/* line 15, ../sass/styles.scss */
 body {
   background: url(/assets/images/retina_wood.png);
   color: #582a72;
@@ -9283,101 +9333,56 @@ body {
   text-align: center;
 }
 
-/* line 21, ../sass/styles.scss */
+/* line 22, ../sass/styles.scss */
 a {
   color: #aa9739;
 }
 
-/* line 25, ../sass/styles.scss */
+/* line 26, ../sass/styles.scss */
 img {
   max-width: 80%;
 }
 
-/* line 29, ../sass/styles.scss */
+/* line 30, ../sass/styles.scss */
 h1 {
   font-size: 2.2em;
   margin-top: 5px;
   color: #582a72;
 }
 
-/* line 36, ../sass/styles.scss */
+/* line 37, ../sass/styles.scss */
 h2 {
   font-size: 1.5em;
 }
 
-/* line 40, ../sass/styles.scss */
+/* line 41, ../sass/styles.scss */
 hr {
   border-color: #d2c277;
 }
 
-/* line 44, ../sass/styles.scss */
+/* line 45, ../sass/styles.scss */
 p {
   text-align: justify;
   font-size: 0.8em;
   font-family: "Nixie One";
 }
 
-/* line 50, ../sass/styles.scss */
-#build-data {
-  background-color: #bfbfbf;
-  font-size: 0.7em;
-  font-family: "Cutive Mono";
-  bottom: 45px;
-  margin: auto;
-  position: absolute;
-  left: 0;
-  right: 0;
-  width: 80%;
-  padding-top: 5px;
-}
-/* line 66, ../sass/styles.scss */
-#build-data a {
-  color: #7f7f7f;
-}
-/* line 71, ../sass/styles.scss */
-#build-data a:hover, #build-data a:active {
-  color: #7f7f7f;
-  text-decoration: none;
-}
-/* line 77, ../sass/styles.scss */
-#build-data th, #build-data td, #build-data tbody {
-  border-color: #b2b2b2;
-  color: #7f7f7f;
-  text-align: center;
-}
-/* line 83, ../sass/styles.scss */
-#build-data tbody {
-  border-top: none;
-}
-/* line 87, ../sass/styles.scss */
-#build-data td.key {
-  text-align: right;
-}
-/* line 91, ../sass/styles.scss */
-#build-data td.value {
-  text-align: left;
-}
-/* line 95, ../sass/styles.scss */
-#build-data th {
-  padding-top: 8px;
-}
-
-/* line 100, ../sass/styles.scss */
+/* line 51, ../sass/styles.scss */
 #reset-modal, .mode-modal {
   top: 15%;
 }
 
-/* line 105, ../sass/styles.scss */
+/* line 56, ../sass/styles.scss */
 .modal-content {
   background-color: rgba(255, 255, 170, 0.95);
 }
 
-/* line 109, ../sass/styles.scss */
+/* line 60, ../sass/styles.scss */
 .modal p {
   text-align: center;
 }
 
-/* line 113, ../sass/styles.scss */
+/* line 64, ../sass/styles.scss */
 .current-mode {
   display: none;
   font-style: italic;

@@ -1,0 +1,55 @@
+#build-data {
+width: 80%;
+position: fixed;
+z-index: 1;
+bottom: $footer-height;
+
+left: -75%;
+//overflow-x: hidden;
+transition: 0.5s;
+
+  table {
+    background-color: $light-grey;
+    //background: url(/assets/images/brushed_steel.jpg);
+    font-size: 0.7em;
+    font-family: $font-fixed;
+    //box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+
+    //text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+
+    a {
+      color: $grey;
+    //  text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.5);
+    }
+
+    a:hover, a:active {
+      color: $grey;
+    //  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+    }
+
+    th, td {
+      border-color: lighten($grey, 20%);
+      color: $grey;
+      text-align: center;
+    }
+
+    td.key {
+      text-align: right;
+    }
+
+    td.value {
+      text-align: left;
+    }
+
+    th {
+      padding-top: 8px;
+    }
+
+    #build-slide-tab {
+      min-width: 30px;
+      max-width: 30px;
+      cursor: pointer;
+    }
+  }
+}
