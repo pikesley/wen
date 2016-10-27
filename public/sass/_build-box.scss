@@ -1,0 +1,55 @@
+#build-data {
+width: 90%;
+position: fixed;
+z-index: 1;
+bottom: $footer-height;
+
+right: 95%;
+transition: 1s;
+transition-timing-function: ease;
+
+  table {
+    background-color: transparentize($light-grey, 0.2);
+    font-size: 0.7em;
+    font-family: $font-fixed;
+    margin: 0;
+
+    a {
+      color: $grey;
+    }
+
+    a:hover, a:active {
+      color: $grey;
+      text-decoration: none;
+    }
+
+    th, td {
+      border-color: lighten($grey, 20%);
+      color: $grey;
+      text-align: center;
+    }
+
+    td.key {
+      text-align: right;
+    }
+
+    td.value {
+      text-align: left;
+    }
+
+    th {
+      padding-top: 8px;
+    }
+
+    #build-slide-tab {
+      width: 5%;
+      cursor: pointer;
+      vertical-align: middle;
+
+      :hover {
+        color: darken($grey, 20%);
+        transition: 0.3s;
+      }
+    }
+  }
+}

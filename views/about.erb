@@ -42,32 +42,31 @@ Issues / suggestions / pull-requests can be submitted <a href='https://github.co
 
 <hr />
 -->
-<% g = Git.open('.').log.first %>
-<table class='table table-condensed table-bordered' id='build-data'>
-  <tr data-toggle="collapse" data-target=".collapsed-build-rows" class="clickable">
-    <th colspan='2' class='show-build-data'>About this build</th>
-  </tr>
-  <tbody class="collapse collapsed-build-rows">
+
+<div id='build-data' class='unshown'>
+  <% g = Git.open('.').log.first %>
+  <table class='table table-condensed table-bordered'>
     <tr>
-      <td class='key'>SHA</td>
-      <td class='value'><a href='<%= "#{Wen::Config.instance.config['github_url']}/tree/#{g.sha}" %>'><%= g.sha %></a></td>
+      <th colspan='4' class='show-build-data'>About this build</th>
+      <td rowspan='4' id='build-slide-tab' class='clickable' onclick="showHide()">
+      </td>
     </tr>
-    <tr>
-      <td class='key'>Date</td>
-      <td class='value'><%= g.date.utc.strftime '%Y-%m-%d %H:%M:%S UTC' %></td>
-    </tr>
-    <tr>
-      <td class='key'>Author</td>
-      <td class='value'><%= g.author.name %></td>
-    </tr>
-    <!--<tr>
-      <td class='key'>Commit message</td>
-      <td class='value'><%= g.message %></td>
-    </tr>-->
-  </tbody>
-</table>
+      <tr>
+        <td class='key'>SHA</td>
+        <td class='value' colspan='3'><a href='<%= "#{Wen::Config.instance.config['github_url']}/tree/#{g.sha}" %>'><%= g.sha %></a></td>
+      </tr>
+      <tr>
+        <td class='key'>Author</td>
+        <td class='value'><%= g.author.name %></td>
+        <td class='key'>Date</td>
+        <td class='value'><%= g.date.utc.strftime '%Y-%m-%d %H:%M:%S UTC' %></td>
+      </tr>
+  </table>
+</div>
 
 <script>
+$('#build-slide-tab').html(arrows('right'))
+
 function submit(trick) {
   $.ajax({
       url: '/tricks/',
@@ -75,5 +74,24 @@ function submit(trick) {
       type: 'POST',
       contentType: 'application/json'
   })
+}
+
+function showHide() {
+  if ($('#build-data').attr('style') == 'right: 5%' ) {
+    $('#build-data').attr('style', 'right: 95%')
+    $('#build-slide-tab').html(arrows('right'))
+  } else {
+    $('#build-data').attr('style', 'right: 5%')
+    $('#build-slide-tab').html(arrows('left'))
+  }
+}
+
+function arrows(direction) {
+  s = ''
+  for (i = 0; i < 3; i++) {
+    s += "<i class='fa fa-arrow-circle-" + direction + "'></i>"
+  }
+
+  return s
 }
 </script>
