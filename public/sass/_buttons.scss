@@ -34,3 +34,18 @@ $hover-darken: 0%; // mobile browser keeps the hover even after click
   border-color: darken($brand-secondary-1, $border-darken);
   color: $brand-complement;
 }
+
+.btn {
+  border-radius: 15px;
+}
+
+.btn-circle {
+  @extend .btn-default;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
