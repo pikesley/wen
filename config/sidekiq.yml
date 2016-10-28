@@ -3,5 +3,4 @@
   - modes
   - tricks
   - time
-#:concurrency:
-#  - 10
+:concurrency: 10
