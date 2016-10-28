@@ -3,13 +3,15 @@ module Wen
     context 'set colours' do
       it 'sets the time' do
         post '/colours', { hours: {hand: [0, 255, 0] } }.to_json, JSON_HEADERS
-        expect(ClockWorker).to have_enqueued_job 'colours', {
-          'hours' => {
-            'hand' => [
-              0, 255, 0
-            ]
+        expect(ColourWorker).to have_enqueued_job(
+          {
+            'hours' => {
+              'hand' => [
+                0, 255, 0
+              ]
+            }
           }
-        }
+        )
         expect(Clock).to receive(:colours).with ({
           'hours' => {
             'hand' => [
@@ -17,7 +19,7 @@ module Wen
             ]
           }
         })
-        ClockWorker.drain
+        ColourWorker.drain
       end
     end
 

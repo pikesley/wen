@@ -199,7 +199,7 @@ module Wen
         ITERATIONS.times do
           spacing.times do |sp|
             Wen::Clock::Tricks.clear
-            (sp..TOTAL_LENGTH).step(spacing) do |ii|
+            (sp...TOTAL_LENGTH).step(spacing) do |ii|
               a[ii] = colour
             end
             Wen::Neopixels.instance.illuminate array_filler(a)

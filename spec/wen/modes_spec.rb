@@ -3,11 +3,13 @@ module Wen
     context 'set the mode' do
       it 'sets the mode' do
         post '/modes', { mode: 'vague' }.to_json, JSON_HEADERS
-        expect(ClockWorker).to have_enqueued_job 'mode', {
-          mode: 'vague'
-        }
+        expect(ModeWorker).to have_enqueued_job(
+          {
+            mode: 'vague'
+          }
+        )
         expect(Clock).to receive(:mode=).with 'vague'
-        ClockWorker.drain
+        ModeWorker.drain
       end
 
       it 'gets the mode' do
