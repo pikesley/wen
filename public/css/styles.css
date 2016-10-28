@@ -9172,8 +9172,8 @@ body {
 /* line 10, ../sass/_buttons.scss */
 .btn:hover, .btn-active:hover, .wen-picker button:hover,
 .wen-picker .sp-cancel:hover {
-  background-color: #1e594f;
-  border-color: #1e594f;
+  background-color: #246c60;
+  border-color: #246c60;
   color: #ffccaa;
 }
 
@@ -9196,7 +9196,7 @@ body {
 
 /* line 30, ../sass/_buttons.scss */
 .btn-active:hover {
-  background-color: #973533;
+  background-color: #aa3c39;
   border-color: #973533;
   color: #ffccaa;
 }

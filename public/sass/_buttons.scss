@@ -1,5 +1,5 @@
 $border-darken: 5%;
-$hover-darken: 5%;
+$hover-darken: 0%; // mobile browser keeps the hover even after click
 
 .btn-default, .btn:focus {
   background-color: $brand-primary;
