@@ -33,18 +33,18 @@ fields = function() {
 
 pi = Math.PI
 
-width = 320
-height = 320
+width = 380
+height = width
 cx = width / 2
 cy = height / 2
 margin = 8 / 100
-handSpan = (pi) / 12
+handSpan = (pi) / 8
 stroke = 1.5
 
-bigRadius = 150
-littleRadius = 90
-thickness = 40
-cornerRadius = 16
+bigRadius = 180
+littleRadius = 110
+thickness = 50
+cornerRadius = 20
 
 scaleMins = d3.scale.linear().domain([0, 59 + 59/60]).range([0, 2 * pi])
 scaleHours = d3.scale.linear().domain([0, 11 + 59/60]).range([0, 2 * pi])
@@ -107,7 +107,7 @@ render = function(data) {
     case 'range':
       $.extend(mh, {
         startAngle: function(number) {
-          return 0
+          return 0 + margin / 2
         },
         endAngle: function(number) {
           return scaleMins(limit(number)) + handSpan
@@ -119,7 +119,7 @@ render = function(data) {
           return scaleMins(limit(number)) + handSpan + margin
         },
         endAngle: function(number) {
-          return (pi * 2) - margin
+          return (pi * 2) - margin / 2
         }
       })
       break

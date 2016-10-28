@@ -3,22 +3,20 @@
   <div class='row'>
     <% Wen::Config.instance.config['clock-modes'].each do |mode| %>
         <div class='col-xs-12'>
-          <div class='btn-group' role='group'>
-            <button type='button'
-                    class='btn btn-default <%= mode["name"] %>-mode mode-button'
-                    id='<%= mode["name"] %>-mode-picker'
-                    title='<%= mode["what"] %>'
-                    onclick='submit("<%= mode["name"] %>")'>
-              <%= mode["name"] %> clock
-            </button>
-            <button type='button'
-                    class='btn btn-default <%= mode["name"] %>-mode'
-                    id='about-<%= mode["name"] %>-mode'
-                    data-target='#<%= mode["name"] %>-modal'
-                    data-toggle='modal'>
-                <i class='fa fa-ellipsis-h'></i>
-            </button>
-          </div>
+          <button type='button'
+                  class='btn btn-default <%= mode["name"] %>-mode mode-button'
+                  id='<%= mode["name"] %>-mode-picker'
+                  title='<%= mode["what"] %>'
+                  onclick='submit("<%= mode["name"] %>")'>
+            <%= mode["name"] %> clock
+          </button>
+          <button type='button'
+                  class='btn btn-default  <%= mode["name"] %>-mode'
+                  id='about-<%= mode["name"] %>-mode'
+                  data-target='#<%= mode["name"] %>-modal'
+                  data-toggle='modal'>
+              <i class='fa fa-ellipsis-h'></i>
+          </button>
         </div>
     <% end %>
   </div>
