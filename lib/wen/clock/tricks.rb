@@ -16,15 +16,13 @@ module Wen
       def self.align_clock
         self.clear
         a = []
-        c = Config.instance.config['colours']['magenta']
-
+        a[0] = Config.instance.config['colours']['red']
         [
-          0,
           Config.instance.config.neopixels['minutes']['pins'] / 2,
           Config.instance.config.neopixels['minutes']['pins'],
           Config.instance.config.neopixels['minutes']['pins'] + (Config.instance.config.neopixels['hours']['pins'] / 2)
         ].each do |i|
-          a[i] = c
+          a[i] = Config.instance.config['colours']['green']
         end
 
         Wen::Neopixels.instance.illuminate array_filler(a)
