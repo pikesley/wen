@@ -22,11 +22,12 @@ $spectrum-colours: (
   }
 
   .sp-thumb-el, .sp-thumb-inner {
-    border-radius: 10px;
-    border: 0;
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
   }
 }
 
 .sp-palette-container {
-  max-width: 90px;
+  max-width: 220px;
 }
