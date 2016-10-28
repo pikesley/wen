@@ -227,7 +227,7 @@ module Wen
         ITERATIONS.times do |jj|
           spacing.times do |sp|
             a = []
-            (sp...TOTAL_LENGTH).step(spacing) do |ii|
+            (sp..TOTAL_LENGTH).step(spacing) do |ii|
               a[ii] = Wen::Clock::Tricks.wheel((ii + jj) % 255)
             end
             Wen::Neopixels.instance.illuminate array_filler(a)
