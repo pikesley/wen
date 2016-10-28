@@ -12,7 +12,7 @@ module Wen
   end
 
   class ColourWorker < ClockWorker
-    sidekiq_options queue: 'colours'
+  #  sidekiq_options queue: 'colours'
 
     def perform params
       self.class.commence params
@@ -26,7 +26,7 @@ module Wen
   end
 
   class ModeWorker < ClockWorker
-    sidekiq_options queue: 'modes'
+  #  sidekiq_options queue: 'modes'
 
     def perform params
       self.class.commence params
@@ -36,7 +36,7 @@ module Wen
   end
 
   class TrickWorker < ClockWorker
-    sidekiq_options queue: 'tricks'
+  #  sidekiq_options queue: 'tricks'
 
     def perform params
       self.class.commence params
@@ -46,12 +46,12 @@ module Wen
   end
 
   class TimeWorker < ClockWorker
-    sidekiq_options queue: 'time'
+  #  sidekiq_options queue: 'time'
 
     def perform
       self.class.commence
       Clock.time
-      self.class.cease 
+      self.class.cease
     end
   end
 end
