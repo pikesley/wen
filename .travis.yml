@@ -5,25 +5,25 @@ services:
   - redis-server
 cache: bundler
 
-# sauce_connect / nightwatch
-addons:
-  sauce_connect: true
-
-install:
-  - nvm install 4.0
-  - npm install -g nightwatch
-  - bundle
-
-before_script:
-  - bundle exec sidekiq -r ./lib/wen.rb &
-  - bundle exec rackup -p 9292 &
-
-script:
-  - bundle exec rake
-  - nightwatch --config spec/javascripts/support/nightwatch.js
-  - pkill ruby
-
-env:
-  global:
-  - secure: Ql/n5cBplDLOSn1CZzmE+wHKXZVCYcwVIfloIBB/AaqN6r/cdkl3K9kgCvAEkaHRy6eNIfwhh5YPqkXJDVto1Y8NckvLdINDkrYNIxCPqbzvJVwFbYuhk1hQ3s6kRRDqWRpsCGRU1V/HG7N1H9ZIxDlbush75VV/VJpaAq2lNh/YXioM4LlKsfPF4Z+nv3GYw1eFmp52atr3RXKRdZwzYGZLdasN8TkjqJdeixp/E/mRNKKeS6G0Ze7RiWwNaW9NQ4MVCIlEDGCtQO45KfHHElA4SI/tHWCxVZj/4TEJMz5hVsTvhOsVcyL38CCOyl7IcAXoTT6lFCgtkOPm0Aiu3b+N2nA9WDU70cbFMMR45XJ4Wep4NUT6Af+uS2Dns2+2C8u4VP7uu56McQiEVvpf/CT/1EGfQoies+5fa/AlGkBaDuvz5NEQXbCtHsxaAzRZfRMzcORvhZlY9alFEI8qESIn803b6vPp73EyUMdy45bGit5Yd46ZkyrKDJy66cQnxroz/d3pUU2nZyTuTjV/n1NmNu+lkd+hqUI9wrbSIQGwvrbn4vmfvL5HSRj5l9KPt8r14wFxv6oNnrw3iuPGBgViH8Fh/QpvjbmexFf8fcTkidThj/Y1KjWR6xPkFc0ExOoYcmMI5RcI32X5yDYiJi9bk9qlvcU5yJwynflBwc0=
-  - secure: oFzoZ7EcosBRqeD3DuAty872JO7+Pmsgjnr+UaAZ3ZuxZbVLdrt2i3ZyvQeE+RzbhOfsbFvQ0q/zchVfehpu217eslalsct9pIZFpc/neiAUcNEeG0y6mYqpuyAZ/uHCbn2b59NdzHnqRYEn8LcNizZYD9S4WWItpjGTBaacVNTHYwyI74WSVYlAX9Pu+OOqAVkQWNk3VZi1jngi70sttAgF1vuwIigLlsMpwtqbBfRqwJk1JV2wJwhBh9iAO/Arl0bqTny8TiJg+1N91lLwMYtME/oijLm58dFUduWLzhcPJG3ZlTdWEOUyWCpzwoElJGmrrHZWqnM2PxT7G1noPLOmNbj/OX/dENtbjYH78uChXpcTi4S9F8kRCJeJQmcZg3ZI0+2I8zg+7Irph7d7PEj8i6546gt2vN8EKFvebKIxXa70IWVZ/AmK5MvK+7Wa+JY7IG4wtlp7kagzv7Y70kf25znTzzzKF0AMUchuicZlTBei7IiFWf1GWX15mvL6yikG4dQbbVdygf8C26hWfk23sjmuDcx/dJ7oJYqBuGZJCXts13kKiy5fqgARBrzEsZfqqe3u7biDRW/u8OnG3e7ANg0akwkaq4RA9slXZ6pd41ddX6I+x9ydN/8XgfXQ8ck48xWS6rTIbrFtP8drPbe7fIlPETjOxf7yovlyBI4=
+### # sauce_connect / nightwatch
+### addons:
+###   sauce_connect: true
+### 
+### install:
+###   - nvm install 4.0
+###   - npm install -g nightwatch
+###   - bundle
+### 
+### before_script:
+###   - bundle exec sidekiq -r ./lib/wen.rb &
+###   - bundle exec rackup -p 9292 &
+### 
+### script:
+###   - bundle exec rake
+###   - nightwatch --config spec/javascripts/support/nightwatch.js
+###   - pkill ruby
+### 
+### env:
+###   global:
+###   - secure: Ql/n5cBplDLOSn1CZzmE+wHKXZVCYcwVIfloIBB/AaqN6r/cdkl3K9kgCvAEkaHRy6eNIfwhh5YPqkXJDVto1Y8NckvLdINDkrYNIxCPqbzvJVwFbYuhk1hQ3s6kRRDqWRpsCGRU1V/HG7N1H9ZIxDlbush75VV/VJpaAq2lNh/YXioM4LlKsfPF4Z+nv3GYw1eFmp52atr3RXKRdZwzYGZLdasN8TkjqJdeixp/E/mRNKKeS6G0Ze7RiWwNaW9NQ4MVCIlEDGCtQO45KfHHElA4SI/tHWCxVZj/4TEJMz5hVsTvhOsVcyL38CCOyl7IcAXoTT6lFCgtkOPm0Aiu3b+N2nA9WDU70cbFMMR45XJ4Wep4NUT6Af+uS2Dns2+2C8u4VP7uu56McQiEVvpf/CT/1EGfQoies+5fa/AlGkBaDuvz5NEQXbCtHsxaAzRZfRMzcORvhZlY9alFEI8qESIn803b6vPp73EyUMdy45bGit5Yd46ZkyrKDJy66cQnxroz/d3pUU2nZyTuTjV/n1NmNu+lkd+hqUI9wrbSIQGwvrbn4vmfvL5HSRj5l9KPt8r14wFxv6oNnrw3iuPGBgViH8Fh/QpvjbmexFf8fcTkidThj/Y1KjWR6xPkFc0ExOoYcmMI5RcI32X5yDYiJi9bk9qlvcU5yJwynflBwc0=
+###   - secure: oFzoZ7EcosBRqeD3DuAty872JO7+Pmsgjnr+UaAZ3ZuxZbVLdrt2i3ZyvQeE+RzbhOfsbFvQ0q/zchVfehpu217eslalsct9pIZFpc/neiAUcNEeG0y6mYqpuyAZ/uHCbn2b59NdzHnqRYEn8LcNizZYD9S4WWItpjGTBaacVNTHYwyI74WSVYlAX9Pu+OOqAVkQWNk3VZi1jngi70sttAgF1vuwIigLlsMpwtqbBfRqwJk1JV2wJwhBh9iAO/Arl0bqTny8TiJg+1N91lLwMYtME/oijLm58dFUduWLzhcPJG3ZlTdWEOUyWCpzwoElJGmrrHZWqnM2PxT7G1noPLOmNbj/OX/dENtbjYH78uChXpcTi4S9F8kRCJeJQmcZg3ZI0+2I8zg+7Irph7d7PEj8i6546gt2vN8EKFvebKIxXa70IWVZ/AmK5MvK+7Wa+JY7IG4wtlp7kagzv7Y70kf25znTzzzKF0AMUchuicZlTBei7IiFWf1GWX15mvL6yikG4dQbbVdygf8C26hWfk23sjmuDcx/dJ7oJYqBuGZJCXts13kKiy5fqgARBrzEsZfqqe3u7biDRW/u8OnG3e7ANg0akwkaq4RA9slXZ6pd41ddX6I+x9ydN/8XgfXQ8ck48xWS6rTIbrFtP8drPbe7fIlPETjOxf7yovlyBI4=
