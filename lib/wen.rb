@@ -16,7 +16,7 @@ require_relative 'wen/clock/tricks'
 
 require_relative 'wen/helpers'
 require_relative 'wen/racks'
-require_relative 'wen/clock_worker'
+require_relative 'wen/clock_workers'
 
 
 Sidekiq.options[:concurrency] = 1
@@ -53,14 +53,14 @@ module Wen
 
     get '/colours/?' do
       respond_to do |wants|
-         wants.html do
-           @title = 'Colours'
-           erb :'colours'
-         end
+        wants.html do
+          @title = 'Colours'
+          erb :'colours'
+        end
 
-          wants.json do
-            Config.instance.config.colours.to_json
-          end
+        wants.json do
+          Config.instance.config.colours.to_json
+        end
       end
     end
 
@@ -72,11 +72,11 @@ module Wen
     end
 
     post '/colours/reset/?' do
-      ClockWorker.perform_async 'reset', {'reset' => 'colours'}
+      ColourWorker.perform_async :reset
     end
 
     post '/colours/?' do
-      ClockWorker.perform_async 'colours', JSON.parse(request.body.read)
+      ColourWorker.perform_async JSON.parse(request.body.read)
     end
 
 ### modes
@@ -99,7 +99,7 @@ module Wen
     end
 
     post '/modes/?' do
-      ClockWorker.perform_async 'mode', JSON.parse(request.body.read)
+      ModeWorker.perform_async JSON.parse(request.body.read)
     end
 
 ### tricks
@@ -116,13 +116,13 @@ module Wen
     end
 
     post '/tricks/?' do
-      ClockWorker.perform_async 'tricks', JSON.parse(request.body.read)
+      TrickWorker.perform_async JSON.parse(request.body.read)
     end
 
 ### time
 
     post '/time/?' do
-      ClockWorker.perform_async 'time'
+      TimeWorker.perform_async
     end
 
     # start the server if ruby file executed directly

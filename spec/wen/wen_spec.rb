@@ -8,16 +8,16 @@ module Wen
 
     it 'requests the time' do
       post '/time', nil, JSON_HEADERS
-      expect(ClockWorker).to have_enqueued_job 'time'
+      expect(TimeWorker).to have_enqueued_job
       expect(Clock).to receive(:time)
-      ClockWorker.drain
+      TimeWorker.drain
     end
 
     it 'shuffles' do
       post '/tricks', { trick: 'shuffle' }.to_json, JSON_HEADERS
-      expect(ClockWorker).to have_enqueued_job 'tricks', {'trick' => 'shuffle'}
+      expect(TrickWorker).to have_enqueued_job({'trick' => 'shuffle'})
       expect(Clock::Tricks).to receive(:shuffle)
-      ClockWorker.drain
+      TrickWorker.drain
     end
 
     it 'has a config' do
