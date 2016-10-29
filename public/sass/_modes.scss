@@ -3,6 +3,8 @@
 }
 
 .mode-canceller {
-  background-color: lighten($brand-secondary-1, 20%);
-  border-color: $brand-secondary-1;
+  @extend .btn-default;
+
+  background-color: $brand-secondary-2;
+  border: 2px $text-color solid;
 }

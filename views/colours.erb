@@ -2,7 +2,7 @@
 
 <div id='clock'></div>
 
-<a href='#' class='btn btn-default' id='reset' onclick='reset()'>reset</a>
+<button class='btn btn-default' id='reset' onclick='reset()'>reset</button>
 
 <script>
 colours = [
@@ -253,6 +253,10 @@ function refresh() {
         containerClassName: 'wen-picker ' + id + '-picker'
       })
     })
+  })
+
+  $("#reset").focus(function () {
+    this.blur()
   })
 }
 
