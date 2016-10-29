@@ -36,51 +36,21 @@ $transparency: 0.2;
   border: 2px $text-color solid;
 }
 
-/*.btn-default, .btn:focus {
-  background-color: $brand-primary;
-  border-color: darken($brand-primary, $border-darken);
-  color: $brand-complement;
-}
-
-.btn:hover {
-  background-color: darken($brand-primary, $hover-darken);
-  border-color: darken($brand-primary, $hover-darken);
-  color: $brand-complement;
-}
-
-.btn {
-  margin-top: $padding-small-vertical;
-  font-family: $font-secondary;
-  font-size: 0.9em;
-}
-
-.btn-active, .btn-active:focus {
-  @extend .btn;
-
-  background-color: $brand-secondary-1;
-  border-color: darken($brand-secondary-1, $border-darken);
-  color: $brand-complement;
-}
-
-.btn-active:hover {
-  @extend .btn;
-
-  background-color: darken($brand-secondary-1, $hover-darken);
-  border-color: darken($brand-secondary-1, $border-darken);
-  color: $brand-complement;
-}
-
-.btn {
-  border-radius: 15px;
-}
-
-.btn-circle {
+.trick-btn {
   @extend .btn-default;
-  width: 30px;
-  height: 30px;
+
+  white-space: normal;
+  line-height: 1em;
+  height: $btn-size + 10;
+  width: $btn-size + 10;
   text-align: center;
-  padding: 6px 0;
-  font-size: 12px;
-  line-height: 1.428571429;
-  border-radius: 15px;
-}*/
+  font-size: 1.2em;
+}
+
+.trick-btn:active:focus,
+.trick-btn:active:hover,
+.trick-btn:focus,
+.trick-btn:hover,
+.trick-btn:active {
+  @extend .trick-btn;
+}

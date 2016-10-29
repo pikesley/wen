@@ -1,10 +1,18 @@
 <script>
+$("button").focus(function () {
+  this.blur()
+})
+
 function submit(trick) {
   $.ajax({
       url: '/tricks/',
       data: JSON.stringify({ trick: trick }),
       type: 'POST',
       contentType: 'application/json'
+  })
+
+  $("button").focus(function () {
+    this.blur()
   })
 }
 </script>

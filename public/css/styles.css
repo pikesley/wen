@@ -4520,46 +4520,53 @@ fieldset[disabled] .wen-picker a.sp-cancel,
 }
 
 /* line 68, ../../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_buttons.scss */
-.btn-default, .btn-active, .btn-active:focus, .btn-active:hover, .btn-active:active, .mode-canceller {
+.btn-default, .btn-active, .btn-active:focus, .btn-active:hover, .btn-active:active, .trick-btn, .trick-btn:active:focus,
+.trick-btn:active:hover,
+.trick-btn:focus,
+.trick-btn:hover,
+.trick-btn:active, .mode-canceller {
   color: #333;
   background-color: #fff;
   border-color: #ccc;
 }
 /* line 11, ../../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_buttons.scss */
-.btn-default:focus, .btn-active:focus, .mode-canceller:focus, .btn-default.focus, .focus.btn-active, .focus.mode-canceller {
+.btn-default:focus, .btn-active:focus, .trick-btn:focus, .trick-btn:focus:active, .mode-canceller:focus, .btn-default.focus, .focus.btn-active, .focus.trick-btn, .focus.mode-canceller {
   color: #333;
   background-color: #e6e6e6;
   border-color: #8c8c8c;
 }
 /* line 17, ../../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_buttons.scss */
-.btn-default:hover, .btn-active:hover, .mode-canceller:hover {
+.btn-default:hover, .btn-active:hover, .trick-btn:hover,
+.trick-btn:hover:active, .mode-canceller:hover {
   color: #333;
   background-color: #e6e6e6;
   border-color: #adadad;
 }
 /* line 22, ../../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_buttons.scss */
-.btn-default:active, .btn-active:active, .mode-canceller:active, .btn-default.active, .active.btn-active, .active.mode-canceller, .open > .btn-default.dropdown-toggle, .open > .dropdown-toggle.btn-active, .open > .dropdown-toggle.mode-canceller {
+.btn-default:active, .btn-active:active, .trick-btn:active, .trick-btn:active:focus,
+.trick-btn:active:hover, .mode-canceller:active, .btn-default.active, .active.btn-active, .active.trick-btn, .active.mode-canceller, .open > .btn-default.dropdown-toggle, .open > .dropdown-toggle.btn-active, .open > .dropdown-toggle.trick-btn, .open > .dropdown-toggle.mode-canceller {
   color: #333;
   background-color: #e6e6e6;
   border-color: #adadad;
 }
 /* line 29, ../../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_buttons.scss */
-.btn-default:active:hover, .btn-active:active:hover, .mode-canceller:active:hover, .btn-default:active:focus, .btn-active:active:focus, .mode-canceller:active:focus, .btn-default:active.focus, .btn-active:active.focus, .mode-canceller:active.focus, .btn-default.active:hover, .active.btn-active:hover, .active.mode-canceller:hover, .btn-default.active:focus, .active.btn-active:focus, .active.mode-canceller:focus, .btn-default.active.focus, .active.focus.btn-active, .active.focus.mode-canceller, .open > .btn-default.dropdown-toggle:hover, .open > .dropdown-toggle.btn-active:hover, .open > .dropdown-toggle.mode-canceller:hover, .open > .btn-default.dropdown-toggle:focus, .open > .dropdown-toggle.btn-active:focus, .open > .dropdown-toggle.mode-canceller:focus, .open > .btn-default.dropdown-toggle.focus, .open > .dropdown-toggle.focus.btn-active, .open > .dropdown-toggle.focus.mode-canceller {
+.btn-default:active:hover, .btn-active:active:hover, .trick-btn:active:hover, .mode-canceller:active:hover, .btn-default:active:focus, .btn-active:active:focus, .trick-btn:active:focus, .mode-canceller:active:focus, .btn-default:active.focus, .btn-active:active.focus, .trick-btn:active.focus, .mode-canceller:active.focus, .btn-default.active:hover, .active.btn-active:hover, .active.trick-btn:hover, .active.mode-canceller:hover, .btn-default.active:focus, .active.btn-active:focus, .active.trick-btn:focus, .active.mode-canceller:focus, .btn-default.active.focus, .active.focus.btn-active, .active.focus.trick-btn, .active.focus.mode-canceller, .open > .btn-default.dropdown-toggle:hover, .open > .dropdown-toggle.btn-active:hover, .open > .dropdown-toggle.trick-btn:hover, .open > .dropdown-toggle.mode-canceller:hover, .open > .btn-default.dropdown-toggle:focus, .open > .dropdown-toggle.btn-active:focus, .open > .dropdown-toggle.trick-btn:focus, .open > .dropdown-toggle.mode-canceller:focus, .open > .btn-default.dropdown-toggle.focus, .open > .dropdown-toggle.focus.btn-active, .open > .dropdown-toggle.focus.trick-btn, .open > .dropdown-toggle.focus.mode-canceller {
   color: #333;
   background-color: #d4d4d4;
   border-color: #8c8c8c;
 }
 /* line 37, ../../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_buttons.scss */
-.btn-default:active, .btn-active:active, .mode-canceller:active, .btn-default.active, .active.btn-active, .active.mode-canceller, .open > .btn-default.dropdown-toggle, .open > .dropdown-toggle.btn-active, .open > .dropdown-toggle.mode-canceller {
+.btn-default:active, .btn-active:active, .trick-btn:active, .trick-btn:active:focus,
+.trick-btn:active:hover, .mode-canceller:active, .btn-default.active, .active.btn-active, .active.trick-btn, .active.mode-canceller, .open > .btn-default.dropdown-toggle, .open > .dropdown-toggle.btn-active, .open > .dropdown-toggle.trick-btn, .open > .dropdown-toggle.mode-canceller {
   background-image: none;
 }
 /* line 45, ../../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_buttons.scss */
-.btn-default.disabled:hover, .disabled.btn-active:hover, .disabled.mode-canceller:hover, .btn-default.disabled:focus, .disabled.btn-active:focus, .disabled.mode-canceller:focus, .btn-default.disabled.focus, .disabled.focus.btn-active, .disabled.focus.mode-canceller, .btn-default[disabled]:hover, [disabled].btn-active:hover, [disabled].mode-canceller:hover, .btn-default[disabled]:focus, [disabled].btn-active:focus, [disabled].mode-canceller:focus, .btn-default[disabled].focus, [disabled].focus.btn-active, [disabled].focus.mode-canceller, fieldset[disabled] .btn-default:hover, fieldset[disabled] .btn-active:hover, fieldset[disabled] .mode-canceller:hover, fieldset[disabled] .btn-default:focus, fieldset[disabled] .btn-active:focus, fieldset[disabled] .mode-canceller:focus, fieldset[disabled] .btn-default.focus, fieldset[disabled] .focus.btn-active, fieldset[disabled] .focus.mode-canceller {
+.btn-default.disabled:hover, .disabled.btn-active:hover, .disabled.trick-btn:hover, .disabled.mode-canceller:hover, .btn-default.disabled:focus, .disabled.btn-active:focus, .disabled.trick-btn:focus, .disabled.mode-canceller:focus, .btn-default.disabled.focus, .disabled.focus.btn-active, .disabled.focus.trick-btn, .disabled.focus.mode-canceller, .btn-default[disabled]:hover, [disabled].btn-active:hover, [disabled].trick-btn:hover, [disabled].mode-canceller:hover, .btn-default[disabled]:focus, [disabled].btn-active:focus, [disabled].trick-btn:focus, [disabled].mode-canceller:focus, .btn-default[disabled].focus, [disabled].focus.btn-active, [disabled].focus.trick-btn, [disabled].focus.mode-canceller, fieldset[disabled] .btn-default:hover, fieldset[disabled] .btn-active:hover, fieldset[disabled] .trick-btn:hover, fieldset[disabled] .mode-canceller:hover, fieldset[disabled] .btn-default:focus, fieldset[disabled] .btn-active:focus, fieldset[disabled] .trick-btn:focus, fieldset[disabled] .mode-canceller:focus, fieldset[disabled] .btn-default.focus, fieldset[disabled] .focus.btn-active, fieldset[disabled] .focus.trick-btn, fieldset[disabled] .focus.mode-canceller {
   background-color: #fff;
   border-color: #ccc;
 }
 /* line 53, ../../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_buttons.scss */
-.btn-default .badge, .btn-active .badge, .mode-canceller .badge {
+.btn-default .badge, .btn-active .badge, .trick-btn .badge, .mode-canceller .badge {
   color: #fff;
   background-color: #333;
 }
@@ -9103,7 +9110,12 @@ body {
 }
 
 /* line 8, ../sass/_buttons.scss */
-.btn-default, .btn-active, .btn-active:focus, .btn-active:hover, .btn-active:active, .mode-canceller, .btn-default:focus, .btn-active:focus, .mode-canceller:focus, .btn-default:hover, .btn-active:hover, .mode-canceller:hover {
+.btn-default, .btn-active, .btn-active:focus, .btn-active:hover, .btn-active:active, .trick-btn, .trick-btn:active:focus,
+.trick-btn:active:hover,
+.trick-btn:focus,
+.trick-btn:hover,
+.trick-btn:active, .mode-canceller, .btn-default:focus, .btn-active:focus, .trick-btn:focus, .trick-btn:focus:active, .mode-canceller:focus, .btn-default:hover, .btn-active:hover, .trick-btn:hover,
+.trick-btn:hover:active, .mode-canceller:hover {
   height: 80px;
   min-width: 80px;
   background-color: rgba(255, 127, 0, 0.8);
@@ -9116,9 +9128,10 @@ body {
 }
 
 /* line 21, ../sass/_buttons.scss */
-.btn-default:active:focus, .btn-active:active:focus, .mode-canceller:active:focus,
+.btn-default:active:focus, .btn-active:active:focus, .trick-btn:active:focus, .mode-canceller:active:focus,
 .btn-default:active:hover,
 .btn-active:active:hover,
+.trick-btn:active:hover,
 .mode-canceller:active:hover {
   background-color: rgba(153, 76, 0, 0.8);
   border: 2px #331900 solid;
@@ -9135,54 +9148,20 @@ body {
   border: 2px #331900 solid;
 }
 
-/*.btn-default, .btn:focus {
-  background-color: $brand-primary;
-  border-color: darken($brand-primary, $border-darken);
-  color: $brand-complement;
-}
-
-.btn:hover {
-  background-color: darken($brand-primary, $hover-darken);
-  border-color: darken($brand-primary, $hover-darken);
-  color: $brand-complement;
-}
-
-.btn {
-  margin-top: $padding-small-vertical;
-  font-family: $font-secondary;
-  font-size: 0.9em;
-}
-
-.btn-active, .btn-active:focus {
-  @extend .btn;
-
-  background-color: $brand-secondary-1;
-  border-color: darken($brand-secondary-1, $border-darken);
-  color: $brand-complement;
-}
-
-.btn-active:hover {
-  @extend .btn;
-
-  background-color: darken($brand-secondary-1, $hover-darken);
-  border-color: darken($brand-secondary-1, $border-darken);
-  color: $brand-complement;
-}
-
-.btn {
-  border-radius: 15px;
-}
-
-.btn-circle {
-  @extend .btn-default;
-  width: 30px;
-  height: 30px;
+/* line 39, ../sass/_buttons.scss */
+.trick-btn, .trick-btn:active:focus,
+.trick-btn:active:hover,
+.trick-btn:focus,
+.trick-btn:hover,
+.trick-btn:active {
+  white-space: normal;
+  line-height: 1em;
+  height: 90px;
+  width: 90px;
   text-align: center;
-  padding: 6px 0;
-  font-size: 12px;
-  line-height: 1.428571429;
-  border-radius: 15px;
-}*/
+  font-size: 1.2em;
+}
+
 /* line 1, ../sass/_nav.scss */
 #main-nav {
   padding-top: 5px;
@@ -9403,7 +9382,7 @@ h2 {
 
 /* line 44, ../sass/styles.scss */
 hr {
-  border-color: #00d45d;
+  border-color: #006e30;
 }
 
 /* line 48, ../sass/styles.scss */
