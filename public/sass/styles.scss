@@ -6,7 +6,6 @@
 @import 'buttons';
 @import 'nav';
 @import 'spectrum';
-@import 'tricks';
 @import 'modes';
 @import 'build-box';
 
@@ -16,7 +15,6 @@ html {
 
 body {
   background: url(/assets/images/retina_wood.png);
-  //background-color: $brand-background;
   color: $brand-primary;
   font-family: $font-primary;
   text-align: center;
@@ -64,8 +62,9 @@ p {
   text-align: center;
 }
 
-.current-mode {
-  display: none;
-  font-style: italic;
-  color: $brand-secondary-1;
+
+.button-panel {
+  background-color: transparentize($brand-complement, $transparency);
+  border: $border-thickness darken($brand-complement, $border-darken) solid;
+  border-radius: $corner-radius;
 }

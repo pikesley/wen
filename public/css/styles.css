@@ -7,7 +7,7 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 @import "https://fonts.googleapis.com/css?family=Nixie+One";
 @import "https://fonts.googleapis.com/css?family=Cutive+Mono";
-@import "https://fonts.googleapis.com/css?family=VT323";
+@import "https://fonts.googleapis.com/css?family=Orbitron";
 @import "https://fonts.googleapis.com/css?family=VT323";
 /* line 9, ../../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_normalize.scss */
 html {
@@ -9099,17 +9099,18 @@ body {
   color: #03637a;
   height: 40px;
   padding: 10px 16px;
+  border-top: 2px #331900 solid;
 }
-/* line 22, ../sass/_footer.scss */
+/* line 24, ../sass/_footer.scss */
 .footer a {
   color: #03637a;
 }
-/* line 26, ../sass/_footer.scss */
+/* line 28, ../sass/_footer.scss */
 .footer a:hover {
   color: #00d45d;
 }
 
-/* line 8, ../sass/_buttons.scss */
+/* line 4, ../sass/_buttons.scss */
 .btn-default, .btn-active, .btn-active:focus, .btn-active:hover, .btn-active:active, .trick-btn, .trick-btn:active:focus,
 .trick-btn:active:hover,
 .trick-btn:focus,
@@ -9118,37 +9119,37 @@ body {
 .trick-btn:hover:active, .mode-canceller:hover {
   height: 80px;
   min-width: 80px;
-  background-color: rgba(255, 127, 0, 0.8);
+  background-color: rgba(255, 127, 0, 0.7);
   color: #331900;
   border: 2px #331900 solid;
-  border-radius: 15px;
+  border-radius: 20px;
   font-family: "VT323";
   font-size: 1.5em;
   margin: 10px;
 }
 
-/* line 21, ../sass/_buttons.scss */
+/* line 17, ../sass/_buttons.scss */
 .btn-default:active:focus, .btn-active:active:focus, .trick-btn:active:focus, .mode-canceller:active:focus,
 .btn-default:active:hover,
 .btn-active:active:hover,
 .trick-btn:active:hover,
 .mode-canceller:active:hover {
-  background-color: rgba(153, 76, 0, 0.8);
+  background-color: rgba(153, 76, 0, 0.7);
   border: 2px #331900 solid;
 }
 
-/* line 27, ../sass/_buttons.scss */
+/* line 23, ../sass/_buttons.scss */
 .btn-active, .btn-active:focus, .btn-active:hover, .btn-active:active {
-  background-color: rgba(0, 110, 48, 0.8);
+  background-color: rgba(0, 110, 48, 0.7);
 }
 
-/* line 33, ../sass/_buttons.scss */
+/* line 29, ../sass/_buttons.scss */
 .btn-active:active:hover {
-  background-color: rgba(0, 110, 48, 0.8);
+  background-color: rgba(0, 110, 48, 0.7);
   border: 2px #331900 solid;
 }
 
-/* line 39, ../sass/_buttons.scss */
+/* line 35, ../sass/_buttons.scss */
 .trick-btn, .trick-btn:active:focus,
 .trick-btn:active:hover,
 .trick-btn:focus,
@@ -9177,27 +9178,34 @@ body {
 
 /* line 14, ../sass/_nav.scss */
 .nav-pills li.active a, .nav-pills li.active a:focus, .nav-pills li.active a:hover {
-  background-color: transparent;
-  border-color: transparent;
-  color: #006e30;
+  background-color: rgba(0, 110, 48, 0.7);
+  border: 2px black solid;
+  color: black;
 }
 /* line 22, ../sass/_nav.scss */
 .nav-pills li.inactive a, .nav-pills li.inactive a:hover {
   color: #b2b2b2;
   opacity: 0.7;
 }
+/* line 28, ../sass/_nav.scss */
+.nav-pills li {
+  /*    a:focus, a:hover {
+        background-color: transparent;
+        border-color: transparent;
+        color: darken($brand-secondary-1, 10%);
+      }*/
+}
 /* line 29, ../sass/_nav.scss */
 .nav-pills li a {
-  background-color: transparent;
-  border-color: transparent;
-  color: #9b2000;
-  transition: 0.5s;
+  background-color: rgba(255, 127, 0, 0.7);
+  border: 2px #331900 solid;
+  border-radius: 10px;
+  color: #331900;
 }
 /* line 36, ../sass/_nav.scss */
-.nav-pills li a:focus, .nav-pills li a:hover {
-  background-color: transparent;
-  border-color: transparent;
-  color: #003b1a;
+.nav-pills li a:focus,
+.nav-pills li a:hover {
+  background-color: rgba(153, 76, 0, 0.7);
 }
 
 /* line 5, ../sass/_spectrum.scss */
@@ -9228,56 +9236,6 @@ body {
   max-width: 220px;
 }
 
-/* line 8, ../sass/_tricks.scss */
-.grid-item {
-  -webkit-user-select: none;
-  /* Chrome all / Safari all */
-  -moz-user-select: none;
-  /* Firefox all */
-  -ms-user-select: none;
-  /* IE 10+ */
-  user-select: none;
-  /* Likely future */
-}
-/* line 9, ../sass/_tricks.scss */
-.grid-item a {
-  color: rgba(46, 24, 0, 0.7);
-}
-/* line 13, ../sass/_tricks.scss */
-.grid-item a:hover {
-  text-decoration: none;
-}
-/* line 17, ../sass/_tricks.scss */
-.grid-item :active {
-  background-color: rgba(148, 76, 0, 0.7);
-}
-
-/* line 27, ../sass/_tricks.scss */
-.grid-item-content {
-  font-family: "VT323";
-  font-size: 1.5em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1em;
-  padding: 5px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  height: 80px;
-  cursor: pointer;
-  background-color: rgba(250, 129, 0, 0.7);
-  border-radius: 15px;
-  border: 2px rgba(46, 24, 0, 0.7) solid;
-}
-
-/* line 44, ../sass/_tricks.scss */
-.trick-buttons {
-  padding: 10px;
-  border: 2px rgba(46, 24, 0, 0.7) solid;
-  border-radius: 15px;
-  background-color: rgba(5, 126, 255, 0.2);
-}
-
 /* line 1, ../sass/_modes.scss */
 .mode-button {
   width: 200px;
@@ -9289,12 +9247,19 @@ body {
   border: 2px #331900 solid;
 }
 
+/* line 12, ../sass/_modes.scss */
+.current-mode {
+  display: none;
+  font-style: italic;
+  color: #ff7f00;
+}
+
 /* line 1, ../sass/_build-box.scss */
 #build-data {
   width: 90%;
   position: fixed;
   z-index: 1;
-  bottom: 40px;
+  bottom: 42px;
   right: 95%;
   transition: 1s;
   transition-timing-function: ease;
@@ -9308,7 +9273,7 @@ body {
 }
 /* line 17, ../sass/_build-box.scss */
 #build-data table a {
-  color: #aa3c39;
+  color: #006e30;
 }
 /* line 21, ../sass/_build-box.scss */
 #build-data table a:hover, #build-data table a:active {
@@ -9345,12 +9310,12 @@ body {
   transition: 0.3s;
 }
 
-/* line 13, ../sass/styles.scss */
+/* line 12, ../sass/styles.scss */
 html {
   text-transform: lowercase;
 }
 
-/* line 17, ../sass/styles.scss */
+/* line 16, ../sass/styles.scss */
 body {
   background: url(/assets/images/retina_wood.png);
   color: #ff7f00;
@@ -9358,58 +9323,58 @@ body {
   text-align: center;
 }
 
-/* line 25, ../sass/styles.scss */
+/* line 23, ../sass/styles.scss */
 a {
   color: #006e30;
 }
 
-/* line 29, ../sass/styles.scss */
+/* line 27, ../sass/styles.scss */
 img {
   max-width: 80%;
 }
 
-/* line 33, ../sass/styles.scss */
+/* line 31, ../sass/styles.scss */
 h1 {
   font-size: 2.2em;
   margin-top: 5px;
   color: #ff7f00;
 }
 
-/* line 40, ../sass/styles.scss */
+/* line 38, ../sass/styles.scss */
 h2 {
   font-size: 1.5em;
 }
 
-/* line 44, ../sass/styles.scss */
+/* line 42, ../sass/styles.scss */
 hr {
   border-color: #006e30;
 }
 
-/* line 48, ../sass/styles.scss */
+/* line 46, ../sass/styles.scss */
 p {
   text-align: justify;
   font-size: 0.8em;
   font-family: "Nixie One";
 }
 
-/* line 54, ../sass/styles.scss */
+/* line 52, ../sass/styles.scss */
 #reset-modal, .mode-modal {
   top: 15%;
 }
 
-/* line 59, ../sass/styles.scss */
+/* line 57, ../sass/styles.scss */
 .modal-content {
   background-color: rgba(3, 99, 122, 0.95);
 }
 
-/* line 63, ../sass/styles.scss */
+/* line 61, ../sass/styles.scss */
 .modal p {
   text-align: center;
 }
 
-/* line 67, ../sass/styles.scss */
-.current-mode {
-  display: none;
-  font-style: italic;
-  color: #006e30;
+/* line 66, ../sass/styles.scss */
+.button-panel {
+  background-color: rgba(3, 99, 122, 0.7);
+  border: 2px black solid;
+  border-radius: 20px;
 }
