@@ -1,7 +1,33 @@
-$border-darken: 5%;
+@import 'https://fonts.googleapis.com/css?family=VT323';
+$buttons-font: 'VT323';
+
 $hover-darken: 0%; // mobile browser keeps the hover even after click
+$btn-size: 80px;
+$text-color:  darken($brand-primary, 40%);
+$transparency: 0.2;
 
 .btn-default, .btn:focus {
+  height: $btn-size;
+  width: $btn-size;
+  background-color: transparentize($brand-primary, $transparency);
+  color: $text-color;
+  border: 2px $text-color solid;
+  border-radius: 15px;
+  font-family: $buttons-font;
+  font-size: 1.5em;
+}
+
+.btn-default:active:focus,
+.btn-default:active:hover,
+//.btn-default:hover,
+.btn:hover,
+.btn-default:focus,
+.btn-default:active {
+  background-color: transparentize(darken($brand-primary, 20%), $transparency);
+}
+
+
+/*.btn-default, .btn:focus {
   background-color: $brand-primary;
   border-color: darken($brand-primary, $border-darken);
   color: $brand-complement;
@@ -48,4 +74,4 @@ $hover-darken: 0%; // mobile browser keeps the hover even after click
   font-size: 12px;
   line-height: 1.428571429;
   border-radius: 15px;
-}
+}*/
