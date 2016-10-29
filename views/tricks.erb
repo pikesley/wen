@@ -1,5 +1,6 @@
 <h1><%= @title %></h1>
-<div class='row'>
+<div class='button-panel'>
+  <div class='row'>
     <% Wen::Config.instance.config['trick-modes'].each do |trick| %>
       <div class='col-xs-4 col-sm-4 col-md-4'>
         <button id='display-<%= trick["method"] %>' class='btn trick-btn' onclick='submit("<%= trick["method"] %>")'>
@@ -10,7 +11,6 @@
       </div>
     <% end %>
   </div>
-</div>
 </div>
 
 <%= erb :'javascript/tricks.js' %>

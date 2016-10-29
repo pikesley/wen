@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=VT323';
+/*@import 'https://fonts.googleapis.com/css?family=VT323';
 $font-tricks: 'VT323';
 
 $trick-box-colour: rgba(250, 129, 0, 0.7);
@@ -18,10 +18,10 @@ $trick-box-text: darken($trick-box-alt, 20%);
     background-color: $trick-box-alt;
   }
 
-  -webkit-user-select: none;  /* Chrome all / Safari all */
-  -moz-user-select: none;     /* Firefox all */
-  -ms-user-select: none;      /* IE 10+ */
-  user-select: none;          /* Likely future */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .grid-item-content {
@@ -46,4 +46,4 @@ $trick-box-text: darken($trick-box-alt, 20%);
   border: 2px $trick-box-text solid;
   border-radius: 15px;
   background-color: transparentize(invert($trick-box-colour), 0.5);
-}
+}*/

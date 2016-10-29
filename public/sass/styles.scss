@@ -64,8 +64,9 @@ p {
   text-align: center;
 }
 
-.current-mode {
-  display: none;
-  font-style: italic;
-  color: $brand-secondary-1;
+
+.button-panel {
+  background-color: transparentize($brand-complement, $transparency);
+  border: $border-thickness darken($brand-complement, $border-darken) solid;
+  border-radius: $corner-radius;
 }

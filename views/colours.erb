@@ -1,9 +1,11 @@
 <h1><%= @title %></h1>
 
+<div class='button-panel'>
+
 <div id='clock'></div>
 
 <button class='btn btn-default' id='reset' onclick='reset()'>reset</button>
-
+</div>
 <script>
 colours = [
   <% Wen::Config.instance.config.colours.each do |name, rgb| %>

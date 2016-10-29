@@ -7,7 +7,7 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 @import "https://fonts.googleapis.com/css?family=Nixie+One";
 @import "https://fonts.googleapis.com/css?family=Cutive+Mono";
-@import "https://fonts.googleapis.com/css?family=VT323";
+@import "https://fonts.googleapis.com/css?family=Orbitron";
 @import "https://fonts.googleapis.com/css?family=VT323";
 /* line 9, ../../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_normalize.scss */
 html {
@@ -9099,17 +9099,18 @@ body {
   color: #03637a;
   height: 40px;
   padding: 10px 16px;
+  border-top: 2px #331900 solid;
 }
-/* line 22, ../sass/_footer.scss */
+/* line 24, ../sass/_footer.scss */
 .footer a {
   color: #03637a;
 }
-/* line 26, ../sass/_footer.scss */
+/* line 28, ../sass/_footer.scss */
 .footer a:hover {
   color: #00d45d;
 }
 
-/* line 8, ../sass/_buttons.scss */
+/* line 7, ../sass/_buttons.scss */
 .btn-default, .btn-active, .btn-active:focus, .btn-active:hover, .btn-active:active, .trick-btn, .trick-btn:active:focus,
 .trick-btn:active:hover,
 .trick-btn:focus,
@@ -9118,37 +9119,37 @@ body {
 .trick-btn:hover:active, .mode-canceller:hover {
   height: 80px;
   min-width: 80px;
-  background-color: rgba(255, 127, 0, 0.8);
+  background-color: rgba(255, 127, 0, 0.7);
   color: #331900;
   border: 2px #331900 solid;
-  border-radius: 15px;
-  font-family: "VT323";
+  border-radius: 20px;
+  font-family: "Orbitron";
   font-size: 1.5em;
   margin: 10px;
 }
 
-/* line 21, ../sass/_buttons.scss */
+/* line 20, ../sass/_buttons.scss */
 .btn-default:active:focus, .btn-active:active:focus, .trick-btn:active:focus, .mode-canceller:active:focus,
 .btn-default:active:hover,
 .btn-active:active:hover,
 .trick-btn:active:hover,
 .mode-canceller:active:hover {
-  background-color: rgba(153, 76, 0, 0.8);
+  background-color: rgba(153, 76, 0, 0.7);
   border: 2px #331900 solid;
 }
 
-/* line 27, ../sass/_buttons.scss */
+/* line 26, ../sass/_buttons.scss */
 .btn-active, .btn-active:focus, .btn-active:hover, .btn-active:active {
-  background-color: rgba(0, 110, 48, 0.8);
+  background-color: rgba(0, 110, 48, 0.7);
 }
 
-/* line 33, ../sass/_buttons.scss */
+/* line 32, ../sass/_buttons.scss */
 .btn-active:active:hover {
-  background-color: rgba(0, 110, 48, 0.8);
+  background-color: rgba(0, 110, 48, 0.7);
   border: 2px #331900 solid;
 }
 
-/* line 39, ../sass/_buttons.scss */
+/* line 38, ../sass/_buttons.scss */
 .trick-btn, .trick-btn:active:focus,
 .trick-btn:active:hover,
 .trick-btn:focus,
@@ -9212,7 +9213,7 @@ body {
 .wen-picker button:hover,
 .wen-picker .sp-cancel {
   text-shadow: none;
-  font-family: "Nixie One";
+  font-family: "Orbitron";
   background-color: transparent;
   border: none;
 }
@@ -9228,56 +9229,55 @@ body {
   max-width: 220px;
 }
 
-/* line 8, ../sass/_tricks.scss */
+/*@import 'https://fonts.googleapis.com/css?family=VT323';
+$font-tricks: 'VT323';
+
+$trick-box-colour: rgba(250, 129, 0, 0.7);
+$trick-box-alt: darken($trick-box-colour, 20%);
+$trick-box-text: darken($trick-box-alt, 20%);
+
 .grid-item {
+  a {
+    color: $trick-box-text;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  :active {
+    background-color: $trick-box-alt;
+  }
+
   -webkit-user-select: none;
-  /* Chrome all / Safari all */
   -moz-user-select: none;
-  /* Firefox all */
   -ms-user-select: none;
-  /* IE 10+ */
   user-select: none;
-  /* Likely future */
-}
-/* line 9, ../sass/_tricks.scss */
-.grid-item a {
-  color: rgba(46, 24, 0, 0.7);
-}
-/* line 13, ../sass/_tricks.scss */
-.grid-item a:hover {
-  text-decoration: none;
-}
-/* line 17, ../sass/_tricks.scss */
-.grid-item :active {
-  background-color: rgba(148, 76, 0, 0.7);
 }
 
-/* line 27, ../sass/_tricks.scss */
 .grid-item-content {
-  font-family: "VT323";
+  font-family: $font-tricks;
   font-size: 1.5em;
   display: flex;
   align-items: center;
   justify-content: center;
   line-height: 1em;
-  padding: 5px;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  padding: $padding-small-vertical;
+  margin-bottom: $padding-large-vertical;
+  margin-top: $padding-large-vertical;
   height: 80px;
   cursor: pointer;
-  background-color: rgba(250, 129, 0, 0.7);
+  background-color: $trick-box-colour;
   border-radius: 15px;
-  border: 2px rgba(46, 24, 0, 0.7) solid;
+  border: 2px $trick-box-text solid;
 }
 
-/* line 44, ../sass/_tricks.scss */
 .trick-buttons {
-  padding: 10px;
-  border: 2px rgba(46, 24, 0, 0.7) solid;
+  padding: $padding-large-vertical;
+  border: 2px $trick-box-text solid;
   border-radius: 15px;
-  background-color: rgba(5, 126, 255, 0.2);
-}
-
+  background-color: transparentize(invert($trick-box-colour), 0.5);
+}*/
 /* line 1, ../sass/_modes.scss */
 .mode-button {
   width: 200px;
@@ -9287,6 +9287,13 @@ body {
 .mode-canceller {
   background-color: #9b2000;
   border: 2px #331900 solid;
+}
+
+/* line 12, ../sass/_modes.scss */
+.current-mode {
+  display: none;
+  font-style: italic;
+  color: #ff7f00;
 }
 
 /* line 1, ../sass/_build-box.scss */
@@ -9308,7 +9315,7 @@ body {
 }
 /* line 17, ../sass/_build-box.scss */
 #build-data table a {
-  color: #aa3c39;
+  color: #006e30;
 }
 /* line 21, ../sass/_build-box.scss */
 #build-data table a:hover, #build-data table a:active {
@@ -9354,7 +9361,7 @@ html {
 body {
   background: url(/assets/images/retina_wood.png);
   color: #ff7f00;
-  font-family: "Nixie One";
+  font-family: "Orbitron";
   text-align: center;
 }
 
@@ -9389,7 +9396,7 @@ hr {
 p {
   text-align: justify;
   font-size: 0.8em;
-  font-family: "Nixie One";
+  font-family: "Orbitron";
 }
 
 /* line 54, ../sass/styles.scss */
@@ -9407,9 +9414,9 @@ p {
   text-align: center;
 }
 
-/* line 67, ../sass/styles.scss */
-.current-mode {
-  display: none;
-  font-style: italic;
-  color: #006e30;
+/* line 68, ../sass/styles.scss */
+.button-panel {
+  background-color: rgba(3, 99, 122, 0.7);
+  border: 2px black solid;
+  border-radius: 20px;
 }

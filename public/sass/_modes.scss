@@ -8,3 +8,9 @@
   background-color: $brand-secondary-2;
   border: 2px $text-color solid;
 }
+
+.current-mode {
+  display: none;
+  font-style: italic;
+  color: $brand-primary;
+}

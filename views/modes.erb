@@ -1,59 +1,62 @@
 <h1><%= @title %></h1>
 <div id='modes'>
-  <div class='row'>
-    <% Wen::Config.instance.config['clock-modes'].each do |mode| %>
-        <div class='col-xs-12'>
-          <button type='button'
-                  class='btn btn-default <%= mode["name"] %>-mode mode-button'
-                  id='<%= mode["name"] %>-mode-picker'
-                  title='<%= mode["what"] %>'
-                  onclick='submit("<%= mode["name"] %>")'>
-            <%= mode["name"] %> clock
-          </button>
-          <button type='button'
-                  class='btn btn-default  <%= mode["name"] %>-mode'
-                  id='about-<%= mode["name"] %>-mode'
-                  data-target='#<%= mode["name"] %>-modal'
-                  data-toggle='modal'>
-              <i class='fa fa-ellipsis-h'></i>
-          </button>
-        </div>
-    <% end %>
+  <div class='button-panel'>
+    <div class='row'>
+      <% Wen::Config.instance.config['clock-modes'].each do |mode| %>
+          <div class='col-xs-12'>
+            <button type='button'
+                    class='btn btn-default <%= mode["name"] %>-mode mode-button'
+                    id='<%= mode["name"] %>-mode-picker'
+                    title='<%= mode["what"] %>'
+                    onclick='submit("<%= mode["name"] %>")'>
+              <%= mode["name"] %> clock
+            </button>
+            <button type='button'
+                    class='btn btn-default  <%= mode["name"] %>-mode'
+                    id='about-<%= mode["name"] %>-mode'
+                    data-target='#<%= mode["name"] %>-modal'
+                    data-toggle='modal'>
+                <i class='fa fa-ellipsis-h'></i>
+            </button>
+          </div>
+      <% end %>
+    </div>
   </div>
 </div>
 
 <div id='modals'>
-<% Wen::Config.instance.config['clock-modes'].each do |mode| %>
-  <div class='modal fade mode-modal' id='<%= mode["name"] %>-modal' role='dialog'>
-    <div class='modal-dialog modal-sm'>
-      <div class='modal-content'>
-        <div class='modal-body'>
-          <h2><%= mode["name"] %> clock</h2>
-          <p>
-            <%= mode['what'] %>
-          </p>
-          <p class='current-mode' id='<%= mode["name"] %>-is-current'>This mode is currently selected</p>
-          <button type='button'
-                  class='btn btn-default <%= mode["name"] %>-mode mode-picker'
-                  id='<%= mode["name"] %>-mode-modal-picker'
-                  title='<%= mode["what"] %>'
-                  onclick='submit("<%= mode["name"] %>")'
-                  data-dismiss='modal'>
-            pick this
-          </button>
-          <button type='button'
-                  class='btn btn-warning mode-canceller'
-                  id='<%= mode["name"] %>-mode-modal-cancel'
-                  data-dismiss='modal'
-                  aria-label='Close'>
-            leave things as they are for now
-          </button>
+  <% Wen::Config.instance.config['clock-modes'].each do |mode| %>
+    <div class='modal fade mode-modal' id='<%= mode["name"] %>-modal' role='dialog'>
+      <div class='modal-dialog modal-sm'>
+        <div class='modal-content'>
+          <div class='modal-body'>
+            <h2><%= mode["name"] %> clock</h2>
+            <p>
+              <%= mode['what'] %>
+            </p>
+            <p class='current-mode' id='<%= mode["name"] %>-is-current'>This mode is currently selected</p>
+            <button type='button'
+                    class='btn btn-default <%= mode["name"] %>-mode mode-picker'
+                    id='<%= mode["name"] %>-mode-modal-picker'
+                    title='<%= mode["what"] %>'
+                    onclick='submit("<%= mode["name"] %>")'
+                    data-dismiss='modal'>
+              pick this
+            </button>
+            <button type='button'
+                    class='btn btn-warning mode-canceller'
+                    id='<%= mode["name"] %>-mode-modal-cancel'
+                    data-dismiss='modal'
+                    aria-label='Close'>
+              leave things as they are for now
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
 </div>
+
 <%= erb :'javascript/modes.js' %>
 
 <script>
