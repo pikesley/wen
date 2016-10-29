@@ -44,7 +44,7 @@ module Wen
 
       def self.roll_around
         current_mode = Clock.mode
-        Clock.mode = 'range'
+        Clock.mode = 'vague'
         now = Clock.time.strftime('%s').to_i
         tomorrow = now + 86400
         while now <= tomorrow
@@ -117,7 +117,7 @@ module Wen
 
       def self.shuffle iterations = 64
         current_mode = Clock.mode
-        Clock.mode = 'range'
+        Clock.mode = 'vague'
         iterations.times do
           Clock.time DateTime.strptime(Random.rand(86400).to_s, '%s')
           self.kip 0.05
