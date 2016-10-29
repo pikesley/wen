@@ -1,8 +1,5 @@
-@import 'https://fonts.googleapis.com/css?family=VT323';
-$buttons-font: 'Orbitron';
-
 $btn-size: 80px;
-$text-color:  darken($brand-primary, $border-darken);
+$text-color: darken($brand-primary, $border-darken);
 
 .btn-default, .btn-default:focus, .btn-default:hover {
   height: $btn-size;
