@@ -1,11 +1,11 @@
 <h1><%= @title %></h1>
 
 <div class='button-panel'>
+  <div id='clock'></div>
 
-<div id='clock'></div>
-
-<button class='btn btn-default' id='reset' onclick='reset()'>reset</button>
+  <button class='btn btn-default' id='reset' onclick='reset()'>reset</button>
 </div>
+
 <script>
 colours = [
   <% Wen::Config.instance.config.colours.each do |name, rgb| %>
@@ -41,10 +41,10 @@ cx = width / 2
 cy = height / 2
 margin = 8 / 100
 handSpan = (pi) / 12
-stroke = 2.5
+stroke = 2
 
 bigRadius = 150
-littleRadius = 100
+littleRadius = 90
 thickness = 45
 cornerRadius = 20
 

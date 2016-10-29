@@ -6,7 +6,6 @@
 @import 'buttons';
 @import 'nav';
 @import 'spectrum';
-@import 'tricks';
 @import 'modes';
 @import 'build-box';
 
@@ -16,7 +15,6 @@ html {
 
 body {
   background: url(/assets/images/retina_wood.png);
-  //background-color: $brand-background;
   color: $brand-primary;
   font-family: $font-primary;
   text-align: center;

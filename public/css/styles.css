@@ -9236,55 +9236,6 @@ body {
   max-width: 220px;
 }
 
-/*@import 'https://fonts.googleapis.com/css?family=VT323';
-$font-tricks: 'VT323';
-
-$trick-box-colour: rgba(250, 129, 0, 0.7);
-$trick-box-alt: darken($trick-box-colour, 20%);
-$trick-box-text: darken($trick-box-alt, 20%);
-
-.grid-item {
-  a {
-    color: $trick-box-text;
-  }
-
-  a:hover {
-    text-decoration: none;
-  }
-
-  :active {
-    background-color: $trick-box-alt;
-  }
-
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.grid-item-content {
-  font-family: $font-tricks;
-  font-size: 1.5em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1em;
-  padding: $padding-small-vertical;
-  margin-bottom: $padding-large-vertical;
-  margin-top: $padding-large-vertical;
-  height: 80px;
-  cursor: pointer;
-  background-color: $trick-box-colour;
-  border-radius: 15px;
-  border: 2px $trick-box-text solid;
-}
-
-.trick-buttons {
-  padding: $padding-large-vertical;
-  border: 2px $trick-box-text solid;
-  border-radius: 15px;
-  background-color: transparentize(invert($trick-box-colour), 0.5);
-}*/
 /* line 1, ../sass/_modes.scss */
 .mode-button {
   width: 200px;
@@ -9359,12 +9310,12 @@ $trick-box-text: darken($trick-box-alt, 20%);
   transition: 0.3s;
 }
 
-/* line 13, ../sass/styles.scss */
+/* line 12, ../sass/styles.scss */
 html {
   text-transform: lowercase;
 }
 
-/* line 17, ../sass/styles.scss */
+/* line 16, ../sass/styles.scss */
 body {
   background: url(/assets/images/retina_wood.png);
   color: #ff7f00;
@@ -9372,56 +9323,56 @@ body {
   text-align: center;
 }
 
-/* line 25, ../sass/styles.scss */
+/* line 23, ../sass/styles.scss */
 a {
   color: #006e30;
 }
 
-/* line 29, ../sass/styles.scss */
+/* line 27, ../sass/styles.scss */
 img {
   max-width: 80%;
 }
 
-/* line 33, ../sass/styles.scss */
+/* line 31, ../sass/styles.scss */
 h1 {
   font-size: 2.2em;
   margin-top: 5px;
   color: #ff7f00;
 }
 
-/* line 40, ../sass/styles.scss */
+/* line 38, ../sass/styles.scss */
 h2 {
   font-size: 1.5em;
 }
 
-/* line 44, ../sass/styles.scss */
+/* line 42, ../sass/styles.scss */
 hr {
   border-color: #006e30;
 }
 
-/* line 48, ../sass/styles.scss */
+/* line 46, ../sass/styles.scss */
 p {
   text-align: justify;
   font-size: 0.8em;
   font-family: "Nixie One";
 }
 
-/* line 54, ../sass/styles.scss */
+/* line 52, ../sass/styles.scss */
 #reset-modal, .mode-modal {
   top: 15%;
 }
 
-/* line 59, ../sass/styles.scss */
+/* line 57, ../sass/styles.scss */
 .modal-content {
   background-color: rgba(3, 99, 122, 0.95);
 }
 
-/* line 63, ../sass/styles.scss */
+/* line 61, ../sass/styles.scss */
 .modal p {
   text-align: center;
 }
 
-/* line 68, ../sass/styles.scss */
+/* line 66, ../sass/styles.scss */
 .button-panel {
   background-color: rgba(3, 99, 122, 0.7);
   border: 2px black solid;
