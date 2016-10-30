@@ -2,14 +2,14 @@ neopixels:
   minutes:
     pins: 24
     colours:
-      hand: [255,   0,   0]
-      face: [  0,   0, 255]
+      hand: [255, 127,   0]
+      face: [  3,  99, 122]
 
   hours:
     pins: 12
     colours:
-      hand: [255,   0,   0]
-      face: [  0,   0, 255]
+      hand: [255, 127,   0]
+      face: [  3,  99, 122]
 
 led:
   pin:        18

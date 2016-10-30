@@ -1,6 +1,6 @@
 .wen-picker {
   border-radius: $corner-radius;
-  background-color: transparentize($brand-primary, 0.1);
+  background-color: transparentize($brand-complement, 0.1);
   border-color: darken($brand-primary, $border-darken);
 
   button.sp-choose,
@@ -9,9 +9,14 @@
   button.sp-choose:active:hover,
   button.sp-choose:active,
   button.sp-choose:hover {
+    background: transparent;
+
     @extend .btn-default;
     height: 40px;
+    border-radius: 10px;
     font-family: $buttons-font;
+    text-shadow: none;
+    background-color: transparentize($brand-primary, $transparency);
   }
 
   .sp-thumb-el, .sp-thumb-inner {
