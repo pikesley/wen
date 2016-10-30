@@ -12,9 +12,9 @@
 .nav-pills {
   li.active {
     a, a:focus, a:hover {
-      background-color: transparentize($brand-secondary-1, $transparency);
-      border: $border-thickness darken($brand-secondary-1, $border-darken) solid;
-      color: darken($brand-secondary-1, $border-darken);
+      background-color: transparent;
+      border-color: transparent;
+      color: $brand-secondary-1;
     }
   }
 
@@ -27,21 +27,16 @@
 
   li {
     a {
-      background-color: transparentize($brand-primary, $transparency);
-      border: $border-thickness darken($brand-primary, $border-darken) solid;
-      border-radius: $corner-radius / 2;
-      color: darken($brand-primary, $border-darken);
+      background-color: transparent;
+      border-color: transparent;
+      color: $brand-secondary-2;
+      transition: 0.5s;
     }
 
-    a:focus,
-    a:hover {
-      background-color: transparentize(darken($brand-primary, 20%), $transparency);
-    }
-
-/*    a:focus, a:hover {
+    a:focus, a:hover {
       background-color: transparent;
       border-color: transparent;
       color: darken($brand-secondary-1, 10%);
-    }*/
+    }
   }
 }
