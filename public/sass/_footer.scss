@@ -19,8 +19,6 @@ body {
 
   padding: $padding-large-vertical $padding-large-horizontal;
 
-  border-top: $border-thickness darken($brand-primary, $border-darken) solid;
-
   a {
     color: $brand-complement;
   }
