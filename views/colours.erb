@@ -179,21 +179,46 @@ setInterval(function() {
 data = fields()
 render(data)
 
-$('.picker').on('change.spectrum', function (ev, tc) {
-  d = ev.target.id.split('-')
+$('.picker').on('move.spectrum', function (ev, tc) {
+  /*d = ev.target.id.split('-')
   x = {}
   x[d[1]] = [tc['_r'], tc['_g'], tc['_b']]
   y = {}
-  y[d[0]] = x
+  y[d[0]] = x*/
 
   $.ajax({
     url: '/colours/',
-    data: JSON.stringify(y),
+    data: JSON.stringify(prepareColourData(ev.target.it, tc)),
+    type: 'POST',
+    contentType: 'application/json'
+  })
+})
+
+$('.picker').on('change.spectrum', function (ev, tc) {
+  /*d = ev.target.id.split('-')
+  x = {}
+  x[d[1]] = [tc['_r'], tc['_g'], tc['_b']]
+  y = {}
+  y[d[0]] = x*/
+
+  $.ajax({
+    url: '/colours/',
+    data: JSON.stringify(prepareColourData(ev.target.it, tc)),
     type: 'POST',
     contentType: 'application/json',
     complete: refresh
   })
 })
+
+function prepareColourData(id, tc) {
+  d = id.split('-')
+  x = {}
+  x[d[1]] = [tc['_r'], tc['_g'], tc['_b']]
+  y = {}
+  y[d[0]] = x
+
+  return y
+}
 
 function makeWheel(params) {
   return d3.svg.arc()
@@ -252,7 +277,8 @@ function refresh() {
         //showPaletteOnly: true,
         hideAfterPaletteSelect:true,
         preferredFormat: 'rgb',
-        containerClassName: 'wen-picker ' + id + '-picker'
+        containerClassName: 'wen-picker ' + id + '-picker',
+        clickoutFiresChange: true
       })
     })
   })
