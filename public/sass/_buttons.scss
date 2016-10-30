@@ -23,12 +23,12 @@ $text-color: darken($brand-primary, $border-darken);
 .btn-active, .btn-active:focus, .btn-active:hover, .btn-active:active {
   @extend .btn-default;
 
-  background-color: transparentize($brand-secondary-1, $transparency);
+  background-color: transparentize($brand-complement, $transparency);
 }
 
 .btn-active:active:hover
 {
-  background-color: transparentize($brand-secondary-1, $transparency);
+  background-color: transparentize($brand-complement, $transparency);
   border: 2px $text-color solid;
 }
 

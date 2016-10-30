@@ -8877,12 +8877,12 @@ body {
 
 /* line 23, ../sass/_buttons.scss */
 .btn-active, .btn-active:focus, .btn-active:hover, .btn-active:active {
-  background-color: rgba(0, 110, 48, 0.7);
+  background-color: rgba(3, 99, 122, 0.7);
 }
 
 /* line 29, ../sass/_buttons.scss */
 .btn-active:active:hover {
-  background-color: rgba(0, 110, 48, 0.7);
+  background-color: rgba(3, 99, 122, 0.7);
   border: 2px #331900 solid;
 }
 
@@ -9094,7 +9094,7 @@ h2 {
 
 /* line 42, ../sass/styles.scss */
 hr {
-  border-color: #006e30;
+  border-color: #03637a;
 }
 
 /* line 46, ../sass/styles.scss */
