@@ -4,7 +4,7 @@ $spectrum-colours: (
 
 .wen-picker {
   border-radius: $corner-radius;
-  background-color: transparentize($brand-primary, $transparency);
+  background-color: transparentize($brand-primary, 0.1);
   border-color: darken($brand-primary, $border-darken);
 
   button,
@@ -29,5 +29,14 @@ $spectrum-colours: (
 }
 
 .sp-palette-container {
-  max-width: 220px;
+  max-width: 140px;
 }
+
+/*.sp-container {
+  max-width: 230px;
+}
+
+
+.sp-hue {
+  width: 70px;
+}*/

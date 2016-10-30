@@ -45,17 +45,17 @@ module Wen
             "grey" => [127, 127, 127],
             "white" => [255, 255, 255],
             "red" => [255, 0, 0],
-            "red-magenta" => [255, 0, 127],
+      #      "red-magenta" => [255, 0, 127],
             "magenta" => [255, 0, 255],
-            "magenta-blue" => [127, 0, 255],
+      #      "magenta-blue" => [127, 0, 255],
             "blue" => [0, 0, 255],
-            "blue-cyan" => [0, 127, 255],
+      #      "blue-cyan" => [0, 127, 255],
             "cyan" => [0, 255, 255],
-            "cyan-green" => [0, 255, 127],
+      #      "cyan-green" => [0, 255, 127],
             "green" => [0, 255, 0],
-            "green-yellow" => [127, 255, 127],
+      #      "green-yellow" => [127, 255, 127],
             "yellow" => [255, 255, 0],
-            "yellow-red" => [255, 127, 0]
+      #      "yellow-red" => [255, 127, 0]
           }
         )
       end
