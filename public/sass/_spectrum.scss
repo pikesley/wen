@@ -3,9 +3,9 @@ $spectrum-colours: (
 );
 
 .wen-picker {
-  border-radius: 15px;
-  background-color: $brand-primary;
-  border-color: darken($brand-primary, 5%);
+  border-radius: $corner-radius;
+  background-color: transparentize($brand-primary, $transparency);
+  border-color: darken($brand-primary, $border-darken);
 
   button,
   button:active,
@@ -22,7 +22,7 @@ $spectrum-colours: (
   }
 
   .sp-thumb-el, .sp-thumb-inner {
-    border-radius: 20px;
+    border-radius: 10px;
     width: 40px;
     height: 40px;
   }

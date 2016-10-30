@@ -9203,9 +9203,9 @@ body {
 
 /* line 5, ../sass/_spectrum.scss */
 .wen-picker {
-  border-radius: 15px;
-  background-color: #ff7f00;
-  border-color: #e67200;
+  border-radius: 20px;
+  background-color: rgba(255, 127, 0, 0.7);
+  border-color: #331900;
 }
 /* line 10, ../sass/_spectrum.scss */
 .wen-picker button,
@@ -9219,7 +9219,7 @@ body {
 }
 /* line 24, ../sass/_spectrum.scss */
 .wen-picker .sp-thumb-el, .wen-picker .sp-thumb-inner {
-  border-radius: 20px;
+  border-radius: 10px;
   width: 40px;
   height: 40px;
 }
