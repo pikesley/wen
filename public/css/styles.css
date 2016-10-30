@@ -8941,7 +8941,7 @@ body {
 /* line 1, ../sass/_spectrum.scss */
 .wen-picker {
   border-radius: 20px;
-  background-color: rgba(255, 127, 0, 0.9);
+  background-color: rgba(3, 99, 122, 0.9);
   border-color: #331900;
 }
 /* line 6, ../sass/_spectrum.scss */
@@ -8951,22 +8951,26 @@ body {
 .wen-picker button.sp-choose:active:hover,
 .wen-picker button.sp-choose:active,
 .wen-picker button.sp-choose:hover {
+  background: transparent;
   height: 40px;
+  border-radius: 10px;
   font-family: "VT323";
+  text-shadow: none;
+  background-color: rgba(255, 127, 0, 0.7);
 }
-/* line 17, ../sass/_spectrum.scss */
+/* line 22, ../sass/_spectrum.scss */
 .wen-picker .sp-thumb-el, .wen-picker .sp-thumb-inner {
   border-radius: 10px;
   width: 40px;
   height: 40px;
 }
 
-/* line 24, ../sass/_spectrum.scss */
+/* line 29, ../sass/_spectrum.scss */
 .sp-palette-container {
   max-width: 140px;
 }
 
-/* line 28, ../sass/_spectrum.scss */
+/* line 33, ../sass/_spectrum.scss */
 .sp-cancel {
   display: none;
 }
