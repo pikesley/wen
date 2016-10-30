@@ -1,24 +1,17 @@
-$spectrum-colours: (
-  bg: $brand-primary
-);
-
 .wen-picker {
   border-radius: $corner-radius;
   background-color: transparentize($brand-primary, 0.1);
   border-color: darken($brand-primary, $border-darken);
 
-  button,
-  button:active,
-  button:hover,
-  .sp-cancel {
-    @extend .btn;
-    @extend .btn-link;
-    @extend .btn-xs;
-
-    text-shadow: none;
-    font-family: $font-primary;
-    background-color: transparent;
-    border: none;
+  button.sp-choose,
+  button.sp-choose:focus,
+  button.sp-choose:active:focus,
+  button.sp-choose:active:hover,
+  button.sp-choose:active,
+  button.sp-choose:hover {
+    @extend .btn-default;
+    height: 40px;
+    font-family: $buttons-font;
   }
 
   .sp-thumb-el, .sp-thumb-inner {
@@ -30,6 +23,10 @@ $spectrum-colours: (
 
 .sp-palette-container {
   max-width: 140px;
+}
+
+.sp-cancel {
+  display: none;
 }
 
 /*.sp-container {
