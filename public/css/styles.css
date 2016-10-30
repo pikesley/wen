@@ -9178,34 +9178,27 @@ body {
 
 /* line 14, ../sass/_nav.scss */
 .nav-pills li.active a, .nav-pills li.active a:focus, .nav-pills li.active a:hover {
-  background-color: rgba(0, 110, 48, 0.7);
-  border: 2px black solid;
-  color: black;
+  background-color: transparent;
+  border-color: transparent;
+  color: #006e30;
 }
 /* line 22, ../sass/_nav.scss */
 .nav-pills li.inactive a, .nav-pills li.inactive a:hover {
   color: #b2b2b2;
   opacity: 0.7;
 }
-/* line 28, ../sass/_nav.scss */
-.nav-pills li {
-  /*    a:focus, a:hover {
-        background-color: transparent;
-        border-color: transparent;
-        color: darken($brand-secondary-1, 10%);
-      }*/
-}
 /* line 29, ../sass/_nav.scss */
 .nav-pills li a {
-  background-color: rgba(255, 127, 0, 0.7);
-  border: 2px #331900 solid;
-  border-radius: 10px;
-  color: #331900;
+  background-color: transparent;
+  border-color: transparent;
+  color: #9b2000;
+  transition: 0.5s;
 }
 /* line 36, ../sass/_nav.scss */
-.nav-pills li a:focus,
-.nav-pills li a:hover {
-  background-color: rgba(153, 76, 0, 0.7);
+.nav-pills li a:focus, .nav-pills li a:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: #003b1a;
 }
 
 /* line 5, ../sass/_spectrum.scss */
@@ -9370,11 +9363,4 @@ p {
 /* line 61, ../sass/styles.scss */
 .modal p {
   text-align: center;
-}
-
-/* line 66, ../sass/styles.scss */
-.button-panel {
-  background-color: rgba(3, 99, 122, 0.7);
-  border: 2px black solid;
-  border-radius: 20px;
 }
