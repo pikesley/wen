@@ -9099,13 +9099,12 @@ body {
   color: #03637a;
   height: 40px;
   padding: 10px 16px;
-  border-top: 2px #331900 solid;
 }
-/* line 24, ../sass/_footer.scss */
+/* line 22, ../sass/_footer.scss */
 .footer a {
   color: #03637a;
 }
-/* line 28, ../sass/_footer.scss */
+/* line 26, ../sass/_footer.scss */
 .footer a:hover {
   color: #00d45d;
 }
