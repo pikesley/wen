@@ -23,6 +23,10 @@ RSpec.configure do |config|
 
   config.before :each do
     $redis.flushdb
+    Wen::Config.instance.config.neopixels['minutes']['colours']['hand'] = [255, 0, 0]
+    Wen::Config.instance.config.neopixels['minutes']['colours']['face'] = [0, 0, 255]
+    Wen::Config.instance.config.neopixels['hours']['colours']['hand'] = [255, 0, 0]
+    Wen::Config.instance.config.neopixels['hours']['colours']['face'] = [0, 0, 255]
     Wen.stash_defaults
   end
 
