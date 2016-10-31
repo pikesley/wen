@@ -9,14 +9,14 @@ module Wen
         Config.instance.config.clock_type = :range
         Timecop.freeze DateTime.parse '13:00' do
           expect(Neopixels.instance).to receive(:illuminate).with (
-            Array.new(1, [255, 0, 0]) +
-            Array.new(23, [0, 0, 255]) +
+            Array.new(1, $hand_colour) +
+            Array.new(23, $face_colour) +
 
             [
-              [0, 0, 255], [255, 0, 0], [0, 0, 255],
-              [0, 0, 255], [0, 0, 255], [0, 0, 255],
-              [0, 0, 255], [0, 0, 255], [0, 0, 255],
-              [0, 0, 255], [0, 0, 255], [0, 0, 255]
+              $face_colour, $hand_colour, $face_colour,
+              $face_colour, $face_colour, $face_colour,
+              $face_colour, $face_colour, $face_colour,
+              $face_colour, $face_colour, $face_colour
             ]
           )
           described_class.time
@@ -26,14 +26,14 @@ module Wen
       it 'shows a half-past-the-hour time' do
         Timecop.freeze DateTime.parse '09:30' do
           expect(Neopixels.instance).to receive(:illuminate).with (
-            Array.new(13, [255, 0, 0]) +
-            Array.new(11, [0, 0, 255]) +
+            Array.new(13, $hand_colour) +
+            Array.new(11, $face_colour) +
 
             [
-              [0, 0, 255], [0, 0, 255], [0, 0, 255],
-              [0, 0, 255], [0, 0, 255], [0, 0, 255],
-              [0, 0, 255], [0, 0, 255], [0, 0, 255],
-              [255, 0, 0], [0, 0, 255], [0, 0, 255]
+              $face_colour, $face_colour, $face_colour,
+              $face_colour, $face_colour, $face_colour,
+              $face_colour, $face_colour, $face_colour,
+              $hand_colour, $face_colour, $face_colour
             ]
           )
           described_class.time
@@ -43,14 +43,14 @@ module Wen
       it 'shows a quarter-past time' do
         Timecop.freeze DateTime.parse '09:15' do
           expect(Neopixels.instance).to receive(:illuminate).with (
-            Array.new(7, [255, 0, 0]) +
-            Array.new(17, [0, 0, 255]) +
+            Array.new(7, $hand_colour) +
+            Array.new(17, $face_colour) +
 
             [
-             [0, 0, 255], [0, 0, 255], [0, 0, 255],
-             [0, 0, 255], [0, 0, 255], [0, 0, 255],
-             [0, 0, 255], [0, 0, 255], [0, 0, 255],
-             [255, 0, 0], [0, 0, 255], [0, 0, 255]
+             $face_colour, $face_colour, $face_colour,
+             $face_colour, $face_colour, $face_colour,
+             $face_colour, $face_colour, $face_colour,
+             $hand_colour, $face_colour, $face_colour
            ]
           )
           described_class.time
@@ -60,14 +60,14 @@ module Wen
       it 'shows a quarter-to time' do
         Timecop.freeze DateTime.parse '20:45' do
           expect(Neopixels.instance).to receive(:illuminate).with (
-            Array.new(19, [255, 0, 0]) +
-            Array.new(5, [0, 0, 255]) +
+            Array.new(19, $hand_colour) +
+            Array.new(5, $face_colour) +
 
             [
-              [0, 0, 255], [0, 0, 255], [0, 0, 255],
-              [0, 0, 255], [0, 0, 255], [0, 0, 255],
-              [0, 0, 255], [0, 0, 255], [255, 0, 0],
-              [0, 0, 255], [0, 0, 255], [0, 0, 255]
+              $face_colour, $face_colour, $face_colour,
+              $face_colour, $face_colour, $face_colour,
+              $face_colour, $face_colour, $hand_colour,
+              $face_colour, $face_colour, $face_colour
             ]
           )
           described_class.time

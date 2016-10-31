@@ -7,7 +7,7 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 @import "https://fonts.googleapis.com/css?family=Nixie+One";
 @import "https://fonts.googleapis.com/css?family=Cutive+Mono";
-@import "https://fonts.googleapis.com/css?family=Orbitron";
+@import "https://fonts.googleapis.com/css?family=Play:700";
 @import "https://fonts.googleapis.com/css?family=VT323";
 /* line 9, ../../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_normalize.scss */
 html {
@@ -8917,7 +8917,7 @@ body {
 .nav-pills li.active a, .nav-pills li.active a:focus, .nav-pills li.active a:hover {
   background-color: transparent;
   border-color: transparent;
-  color: #006e30;
+  color: #ff7f00;
 }
 /* line 22, ../sass/_nav.scss */
 .nav-pills li.inactive a, .nav-pills li.inactive a:hover {
@@ -8928,14 +8928,14 @@ body {
 .nav-pills li a {
   background-color: transparent;
   border-color: transparent;
-  color: #9b2000;
+  color: #03637a;
   transition: 0.5s;
 }
 /* line 36, ../sass/_nav.scss */
 .nav-pills li a:focus, .nav-pills li a:hover {
   background-color: transparent;
   border-color: transparent;
-  color: #003b1a;
+  color: #681500;
 }
 
 /* line 1, ../sass/_spectrum.scss */
@@ -9011,47 +9011,47 @@ body {
   transition: 1s;
   transition-timing-function: ease;
 }
-/* line 11, ../sass/_build-box.scss */
+/* line 10, ../sass/_build-box.scss */
 #build-data table {
   background-color: rgba(191, 191, 191, 0.8);
   font-size: 0.7em;
   font-family: "Cutive Mono";
   margin: 0;
 }
-/* line 17, ../sass/_build-box.scss */
+/* line 16, ../sass/_build-box.scss */
 #build-data table a {
   color: #006e30;
 }
-/* line 21, ../sass/_build-box.scss */
+/* line 20, ../sass/_build-box.scss */
 #build-data table a:hover, #build-data table a:active {
   color: #7f7f7f;
   text-decoration: none;
 }
-/* line 26, ../sass/_build-box.scss */
+/* line 25, ../sass/_build-box.scss */
 #build-data table th, #build-data table td {
   border-color: #b2b2b2;
   color: #7f7f7f;
   text-align: center;
 }
-/* line 32, ../sass/_build-box.scss */
+/* line 31, ../sass/_build-box.scss */
 #build-data table td.key {
   text-align: right;
 }
-/* line 36, ../sass/_build-box.scss */
+/* line 35, ../sass/_build-box.scss */
 #build-data table td.value {
   text-align: left;
 }
-/* line 40, ../sass/_build-box.scss */
+/* line 39, ../sass/_build-box.scss */
 #build-data table th {
   padding-top: 8px;
 }
-/* line 44, ../sass/_build-box.scss */
+/* line 43, ../sass/_build-box.scss */
 #build-data table #build-slide-tab {
   width: 5%;
   cursor: pointer;
   vertical-align: middle;
 }
-/* line 49, ../sass/_build-box.scss */
+/* line 48, ../sass/_build-box.scss */
 #build-data table #build-slide-tab :hover {
   color: #4c4c4c;
   transition: 0.3s;
@@ -9082,7 +9082,7 @@ img {
 
 /* line 31, ../sass/styles.scss */
 h1 {
-  font-size: 2.2em;
+  font-size: 2.5em;
   margin-top: 5px;
   color: #ff7f00;
 }
@@ -9093,28 +9093,33 @@ h2 {
 }
 
 /* line 42, ../sass/styles.scss */
+h1, h2 {
+  text-shadow: -1px -1px 1px #331900, 1px 1px 1px #ffe5cc;
+}
+
+/* line 47, ../sass/styles.scss */
 hr {
   border-color: #03637a;
 }
 
-/* line 46, ../sass/styles.scss */
+/* line 51, ../sass/styles.scss */
 p {
   text-align: justify;
   font-size: 0.8em;
   font-family: "Nixie One";
 }
 
-/* line 52, ../sass/styles.scss */
+/* line 57, ../sass/styles.scss */
 #reset-modal, .mode-modal {
   top: 15%;
 }
 
-/* line 57, ../sass/styles.scss */
+/* line 61, ../sass/styles.scss */
 .modal-content {
   background-color: rgba(3, 99, 122, 0.95);
 }
 
-/* line 61, ../sass/styles.scss */
+/* line 65, ../sass/styles.scss */
 .modal p {
   text-align: center;
 }

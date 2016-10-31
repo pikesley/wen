@@ -14,7 +14,7 @@
     a, a:focus, a:hover {
       background-color: transparent;
       border-color: transparent;
-      color: $brand-secondary-1;
+      color: $brand-primary;
     }
   }
 
@@ -29,14 +29,14 @@
     a {
       background-color: transparent;
       border-color: transparent;
-      color: $brand-secondary-2;
+      color: $brand-complement;
       transition: 0.5s;
     }
 
     a:focus, a:hover {
       background-color: transparent;
       border-color: transparent;
-      color: darken($brand-secondary-1, 10%);
+      color: darken($brand-secondary-2, 10%);
     }
   }
 }

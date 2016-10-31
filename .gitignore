@@ -8,3 +8,4 @@ log/
 spec/javascripts/nightwatch/reports
 
 screenshot/
+dump.rdb

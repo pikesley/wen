@@ -1,3 +1,4 @@
+<% transition_type = 'fade' %>
 <!DOCTYPE html>
 <html lang='en'>
   <%= erb :'includes/header' %>
@@ -5,8 +6,42 @@
     <%= erb :'includes/github-corner' if @github_url %>
     <div class='container'>
       <%= erb :'includes/nav' %>
-      <%= yield %>
+
+      <% slide_side = 'left' %>
+      <% pages = Wen::Config.instance.config['pages'].map { |p| p['name'] } %>
+      <% if request.referer %>
+        <% if (pages.index(request.referer.split('/').last) || 0) < pages.index(request.path[1..-1]) %>
+          <% slide_side = 'right' %>
+        <% end %>
+      <% end %>
+      <div class='animsition'
+           id='animsition'
+           data-animsition-in-class='fade-in-<%= slide_side %>'>
+        <%= yield %>
+      </div>
     </div>
     <%= erb :'includes/footer' %>
   </body>
 </html>
+
+<script>
+$(document).ready(function() {
+  $(".animsition").animsition({
+    inDuration: 400,
+    outDuration: 400,
+    linkElement: '.animsition-link',
+    loading: true,
+    loadingParentElement: '#animsition', //animsition wrapper element
+    loadingClass: 'animsition-loading',
+    loadingInner: '', // e.g '<img src="loading.svg" />'
+    timeout: false,
+    timeoutCountdown: 5000,
+    onLoadEvent: true,
+    browser: [ 'animation-duration', '-webkit-animation-duration'],
+    overlay : false,
+    overlayClass : 'animsition-overlay-slide',
+    overlayParentElement : 'body',
+    transition: function(url){ window.location.href = url }
+  })
+})
+</script>
