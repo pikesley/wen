@@ -5,7 +5,14 @@
     <%= erb :'includes/github-corner' if @github_url %>
     <div class='container'>
       <%= erb :'includes/nav' %>
-      <div class='animsition' id='animsition'>
+      <% slide_side = 'left' %>
+      <% pages = Wen::Config.instance.config['pages'].map { |p| p['name'] } %>
+      <% if pages.index(request.referer.split('/').last) < pages.index(request.path[1..-1]) %>
+        <% slide_side = 'right' %>
+      <% end %>
+      <div class='animsition'
+           id='animsition'
+           data-animsition-in-class='fade-in-<%= slide_side %>'>
         <%= yield %>
       </div>
     </div>
