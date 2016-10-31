@@ -147,7 +147,7 @@ module Wen
     Wen::Config.instance.config.neopixels.each_pair do |wheel, data|
       data['colours'].keys.each do |layer|
         key = "#{wheel}/#{layer}"
-        $redis.set key, data['colours'][layer].join(', ') unless $redis.get key
+        $redis.set key, data['colours'][layer].join(', ')
       end
     end
   end
