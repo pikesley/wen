@@ -17,7 +17,7 @@ module Wen
     def perform params
       self.class.commence params
       if params == 'reset'
-        Wen.stash_colours
+        Wen.stash_colours 
       else
         Clock.send(:colours, params)
       end
