@@ -32,6 +32,7 @@ $(document).on('ready', function() {
   }
 
   $('#animsition').attr('data-animsition-in-class', transition)
+
   $(".animsition").animsition({
     inDuration: 500,
     outDuration: 500,
@@ -52,9 +53,9 @@ $(document).on('ready', function() {
 
   $('nav li').each(function() {
     $(this).removeClass('active')
-
-    matcher = /.*\/([A-Za-z0-9]*)/
-    $('#' + here + '-link').addClass('active')
   })
+
+  matcher = /.*\/([A-Za-z0-9]*)/
+  $('#' + here + '-link').addClass('active')
 })
 </script>
