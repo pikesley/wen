@@ -37,6 +37,7 @@ namespace :nightwatch do
 end
 
 namespace :colours do
+  desc 'pull colours from Paletton palette into config'
   task :capture do
     map = {}
     File.readlines('public/sass/_colours.scss').grep(/\$brand/).each do |b|
@@ -63,5 +64,25 @@ namespace :colours do
     File.open 'config/clock.yml', 'w' do |f|
       f.write y.to_yaml
     end
+  end
+end
+
+namespace :run do
+  desc 'clean-up and start app'
+  task :app do
+    sh 'redis-cli flushall'
+    Rake::Task['colours:capture'].invoke
+    sh 'rackup -o 0.0.0.0'
+  end
+
+  desc 'clean-up and run compass'
+  task :sass do
+    sh 'compass clean && compass watch'
+  end
+
+  desc 'start redis and run sidekiq'
+  task :queue do
+    sh 'redis-server &'
+    sh 'sidekiq -r ./lib/wen.rb'
   end
 end

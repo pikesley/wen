@@ -8935,7 +8935,7 @@ body {
 .nav-pills li a:focus, .nav-pills li a:hover {
   background-color: transparent;
   border-color: transparent;
-  color: #cc6600;
+  color: #681500;
 }
 
 /* line 1, ../sass/_spectrum.scss */
@@ -9011,47 +9011,47 @@ body {
   transition: 1s;
   transition-timing-function: ease;
 }
-/* line 11, ../sass/_build-box.scss */
+/* line 10, ../sass/_build-box.scss */
 #build-data table {
   background-color: rgba(191, 191, 191, 0.8);
   font-size: 0.7em;
   font-family: "Cutive Mono";
   margin: 0;
 }
-/* line 17, ../sass/_build-box.scss */
+/* line 16, ../sass/_build-box.scss */
 #build-data table a {
   color: #006e30;
 }
-/* line 21, ../sass/_build-box.scss */
+/* line 20, ../sass/_build-box.scss */
 #build-data table a:hover, #build-data table a:active {
   color: #7f7f7f;
   text-decoration: none;
 }
-/* line 26, ../sass/_build-box.scss */
+/* line 25, ../sass/_build-box.scss */
 #build-data table th, #build-data table td {
   border-color: #b2b2b2;
   color: #7f7f7f;
   text-align: center;
 }
-/* line 32, ../sass/_build-box.scss */
+/* line 31, ../sass/_build-box.scss */
 #build-data table td.key {
   text-align: right;
 }
-/* line 36, ../sass/_build-box.scss */
+/* line 35, ../sass/_build-box.scss */
 #build-data table td.value {
   text-align: left;
 }
-/* line 40, ../sass/_build-box.scss */
+/* line 39, ../sass/_build-box.scss */
 #build-data table th {
   padding-top: 8px;
 }
-/* line 44, ../sass/_build-box.scss */
+/* line 43, ../sass/_build-box.scss */
 #build-data table #build-slide-tab {
   width: 5%;
   cursor: pointer;
   vertical-align: middle;
 }
-/* line 49, ../sass/_build-box.scss */
+/* line 48, ../sass/_build-box.scss */
 #build-data table #build-slide-tab :hover {
   color: #4c4c4c;
   transition: 0.3s;
