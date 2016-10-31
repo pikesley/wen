@@ -7,7 +7,7 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 @import "https://fonts.googleapis.com/css?family=Nixie+One";
 @import "https://fonts.googleapis.com/css?family=Cutive+Mono";
-@import "https://fonts.googleapis.com/css?family=Orbitron";
+@import "https://fonts.googleapis.com/css?family=Play:700";
 @import "https://fonts.googleapis.com/css?family=VT323";
 /* line 9, ../../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_normalize.scss */
 html {
@@ -9066,7 +9066,7 @@ html {
 body {
   background: url(/assets/images/retina_wood.png);
   color: #ff7f00;
-  font-family: "Nixie One";
+  font-family: "Play";
   text-align: center;
 }
 
@@ -9082,7 +9082,7 @@ img {
 
 /* line 31, ../sass/styles.scss */
 h1 {
-  font-size: 2.2em;
+  font-size: 2.5em;
   margin-top: 5px;
   color: #ff7f00;
 }
@@ -9109,12 +9109,12 @@ p {
   top: 15%;
 }
 
-/* line 57, ../sass/styles.scss */
+/* line 56, ../sass/styles.scss */
 .modal-content {
   background-color: rgba(3, 99, 122, 0.95);
 }
 
-/* line 61, ../sass/styles.scss */
+/* line 60, ../sass/styles.scss */
 .modal p {
   text-align: center;
 }

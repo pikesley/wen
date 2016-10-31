@@ -49,7 +49,7 @@ namespace :colours do
                 grep(/@import/).first.split(' ')[1].split("'")[1].gsub('/', '/_')}.scss"
 
     map.each_pair do |k, v|
-      map[k] = palette.grep(/#{v[1..-1]}/).first.match(/.*rgba\((.*)\).*/)[1].split(',')[0..2].map { |n| n.to_i }
+      map[k] = palette.grep(/#{v[1..-1]}/).last.match(/.*rgba\((.*)\).*/)[1].split(',')[0..2].map { |n| n.to_i }
     end
 
     y = YAML.load_file 'config/clock.yml'
