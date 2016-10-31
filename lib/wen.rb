@@ -140,14 +140,14 @@ module Wen
   def self.stash_defaults
     self.stash_colours
 
-    $redis.set 'clock-mode', Wen::Config.instance.config['clock-modes'].first['name']
+    $redis.set 'clock-mode', Wen::Config.instance.config['clock-modes'].first['name'] unless $redis.get 'clock-mode'
   end
 
   def self.stash_colours
     Wen::Config.instance.config.neopixels.each_pair do |wheel, data|
       data['colours'].keys.each do |layer|
         key = "#{wheel}/#{layer}"
-        $redis.set key, data['colours'][layer].join(', ')
+        $redis.set key, data['colours'][layer].join(', ') unless $redis.get key
       end
     end
   end
