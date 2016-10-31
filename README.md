@@ -116,7 +116,7 @@ If you hit _this_ with a browser, it will return a list of available trick modes
 
 ![trick modes](http://i.imgur.com/mjB7eic.png)
 
-It also  _Accepts_ a **POST** with some JSON like
+It also _Accepts_ a **POST** with some JSON like
 
     {
       mode: 'shuffle'
