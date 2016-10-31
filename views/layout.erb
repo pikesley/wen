@@ -5,7 +5,9 @@
     <%= erb :'includes/github-corner' if @github_url %>
     <div class='container'>
       <%= erb :'includes/nav' %>
-      <%= yield %>
+      <div class='animsition' id='animsition'>
+        <%= yield %>
+      </div>
     </div>
     <%= erb :'includes/footer' %>
   </body>
