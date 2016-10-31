@@ -9066,7 +9066,7 @@ html {
 body {
   background: url(/assets/images/retina_wood.png);
   color: #ff7f00;
-  font-family: "Play";
+  font-family: "Nixie One";
   text-align: center;
 }
 
@@ -9093,28 +9093,33 @@ h2 {
 }
 
 /* line 42, ../sass/styles.scss */
+h1, h2 {
+  text-shadow: -1px -1px 1px #331900, 1px 1px 1px #ffe5cc;
+}
+
+/* line 47, ../sass/styles.scss */
 hr {
   border-color: #03637a;
 }
 
-/* line 46, ../sass/styles.scss */
+/* line 51, ../sass/styles.scss */
 p {
   text-align: justify;
   font-size: 0.8em;
   font-family: "Nixie One";
 }
 
-/* line 52, ../sass/styles.scss */
+/* line 57, ../sass/styles.scss */
 #reset-modal, .mode-modal {
   top: 15%;
 }
 
-/* line 56, ../sass/styles.scss */
+/* line 61, ../sass/styles.scss */
 .modal-content {
   background-color: rgba(3, 99, 122, 0.95);
 }
 
-/* line 60, ../sass/styles.scss */
+/* line 65, ../sass/styles.scss */
 .modal p {
   text-align: center;
 }

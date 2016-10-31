@@ -8,19 +8,19 @@ module Wen
       it 'shows an on-the-hour time' do
         Timecop.freeze DateTime.parse '13:00' do
           expect(Neopixels.instance).to receive(:illuminate).with [
-            [255, 0, 0], [255, 0, 0], [0, 0, 255],
-            [0, 0, 255], [0, 0, 255], [0, 0, 255],
-            [0, 0, 255], [0, 0, 255], [0, 0, 255],
-            [0, 0, 255], [0, 0, 255], [0, 0, 255],
-            [0, 0, 255], [0, 0, 255], [0, 0, 255],
-            [0, 0, 255], [0, 0, 255], [0, 0, 255],
-            [0, 0, 255], [0, 0, 255], [0, 0, 255],
-            [0, 0, 255], [0, 0, 255], [255, 0, 0],
+            $hand_colour, $hand_colour, $face_colour,
+            $face_colour, $face_colour, $face_colour,
+            $face_colour, $face_colour, $face_colour,
+            $face_colour, $face_colour, $face_colour,
+            $face_colour, $face_colour, $face_colour,
+            $face_colour, $face_colour, $face_colour,
+            $face_colour, $face_colour, $face_colour,
+            $face_colour, $face_colour, $hand_colour,
 
-            [0, 0, 255], [255, 0, 0], [0, 0, 255],
-            [0, 0, 255], [0, 0, 255], [0, 0, 255],
-            [0, 0, 255], [0, 0, 255], [0, 0, 255],
-            [0, 0, 255], [0, 0, 255], [0, 0, 255]
+            $face_colour, $hand_colour, $face_colour,
+            $face_colour, $face_colour, $face_colour,
+            $face_colour, $face_colour, $face_colour,
+            $face_colour, $face_colour, $face_colour
           ]
           described_class.time
         end
@@ -29,19 +29,19 @@ module Wen
       it 'shows a half-past-the-hour time' do
         Timecop.freeze DateTime.parse '09:30' do
           expect(Neopixels.instance).to receive(:illuminate).with [
-            [0, 0, 255], [0, 0, 255], [0, 0, 255],
-            [0, 0, 255], [0, 0, 255], [0, 0, 255],
-            [0, 0, 255], [0, 0, 255], [0, 0, 255],
-            [0, 0, 255], [0, 0, 255], [255, 0, 0],
-            [255, 0, 0], [255, 0, 0], [0, 0, 255],
-            [0, 0, 255], [0, 0, 255], [0, 0, 255],
-            [0, 0, 255], [0, 0, 255], [0, 0, 255],
-            [0, 0, 255], [0, 0, 255], [0, 0, 255],
+            $face_colour, $face_colour, $face_colour,
+            $face_colour, $face_colour, $face_colour,
+            $face_colour, $face_colour, $face_colour,
+            $face_colour, $face_colour, $hand_colour,
+            $hand_colour, $hand_colour, $face_colour,
+            $face_colour, $face_colour, $face_colour,
+            $face_colour, $face_colour, $face_colour,
+            $face_colour, $face_colour, $face_colour,
 
-            [0, 0, 255], [0, 0, 255], [0, 0, 255],
-            [0, 0, 255], [0, 0, 255], [0, 0, 255],
-            [0, 0, 255], [0, 0, 255], [0, 0, 255],
-            [255, 0, 0], [0, 0, 255], [0, 0, 255]
+            $face_colour, $face_colour, $face_colour,
+            $face_colour, $face_colour, $face_colour,
+            $face_colour, $face_colour, $face_colour,
+            $hand_colour, $face_colour, $face_colour
           ]
           described_class.time
         end
@@ -51,19 +51,19 @@ module Wen
         it 'handles on-the-hour' do
           Timecop.freeze DateTime.parse '09:00' do
             expect(Neopixels.instance).to receive(:illuminate).with [
-              [255, 0, 0], [255, 0, 0], [0, 0, 255],
-              [0, 0, 255], [0, 0, 255], [0, 0, 255],
-              [0, 0, 255], [0, 0, 255], [0, 0, 255],
-              [0, 0, 255], [0, 0, 255], [0, 0, 255],
-              [0, 0, 255], [0, 0, 255], [0, 0, 255],
-              [0, 0, 255], [0, 0, 255], [0, 0, 255],
-              [0, 0, 255], [0, 0, 255], [0, 0, 255],
-              [0, 0, 255], [0, 0, 255], [255, 0, 0],
+              $hand_colour, $hand_colour, $face_colour,
+              $face_colour, $face_colour, $face_colour,
+              $face_colour, $face_colour, $face_colour,
+              $face_colour, $face_colour, $face_colour,
+              $face_colour, $face_colour, $face_colour,
+              $face_colour, $face_colour, $face_colour,
+              $face_colour, $face_colour, $face_colour,
+              $face_colour, $face_colour, $hand_colour,
 
-              [0, 0, 255], [0, 0, 255], [0, 0, 255],
-              [0, 0, 255], [0, 0, 255], [0, 0, 255],
-              [0, 0, 255], [0, 0, 255], [0, 0, 255],
-              [255, 0, 0], [0, 0, 255], [0, 0, 255]
+              $face_colour, $face_colour, $face_colour,
+              $face_colour, $face_colour, $face_colour,
+              $face_colour, $face_colour, $face_colour,
+              $hand_colour, $face_colour, $face_colour
             ]
             described_class.time
           end
@@ -72,19 +72,19 @@ module Wen
         it 'handles one-minute-to' do
           Timecop.freeze DateTime.parse '20:59' do
             expect(Neopixels.instance).to receive(:illuminate).with [
-              [255, 0, 0], [0, 0, 255], [0, 0, 255],
-              [0, 0, 255], [0, 0, 255], [0, 0, 255],
-              [0, 0, 255], [0, 0, 255], [0, 0, 255],
-              [0, 0, 255], [0, 0, 255], [0, 0, 255],
-              [0, 0, 255], [0, 0, 255], [0, 0, 255],
-              [0, 0, 255], [0, 0, 255], [0, 0, 255],
-              [0, 0, 255], [0, 0, 255], [0, 0, 255],
-              [0, 0, 255], [255, 0, 0], [255, 0, 0],
+              $hand_colour, $face_colour, $face_colour,
+              $face_colour, $face_colour, $face_colour,
+              $face_colour, $face_colour, $face_colour,
+              $face_colour, $face_colour, $face_colour,
+              $face_colour, $face_colour, $face_colour,
+              $face_colour, $face_colour, $face_colour,
+              $face_colour, $face_colour, $face_colour,
+              $face_colour, $hand_colour, $hand_colour,
 
-              [0, 0, 255], [0, 0, 255], [0, 0, 255],
-              [0, 0, 255], [0, 0, 255], [0, 0, 255],
-              [0, 0, 255], [0, 0, 255], [255, 0, 0],
-              [0, 0, 255], [0, 0, 255], [0, 0, 255]
+              $face_colour, $face_colour, $face_colour,
+              $face_colour, $face_colour, $face_colour,
+              $face_colour, $face_colour, $hand_colour,
+              $face_colour, $face_colour, $face_colour
             ]
             described_class.time
           end

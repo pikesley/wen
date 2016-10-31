@@ -30,7 +30,7 @@ module Wen
         expect(JSON.parse last_response.body).to eq (
           {
             'colour' => [
-              255, 0, 0
+              *$hand_colour
             ]
           }
         )
