@@ -34,13 +34,34 @@ namespace :nightwatch do
     sh "nightwatch --config spec/javascripts/support/nightwatch.js --env local --test spec/javascripts/screenshots/screenshots.js"
     sh "pkill -f selenium"
   end
+end
 
-  #task :travis do
-  #  sh "nvm install 4.0"
-  #  sh "npm install -g nightwatch"
-  #  sh "bundle exec sidekiq -r ./lib/wen.rb &"
-  #  sh "bundle exec rackup -p 9292 &"
-  #  sh "sh 'nightwatch --config spec/javascripts/support/nightwatch.js'"
-  #  sh "pkill ruby"
-  #end
+namespace :colours do
+  task :capture do
+    map = {}
+    File.readlines('public/sass/_colours.scss').grep(/\$brand/).each do |b|
+      parts = b.split(/: */)
+      map[parts[0]] = parts[1].strip[0..-2]
+    end
+
+    palette = File.readlines "public/sass/#{File.readlines('public/sass/_colours.scss').
+                grep(/@import/).first.split(' ')[1].split("'")[1].gsub('/', '/_')}.scss"
+
+    map.each_pair do |k, v|
+      map[k] = palette.grep(/#{v[1..-1]}/).first.match(/.*rgba\((.*)\).*/)[1].split(',')[0..2].map { |n| n.to_i }
+    end
+
+    y = YAML.load_file 'config/clock.yml'
+
+    y['neopixels']['minutes']['colours']['hand'] = map['$brand-primary']
+    y['neopixels']['minutes']['colours']['face'] = map['$brand-complement']
+    y['neopixels']['hours']['colours']['hand'] = map['$brand-primary']
+    y['neopixels']['hours']['colours']['face'] = map['$brand-complement']
+
+    map.keys.map { |k| y['colours'][k[1..-1]] = map[k] }
+
+    File.open 'config/clock.yml', 'w' do |f|
+      f.write y.to_yaml
+    end
+  end
 end
