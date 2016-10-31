@@ -2,8 +2,14 @@
   <div class='container-fluid'>
     <ul class='nav nav-pills'>
       <% Wen::Config.instance.config['pages'].each do |page| %>
-        <li role='presentation' class='nav-item<%= " active" if request.path.sub('/', '') == page['name'] %>'>
-          <a href="/<%= page['name'] %>" title='<%= page["text"] %>'>
+        <% extra_class = '' %>
+        <% target = "/#{page['name']}" %>
+        <% if request.path.sub('/', '') == page['name'] %>
+          <% extra_class = ' active' %>
+          <% target = '#' %>
+        <% end %>
+        <li role='presentation' class='nav-item<%= extra_class %>'>
+          <a href="<%= target %>" title='<%= page["text"] %>'>
             <i class='fa fa-<%= page["fa"] %>'></i>
           </a>
         </li>
