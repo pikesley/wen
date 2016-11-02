@@ -44,7 +44,7 @@ module Wen
       respond_to do |wants|
          wants.html do
             @title = 'About'
-            erb :'about'
+            erb :'about', layout: !is_pjax?
          end
       end
     end
@@ -55,7 +55,7 @@ module Wen
       respond_to do |wants|
         wants.html do
           @title = 'Colours'
-          erb :'colours'
+          erb :'colours', layout: !is_pjax?
         end
 
         wants.json do
@@ -87,7 +87,7 @@ module Wen
       respond_to do |wants|
         wants.html do
           @title = 'Clock Modes'
-          erb :modes
+          erb :modes, layout: !is_pjax?
         end
 
         wants.json do
@@ -110,7 +110,7 @@ module Wen
       respond_to do |wants|
         wants.html do
           @title = 'Trick Modes'
-          erb :tricks
+          erb :tricks, layout: !is_pjax?
         end
       end
     end

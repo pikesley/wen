@@ -1,7 +1,8 @@
+<%= erb :'includes/nav' %>
+
 <h1><%= @title %></h1>
 <div class='button-panel'>
   <div class='row'>
-    <% count = 0 %>
     <% Wen::Config.instance.config['trick-modes'].each do |trick| %>
       <div class='col-xs-4 col-sm-4 col-md-4'>
         <button id='display-<%= trick["method"] %>' class='btn trick-btn' onclick='submit("<%= trick["method"] %>")'>
@@ -10,12 +11,6 @@
             <%= display_name %>
         </button>
       </div>
-      <% count += 1 %>
-      <% if count == 3 %>
-        </div>
-        <div class='row'>
-        <% count = 0 %>
-      <% end %>
     <% end %>
   </div>
 </div>

@@ -2,60 +2,15 @@
 <html lang='en'>
   <%= erb :'includes/header' %>
   <body>
-    <%= erb :'includes/github-corner' if @github_url %>
-    <div class='container'>
-      <%= erb :'includes/nav' %>
-      <div class='container'>
-        <div class='animsition' id='animsition'>
-          <%= yield %>
-        </div>
-      </div>
+    <div class='container' id='pjax'>
+      <%= yield %>
     </div>
     <%= erb :'includes/footer' %>
   </body>
 </html>
 
 <script>
-var pages = [
-  "<%= Wen::Config.instance.config['pages'].map { |p| p['name'] }.join '", "' %>"
-]
-
-var matcher = /.*\/([A-Za-z0-9]*)/
-
 $(document).on('ready', function() {
-
-  here = matcher.exec(document.URL)[1]
-  referer = matcher.exec(document.referrer)[1]
-  transition = 'fade-in-left'
-  if (pages.indexOf(referer) < pages.indexOf(here)) {
-    transition = 'fade-in-right'
-  }
-
-  $('#animsition').attr('data-animsition-in-class', transition)
-
-  $(".animsition").animsition({
-    inDuration: 500,
-    outDuration: 500,
-    linkElement: '.animsition-link',
-    loading: true,
-    loadingParentElement: '#animsition', //animsition wrapper element
-    loadingClass: 'animsition-loading',
-    loadingInner: '', // e.g '<img src="loading.svg" />'
-    timeout: false,
-    timeoutCountdown: 5000,
-    onLoadEvent: true,
-    browser: [ 'animation-duration', '-webkit-animation-duration'],
-    overlay : false,
-    overlayClass : 'animsition-overlay-slide',
-    overlayParentElement : 'body',
-    transition: function(url){ window.location.href = url }
-  })
-
-  $('nav li').each(function() {
-    $(this).removeClass('active')
-  })
-
-  matcher = /.*\/([A-Za-z0-9]*)/
-  $('#' + here + '-link').addClass('active')
+  $('#pjax').pjax('nav a')
 })
 </script>
