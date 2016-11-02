@@ -31,8 +31,6 @@ img {
 h1 {
   font-size: 2.5em;
   margin-top: $padding-small-vertical;
-
-	color: $brand-primary;
 }
 
 h2 {
@@ -40,8 +38,7 @@ h2 {
 }
 
 h1, h2 {
-  text-shadow: -1px -1px 1px darken($brand-primary, $border-darken),
-                1px  1px 1px lighten($brand-primary, $border-darken);
+  color: transparentize($brand-primary, 0.1);
 }
 
 hr {

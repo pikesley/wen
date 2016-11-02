@@ -44,7 +44,7 @@ module Wen
       respond_to do |wants|
          wants.html do
             @title = 'About'
-            erb :'about'
+            erb :'about', layout: !is_pjax?
          end
       end
     end
@@ -55,7 +55,7 @@ module Wen
       respond_to do |wants|
         wants.html do
           @title = 'Colours'
-          erb :'colours'
+          erb :'colours', layout: !is_pjax?
         end
 
         wants.json do
@@ -87,7 +87,7 @@ module Wen
       respond_to do |wants|
         wants.html do
           @title = 'Clock Modes'
-          erb :modes
+          erb :modes, layout: !is_pjax?
         end
 
         wants.json do
@@ -110,7 +110,7 @@ module Wen
       respond_to do |wants|
         wants.html do
           @title = 'Trick Modes'
-          erb :tricks
+          erb :tricks, layout: !is_pjax?
         end
       end
     end
@@ -137,17 +137,17 @@ module Wen
     end
   end
 
-  def self.stash_defaults
-    self.stash_colours
+  def self.stash_defaults gently: false
+    self.stash_colours gently: gently
 
     $redis.set 'clock-mode', Wen::Config.instance.config['clock-modes'].first['name'] unless $redis.get 'clock-mode'
   end
 
-  def self.stash_colours
+  def self.stash_colours gently: false
     Wen::Config.instance.config.neopixels.each_pair do |wheel, data|
       data['colours'].keys.each do |layer|
         key = "#{wheel}/#{layer}"
-        $redis.set key, data['colours'][layer].join(', ')
+        $redis.set key, data['colours'][layer].join(', ') unless ($redis.get key || gently == false)
       end
     end
   end

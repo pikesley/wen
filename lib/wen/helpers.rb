@@ -6,5 +6,8 @@ end
 
 module Wen
   module Helpers
+    def is_pjax?
+      env['HTTP_X_PJAX']
+    end
   end
 end

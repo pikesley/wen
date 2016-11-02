@@ -7,7 +7,6 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 @import "https://fonts.googleapis.com/css?family=Nixie+One";
 @import "https://fonts.googleapis.com/css?family=Cutive+Mono";
-@import "https://fonts.googleapis.com/css?family=Play:700";
 @import "https://fonts.googleapis.com/css?family=VT323";
 /* line 9, ../../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_normalize.scss */
 html {
@@ -9084,42 +9083,41 @@ img {
 h1 {
   font-size: 2.5em;
   margin-top: 5px;
-  color: #ff7f00;
 }
 
-/* line 38, ../sass/styles.scss */
+/* line 36, ../sass/styles.scss */
 h2 {
   font-size: 1.5em;
 }
 
-/* line 42, ../sass/styles.scss */
+/* line 40, ../sass/styles.scss */
 h1, h2 {
-  text-shadow: -1px -1px 1px #331900, 1px 1px 1px #ffe5cc;
+  color: rgba(255, 127, 0, 0.9);
 }
 
-/* line 47, ../sass/styles.scss */
+/* line 44, ../sass/styles.scss */
 hr {
   border-color: #03637a;
 }
 
-/* line 51, ../sass/styles.scss */
+/* line 48, ../sass/styles.scss */
 p {
   text-align: justify;
   font-size: 0.8em;
   font-family: "Nixie One";
 }
 
-/* line 57, ../sass/styles.scss */
+/* line 54, ../sass/styles.scss */
 #reset-modal, .mode-modal {
   top: 15%;
 }
 
-/* line 61, ../sass/styles.scss */
+/* line 58, ../sass/styles.scss */
 .modal-content {
   background-color: rgba(3, 99, 122, 0.95);
 }
 
-/* line 65, ../sass/styles.scss */
+/* line 62, ../sass/styles.scss */
 .modal p {
   text-align: center;
 }

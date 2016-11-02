@@ -7,6 +7,6 @@ if $is_pi
   $stderr.reopen(log)
 end
 
-Wen.stash_defaults
+Wen.stash_defaults gently: true
 Wen::Clock::Tricks.super_wipe if $is_pi
 run Wen::App

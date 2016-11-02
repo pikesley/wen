@@ -4,14 +4,9 @@
     <ul class='nav nav-pills'>
       <% Wen::Config.instance.config['pages'].each do |page| %>
         <% target = "/#{page['name']}" %>
-        <% if request.path.sub('/', '') == page['name'] %>
-          <% #target = '#' %>
-          <% slide_side = 'left' %>
-        <% end %>
-        <li role='presentation' class='nav-item' id='<%= page['name'] %>-link'>
+        <% target = '#' if request.path == target %>
+        <li role='presentation' class='nav-item<%= " active" if target == '#' %>' id='<%= page['name'] %>-link'>
           <a href="<%= target %>"
-            <%= "class='animsition-link'" unless target == '#' %>
-            data-animsition-out-class='fade-out-<%= slide_side %>'
             title='<%= page["text"] %>'>
             <i class='fa fa-<%= page["fa"] %>'></i>
           </a>
