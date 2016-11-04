@@ -53,5 +53,27 @@ module Wen
         )
       end
     end
+
+    context 'reset colours' do
+      it 'sets colours if none exist' do
+        $redis.flushall
+        Wen.stash_colours
+        expect(Clock.fetch_colour 'hours', 'hand').to eq $hand_colour
+      end
+
+      it 'does not overwrite an existing colour' do
+        post '/colours', { hours: {hand: [0, 255, 0] } }.to_json, JSON_HEADERS
+        Wen.stash_colours
+        ColourWorker.drain
+        expect(Clock.fetch_colour 'hours', 'hand').to eq [0, 255, 0]
+      end
+
+      it 'unless we insist' do
+        post '/colours', { hours: {hand: [0, 255, 0] } }.to_json, JSON_HEADERS
+        post '/colours/reset', nil, JSON_HEADERS
+        ColourWorker.drain
+        expect(Clock.fetch_colour 'hours', 'hand').to eq $hand_colour
+      end
+    end
   end
 end
