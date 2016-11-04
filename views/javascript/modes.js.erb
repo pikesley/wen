@@ -21,7 +21,7 @@
     })
 
     $('.mode-canceller').each(function () {
-      $(this).text('leave things as they are for now')
+      $(this).text("<%= Wen::Config.instance.config['button-text']['modes']['dismiss'] %>")
     })
 
     $('.current-mode').each(function () {
@@ -32,7 +32,7 @@
       $('.' + data['mode'] + '-mode').removeClass('btn-default').addClass('btn-active')
       $('#' + data['mode'] + '-is-current').show()
       $('#' + data['mode'] + '-mode-modal-picker').hide()
-      $('#' + data['mode'] + '-mode-modal-cancel').text('this button closes this window')
+      $('#' + data['mode'] + '-mode-modal-cancel').text("<%= Wen::Config.instance.config['button-text']['modes']['close'] %>")
     })
 
     $("#modes button").focus(function () {

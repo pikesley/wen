@@ -43,14 +43,14 @@
                     title='<%= mode["what"] %>'
                     onclick='submit("<%= mode["name"] %>")'
                     data-dismiss='modal'>
-              pick this
+              <%= Wen::Config.instance.config['button-text']['modes']['pick'] %>
             </button>
             <button type='button'
                     class='btn btn-warning mode-canceller'
                     id='<%= mode["name"] %>-mode-modal-cancel'
                     data-dismiss='modal'
                     aria-label='Close'>
-              leave things as they are for now
+              <%= Wen::Config.instance.config['button-text']['modes']['dismiss'] %>
             </button>
           </div>
         </div>
