@@ -9064,13 +9064,13 @@ body {
   padding-top: 8px;
 }
 /* line 43, ../sass/_build-box.scss */
-#build-data table #build-slide-tab {
+#build-data table .build-slide-tab {
   width: 5%;
   cursor: pointer;
   vertical-align: middle;
 }
 /* line 48, ../sass/_build-box.scss */
-#build-data table #build-slide-tab :hover {
+#build-data table .build-slide-tab :hover {
   color: #4c4c4c;
   transition: 0.3s;
 }
