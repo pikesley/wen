@@ -8975,31 +8975,46 @@ body {
 }
 
 /* line 1, ../sass/_modes.scss */
+.mode-modal {
+  top: 15%;
+}
+
+/* line 5, ../sass/_modes.scss */
+.modal-content {
+  background-color: rgba(3, 99, 122, 0.9);
+}
+
+/* line 9, ../sass/_modes.scss */
+.modal p {
+  text-align: center;
+}
+
+/* line 13, ../sass/_modes.scss */
 .mode-button {
   width: 200px;
 }
 
-/* line 5, ../sass/_modes.scss */
+/* line 17, ../sass/_modes.scss */
 .mode-canceller {
   background-color: #9b2000;
   border: 2px #331900 solid;
 }
 
-/* line 12, ../sass/_modes.scss */
+/* line 24, ../sass/_modes.scss */
 .current-mode {
   display: none;
   font-style: italic;
   color: #ff7f00;
 }
 
-/* line 19, ../sass/_modes.scss */
+/* line 31, ../sass/_modes.scss */
 .mode-modal button,
 .mode-modal button:focus,
 .mode-modal button:hover,
 .mode-modal button:active {
   height: 50px;
 }
-/* line 26, ../sass/_modes.scss */
+/* line 38, ../sass/_modes.scss */
 .mode-modal p {
   font-size: 1em;
 }
@@ -9062,7 +9077,7 @@ body {
 
 /* line 12, ../sass/styles.scss */
 html {
-  text-transform: lowercase;
+  text-transform: lowercase !important;
 }
 
 /* line 16, ../sass/styles.scss */
@@ -9109,19 +9124,4 @@ p {
   text-align: justify;
   font-size: 0.8em;
   font-family: "Nixie One";
-}
-
-/* line 54, ../sass/styles.scss */
-#reset-modal, .mode-modal {
-  top: 15%;
-}
-
-/* line 58, ../sass/styles.scss */
-.modal-content {
-  background-color: rgba(3, 99, 122, 0.95);
-}
-
-/* line 62, ../sass/styles.scss */
-.modal p {
-  text-align: center;
 }

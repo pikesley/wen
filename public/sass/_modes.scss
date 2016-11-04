@@ -1,3 +1,15 @@
+.mode-modal {
+  top: 15%;
+}
+
+.modal-content {
+  background-color: transparentize($brand-complement, 0.1);
+}
+
+.modal p {
+  text-align: center;
+}
+
 .mode-button {
   width: 200px;
 }

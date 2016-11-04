@@ -35,7 +35,7 @@
       $('#' + data['mode'] + '-mode-modal-cancel').text("<%= Wen::Config.instance.config['button-text']['modes']['close'] %>")
     })
 
-    $("#modes button").focus(function () {
+    $("button").focus(function () {
       this.blur()
     })
   }

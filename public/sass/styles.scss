@@ -10,7 +10,7 @@
 @import 'build-box';
 
 html {
-  text-transform: lowercase;
+  text-transform: lowercase !important;
 }
 
 body {
@@ -49,23 +49,4 @@ p {
   text-align: justify;
   font-size: 0.8em;
   font-family: $font-secondary;
-}
-
-#reset-modal, .mode-modal {
-  top: 15%;
-}
-
-.modal-content {
-  background-color: transparentize($brand-complement, 0.05);
-}
-
-.modal p {
-  text-align: center;
-}
-
-
-.button-panel {
-//  background-color: transparentize($brand-complement, $transparency);
-//  border: $border-thickness darken($brand-complement, $border-darken) solid;
-//  border-radius: $corner-radius;
 }
