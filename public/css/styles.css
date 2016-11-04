@@ -8955,7 +8955,7 @@ body {
   border-radius: 10px;
   font-family: "VT323";
   text-shadow: none;
-  background-color: rgba(255, 127, 0, 0.7);
+  background-color: #ff7f00;
 }
 /* line 22, ../sass/_spectrum.scss */
 .wen-picker .sp-thumb-el, .wen-picker .sp-thumb-inner {
@@ -8974,14 +8974,6 @@ body {
   display: none;
 }
 
-/*.sp-container {
-  max-width: 230px;
-}
-
-
-.sp-hue {
-  width: 70px;
-}*/
 /* line 1, ../sass/_modes.scss */
 .mode-button {
   width: 200px;
@@ -8998,6 +8990,18 @@ body {
   display: none;
   font-style: italic;
   color: #ff7f00;
+}
+
+/* line 19, ../sass/_modes.scss */
+.mode-modal button,
+.mode-modal button:focus,
+.mode-modal button:hover,
+.mode-modal button:active {
+  height: 50px;
+}
+/* line 26, ../sass/_modes.scss */
+.mode-modal p {
+  font-size: 1em;
 }
 
 /* line 1, ../sass/_build-box.scss */

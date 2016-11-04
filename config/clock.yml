@@ -29,6 +29,11 @@ clock-modes:
   what: The lights on either side of the current pin are also illuminated
 - name: strict
   what: Only the pin closest to the current minute is illuminated
+button-text:
+  modes:
+    pick: pick this
+    dismiss: leave it for now
+    close: this button closes this window
 trick-modes:
 - method: shuffle
 - method: disco

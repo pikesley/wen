@@ -14,3 +14,16 @@
   font-style: italic;
   color: $brand-primary;
 }
+
+.mode-modal {
+  button,
+  button:focus,
+  button:hover,
+  button:active {
+    height: 50px;
+  }
+
+  p {
+    font-size: 1em;
+  }
+}

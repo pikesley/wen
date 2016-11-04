@@ -16,7 +16,7 @@
     border-radius: 10px;
     font-family: $buttons-font;
     text-shadow: none;
-    background-color: transparentize($brand-primary, $transparency);
+    background-color: $brand-primary;
   }
 
   .sp-thumb-el, .sp-thumb-inner {
@@ -33,12 +33,3 @@
 .sp-cancel {
   display: none;
 }
-
-/*.sp-container {
-  max-width: 230px;
-}
-
-
-.sp-hue {
-  width: 70px;
-}*/
