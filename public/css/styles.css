@@ -8824,7 +8824,7 @@ body {
   bottom: 0;
   width: 100%;
   margin-top: 10px;
-  background: #ff7f00;
+  background-color: transparent;
   color: #03637a;
   height: 40px;
   padding: 10px 16px;
