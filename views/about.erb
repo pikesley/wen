@@ -49,8 +49,9 @@ Issues / suggestions / pull-requests can be submitted <a href='https://github.co
   <% g = Git.open('.').log.first %>
   <table class='table table-condensed table-bordered'>
     <tr>
+      <td rowspan='4' class='build-slide-tab' class='clickable' onclick="showHide()">
       <th colspan='4' class='show-build-data'>About this build</th>
-      <td rowspan='4' id='build-slide-tab' class='clickable' onclick="showHide()">
+      <td rowspan='4' class='build-slide-tab' class='clickable' onclick="showHide()">
       </td>
     </tr>
       <tr>
@@ -67,7 +68,7 @@ Issues / suggestions / pull-requests can be submitted <a href='https://github.co
 </div>
 
 <script>
-$('#build-slide-tab').html(arrows('right'))
+$('.build-slide-tab').html(arrows('right'))
 
 function submit(trick) {
   $.ajax({
@@ -81,10 +82,10 @@ function submit(trick) {
 function showHide() {
   if ($('#build-data').attr('style') == 'right: 5%' ) {
     $('#build-data').attr('style', 'right: 95%')
-    $('#build-slide-tab').html(arrows('right'))
+    $('.build-slide-tab').html(arrows('right'))
   } else {
     $('#build-data').attr('style', 'right: 5%')
-    $('#build-slide-tab').html(arrows('left'))
+    $('.build-slide-tab').html(arrows('left'))
   }
 }
 
