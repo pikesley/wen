@@ -63,6 +63,22 @@ module Wen
       end
     end
 
+    def self.scrambled_colours
+      keys = Wen::Config.instance.config.colours.keys.shuffle
+
+      d = {}
+
+      d['hours'] = {}
+      d['hours']['hand'] = Wen::Config.instance.config.colours[keys.shift]
+      d['hours']['face'] = Wen::Config.instance.config.colours[keys.shift]
+
+      d['minutes'] = {}
+      d['minutes']['hand'] = Wen::Config.instance.config.colours[keys.shift]
+      d['minutes']['face'] = Wen::Config.instance.config.colours[keys.shift]
+
+      self.colours d
+    end
+
     def self.mode= mode
       $redis.set 'clock-mode', mode
       Clock.time
