@@ -2,13 +2,13 @@
 width: 90%;
 position: fixed;
 z-index: 1;
-bottom: $footer-height + $border-thickness;
+bottom: 0; //$footer-height + $border-thickness;
 right: 95%;
 transition: 1s;
 transition-timing-function: ease;
 
   table {
-    background-color: transparentize($light-grey, 0.2);
+    background-color: transparentize($light-grey, 0.1);
     font-size: 0.7em;
     font-family: $font-fixed;
     margin: 0;
