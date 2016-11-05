@@ -75,5 +75,11 @@ module Wen
         expect(Clock.fetch_colour 'hours', 'hand').to eq $hand_colour
       end
     end
+
+    it 'scrambles colours' do
+      post '/colours/scramble', nil, JSON_HEADERS
+      expect(Clock).to receive(:colours).with(Hash)
+      ColourWorker.drain
+    end
   end
 end

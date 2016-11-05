@@ -33,7 +33,7 @@ module Wen
 
         Clock.colours d
       else
-        Clock.send(:colours, params)
+        Clock.colours params
       end
 
       Clock.time
