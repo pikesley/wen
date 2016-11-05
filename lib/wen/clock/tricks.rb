@@ -57,6 +57,7 @@ module Wen
           d['minutes']['face'] = Wen::Config.instance.config.colours[keys.shift]
 
           Clock.colours d
+          Clock.time
 
           self.kip duration
         end
