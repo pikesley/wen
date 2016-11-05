@@ -20,16 +20,16 @@ module Wen
       when 'reset'
         Wen.stash_colours
       when 'scramble'
-        keys = Wen::Config.instance.config.colours.keys
+        keys = Wen::Config.instance.config.colours.keys.shuffle
         d = {}
 
         d['hours'] = {}
-        d['hours']['hand'] = Wen::Config.instance.config.colours[keys.shuffle.first]
-        d['hours']['face'] = Wen::Config.instance.config.colours[keys.shuffle.first]
+        d['hours']['hand'] = Wen::Config.instance.config.colours[keys.shift]
+        d['hours']['face'] = Wen::Config.instance.config.colours[keys.shift]
 
         d['minutes'] = {}
-        d['minutes']['hand'] = Wen::Config.instance.config.colours[keys.shuffle.first]
-        d['minutes']['face'] = Wen::Config.instance.config.colours[keys.shuffle.first]
+        d['minutes']['hand'] = Wen::Config.instance.config.colours[keys.shift]
+        d['minutes']['face'] = Wen::Config.instance.config.colours[keys.shift]
 
         Clock.colours d
       else
