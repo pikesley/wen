@@ -43,25 +43,23 @@ module Wen
       end
 
       def self.ripple duration = 0.1
+        d = {}
+        d['hours'] = {}
+        d['hours']['hand'] = Clock.fetch_colour 'hours', 'hand'
+        d['hours']['face'] = Clock.fetch_colour 'hours', 'face'
+
+        d['minutes'] = {}
+        d['minutes']['hand'] = Clock.fetch_colour 'minutes', 'hand'
+        d['minutes']['face'] = Clock.fetch_colour 'minutes', 'face'
+
         ITERATIONS.times do
-          keys = Wen::Config.instance.config.colours.keys.shuffle
-
-          d = {}
-
-          d['hours'] = {}
-          d['hours']['hand'] = Wen::Config.instance.config.colours[keys.shift]
-          d['hours']['face'] = Wen::Config.instance.config.colours[keys.shift]
-
-          d['minutes'] = {}
-          d['minutes']['hand'] = Wen::Config.instance.config.colours[keys.shift]
-          d['minutes']['face'] = Wen::Config.instance.config.colours[keys.shift]
-
-          Clock.colours d
+          Clock.scrambled_colours
           Clock.time
 
           self.kip duration
         end
 
+        Clock.colours d
         Clock.time
       end
 
