@@ -42,6 +42,28 @@ module Wen
         Clock.time
       end
 
+      def self.ripple duration = 0.1
+        ITERATIONS.times do
+          keys = Wen::Config.instance.config.colours.keys.shuffle
+
+          d = {}
+
+          d['hours'] = {}
+          d['hours']['hand'] = Wen::Config.instance.config.colours[keys.shift]
+          d['hours']['face'] = Wen::Config.instance.config.colours[keys.shift]
+
+          d['minutes'] = {}
+          d['minutes']['hand'] = Wen::Config.instance.config.colours[keys.shift]
+          d['minutes']['face'] = Wen::Config.instance.config.colours[keys.shift]
+
+          Clock.colours d
+
+          self.kip duration
+        end
+
+        Clock.time
+      end
+
       def self.roll_around
         current_mode = Clock.mode
         Clock.mode = 'vague'
