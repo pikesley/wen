@@ -75,6 +75,10 @@ module Wen
       ColourWorker.perform_async :reset
     end
 
+    post '/colours/scramble/?' do
+      ColourWorker.perform_async :scramble
+    end
+
     post '/colours/?' do
       ColourWorker.perform_async JSON.parse(request.body.read)
     end
