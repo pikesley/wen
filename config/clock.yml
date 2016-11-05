@@ -48,8 +48,7 @@ trick-modes:
 - method: blink
 - method: super_wipe
   display_name: wipe
-- method: align_clock
-  display_name: align my clock
+- method: ripple
 pages:
 - name: colours
   fa: paint-brush
