@@ -265,7 +265,7 @@ function refresh() {
     })
   })
 
-  $("#reset").focus(function () {
+  $("#reset, #scramble").focus(function () {
     this.blur()
   })
 }
@@ -273,6 +273,15 @@ function refresh() {
 function reset() {
   $.ajax({
     url: '/colours/reset',
+    type: 'POST',
+    contentType: 'application/json',
+    complete: refresh
+  })
+}
+
+function scramble() {
+  $.ajax({
+    url: '/colours/scramble',
     type: 'POST',
     contentType: 'application/json',
     complete: refresh

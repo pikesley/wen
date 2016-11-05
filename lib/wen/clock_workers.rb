@@ -16,8 +16,22 @@ module Wen
 
     def perform params
       self.class.commence params
-      if params == 'reset'
-        Wen.stash_colours 
+      case params
+      when 'reset'
+        Wen.stash_colours
+      when 'scramble'
+        keys = Wen::Config.instance.config.colours.keys
+        d = {}
+
+        d['hours'] = {}
+        d['hours']['hand'] = Wen::Config.instance.config.colours[keys.shuffle.first]
+        d['hours']['face'] = Wen::Config.instance.config.colours[keys.shuffle.first]
+
+        d['minutes'] = {}
+        d['minutes']['hand'] = Wen::Config.instance.config.colours[keys.shuffle.first]
+        d['minutes']['face'] = Wen::Config.instance.config.colours[keys.shuffle.first]
+
+        Clock.colours d
       else
         Clock.send(:colours, params)
       end
