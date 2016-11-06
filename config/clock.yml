@@ -112,7 +112,6 @@ words:
     modes: clock modes
     tricks: trick modes
     about: about wen
-
   sub-heading:
     code: code
     documentation: documentation
