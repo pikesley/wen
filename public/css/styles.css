@@ -9107,6 +9107,11 @@ svg.misc {
   height: 0.7em;
 }
 
+/* line 13, ../sass/styles.scss */
+html {
+  text-transform: lowercase !important;
+}
+
 /* line 17, ../sass/styles.scss */
 body {
   background: url(/assets/images/retina_wood.png);
@@ -9142,11 +9147,16 @@ h1, h2 {
 }
 
 /* line 45, ../sass/styles.scss */
+h1, h2, button {
+  word-spacing: 10px;
+}
+
+/* line 49, ../sass/styles.scss */
 hr {
   border-color: #03637a;
 }
 
-/* line 49, ../sass/styles.scss */
+/* line 53, ../sass/styles.scss */
 p {
   text-align: justify;
   font-size: 0.8em;
