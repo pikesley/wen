@@ -1,5 +1,7 @@
 <%= erb :'includes/page_top' %>
 
+<h1>Clock Modes</h1>
+
 <div id='modes'>
   <div class='button-panel'>
     <div class='row'>
@@ -10,14 +12,14 @@
                     id='<%= mode["name"] %>-mode-picker'
                     title='<%= mode["what"] %>'
                     onclick='submit("<%= mode["name"] %>")'>
-              <%= erb :"includes/svgs/mode/#{mode['name']}.svg" %>
+              <%= mode['name'] %> clock
             </button>
             <button type='button'
                     class='btn btn-default  <%= mode["name"] %>-mode'
                     id='about-<%= mode["name"] %>-mode'
                     data-target='#<%= mode["name"] %>-modal'
                     data-toggle='modal'>
-                <i class='fa fa-ellipsis-h'></i>
+                    ...
             </button>
           </div>
       <% end %>
@@ -42,21 +44,21 @@
                     title='<%= mode["what"] %>'
                     onclick='submit("<%= mode["name"] %>")'
                     data-dismiss='modal'>
-              <%= erb :'includes/svgs/misc/pick.svg' %>
+              <%= Wen::Config.instance.config['button-text']['modes']['pick'] %>
             </button>
             <button type='button'
                     class='btn btn-warning mode-canceller'
                     id='<%= mode["name"] %>-mode-modal-cancel'
                     data-dismiss='modal'
                     aria-label='Close'>
-              <%= erb :'includes/svgs/misc/dismiss.svg' %>
+              <%= Wen::Config.instance.config['button-text']['modes']['dismiss'] %>
             </button>
             <button type='button'
                     class='btn btn-warning mode-ignorer'
                     id='<%= mode["name"] %>-mode-modal-ignore'
                     data-dismiss='modal'
                     aria-label='Close'>
-              <%= erb :'includes/svgs/misc/close.svg' %>
+              <%= Wen::Config.instance.config['button-text']['modes']['close'] %>
             </button>
           </div>
         </div>

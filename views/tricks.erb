@@ -1,5 +1,7 @@
 <%= erb :'includes/page_top' %>
 
+<h1>Trick Modes</h1>
+
 <div class='button-panel'>
   <div class='row'>
     <% Wen::Config.instance.config['trick-modes'].each do |trick| %>
@@ -7,7 +9,7 @@
         <button id='display-<%= trick["method"] %>' class='btn trick-btn' onclick='submit("<%= trick["method"] %>")'>
             <% display_name = trick['method'] %>
             <% display_name = trick['display_name'] if trick['display_name'] %>
-            <%= erb :"includes/svgs/trick/#{trick['method']}.svg" %>
+            <%= display_name %>
         </button>
       </div>
     <% end %>
