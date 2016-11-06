@@ -7,14 +7,14 @@ module.exports = {
       .waitForElementVisible('body', timeout)
       .assert.containsText('h1', 'colours')
 
-      .click('a[id=reset]')
+      .click('#reset')
       .pause(timeout)
 
       .click('#hours-hand')
       .waitForElementVisible('.hours-hand-picker', timeout)
-      .click('.hours-hand-picker div div div span[title="rgb(255, 0, 127)"] span')
+      .click('.hours-hand-picker div div div span[title="rgb(155, 32, 0)"] span')
       .pause(timeout)
-      .assert.attributeContains('#hours-hand', 'fill', 'rgb(255, 0, 127)')
+      .assert.attributeContains('#hours-hand', 'fill', 'rgb(155, 32, 0)')
 
       .end()
 /*  },

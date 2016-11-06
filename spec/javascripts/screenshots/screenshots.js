@@ -4,7 +4,7 @@ module.exports = {
       .url('http://localhost:9292/colours')
       .waitForElementVisible('body', 1000)
       .resizeWindow(400, 700)
-      .click('a[id=reset]')
+      .click('#reset')
       .click('#hours-hand')
       .waitForElementVisible('.hours-hand-picker', 1000)
       .saveScreenshot('./screenshot/colours.png')

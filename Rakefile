@@ -33,6 +33,7 @@ namespace :nightwatch do
     sleep 3
     sh "nightwatch --config spec/javascripts/support/nightwatch.js --env local --test spec/javascripts/screenshots/screenshots.js"
     sh "pkill -f selenium"
+    sh "open screenshot"
   end
 end
 

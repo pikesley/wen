@@ -68,13 +68,16 @@ module Wen
 
       d = {}
 
+      hand = Wen::Config.instance.config.colours[keys.shift]
+      face = Wen::Config.instance.config.colours[keys.shift]
+
       d['hours'] = {}
-      d['hours']['hand'] = Wen::Config.instance.config.colours[keys.shift]
-      d['hours']['face'] = Wen::Config.instance.config.colours[keys.shift]
+      d['hours']['hand'] = hand
+      d['hours']['face'] = face
 
       d['minutes'] = {}
-      d['minutes']['hand'] = Wen::Config.instance.config.colours[keys.shift]
-      d['minutes']['face'] = Wen::Config.instance.config.colours[keys.shift]
+      d['minutes']['hand'] = hand
+      d['minutes']['face'] = face
 
       self.colours d
     end
