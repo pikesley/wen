@@ -15,6 +15,7 @@ html {
 
 body {
   background: url(/assets/images/retina_wood.png);
+  background-color: black;
   color: $brand-primary;
   font-family: $font-primary;
   text-align: center;
@@ -49,4 +50,12 @@ p {
   text-align: justify;
   font-size: 0.8em;
   font-family: $font-secondary;
+}
+
+svg.title {
+  height: 2em;
+
+  .on {
+    fill: $brand-primary;
+  }
 }
