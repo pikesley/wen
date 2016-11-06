@@ -125,11 +125,19 @@ namespace :svgs do
       end
     end
 
-    ['scramble', 'reset'].each do |word|
+    [
+      'scramble',
+      'reset',
+      'done'
+    ].each do |word|
       FileUtils.mkdir_p "views/includes/svgs/misc"
       File.open "views/includes/svgs/misc/#{word}.svg.erb", 'w' do |f|
         f.write Nineteen::Eighty::Two::Formats::SVG.format word, {class: 'misc'}
       end
+    end
+
+    File.open "views/includes/svgs/misc/404.svg.erb", 'w' do |f|
+      f.write Nineteen::Eighty::Two::Formats::SVG.format '404', {class: 'heading'}
     end
   end
 end
