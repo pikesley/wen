@@ -31,8 +31,8 @@ clock-modes:
   what: Only the pin closest to the current minute is illuminated
 button-text:
   modes:
-    pick: pick this
-    dismiss: leave it for now
+    pick: Pick this
+    dismiss: Leave it for now
     close: 0 OK, 0:1
 trick-modes:
 - method: shuffle

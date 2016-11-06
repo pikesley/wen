@@ -137,8 +137,6 @@ GEM
     net-http-persistent (3.0.0)
       connection_pool (~> 2.2)
     net-http-pipeline (1.0.1)
-    nineteen-eighty-two (0.1.8)
-      erubis
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
     notiffany (0.1.1)
@@ -254,7 +252,6 @@ DEPENDENCIES
   guard-rspec
   httparty
   jasmine
-  nineteen-eighty-two
   pixel_pi
   pry
   puma

@@ -9,7 +9,7 @@ $text-colour: darken($brand-primary, $border-darken);
   border: $border-thickness $text-colour solid;
   border-radius: $corner-radius;
   font-family: $buttons-font;
-  font-size: 1.5em;
+  font-size: 1em;
 
   margin: $padding-small-horizontal;
 }
@@ -40,7 +40,7 @@ $text-colour: darken($brand-primary, $border-darken);
   height: $btn-size + 10;
   width: $btn-size + 10;
   text-align: center;
-  font-size: 1.2em;
+  font-size: 0.7em;
 }
 
 .trick-btn:active:focus,
