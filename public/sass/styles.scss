@@ -11,7 +11,7 @@
 @import 'svg';
 
 html {
-  //text-transform: lowercase !important;
+  text-transform: lowercase !important;
 }
 
 body {
@@ -40,6 +40,10 @@ h2 {
 
 h1, h2 {
   color: transparentize($brand-primary, 0.1);
+}
+
+h1, h2, button {
+  word-spacing: $word-spacing;
 }
 
 hr {
