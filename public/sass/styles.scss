@@ -8,6 +8,7 @@
 @import 'spectrum';
 @import 'modes';
 @import 'build-box';
+@import 'svg';
 
 html {
   text-transform: lowercase !important;
@@ -50,18 +51,4 @@ p {
   text-align: justify;
   font-size: 0.8em;
   font-family: $font-secondary;
-}
-
-svg.heading {
-  height: 2em;
-}
-
-svg.sub-heading {
-  height: 1.5em;
-}
-
-svg {
-  .on {
-    fill: $brand-primary;
-  }
 }

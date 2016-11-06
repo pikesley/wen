@@ -1,0 +1,27 @@
+svg.heading {
+  height: 2em;
+}
+
+svg.sub-heading {
+  height: 1.5em;
+}
+
+svg {
+  .on {
+    fill: $brand-primary;
+  }
+  display: inline-block;
+  vertical-align: middle;
+
+  margin-bottom: $padding-large-vertical;
+}
+
+svg.mode, svg.trick, svg.misc {
+  .on {
+    fill: $text-colour;
+  }
+}
+
+svg.misc {
+  height: 0.7em;
+}

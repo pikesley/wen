@@ -10,7 +10,7 @@
                     id='<%= mode["name"] %>-mode-picker'
                     title='<%= mode["what"] %>'
                     onclick='submit("<%= mode["name"] %>")'>
-              <%= mode["name"] %> clock
+              <%= erb :"includes/svgs/mode/#{mode['name']}.svg" %>
             </button>
             <button type='button'
                     class='btn btn-default  <%= mode["name"] %>-mode'

@@ -1,12 +1,12 @@
 $btn-size: 80px;
-$text-color: darken($brand-primary, $border-darken);
+$text-colour: darken($brand-primary, $border-darken);
 
 .btn-default, .btn-default:focus, .btn-default:hover {
   height: $btn-size;
   min-width: $btn-size;
   background-color: transparentize($brand-primary, $transparency);
-  color: $text-color;
-  border: $border-thickness $text-color solid;
+  color: $text-colour;
+  border: $border-thickness $text-colour solid;
   border-radius: $corner-radius;
   font-family: $buttons-font;
   font-size: 1.5em;
@@ -17,7 +17,7 @@ $text-color: darken($brand-primary, $border-darken);
 .btn-default:active:focus,
 .btn-default:active:hover {
   background-color: transparentize(darken($brand-primary, 20%), $transparency);
-  border: $border-thickness $text-color solid;
+  border: $border-thickness $text-colour solid;
 }
 
 .btn-active, .btn-active:focus, .btn-active:hover, .btn-active:active {
@@ -29,7 +29,7 @@ $text-color: darken($brand-primary, $border-darken);
 .btn-active:active:hover
 {
   background-color: transparentize($brand-complement, $transparency);
-  border: 2px $text-color solid;
+  border: 2px $text-colour solid;
 }
 
 .trick-btn {

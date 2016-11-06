@@ -7,7 +7,7 @@
         <button id='display-<%= trick["method"] %>' class='btn trick-btn' onclick='submit("<%= trick["method"] %>")'>
             <% display_name = trick['method'] %>
             <% display_name = trick['display_name'] if trick['display_name'] %>
-            <%= display_name %>
+            <%= erb :"includes/svgs/trick/#{trick['method']}.svg" %>
         </button>
       </div>
     <% end %>
