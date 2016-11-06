@@ -87,3 +87,19 @@ namespace :run do
     sh 'sidekiq -r ./lib/wen.rb'
   end
 end
+
+namespace :svgs do
+  task :generate do
+    require 'nineteen/eighty/two'
+
+    Wen::Config.instance.config.words.each_pair do |type, words|
+      FileUtils.mkdir_p "views/includes/svgs/#{type}"
+      words.each_pair do |name, content|
+        File.open "views/includes/svgs/#{type}/#{name}.svg.erb", 'w' do |f|
+          f.write Nineteen::Eighty::Two::Formats::SVG.format "#{content}",
+          {class: type}
+        end
+      end
+    end
+  end
+end

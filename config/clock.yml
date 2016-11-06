@@ -106,3 +106,14 @@ colours:
   - 48
   brand-secondary-2: *1
 github_url: http://github.com/pikesley/wen
+words:
+  heading:
+    colours: colours
+    modes: clock modes
+    tricks: trick modes
+    about: about wen
+
+  sub-heading:
+    code: code
+    documentation: documentation
+    align: align your clock
