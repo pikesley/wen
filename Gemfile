@@ -16,6 +16,7 @@ gem 'pixel_pi'
 gem 'httparty'
 gem 'travis'
 gem 'git'
+gem 'nineteen-eighty-two'
 
 group :test do
   gem 'rspec'

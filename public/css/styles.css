@@ -9128,10 +9128,16 @@ p {
 }
 
 /* line 55, ../sass/styles.scss */
-svg.title {
+svg.heading {
   height: 2em;
 }
-/* line 58, ../sass/styles.scss */
-svg.title .on {
+
+/* line 59, ../sass/styles.scss */
+svg.sub-heading {
+  height: 1.5em;
+}
+
+/* line 64, ../sass/styles.scss */
+svg .on {
   fill: #ff7f00;
 }

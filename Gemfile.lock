@@ -20,8 +20,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.4.0)
-    autoprefixer-rails (6.5.1.1)
+    addressable (2.5.0)
+      public_suffix (~> 2.0, >= 2.0.2)
+    autoprefixer-rails (6.5.2)
       execjs
     backports (3.6.8)
     bootstrap-sass (3.3.7)
@@ -136,6 +137,8 @@ GEM
     net-http-persistent (3.0.0)
       connection_pool (~> 2.2)
     net-http-pipeline (1.0.1)
+    nineteen-eighty-two (0.1.8)
+      erubis
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
     notiffany (0.1.1)
@@ -147,6 +150,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    public_suffix (2.0.3)
     puma (3.6.0)
     pusher-client (0.6.2)
       json
@@ -193,7 +197,7 @@ GEM
     rspec-support (3.5.0)
     sass (3.4.22)
     shellany (0.0.1)
-    sidekiq (4.2.4)
+    sidekiq (4.2.5)
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
       rack-protection (>= 1.5.0)
@@ -250,6 +254,7 @@ DEPENDENCIES
   guard-rspec
   httparty
   jasmine
+  nineteen-eighty-two
   pixel_pi
   pry
   puma

@@ -52,9 +52,15 @@ p {
   font-family: $font-secondary;
 }
 
-svg.title {
+svg.heading {
   height: 2em;
+}
 
+svg.sub-heading {
+  height: 1.5em;
+}
+
+svg {
   .on {
     fill: $brand-primary;
   }
