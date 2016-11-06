@@ -3,7 +3,7 @@ module Wen
     it 'has a display page' do
       get '/colours/'
       expect(last_response).to be_ok
-      expect(last_response.body).to match /colours/
+      expect(last_response.body).to match /svg/
     end
 
     it 'requests the time' do

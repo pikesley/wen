@@ -1,2 +1,2 @@
 <%= erb :'includes/nav' %>
-<%= erb :"includes/svgs#{request.path}.svg" %>
+<%= erb :"includes/svgs/#{request.path.gsub('/', '')}.svg" %>
