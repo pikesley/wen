@@ -8997,7 +8997,7 @@ body {
 /* line 17, ../sass/_modes.scss */
 .mode-canceller {
   background-color: #9b2000;
-  border: 2px #331900 solid;
+  border: 2px #333333 solid;
 }
 
 /* line 24, ../sass/_modes.scss */
@@ -9075,12 +9075,43 @@ body {
   transition: 0.3s;
 }
 
-/* line 12, ../sass/styles.scss */
+/* line 1, ../sass/_svg.scss */
+svg.heading {
+  height: 2em;
+}
+
+/* line 5, ../sass/_svg.scss */
+svg.sub-heading {
+  height: 1.5em;
+}
+
+/* line 9, ../sass/_svg.scss */
+svg {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 10px;
+}
+/* line 10, ../sass/_svg.scss */
+svg .on {
+  fill: #ff7f00;
+}
+
+/* line 20, ../sass/_svg.scss */
+svg.mode .on, svg.trick .on, svg.misc .on {
+  fill: #331900;
+}
+
+/* line 25, ../sass/_svg.scss */
+svg.misc {
+  height: 0.7em;
+}
+
+/* line 13, ../sass/styles.scss */
 html {
   text-transform: lowercase !important;
 }
 
-/* line 16, ../sass/styles.scss */
+/* line 17, ../sass/styles.scss */
 body {
   background: url(/assets/images/retina_wood.png);
   background-color: black;
@@ -9089,55 +9120,40 @@ body {
   text-align: center;
 }
 
-/* line 24, ../sass/styles.scss */
+/* line 25, ../sass/styles.scss */
 a {
   color: #006e30;
 }
 
-/* line 28, ../sass/styles.scss */
+/* line 29, ../sass/styles.scss */
 img {
   max-width: 80%;
 }
 
-/* line 32, ../sass/styles.scss */
+/* line 33, ../sass/styles.scss */
 h1 {
   font-size: 2.5em;
   margin-top: 5px;
 }
 
-/* line 37, ../sass/styles.scss */
+/* line 38, ../sass/styles.scss */
 h2 {
   font-size: 1.5em;
 }
 
-/* line 41, ../sass/styles.scss */
+/* line 42, ../sass/styles.scss */
 h1, h2 {
   color: rgba(255, 127, 0, 0.9);
 }
 
-/* line 45, ../sass/styles.scss */
+/* line 46, ../sass/styles.scss */
 hr {
   border-color: #03637a;
 }
 
-/* line 49, ../sass/styles.scss */
+/* line 50, ../sass/styles.scss */
 p {
   text-align: justify;
   font-size: 0.8em;
   font-family: "Nixie One";
-}
-
-/* line 55, ../sass/styles.scss */
-svg.heading {
-  height: 2em;
-}
-
-/* line 59, ../sass/styles.scss */
-svg.sub-heading {
-  height: 1.5em;
-}
-
-/* line 64, ../sass/styles.scss */
-svg .on {
-  fill: #ff7f00;
 }
