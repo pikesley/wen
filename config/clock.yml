@@ -33,7 +33,7 @@ button-text:
   modes:
     pick: pick this
     dismiss: leave it for now
-    close: this button closes this window
+    close: 0 OK, 0:1
 trick-modes:
 - method: shuffle
 - method: disco

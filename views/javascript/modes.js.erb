@@ -20,8 +20,8 @@
       $(this).removeClass('btn-active').addClass('btn-default')
     })
 
-    $('.mode-canceller').each(function () {
-      $(this).text("<%= Wen::Config.instance.config['button-text']['modes']['dismiss'] %>")
+    $('.mode-ignorer').each(function () {
+      $(this).hide()
     })
 
     $('.current-mode').each(function () {
@@ -32,7 +32,8 @@
       $('.' + data['mode'] + '-mode').removeClass('btn-default').addClass('btn-active')
       $('#' + data['mode'] + '-is-current').show()
       $('#' + data['mode'] + '-mode-modal-picker').hide()
-      $('#' + data['mode'] + '-mode-modal-cancel').text("<%= Wen::Config.instance.config['button-text']['modes']['close'] %>")
+      $('#' + data['mode'] + '-mode-modal-cancel').hide()
+      $('#' + data['mode'] + '-mode-modal-ignore').show()
     })
 
     $("button").focus(function () {

@@ -42,14 +42,21 @@
                     title='<%= mode["what"] %>'
                     onclick='submit("<%= mode["name"] %>")'
                     data-dismiss='modal'>
-              <%= Wen::Config.instance.config['button-text']['modes']['pick'] %>
+              <%= erb :'includes/svgs/misc/pick.svg' %>
             </button>
             <button type='button'
                     class='btn btn-warning mode-canceller'
                     id='<%= mode["name"] %>-mode-modal-cancel'
                     data-dismiss='modal'
                     aria-label='Close'>
-              <%= Wen::Config.instance.config['button-text']['modes']['dismiss'] %>
+              <%= erb :'includes/svgs/misc/dismiss.svg' %>
+            </button>
+            <button type='button'
+                    class='btn btn-warning mode-ignorer'
+                    id='<%= mode["name"] %>-mode-modal-ignore'
+                    data-dismiss='modal'
+                    aria-label='Close'>
+              <%= erb :'includes/svgs/misc/close.svg' %>
             </button>
           </div>
         </div>
