@@ -1,6 +1,4 @@
-<% slide_side = 'right' %>
 <nav class='navbar navbar-default' id='main-nav'>
-  <div class='container-fluid'>
     <ul class='nav nav-pills'>
       <% Wen::Config.instance.config['pages'].each do |page| %>
         <% target = "/#{page['name']}" %>
@@ -8,10 +6,9 @@
         <li role='presentation' class='nav-item<%= " active" if target == '#' %>' id='<%= page['name'] %>-link'>
           <a href="<%= target %>"
             title='<%= page["text"] %>'>
-            <i class='fa fa-<%= page["fa"] %>'></i>
+            <i class='icon-<%= page["name"] %>'></i>
           </a>
         </li>
       <% end %>
     </ul>
-  </div>
 </nav>

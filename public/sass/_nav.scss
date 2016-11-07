@@ -3,6 +3,7 @@
   height: $footer-height;
   background-color: transparent;
   border: none;
+  width: 100%;
 }
 
 .nav-item {
@@ -31,6 +32,7 @@
       border-color: transparent;
       color: $brand-complement;
       transition: 0.5s;
+      
     }
 
     a:focus, a:hover {
