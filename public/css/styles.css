@@ -9088,7 +9088,7 @@ body {
 
 /* line 12, ../sass/styles.scss */
 html {
-  text-transform: lowercase !important;
+  text-transform: lowercase;
 }
 
 /* line 16, ../sass/styles.scss */
@@ -9121,16 +9121,22 @@ h2 {
 }
 
 /* line 40, ../sass/styles.scss */
+.error-message {
+  text-transform: none;
+  font-size: 1em;
+}
+
+/* line 45, ../sass/styles.scss */
 h1, h2 {
   color: rgba(255, 127, 0, 0.9);
 }
 
-/* line 45, ../sass/styles.scss */
+/* line 50, ../sass/styles.scss */
 hr {
   border-color: #03637a;
 }
 
-/* line 49, ../sass/styles.scss */
+/* line 54, ../sass/styles.scss */
 p {
   text-align: justify;
   font-size: 0.8em;
