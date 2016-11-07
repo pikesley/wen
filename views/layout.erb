@@ -13,4 +13,28 @@
 $(document).on('ready', function() {
   $('#main').pjax('nav a')
 })
+
+<% np = next_and_previous request.path.gsub('/', '') %>
+next = null
+<% if np[:next] %>
+next = '<%= "/#{np[:next]}" %>'
+<% end %>
+previous = null
+<% if np[:previous] %>
+previous = '<%= "/#{np[:previous]}" %>'
+<% end %>
+
+main = document.getElementById('main')
+if (next != undefined) {
+  Hammer(main).on('swipeleft', function() {
+    location.href = next
+  })
+}
+
+if (previous != undefined) {
+  Hammer(main).on('swiperight', function() {
+    location.href = previous
+  })
+}
+
 </script>

@@ -17,5 +17,21 @@ module Wen
     def get_title key
       titlecase Wen::Config.instance.config.words['heading'][key]
     end
+
+    def next_and_previous request_path
+      pages = Wen::Config.instance.config['pages'].map { |page| page['name'] }
+
+      index = pages.index request_path
+
+      np = {
+        next: nil,
+        previous: nil
+      }
+
+      np[:next] = pages[index + 1]
+      np[:previous] = pages[index - 1] unless index == 0
+
+      np
+    end
   end
 end
