@@ -2,7 +2,7 @@
 <html lang='en'>
   <%= erb :'includes/header' %>
   <body>
-    <div class='container' id='pjax'>
+    <div class='container' id='main'>
       <%= yield %>
     </div>
     <%= erb :'includes/footer' %>
@@ -11,6 +11,6 @@
 
 <script>
 $(document).on('ready', function() {
-  $('#pjax').pjax('nav a')
+  $('#main').pjax('nav a')
 })
 </script>
