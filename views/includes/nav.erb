@@ -5,7 +5,8 @@
         <% target = '#' if request.path == target %>
         <li role='presentation' class='nav-item<%= " active" if target == '#' %>' id='<%= page['name'] %>-link'>
           <a href="<%= target %>"
-            title='<%= page["text"] %>'>
+            title='<%= page["text"] %>'
+            id='<%= page['name'] %>'>
             <i class='icon-<%= page["name"] %>'></i>
           </a>
         </li>
