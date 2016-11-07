@@ -1,9 +1,12 @@
-@import '//fonts.googleapis.com/css?family=Nixie+One';
 @import '//fonts.googleapis.com/css?family=Cutive+Mono';
-@import '//fonts.googleapis.com/css?family=VT323';
-@import '//file.myfontastic.com/qbT833H9AjE28yfY8Bp9qi/icons.css';
+@import '//file.myfontastic.com/qbT833H9AjE28yfY8Bp9qi/icons.css'; // spectrum
+@import '//file.myfontastic.com/XvCbaeh5qxGTfX3HUCMAyE/icons.css'; // icons
 
 $font-primary: 'spectrum';
 $font-secondary: 'Cutive Mono';
 $font-fixed: 'Cutive Mono';
 $buttons-font: 'spectrum';
+
+h1, h2, button {
+  word-spacing: 0.3ch;
+}
