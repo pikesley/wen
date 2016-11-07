@@ -39,8 +39,9 @@ $text-colour: darken($brand-primary, $border-darken);
   line-height: 1em;
   height: $btn-size + 10;
   width: $btn-size + 10;
-  text-align: center;
-  font-size: 0.7em;
+  text-align: left;
+  font-size: 0.75em;
+  padding: 8px;
 }
 
 .trick-btn:active:focus,

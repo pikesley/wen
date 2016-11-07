@@ -8,7 +8,6 @@
 @import 'spectrum';
 @import 'modes';
 @import 'build-box';
-@import 'svg';
 
 html {
   text-transform: lowercase !important;
@@ -40,10 +39,7 @@ h2 {
 
 h1, h2 {
   color: transparentize($brand-primary, 0.1);
-}
-
-h1, h2, button {
-  word-spacing: $word-spacing;
+  //text-shadow: 1px 1px 1px lighten($brand-primary, 20%), -1px -1px 1px darken($brand-primary, 20%);
 }
 
 hr {
