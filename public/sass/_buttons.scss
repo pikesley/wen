@@ -32,6 +32,12 @@ $text-colour: darken($brand-primary, $border-darken);
   border: 2px $text-colour solid;
 }
 
+.btn-warning {
+  @extend .btn-default;
+
+  background-color: transparentize($brand-secondary-1, $transparency);
+}
+
 .trick-btn {
   @extend .btn-default;
 
