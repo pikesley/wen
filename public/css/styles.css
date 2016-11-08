@@ -8809,7 +8809,7 @@ button.close {
 }
 /* line 10, ../sass/_fonts.scss */
 h1, h2, button {
-  word-spacing: 0.3ch;
+  word-spacing: 1em;
 }
 
 /* line 1, ../sass/_footer.scss */
@@ -9111,7 +9111,7 @@ img {
 
 /* line 31, ../sass/styles.scss */
 h1 {
-  font-size: 2.5em;
+  font-size: 2em;
   margin-top: 5px;
 }
 
