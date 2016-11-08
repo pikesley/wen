@@ -1,29 +1,14 @@
 <script>
 <% np = next_and_previous request.path.gsub('/', '') %>
-
-<% if np[:next] %>
-next = '<%= "#{np[:next]}" %>'
-<% else %>
-next = null
-<% end %>
-
-<% if np[:previous] %>
-previous = '<%= "#{np[:previous]}" %>'
-<% else %>
-previous = null
-<% end %>
-
 main = document.getElementById('main')
-
-if (next != undefined) {
-  Hammer(main).on('swipeleft', function() {
-    document.getElementById(next).click()
-  })
-}
-
-if (previous != undefined) {
-  Hammer(main).on('swiperight', function() {
-    document.getElementById(previous).click()
-  })
-}
+<% if np[:next] %>
+Hammer(main).on('swipeleft', function() {
+  document.getElementById('<%= "#{np[:next]}" %>').click()
+})
+<% end %>
+<% if np[:previous] %>
+Hammer(main).on('swiperight', function() {
+  document.getElementById('<%= "#{np[:previous]}" %>').click()
+})
+<% end %>
 </script>
