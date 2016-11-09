@@ -1,29 +1,15 @@
 <script>
-<% current = request.path.gsub('/', '') %>
-current = '<%= current %>'
-<% np = next_and_previous current %>
-
+<% np = next_and_previous request.path.gsub('/', '') %>
 body = document.getElementById('body')
 
+<% if np[:next] %>
 Hammer(body).on('swipeleft', function() {
-  <% if np[:next] %>
   document.getElementById('<%= "#{np[:next]}" %>').click()
-  <% else %>
-  swell()
-  <% end %>
 })
+<% end %>
+<% if np[:previous] %>
 Hammer(body).on('swiperight', function() {
-  <% if np[:previous] %>
   document.getElementById('<%= "#{np[:previous]}" %>').click()
-  <% else %>
-  swell()
-  <% end %>
 })
-
-function swell() {
-  size = parseInt($('#' + current).css('font-size').replace('px', ''))
-
-  $('#' + current).animate({ fontSize: (size * 1.5) + 'px' }, 1000, 'easeOutElastic')
-  $('#' + current).animate({ fontSize: size}, 1000)
-}
+<% end %>
 </script>
