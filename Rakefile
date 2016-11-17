@@ -86,4 +86,9 @@ namespace :run do
     sh 'redis-server &'
     sh 'sidekiq -r ./lib/wen.rb'
   end
+
+  desc 'run sidekiq web'
+  task :skweb do
+    sh 'rackup sidekiq-config.ru -p 9293'
+  end
 end
