@@ -33,5 +33,11 @@ module Wen
 
       np
     end
+
+    def self.with_logging params = nil
+      puts "Starting #{self.name}: #{params}" unless ENV['RACK_ENV'] == 'test'
+      yield
+      puts "Finishing #{self.name}: #{params}" unless ENV['RACK_ENV'] == 'test'
+    end
   end
 end

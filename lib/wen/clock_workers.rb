@@ -1,32 +1,25 @@
 module Wen
   class ClockWorker
     include Sidekiq::Worker
-
-    def self.commence params = 'none'
-      puts "Starting #{self.name}: #{params}" unless ENV['RACK_ENV'] == 'test'
-    end
-
-    def self.cease params = 'none'
-      puts "Finishing #{self.name}: #{params}" unless ENV['RACK_ENV'] == 'test'
-    end
+    include Helpers
   end
 
   class ColourWorker < ClockWorker
     sidekiq_options queue: 'colours'
 
     def perform params
-      self.class.commence params
-      case params
-      when 'reset'
-        Wen.stash_colours
-      when 'scramble'
-        Clock.scrambled_colours
-      else
-        Clock.colours params
-      end
+      Helpers.with_logging(params) do
+        case params
+        when 'reset'
+          Wen.stash_colours
+        when 'scramble'
+          Clock.scrambled_colours
+        else
+          Clock.colours params
+        end
 
-      Clock.time
-      self.class.cease params
+        Clock.time
+      end
     end
   end
 
@@ -34,9 +27,9 @@ module Wen
     sidekiq_options queue: 'modes'
 
     def perform params
-      self.class.commence params
-      Clock.mode = params['mode']
-      self.class.cease params
+      Helpers.with_logging(params) do
+        Clock.mode = params['mode']
+      end
     end
   end
 
@@ -44,9 +37,9 @@ module Wen
     sidekiq_options queue: 'tricks'
 
     def perform params
-      self.class.commence params
-      Clock::Tricks.send(params['trick'].to_sym)
-      self.class.cease params
+      Helpers.with_logging(params) do
+        Clock::Tricks.send(params['trick'].to_sym)
+      end
     end
   end
 
@@ -54,9 +47,9 @@ module Wen
     sidekiq_options queue: 'time'
 
     def perform
-      self.class.commence
-      Clock.time
-      self.class.cease
+      Helpers.with_logging do
+        Clock.time
+      end
     end
   end
 end
