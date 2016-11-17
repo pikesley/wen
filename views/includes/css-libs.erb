@@ -1,0 +1,7 @@
+<%
+libs = {
+  spectrum_picker: '//cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css'
+}.each_pair do |name, url| %>
+  <!-- <%= name %> -->
+  <link rel='stylesheet' href='<%= url %>'>
+<% end %>

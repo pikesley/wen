@@ -1,0 +1,9 @@
+<%
+libs = {
+  cutive: '//fonts.googleapis.com/css?family=Cutive+Mono',
+  spectrum: '//file.myfontastic.com/qbT833H9AjE28yfY8Bp9qi/icons.css',
+  icons: '//file.myfontastic.com/XvCbaeh5qxGTfX3HUCMAyE/icons.css'
+}.each_pair do |name, url| %>
+  <!-- <%= name %> -->
+  <link rel='stylesheet' href='<%= url %>'>
+<% end %>

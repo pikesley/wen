@@ -5,9 +5,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-@import "//fonts.googleapis.com/css?family=Cutive+Mono";
-@import "//file.myfontastic.com/qbT833H9AjE28yfY8Bp9qi/icons.css";
-@import "//file.myfontastic.com/XvCbaeh5qxGTfX3HUCMAyE/icons.css";
 /* line 9, ../../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_normalize.scss */
 html {
   font-family: sans-serif;
@@ -8807,7 +8804,7 @@ button.close {
     display: none !important;
   }
 }
-/* line 10, ../sass/_fonts.scss */
+/* line 6, ../sass/_fonts.scss */
 h1, h2, button {
   word-spacing: 1em;
 }
