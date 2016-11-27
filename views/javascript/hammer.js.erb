@@ -7,7 +7,7 @@ Hammer(body).on('swipeleft', function() {
   document.getElementById('<%= "#{np[:next]}" %>').click()
 })
 <% else %>
-Hammer(body).on('swipeleft', function() {})
+//Hammer(body).on('swipeleft', function() {})
 <% end %>
 
 <% if np[:previous] %>
@@ -15,6 +15,6 @@ Hammer(body).on('swiperight', function() {
   document.getElementById('<%= "#{np[:previous]}" %>').click()
 })
 <% else %>
-Hammer(body).on('swiperight', function() {})
+//Hammer(body).on('swiperight', function() {})
 <% end %>
 </script>
