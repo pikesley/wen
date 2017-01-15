@@ -3,8 +3,8 @@ module Wen
     include Singleton
 
     GAMMA = [
-      1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,
-      1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,
+      0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+      0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  1,  1,
       1,  1,  1,  1,  1,  1,  1,  1,  1,  2,  2,  2,  2,  2,  2,  2,
       2,  3,  3,  3,  3,  3,  3,  3,  4,  4,  4,  4,  4,  5,  5,  5,
       5,  6,  6,  6,  6,  7,  7,  7,  7,  8,  8,  8,  9,  9,  9, 10,
@@ -45,7 +45,7 @@ module Wen
 # should this take a list of 'red' etc and look up the colours?
     def set colours
       colours.each_with_index do |colour, i|
-        fixed_colour = colour #.map { |c| GAMMA[c] }
+        fixed_colour = colour.map { |c| GAMMA[c] }
         rings[i] = PixelPi::Color *fixed_colour
       end
     end

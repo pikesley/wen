@@ -4,12 +4,12 @@ neopixels:
     pins: 24
     colours:
       hand: &1
-      - 19
-      - 7
-      - 58
+      - 32
+      - 9
+      - 106
       face: &2
-      - 85
-      - 70
+      - 155
+      - 128
       - 0
   hours:
     pins: 12
@@ -92,13 +92,13 @@ colours:
   - 255
   - 0
   brand-primary:
-  - 88
-  - 42
-  - 114
+  - 113
+  - 9
+  - 170
   brand-complement:
-  - 128
-  - 128
-  - 21
+  - 197
+  - 197
+  - 0
   brand-secondary-1: *2
   brand-secondary-2: *1
 github_url: http://github.com/pikesley/wen
