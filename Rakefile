@@ -55,10 +55,10 @@ namespace :colours do
 
     y = YAML.load_file 'config/clock.yml'
 
-    y['neopixels']['minutes']['colours']['hand'] = map['$brand-secondary-2']
-    y['neopixels']['minutes']['colours']['face'] = map['$brand-secondary-1']
-    y['neopixels']['hours']['colours']['hand'] = map['$brand-secondary-2']
-    y['neopixels']['hours']['colours']['face'] = map['$brand-secondary-1']
+    y['neopixels']['minutes']['colours']['hand'] = map['$brand-primary']
+    y['neopixels']['minutes']['colours']['face'] = map['$brand-complement']
+    y['neopixels']['hours']['colours']['hand'] = map['$brand-primary']
+    y['neopixels']['hours']['colours']['face'] = map['$brand-complement']
 
     map.keys.map { |k| y['colours'][k[1..-1]] = map[k] }
 
