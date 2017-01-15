@@ -45,7 +45,8 @@ module Wen
 # should this take a list of 'red' etc and look up the colours?
     def set colours
       colours.each_with_index do |colour, i|
-        rings[i] = PixelPi::Color *colour.map { |c| GAMMA[c] }
+        fixed_colour = colour.map { |c| GAMMA[c] }
+        rings[i] = PixelPi::Color *fixed_colour
       end
     end
 
