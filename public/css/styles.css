@@ -8830,17 +8830,17 @@ body {
   width: 100%;
   margin-top: 10px;
   background-color: transparent;
-  color: #808015;
+  color: #c55b00;
   height: 40px;
   padding: 10px 16px;
 }
 /* line 22, ../sass/_footer.scss */
 .footer a {
-  color: #808015;
+  color: #c55b00;
 }
 /* line 26, ../sass/_footer.scss */
 .footer a:hover {
-  color: #282807;
+  color: #5f2c00;
 }
 
 /* line 4, ../sass/_buttons.scss */
@@ -8859,7 +8859,7 @@ body {
 .wen-picker button.sp-choose:hover:active, .mode-canceller:hover {
   height: 80px;
   min-width: 80px;
-  background-color: rgba(88, 42, 114, 0.7);
+  background-color: rgba(1, 147, 154, 0.7);
   color: black;
   border: 2px black solid;
   border-radius: 20px;
@@ -8876,24 +8876,24 @@ body {
 .trick-btn:active:hover,
 .wen-picker button.sp-choose:active:hover,
 .mode-canceller:active:hover {
-  background-color: rgba(30, 15, 39, 0.7);
+  background-color: rgba(0, 50, 53, 0.7);
   border: 2px black solid;
 }
 
 /* line 23, ../sass/_buttons.scss */
 .btn-active, .btn-active:focus, .btn-active:hover, .btn-active:active {
-  background-color: rgba(128, 128, 21, 0.7);
+  background-color: rgba(197, 91, 0, 0.7);
 }
 
 /* line 29, ../sass/_buttons.scss */
 .btn-active:active:hover {
-  background-color: rgba(128, 128, 21, 0.7);
+  background-color: rgba(197, 91, 0, 0.7);
   border: 2px black solid;
 }
 
 /* line 35, ../sass/_buttons.scss */
 .btn-warning {
-  background-color: rgba(85, 70, 0, 0.7);
+  background-color: rgba(155, 4, 0, 0.7);
 }
 
 /* line 41, ../sass/_buttons.scss */
@@ -8929,7 +8929,7 @@ body {
 .nav-pills li.active a, .nav-pills li.active a:focus, .nav-pills li.active a:hover {
   background-color: transparent;
   border-color: transparent;
-  color: #582a72;
+  color: #01939a;
 }
 /* line 23, ../sass/_nav.scss */
 .nav-pills li.inactive a, .nav-pills li.inactive a:hover {
@@ -8940,20 +8940,20 @@ body {
 .nav-pills li a {
   background-color: transparent;
   border-color: transparent;
-  color: #808015;
+  color: #c55b00;
   transition: 0.5s;
 }
 /* line 38, ../sass/_nav.scss */
 .nav-pills li a:focus, .nav-pills li a:hover {
   background-color: transparent;
   border-color: transparent;
-  color: #04020c;
+  color: #004705;
 }
 
 /* line 1, ../sass/_spectrum.scss */
 .wen-picker {
   border-radius: 20px;
-  background-color: rgba(128, 128, 21, 0.9);
+  background-color: rgba(197, 91, 0, 0.9);
   border-color: black;
 }
 /* line 6, ../sass/_spectrum.scss */
@@ -8968,7 +8968,7 @@ body {
   border-radius: 10px;
   font-family: "spectrum";
   text-shadow: none;
-  background-color: #582a72;
+  background-color: #01939a;
 }
 /* line 22, ../sass/_spectrum.scss */
 .wen-picker .sp-thumb-el, .wen-picker .sp-thumb-inner {
@@ -8998,7 +8998,7 @@ body {
 
 /* line 9, ../sass/_modes.scss */
 .modal-content {
-  background-color: rgba(128, 128, 21, 0.9);
+  background-color: rgba(197, 91, 0, 0.9);
 }
 
 /* line 13, ../sass/_modes.scss */
@@ -9013,7 +9013,7 @@ body {
 
 /* line 21, ../sass/_modes.scss */
 .mode-canceller {
-  background-color: #13073a;
+  background-color: #007a08;
   border: 2px #333333 solid;
 }
 
@@ -9021,7 +9021,7 @@ body {
 .current-mode {
   display: none;
   font-style: italic;
-  color: #582a72;
+  color: #01939a;
 }
 
 /* line 35, ../sass/_modes.scss */
@@ -9055,7 +9055,7 @@ body {
 }
 /* line 16, ../sass/_build-box.scss */
 #build-data table a {
-  color: #554600;
+  color: #9b0400;
 }
 /* line 20, ../sass/_build-box.scss */
 #build-data table a:hover, #build-data table a:active {
@@ -9107,42 +9107,47 @@ body {
 
 /* line 24, ../sass/styles.scss */
 a {
-  color: #554600;
+  color: #9b0400;
 }
 
-/* line 28, ../sass/styles.scss */
+/* line 29, ../sass/styles.scss */
+p a {
+  text-decoration: underline;
+}
+
+/* line 34, ../sass/styles.scss */
 img {
   max-width: 80%;
 }
 
-/* line 32, ../sass/styles.scss */
+/* line 38, ../sass/styles.scss */
 h1 {
   font-size: 2em;
   margin-top: 5px;
 }
 
-/* line 37, ../sass/styles.scss */
+/* line 43, ../sass/styles.scss */
 h2 {
   font-size: 1.5em;
 }
 
-/* line 41, ../sass/styles.scss */
+/* line 47, ../sass/styles.scss */
 .error-message {
   text-transform: none;
   font-size: 1em;
 }
 
-/* line 46, ../sass/styles.scss */
+/* line 52, ../sass/styles.scss */
 h1, h2 {
-  color: rgba(88, 42, 114, 0.9);
+  color: rgba(1, 147, 154, 0.9);
 }
 
-/* line 51, ../sass/styles.scss */
+/* line 57, ../sass/styles.scss */
 hr {
-  border-color: #808015;
+  border-color: #c55b00;
 }
 
-/* line 55, ../sass/styles.scss */
+/* line 61, ../sass/styles.scss */
 p {
   text-align: justify;
   font-size: 0.8em;

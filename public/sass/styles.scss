@@ -25,6 +25,12 @@ a {
   color: $brand-secondary-1;
 }
 
+p {
+  a {
+    text-decoration: underline;
+  }
+}
+
 img {
   max-width: 80%;
 }
