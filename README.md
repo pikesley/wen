@@ -1,14 +1,14 @@
-[![Build Status](http://img.shields.io/travis/pikesley/wen.svg?style=flat-square)](https://travis-ci.org/pikesley/wen)
-[![Dependency Status](http://img.shields.io/gemnasium/pikesley/wen.svg?style=flat-square)](https://gemnasium.com/pikesley/wen)
-[![Coverage Status](http://img.shields.io/coveralls/pikesley/wen.svg?style=flat-square)](https://coveralls.io/r/pikesley/wen)
-[![Code Climate](http://img.shields.io/codeclimate/github/pikesley/wen.svg?style=flat-square)](https://codeclimate.com/github/pikesley/wen)
-[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://pikesley.mit-license.org)
+[![Build Status](https://img.shields.io/travis/pikesley/wen.svg?style=flat-square)](https://travis-ci.org/pikesley/wen)
+[![Dependency Status](https://img.shields.io/gemnasium/pikesley/wen.svg?style=flat-square)](https://gemnasium.com/pikesley/wen)
+[![Coverage Status](https://img.shields.io/coveralls/pikesley/wen.svg?style=flat-square)](https://coveralls.io/r/pikesley/wen)
+[![Code Climate](https://img.shields.io/codeclimate/github/pikesley/wen.svg?style=flat-square)](https://codeclimate.com/github/pikesley/wen)
+[![License](https://img.shields.io/:license-mit-blue.svg?style=flat-square)](https://pikesley.mit-license.org)
 
 # Wen, the eternally surprised
 
 _Building a clock out of Maple, Pi and Ruby_
 
-This story begins with a man named [Frank Howarth](https://www.youtube.com/user/urbanTrash). I've spent a _lot_ of time over the last few years, obsessively watching woodturning videos by Frank and others, and then earlier this year I went on a [woodturning course](http://www.axminsterskillcentre.co.uk/course/Beginners-Woodturning-2-days-1.htm) (with my friend [Chris](https://twitter.com/elsmorian)), where I [used a lathe for the first time](https://www.flickr.com/photos/pikesley/albums/72157665435637176). I came back sufficiently enthused that my girlfriend bought me [a mini-lathe](http://www.chronos.ltd.uk/acatalog/copy_of_Lathes___Accessories.html) for my birthday, and I've spent most weekends since then turning nightlight holders and other things in the garden.
+This story begins with a man named [Frank Howarth](https://www.youtube.com/user/urbanTrash). I've spent a _lot_ of time over the last few years, obsessively watching woodturning videos by Frank and others, and then earlier this year I went on a [woodturning course](https://www.axminsterskillcentre.co.uk/course/Beginners-Woodturning-2-days-1.htm) (with my friend [Chris](https://twitter.com/elsmorian)), where I [used a lathe for the first time](https://www.flickr.com/photos/pikesley/albums/72157665435637176). I came back sufficiently enthused that my girlfriend bought me [a mini-lathe](https://www.chronos.ltd.uk/acatalog/copy_of_Lathes___Accessories.html) for my birthday, and I've spent most weekends since then turning nightlight holders and other things in the garden.
 
 ## Everything is a circle
 
@@ -16,11 +16,11 @@ When all you have is a lathe, everything you make is round. It occurred to me th
 
 ## The hardware
 
-I was given to understand, from reading the specs, that a Pi would not be able to handle the timing requirements of the Neopixels, and I would need an [Arduino](https://www.arduino.cc/en/Main/ArduinoBoardUno) in between Pi and pixels. However, after a conversation with [Chris](https://twitter.com/elsmorian) at a [very weird bar in South London](http://www.doitinlondon.co.uk/en/drink-and-food/little-nans-tropical-den-le-cocktail-bar-vient-se-nicher-a-peckham-19456) I discovered that there is [at least one PWM pin on a Pi](http://raspberrypi.stackexchange.com/questions/298/can-i-use-the-gpio-for-pulse-width-modulation-pwm) with enough grunt to drive the Neopixels, and that even better, there's a [Ruby Gem](https://github.com/TwP/pixel_pi). So, no Arduino required.
+I was given to understand, from reading the specs, that a Pi would not be able to handle the timing requirements of the Neopixels, and I would need an [Arduino](https://www.arduino.cc/en/Main/ArduinoBoardUno) in between Pi and pixels. However, after a conversation with [Chris](https://twitter.com/elsmorian) at a [very weird bar in South London](https://www.doitinlondon.co.uk/en/drink-and-food/little-nans-tropical-den-le-cocktail-bar-vient-se-nicher-a-peckham-19456) I discovered that there is [at least one PWM pin on a Pi](https://raspberrypi.stackexchange.com/questions/298/can-i-use-the-gpio-for-pulse-width-modulation-pwm) with enough grunt to drive the Neopixels, and that even better, there's a [Ruby Gem](https://github.com/TwP/pixel_pi). So, no Arduino required.
 
 ### Wiring it up
 
-![schematic](http://svgur.com/i/DQ.svg)
+![schematic](https://svgur.com/i/DQ.svg)
 
 It turns out you can chain the Neopixels together and then address them as one long string of lights, so I ran a wire from Physical Pin 12 (which appears as Pin 18 to the client for reasons I don't fully understand but have [ranted about elsewhere](https://www.youtube.com/watch?v=Dyg5tzi-H4s&feature=youtu.be&t=34m40s)) to _Data In_ on the big ring, and then from its _Data Out_ to _Data In_ on the little one. The box marked _5v_ there is just an old USB cable into which I spliced some wires to power the rings and the Pi, and it all seems to work just fine.
 
@@ -28,7 +28,7 @@ It turns out you can chain the Neopixels together and then address them as one l
 
 ### Installation
 
-The code is all [on Github](https://github.com/pikesley/wen). To get it up and running from a clean install of [NOOBS](https://www.raspberrypi.org/downloads/noobs/) 1.9 [Raspbian Jessie Lite](https://www.raspberrypi.org/downloads/raspbian/) on a Pi Zero, you should look at [my Chef cookbook](http://sam.pikesley.org/cookbooks/)
+The code is all [on Github](https://github.com/pikesley/wen). To get it up and running from a clean install of [NOOBS](https://www.raspberrypi.org/downloads/noobs/) 1.9 [Raspbian Jessie Lite](https://www.raspberrypi.org/downloads/raspbian/) on a Pi Zero, you should look at [my Chef cookbook](https://sam.pikesley.org/cookbooks/)
 
 To play with it locally, you'll need `redis-server` running, then 3 different processes in a terminal each:
 
@@ -36,7 +36,7 @@ To play with it locally, you'll need `redis-server` running, then 3 different pr
 * `bundle exec rake run:sass`
 * `bundle exec rake run:app`
 
-and it should be live at [http://localhost:9292](http://localhost:9292)
+and it should be live at [https://localhost:9292](https://localhost:9292)
 
 ### Internals
 
@@ -50,7 +50,7 @@ It should be noted that 60-pin Neopixels [do exist](https://www.adafruit.com/pro
 
 #### _Everything_ gets a RESTful API eventually
 
-Why the hell does a clock need a RESTful API? Well, here's how I justified it to myself: my first script ran a `while true` loop, updating the LEDs every 10 seconds, which worked OK, but then I started thinking about how I might be able to get the clock to show patterns and so on, and because of the way my mind works now, I reached for [Sinatra](http://www.sinatrarb.com/) (via my [Skellington](http://sam.pikesley.org/projects/skellington/) gem) and started wrapping some HTTP around everything.
+Why the hell does a clock need a RESTful API? Well, here's how I justified it to myself: my first script ran a `while true` loop, updating the LEDs every 10 seconds, which worked OK, but then I started thinking about how I might be able to get the clock to show patterns and so on, and because of the way my mind works now, I reached for [Sinatra](https://www.sinatrarb.com/) (via my [Skellington](https://sam.pikesley.org/projects/skellington/) gem) and started wrapping some HTTP around everything.
 
 So it now has four main endpoints:
 
@@ -58,7 +58,7 @@ So it now has four main endpoints:
 
 If you hit this with a **GET** and an _Accept: text/html_ header (i.e. with a browser), it returns a colour picker
 
-![colour picker](http://i.imgur.com/FGMIVEk.png)
+![colour picker](https://i.imgur.com/FGMIVEk.png)
 
 (which I lashed together with [Spectrum](https://bgrins.github.io/spectrum/) and some [poorly-written](https://github.com/pikesley/wen/blob/master/views/colours.erb) [d3](https://github.com/pikesley/wen/blob/master/public/js/wen.js))
 
@@ -69,7 +69,7 @@ It also  _Accepts_ a **POST** with some JSON like
         hand:
           [0, 255, 0]
         }
-      }    
+      }
     }
 
 to change the colour of the specified clock element (this is what the jQuery does behind the picker). There's also a sub-endpoint
@@ -88,7 +88,7 @@ which you can **GET** to return the current colour of the specified element:
 
 This with a **GET** and _Accept: text/html_ returns the clock-mode picker:
 
-![clock modes](http://i.imgur.com/BIoSJNs.png)
+![clock modes](https://i.imgur.com/BIoSJNs.png)
 
 The available modes are:
 
@@ -108,13 +108,13 @@ It also accepts a **POST** with some JSON:
       mode: "vague"
     }
 
-to set the mode (which is what the jQuery does, behind the buttons)        
+to set the mode (which is what the jQuery does, behind the buttons)
 
 ##### `/tricks`
 
 If you hit _this_ with a browser, it will return a list of available trick modes:
 
-![trick modes](http://i.imgur.com/6t7uA9Q.png)
+![trick modes](https://i.imgur.com/6t7uA9Q.png)
 
 It also _Accepts_ a **POST** with some JSON like
 
@@ -126,7 +126,7 @@ It also _Accepts_ a **POST** with some JSON like
 
 A (empty) **POST** to this causes the clock to show the current time, and this is how the clock actually works: [this systemd config](https://github.com/pikesley/cookbooks/blob/gh-pages/wen-deploy/templates/default/timekeeper.service.erbe) calls [this cURL script](https://github.com/pikesley/wen/blob/master/scripts/hit-clock.sh) which hits this URL every 10 seconds.
 
-All of these **POST** requests then get pushed onto the [Sidekiq](http://sidekiq.org/) queue for asynchro...
+All of these **POST** requests then get pushed onto the [Sidekiq](https://sidekiq.org/) queue for asynchro...
 
 #### Wait, there's a queue in here too?
 
@@ -140,4 +140,4 @@ This is definitely a prototype: I can certainly turn a better clock body, and th
 
 It's a bit out of date now, but:
 
-[![Wen, the Movie](http://i.imgur.com/GmuLpRC.png)](https://youtu.be/FGRnSwF10Dw)
+[![Wen, the Movie](https://i.imgur.com/GmuLpRC.png)](https://youtu.be/FGRnSwF10Dw)
